@@ -26,7 +26,7 @@ namespace AgileOutlook
 
         void TagContextMenu(Office.CommandBar CommandBar, Outlook.Selection Selection)
         {
-
+            
             var cmdMenuItem = (Office.CommandBarButton)CommandBar.Controls.Add(Office.MsoControlType.msoControlButton, Type.Missing, Type.Missing, Type.Missing, true);
             cmdMenuItem.Caption = "Tag";
             cmdMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(tagMenuItem_Click);
@@ -35,9 +35,13 @@ namespace AgileOutlook
 
         void tagMenuItem_Click(Office.CommandBarButton Ctrl, ref bool CancelDefault)
         {
-            TagWindow window = new TagWindow();
+            //TagWindow window = new TagWindow();
+            Form1 frm = new Form1();
+            frm.Mail = this.Application.ActiveExplorer().Selection[1];
+
+            frm.Show();
             
-            window.ShowDialog();
+            //window.ShowDialog();
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)

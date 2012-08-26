@@ -5,6 +5,11 @@ using System.Text;
 using System.Xml.Linq;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Office = Microsoft.Office.Core;
+using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
+using System.ComponentModel.Composition;
+using AgileOutlook.Core;
+using System.IO;
 
 namespace AgileOutlook
 {
@@ -12,7 +17,7 @@ namespace AgileOutlook
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            
+            ComposeExtensions();
             this.Application.ItemContextMenuDisplay += new Outlook.ApplicationEvents_11_ItemContextMenuDisplayEventHandler(Application_ItemContextMenuDisplay);
         }
 
@@ -20,16 +25,28 @@ namespace AgileOutlook
         {
             if (Selection[1] is Outlook.MailItem)
             {
-                TagContextMenu(CommandBar, Selection);
+                OnMailItenContextMenu(CommandBar, Selection);
             }
         }
 
-        void TagContextMenu(Office.CommandBar CommandBar, Outlook.Selection Selection)
+        void OnMailItenContextMenu(Office.CommandBar CommandBar, Outlook.Selection Selection)
         {
-            
-            var cmdMenuItem = (Office.CommandBarButton)CommandBar.Controls.Add(Office.MsoControlType.msoControlButton, Type.Missing, Type.Missing, Type.Missing, true);
-            cmdMenuItem.Caption = "Tag";
-            cmdMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(tagMenuItem_Click);
+            var mailItem=Selection[1] as Outlook.MailItem;
+            var cmdMenuItem = (Office.CommandBarPopup)CommandBar.Controls.Add(Office.MsoControlType.msoControlPopup, Type.Missing, Type.Missing, Type.Missing, true);
+            cmdMenuItem.Caption = "AgileOutlook";
+            foreach (var plugin in Plugins)
+            {
+                var contextMenu=plugin.GetMailItemContextMenu(mailItem);
+                if (contextMenu!=null)
+                {
+                    if (!contextMenu.IsTopMenu)
+                    {
+                        cmdMenuItem.Controls.Add(Office.MsoControlType.msoControlButton, Type.Missing, Type.Missing, Type.Missing,true);
+                    }
+                }
+            }
+
+            //cmdMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(tagMenuItem_Click);
 
         }
 
@@ -44,10 +61,30 @@ namespace AgileOutlook
             //window.ShowDialog();
         }
 
+        public void ComposeExtensions()
+        {
+            AssemblyCatalog catalog = new AssemblyCatalog(this.GetType().Assembly);
+            
+            AggregateCatalog catalogs = new AggregateCatalog(catalog);
+            var pluginDirectory=Path.Combine( AppDomain.CurrentDomain.BaseDirectory,@"\plugins");
+            if(Directory.Exists(pluginDirectory)){
+                DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
+                catalogs.Catalogs.Add(dirCatalog);
+            }
+            
+            CompositionContainer container = new CompositionContainer(catalogs);
+            
+            container.ComposeParts(this);
+            
+        }
+
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
 
         }
+
+        [ImportMany(typeof(IAOExtension))]
+        public IEnumerable<IAOExtension> Plugins;
 
         #region VSTO generated code
 

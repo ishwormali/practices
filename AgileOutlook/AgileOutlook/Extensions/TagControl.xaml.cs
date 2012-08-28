@@ -12,21 +12,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AgileOutlook
+namespace AgileOutlook.Extensions
 {
     /// <summary>
-    /// Interaction logic for TagWindow.xaml
+    /// Interaction logic for TagControl.xaml
     /// </summary>
-    public partial class TagWindow : Window
+    public partial class TagControl : UserControl
     {
-        public TagWindow()
+        public TagControl()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("This click should tag the mail item.");
         }
     }
 }

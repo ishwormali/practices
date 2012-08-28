@@ -31,19 +31,23 @@ namespace AgileOutlook
 
         void OnMailItenContextMenu(Office.CommandBar CommandBar, Outlook.Selection Selection)
         {
-            var mailItem=Selection[1] as Outlook.MailItem;
+            var mailItems = new List<Outlook.MailItem>();
+            foreach (var item in Selection)
+            {
+                var tempMailItem = item as Outlook.MailItem;
+                if (tempMailItem != null)
+                {
+                    mailItems.Add(tempMailItem);
+                }
+                
+            }
+
             var cmdMenuItem = (Office.CommandBarPopup)CommandBar.Controls.Add(Office.MsoControlType.msoControlPopup, Type.Missing, Type.Missing, Type.Missing, true);
             cmdMenuItem.Caption = "AgileOutlook";
             foreach (var plugin in Plugins)
             {
-                var contextMenu=plugin.GetMailItemContextMenu(mailItem);
-                if (contextMenu!=null)
-                {
-                    if (!contextMenu.IsTopMenu)
-                    {
-                        cmdMenuItem.Controls.Add(Office.MsoControlType.msoControlButton, Type.Missing, Type.Missing, Type.Missing,true);
-                    }
-                }
+                var contextMenus=plugin.OnMailItemContextMenu(CommandBar,cmdMenuItem, mailItems);
+                
             }
 
             //cmdMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(tagMenuItem_Click);
@@ -83,8 +87,8 @@ namespace AgileOutlook
 
         }
 
-        [ImportMany(typeof(IAOExtension))]
-        public IEnumerable<IAOExtension> Plugins;
+        [ImportMany(typeof(IAOMailItemExtension))]
+        public IEnumerable<IAOMailItemExtension> Plugins;
 
         #region VSTO generated code
 

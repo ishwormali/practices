@@ -5,12 +5,13 @@ using System.Text;
 using AgileOutlook.Core;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using System.ComponentModel.Composition;
+using Office = Microsoft.Office.Core;
 
 namespace AgileOutlook.Extensions
 {
 
-    [Export(typeof(IAOExtension))]
-    public class Tagger:IAOExtension
+    [Export(typeof(IAOMailItemExtension))]
+    public class Tagger:IAOMailItemExtension
     {
 
         public void Startup(Microsoft.Office.Tools.Outlook.OutlookAddInBase baseAddin)
@@ -23,9 +24,21 @@ namespace AgileOutlook.Extensions
             
         }
 
-        public AOContextMenuItem GetMailItemContextMenu(Outlook.MailItem mailItem)
+        public IEnumerable<Office.CommandBarControl> OnMailItemContextMenu(Office.CommandBar CommandBar,Office.CommandBarPopup agileCommand, IEnumerable<Outlook.MailItem> selectedMailItems)
         {
-            return new AOContextMenuItem() { Caption = "Tag" };
+            var taggerMenuItem=(Office.CommandBarButton)agileCommand.Controls.Add(Office.MsoControlType.msoControlButton, Type.Missing, Type.Missing, Type.Missing, true);
+
+            taggerMenuItem.Caption = "Tag";
+            taggerMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(taggerMenuItem_Click);
+            return new List<Office.CommandBarControl>() { taggerMenuItem };
+            
+        }
+
+        void taggerMenuItem_Click(Office.CommandBarButton Ctrl, ref bool CancelDefault)
+        {
+            //TagWindow win = new TagWindow();
+            TagWindowWpf win = new TagWindowWpf();
+            win.Show();
         }
     }
 }

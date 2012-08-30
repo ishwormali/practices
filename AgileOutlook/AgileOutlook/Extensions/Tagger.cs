@@ -36,8 +36,9 @@ namespace AgileOutlook.Extensions
 
         void taggerMenuItem_Click(Office.CommandBarButton Ctrl, ref bool CancelDefault)
         {
-            //TagWindow win = new TagWindow();
-            TagWindowWpf win = new TagWindowWpf();
+            TagWindow win = new TagWindow();
+            //TagWindowWpf win = new TagWindowWpf();
+           // var win = new TestWpfApp.MainWindow();
             win.Show();
         }
     }

@@ -1,11 +1,129 @@
-﻿<Window x:Class="TestWpfApp.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:TestWpfApp"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="TestWpfApp.MainWindow"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="10,43,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
-        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="10,76,0,0" Name="label1" VerticalAlignment="Top" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,114,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" />
+    <Window.Resources>
+    	<src:Tag x:Key="TagDataSource" d:IsDataSource="True"/>
+        <src:TagCollection x:Key="tags">
+            <src:Tag TagName="CM-1401"/>
+            <src:Tag TagName="CM-967"/>
+            <src:Tag TagName="CM-2221"/>
+            <src:Tag TagName="CM-706"/>
+            <src:Tag TagName="{x:Null}"/>
+        </src:TagCollection>
+        <DataTemplate DataType="{x:Type src:Tag}">
+            <TextBlock Text="{Binding TagName}"></TextBlock>
+        </DataTemplate>
+		<LinearGradientBrush x:Key="TagBackground" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+			<GradientStop Color="#B5CDD0DC" Offset="0.056"/>
+			<GradientStop Color="#E5CED2E2" Offset="0.924"/>
+			<GradientStop Color="#E5CDD0DE" Offset="0.46"/>
+		</LinearGradientBrush>
+        <SolidColorBrush Color="#FF9C9CA9" x:Key="TagBorder">
+            
+        </SolidColorBrush>
+    	<Style x:Key="ListBoxItemStyle1" TargetType="{x:Type ListBoxItem}">
+    		<Setter Property="Background" Value="{StaticResource TagBackground}"/>
+    		<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+    		<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+    		<Setter Property="Padding" Value="2,0,0,0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TagBorder}" />
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="{x:Type ListBoxItem}">
+    					<ControlTemplate.Resources>
+    						<Storyboard x:Key="OnMouseDoubleClick1" AutoReverse="True">
+                                
+    							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="contentPresenter">
+    								<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+    							</ObjectAnimationUsingKeyFrames>
+    							<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBox">
+    								<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+    							</ObjectAnimationUsingKeyFrames>
+                                
+                            </Storyboard>
+                            <Storyboard x:Key="Storyboard2">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="contentPresenter">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBox">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+    					<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="5" Margin="2">
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="VisualStateGroup">
+    								<VisualStateGroup.Transitions>
+    									<VisualTransition GeneratedDuration="0" To="Editing">
+    										<Storyboard>
+    											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="contentPresenter">
+    												<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+    											</ObjectAnimationUsingKeyFrames>
+    											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBox">
+    												<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+    											</ObjectAnimationUsingKeyFrames>
+    										</Storyboard>
+    									</VisualTransition>
+                                        <VisualTransition From="Editing" GeneratedDuration="0">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="contentPresenter">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textBox">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+    								<VisualState x:Name="Editing"/>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+                            <Grid>
+                                <ContentPresenter x:Name="contentPresenter" Margin="2,2,2,2" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <TextBox x:Name="textBox" Visibility="Hidden" Text="{Binding TagName}" Margin="2,2,2,2" >
+                                    <Control.Triggers>
+                                        <EventTrigger RoutedEvent="FocusManager.LostFocus">
+                                            <BeginStoryboard x:Name="Storyboard2_BeginStoryboard" Storyboard="{StaticResource Storyboard2}"/>
+                                        </EventTrigger>
+                                    </Control.Triggers>
+                                </TextBox>
+                            </Grid>
+    					</Border>
+    					<ControlTemplate.Triggers>
+    						
+    						
+    						
+    						<EventTrigger RoutedEvent="Control.MouseDoubleClick"  >
+                                
+    							<BeginStoryboard x:Name="OnMouseDoubleClick1_BeginStoryboard1" Storyboard="{StaticResource OnMouseDoubleClick1}"  />
+    						</EventTrigger>
+    						<Trigger Property="IsSelected" Value="true">
+    							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+    							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+    						</Trigger>
+    						<MultiTrigger>
+    							<MultiTrigger.Conditions>
+    								<Condition Property="IsSelected" Value="true"/>
+    								<Condition Property="Selector.IsSelectionActive" Value="false"/>
+    							</MultiTrigger.Conditions>
+    							<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+    							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    						</MultiTrigger>
+    						<Trigger Property="IsEnabled" Value="false">
+    							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+    						</Trigger>
+                            
+    					</ControlTemplate.Triggers>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource TagDataSource}}">
+
+        <ListBox Margin="167,76,85,60" ItemsSource="{Binding Source={StaticResource tags}}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" />
     </Grid>
 </Window>

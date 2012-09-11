@@ -49,7 +49,7 @@ namespace TestWpfApp
         static EditableBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EditableBox), new FrameworkPropertyMetadata(typeof(EditableBox)));
-            
+            ContentPresenter
         }
 
         public override void OnApplyTemplate()

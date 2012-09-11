@@ -14,6 +14,7 @@
                     <!--<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="{TemplateBinding CornerRadius}" Padding="{TemplateBinding Padding}" Margin="2">-->
                         <Grid Width="{TemplateBinding Width}"
                       Height="{TemplateBinding Height}">
+                            
                             <ContentPresenter Name="PART_Display" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
                         <TextBox Text="{Binding Mode=TwoWay, Path=EditableText, RelativeSource={RelativeSource AncestorType={x:Type local:EditableBox}}}" x:Name="PART_EditBox" DataContext="{Binding Path=Content, Mode=TwoWay, ElementName=PART_Display}"></TextBox>
                         </Grid>

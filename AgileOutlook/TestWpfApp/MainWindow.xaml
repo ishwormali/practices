@@ -6,6 +6,8 @@
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
     	<src:Tag x:Key="TagDataSource" d:IsDataSource="True"/>
+        <src:Tag x:Key="tg" TagName="CM-706"/>
+        
         <src:TagCollection x:Key="tags">
             <src:Tag TagName="CM-1401"/>
             <src:Tag TagName="CM-967"/>
@@ -125,5 +127,16 @@
     <Grid DataContext="{Binding Source={StaticResource TagDataSource}}">
 
         <ListBox Margin="167,76,85,60" ItemsSource="{Binding Source={StaticResource tags}}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" />
+        
+        <src:EditableBox  Content="{Binding Source={StaticResource ResourceKey=tg}}"  EditableText="{Binding Path=TagName}"  BorderBrush="Black" Height="41" HorizontalAlignment="Left" Margin="10,10,0,0" x:Name="editableBox1" VerticalAlignment="Top" Width="233">
+            <src:EditableBox.ContentTemplate>
+                <DataTemplate DataType="{x:Type src:Tag}">
+                    <Border CornerRadius="10,10,10,10">
+                        <TextBlock Text="{Binding TagName}" Foreground="Red"></TextBlock>
+                    </Border>
+                </DataTemplate>
+            </src:EditableBox.ContentTemplate>
+        </src:EditableBox>
+        
     </Grid>
 </Window>

@@ -43,117 +43,89 @@ namespace TestWpfApp
     ///     <MyNamespace:EditableListBox/>
     ///
     /// </summary>
-    public class EditableBox : ContentControl
+    public class EditableBox : TextBox
     {
         
         static EditableBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EditableBox), new FrameworkPropertyMetadata(typeof(EditableBox)));
-            ContentPresenter
+            
         }
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
             
-            textbox_Edit = Template.FindName(Part_Edit,this) as TextBox;
-            if (textbox_Edit != null)
-            {
-                textbox_Edit.LostFocus += new RoutedEventHandler(textbox_Edit_LostFocus);
-            }
-
-            displayControl = Template.FindName(Part_Display, this) as FrameworkElement;
+            ContentHost = Template.FindName(Part_ContentHost, this) as UIElement;
+            ContentHost.LostFocus += new RoutedEventHandler(ContentHost_LostFocus);
             GoToDisplayState(false);
             
+        }
 
+        void ContentHost_LostFocus(object sender, RoutedEventArgs e)
+        {
+            GoToDisplayState(false);
+        }
+
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            base.OnKeyUp(e);
+            switch (e.Key)
+            {
+                case Key.Escape:
+                    if (IsEditing)
+                    {
+                        this.Text = bufferText;
+                    }
+
+                    GoToDisplayState(false);
+                    break;
+                case Key.Enter:
+                    if (IsEditing)
+                    {
+                        GoToDisplayState(false);
+                    }
+                    else
+                    {
+                        GoToEditState(false);
+                    }
+
+                    break;
+            }
+            
         }
 
         protected override void OnMouseDoubleClick(MouseButtonEventArgs e)
         {
             
             base.OnMouseDoubleClick(e);
-            if (this.CurrentStateMode == EditableBoxStateMode.Display)
-            {
-                GoToEditState(true);
-            }
-
-            else if (this.CurrentStateMode==EditableBoxStateMode.Edit)
-            {
-                GoToDisplayState(true);
-            }
+            GoToEditState(false);
         }
-        
-        void textbox_Edit_LostFocus(object sender, RoutedEventArgs e)
-        {
-            
-            GoToDisplayState(false);
-            
-        }
-
-        
-
+       
         protected void GoToDisplayState(bool useTransition)
         {
-            this.CurrentStateMode = EditableBoxStateMode.Display;
-
-            VisualStateManager.GoToState(this, DisplayState, useTransition);
-            ChangeDisplayControlVisibility(Visibility.Visible);
-            ChangeEditBoxVisibility(Visibility.Hidden);
-            
+            IsEditing = false;
+            bufferText = string.Empty;
         }
 
         protected void GoToEditState(bool useTransition)
         {
-            this.CurrentStateMode = EditableBoxStateMode.Display;
-
-            VisualStateManager.GoToState(this, EditState, useTransition);
-            ChangeDisplayControlVisibility(Visibility.Hidden);
-            ChangeEditBoxVisibility(Visibility.Visible);
-            if (textbox_Edit != null)
-            {
-                textbox_Edit.Focus();
-                
-            }
+            IsEditing = true;
+            bufferText = this.Text;
         }
 
-        protected virtual void ChangeEditBoxVisibility(Visibility visibility)
-        {
-            if (textbox_Edit!=null)
-            {
-                textbox_Edit.Visibility = visibility;
-            }
-        }
-
-        protected virtual void ChangeDisplayControlVisibility(Visibility visibility)
-        {
-            if (displayControl != null)
-            {
-                displayControl.Visibility = visibility;
-            }
-        }
+        
 
         private void Test()
         {
             
         }
 
-        private TextBox textbox_Edit;
-        private FrameworkElement displayControl;
-        private const string EditState = "Edit";
-        private const string DisplayState = "Display";
-        private DataTemplate DisplayTemplate = null;
+        private UIElement ContentHost;
+        private string bufferText;
 
-        public const string Part_Edit = "PART_EditBox";
+        public const string Part_ContentHost = "PART_ContentHost";
         public const string Part_Display = "PART_Display";
-
-        public static readonly DependencyProperty EditableTemplateProperty =
-            DependencyProperty.Register("EditableTemplate", typeof (DataTemplate), typeof (EditableBox), new UIPropertyMetadata(default(DataTemplate)));
-
-        public DataTemplate EditableTemplate
-        {
-            get { return (DataTemplate) GetValue(EditableTemplateProperty); }
-            set { SetValue(EditableTemplateProperty, value); }
-        }
 
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof (CornerRadius), typeof (EditableBox), new PropertyMetadata(default(CornerRadius)));
@@ -164,23 +136,17 @@ namespace TestWpfApp
             set { SetValue(CornerRadiusProperty, value); }
         }
 
-        public static readonly DependencyProperty CurrentStateModeProperty =
-            DependencyProperty.Register("CurrentStateMode", typeof (EditableBoxStateMode), typeof (EditableBox), new PropertyMetadata(default(EditableBoxStateMode)));
 
-        public EditableBoxStateMode CurrentStateMode
+        public bool IsEditing
         {
-            get { return (EditableBoxStateMode) GetValue(CurrentStateModeProperty); }
-            set { SetValue(CurrentStateModeProperty, value); }
-        }   
+            get { return (bool)GetValue(IsEditingProperty); }
+            set { SetValue(IsEditingProperty, value); }
+        }
 
-        public static readonly DependencyProperty EditableTextProperty =
-            DependencyProperty.Register("EditableText", typeof(string), typeof(EditableBox),new UIPropertyMetadata(default(string)));
+        // Using a DependencyProperty as the backing store for IsEditing.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsEditingProperty =
+            DependencyProperty.Register("IsEditing", typeof(bool), typeof(EditableBox), new UIPropertyMetadata(false));
 
-        public string EditableText
-        {
-            get { return (string)GetValue(EditableTextProperty); }
-            set { SetValue(EditableTextProperty, value); }
-        }   
-
+        
     }
 }

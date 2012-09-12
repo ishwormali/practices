@@ -126,17 +126,11 @@
     </Window.Resources>
     <Grid DataContext="{Binding Source={StaticResource TagDataSource}}">
 
-        <ListBox Margin="167,76,85,60" ItemsSource="{Binding Source={StaticResource tags}}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" />
-        
-        <src:EditableBox  Content="{Binding Source={StaticResource ResourceKey=tg}}"  EditableText="{Binding Path=TagName}"  BorderBrush="Black" Height="41" HorizontalAlignment="Left" Margin="10,10,0,0" x:Name="editableBox1" VerticalAlignment="Top" Width="233">
-            <src:EditableBox.ContentTemplate>
-                <DataTemplate DataType="{x:Type src:Tag}">
-                    <Border CornerRadius="10,10,10,10">
-                        <TextBlock Text="{Binding TagName}" Foreground="Red"></TextBlock>
-                    </Border>
-                </DataTemplate>
-            </src:EditableBox.ContentTemplate>
+        <ListBox Margin="167,76,85,60"  ItemsSource="{Binding Source={StaticResource tags}}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" />
+
+        <src:EditableBox BorderThickness="1" BorderBrush="Black" Background="Yellow" DataContext="{Binding Source={StaticResource ResourceKey=tg}}"  Text="{Binding TagName, Mode=TwoWay}" Height="32" HorizontalAlignment="Left"  x:Name="editableBox1" VerticalAlignment="Top" Margin="44,25,0,0" Width="87">
+            
         </src:EditableBox>
-        
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="236,30,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" Text="jfjkf" />
     </Grid>
 </Window>

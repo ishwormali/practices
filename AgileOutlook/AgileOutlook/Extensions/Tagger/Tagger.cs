@@ -7,7 +7,7 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 using System.ComponentModel.Composition;
 using Office = Microsoft.Office.Core;
 
-namespace AgileOutlook.Extensions
+namespace AgileOutlook.Extensions.Tagger
 {
 
     [Export(typeof(IAOMailItemExtension))]

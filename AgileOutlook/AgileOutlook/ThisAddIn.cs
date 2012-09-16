@@ -57,10 +57,10 @@ namespace AgileOutlook
         void tagMenuItem_Click(Office.CommandBarButton Ctrl, ref bool CancelDefault)
         {
             //TagWindow window = new TagWindow();
-            Form1 frm = new Form1();
-            frm.Mail = this.Application.ActiveExplorer().Selection[1];
-
-            frm.Show();
+            //Form1 frm = new Form1();
+            //frm.Mail = this.Application.ActiveExplorer().Selection[1];
+            
+            //frm.Show();
             
             //window.ShowDialog();
         }

@@ -154,6 +154,15 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Cinch.WPF">
+      <HintPath>..\packages\Cinch.2.0.1\lib\net40\Cinch.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MEFedMVVM.WPF">
+      <HintPath>..\packages\Cinch.2.0.1\lib\net40\MEFedMVVM.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cinch.2.0.1\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -161,6 +170,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cinch.2.0.1\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -210,31 +222,9 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Extensions\TagControl.xaml.cs">
-      <DependentUpon>TagControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Extensions\Tagger.cs" />
-    <Compile Include="Extensions\TagWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extensions\TagWindow.Designer.cs">
-      <DependentUpon>TagWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <EmbeddedResource Include="Extensions\TagWindow.resx">
-      <DependentUpon>TagWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -246,6 +236,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AgileOutlook_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -254,9 +245,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="TagWindowWpf.xaml.cs">
-      <DependentUpon>TagWindowWpf.xaml</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -268,16 +256,6 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Extensions\TagControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TagWindowWpf.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AgileOutlook.Core\AgileOutlook.Core.csproj">

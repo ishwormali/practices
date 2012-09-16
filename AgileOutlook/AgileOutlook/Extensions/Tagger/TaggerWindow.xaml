@@ -1,32 +1,31 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:src="clr-namespace:AgileOutlook.Extensions.Tag;assembly=AgileOutlook.Extensions"
-        xmlns:local="clr-namespace:TestWpfApp"
-        xmlns:controls="clr-namespace:AgileOutlook.Extensions.Controls;assembly=AgileOutlook.Extensions"
+        xmlns:src="clr-namespace:AgileOutlook.Tagger"
+        xmlns:control="clr-namespace:AgileOutlook.Extensions.Controls" 
         xmlns:c="clr-namespace:Cinch;assembly=Cinch.WPF"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="TestWpfApp.MainWindow"
-        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" >
+        Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
     	<src:Tag x:Key="TagDataSource" d:IsDataSource="True"/>
         <src:Tag x:Key="tg" TagName="CM-706"/>
         
-        <local:TagTestViewModel x:Key="tagsVm"/>
-        <local:DummyAutoCompleteCollector x:Key="collector"/>
+        <src:TagCollection x:Key="tags">
+            <src:Tag TagName="CM-1401"/>
+            <src:Tag TagName="CM-967"/>
+            <src:Tag TagName="CM-2221"/>
+            <src:Tag TagName="CM-706"/>
+            <src:Tag TagName="{x:Null}"/>
+        </src:TagCollection>
         <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
 
             <WrapPanel IsItemsHost="True"/>
         </ItemsPanelTemplate>
         <DataTemplate DataType="{x:Type src:Tag}">
             <!--<TextBlock Text="{Binding TagName}"></TextBlock>-->
-            <controls:EditableBox EnableAutoComplete="True" Text="{Binding TagName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoCompleteCollector="{StaticResource collector}"   BorderThickness="0" Background="Transparent" TextChanged="EditableBox_TextChanged">
-                <controls:EditableBox.AutoCompleteItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding TagName}" Background="AliceBlue" ></TextBlock>
-                    </DataTemplate>
-                </controls:EditableBox.AutoCompleteItemTemplate>
-            </controls:EditableBox>
+            <control:EditableBox Text="{Binding TagName}"   BorderThickness="0" Background="Transparent" TextChanged="EditableBox_TextChanged">
+
+            </control:EditableBox>
         </DataTemplate>
         <Style x:Key="ListBoxItemStyle1" TargetType="{x:Type ListBoxItem}">
             <Style.Resources>
@@ -39,7 +38,7 @@
             <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
             <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
             <Setter Property="Padding" Value="2,0,0,0"/>
-            <Setter Property="Margin" Value="2,1,2,1"/>
+            
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -55,9 +54,7 @@
                                                   Margin="1,1,1,2" 
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                   Grid.Column="0" Grid.ColumnSpan="1"   />
-                                <controls:CrossButton Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,0" Width="12">
-
-                                </controls:CrossButton>
+                                <control:CrossButton Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,0" Width="12"></control:CrossButton>
 
                         </Grid>
                         </Border>
@@ -93,23 +90,16 @@
         </SolidColorBrush>
     	
     </Window.Resources>
-    <Grid DataContext="{Binding Source={StaticResource tagsVm}}" x:Name="MainGrid">
+    <Grid DataContext="{Binding Source={StaticResource TagDataSource}}">
 
-        <ListBox FontSize="10"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="167,76,51,60"  
-                 ItemsSource="{Binding Tags}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}"  />
+        <ListBox FontSize="10"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="167,76,51,60"  ItemsSource="{Binding Source={StaticResource tags}}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}"  />
 
-        <controls:EditableBox   BorderThickness="1" BorderBrush="Black" Background="Yellow" 
-                                DataContext="{Binding ImportantTag}"  Text="{Binding TagName, Mode=TwoWay}" Height="32" HorizontalAlignment="Left"  x:Name="editableBox1" VerticalAlignment="Top" Margin="44,25,0,0" Width="87">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="TextChanged">
-                    <c:EventToCommandTrigger Command="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext.QueryTag}"></c:EventToCommandTrigger>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </controls:EditableBox>
+        <control:EditableBox   BorderThickness="1" BorderBrush="Black" Background="Yellow" DataContext="{Binding Source={StaticResource ResourceKey=tg}}"  Text="{Binding TagName, Mode=TwoWay}" Height="32" HorizontalAlignment="Left"  x:Name="editableBox1" VerticalAlignment="Top" Margin="44,25,0,0" Width="87">
+
+        </control:EditableBox>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="236,30,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" Text="jfjkf" />
+        <control:CrossButton Content="Button" Height="12" HorizontalAlignment="Left" Margin="50,143,0,0" x:Name="crossButton1" VerticalAlignment="Top" Width="13" />
         
-        <controls:CrossButton Content="Button" Height="12" HorizontalAlignment="Left" Margin="50,143,0,0" x:Name="crossButton1" VerticalAlignment="Top" Width="13" />
-        <Slider  Height="23" HorizontalAlignment="Left" Margin="44,219,0,0" Name="slider1" VerticalAlignment="Top" Width="100" />
-        <Button Content="Button" Height="30" HorizontalAlignment="Left" Margin="148,271,0,0" Name="button1" VerticalAlignment="Top" Width="78" Click="button1_Click" />
     </Grid>
 </Window>
 
@@ -211,11 +201,3 @@
         </Setter.Value>
     </Setter>
 </Style>-->
-
-<!--<src:TagCollection x:Key="tags">
-    <src:Tag TagName="CM-1401"/>
-    <src:Tag TagName="CM-967"/>
-    <src:Tag TagName="CM-2221"/>
-    <src:Tag TagName="CM-706"/>
-    <src:Tag TagName="{x:Null}"/>
-</src:TagCollection>-->

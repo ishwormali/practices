@@ -26,22 +26,8 @@ namespace TestWpfApp
 
         private void EditableBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var txtBox = sender as TextBox;
+            var txtBox=e.Source as TextBox;
             System.Diagnostics.Debug.Write(txtBox.Text);
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            var vm=MainGrid.DataContext as TagTestViewModel;
-            vm.Tags.First().TagName = "TagChanged";
-        }
-
-        
-
     }
 }

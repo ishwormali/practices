@@ -5,12 +5,13 @@ using System.Text;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Microsoft.Office.Tools.Outlook;
 using Office = Microsoft.Office.Core;
+using AgileOutlook.Core.Mail;
 namespace AgileOutlook.Core
 {
     
     public interface IAOMailItemExtension
     {
-        void Startup(IAgileOutlookAddIn baseAddin);
+        void Startup(IAgileOutlookAddIn baseAddin,IMailHandler mailHandler);
 
         void ShutDown();
 

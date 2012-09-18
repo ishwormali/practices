@@ -10,6 +10,7 @@ using System.ComponentModel.Composition.Primitives;
 using System.ComponentModel.Composition;
 using AgileOutlook.Core;
 using System.IO;
+using AgileOutlook.Core.Mail;
 
 namespace AgileOutlook
 {
@@ -17,8 +18,8 @@ namespace AgileOutlook
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            ComposeExtensions();
-            Plugins.ToList().ForEach(m => m.Startup(this));
+            PluginLocator.ComposeParts(this);
+            mailHandler.Startup(this);
 
             this.Application.ItemContextMenuDisplay += new Outlook.ApplicationEvents_11_ItemContextMenuDisplayEventHandler(Application_ItemContextMenuDisplay);
         }
@@ -46,11 +47,7 @@ namespace AgileOutlook
 
             var cmdMenuItem = (Office.CommandBarPopup)CommandBar.Controls.Add(Office.MsoControlType.msoControlPopup, Type.Missing, Type.Missing, Type.Missing, true);
             cmdMenuItem.Caption = "AgileOutlook";
-            foreach (var plugin in Plugins)
-            {
-                var contextMenus=plugin.OnMailItemContextMenu(CommandBar,cmdMenuItem, mailItems);
-                
-            }
+            mailHandler.OnMailItemContextMenu(CommandBar, cmdMenuItem, mailItems);
 
             //cmdMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(tagMenuItem_Click);
 
@@ -67,36 +64,28 @@ namespace AgileOutlook
             //window.ShowDialog();
         }
 
-        public void ComposeExtensions()
-        {
-            AssemblyCatalog catalog = new AssemblyCatalog(this.GetType().Assembly);
-            
-            AggregateCatalog catalogs = new AggregateCatalog(catalog);
-            var pluginDirectory=Path.Combine( AppDomain.CurrentDomain.BaseDirectory,@"\plugins");
-            if(Directory.Exists(pluginDirectory)){
-                DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
-                catalogs.Catalogs.Add(dirCatalog);
-            }
-            pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-            if (Directory.Exists(pluginDirectory))
-            {
-                DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
-                catalogs.Catalogs.Add(dirCatalog);
-            }
-
-            CompositionContainer container = new CompositionContainer(catalogs);
-            
-            container.ComposeParts(this);
-            
-        }
+        
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
-
+            mailHandler.ShutDown();
         }
 
-        [ImportMany(typeof(IAOMailItemExtension))]
-        public IEnumerable<IAOMailItemExtension> Plugins;
+        public Outlook.Application OutlookApp{
+            get { return this.Application; }
+        }
+
+
+        //[ImportMany(typeof(IMailHandler))]
+        //public IEnumerable<IMailHandler> mailHandlers { get; set; }
+
+        [Import(typeof(IMailHandler))]
+        public IMailHandler mailHandler { get; set; }
+
+        //public IMailHandler mailHandler
+        //{
+        //    get { return mailHandlers.FirstOrDefault(); }
+        //}
 
         #region VSTO generated code
 
@@ -108,14 +97,10 @@ namespace AgileOutlook
         {
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
-            
+
         }
-        
+
         #endregion
 
-        public Outlook.Application OutlookApp{
-            get { return this.Application; }
-        }
-        
     }
 }

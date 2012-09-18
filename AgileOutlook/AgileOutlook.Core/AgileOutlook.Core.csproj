@@ -67,11 +67,17 @@
   <ItemGroup>
     <Compile Include="AOEventData.cs" />
     <Compile Include="AOEventType.cs" />
-    <Compile Include="AOMailItem.cs" />
+    <Compile Include="Mail\AOMailItem.cs" />
     <Compile Include="EventMediator.cs" />
     <Compile Include="AOContextMenuItem.cs" />
     <Compile Include="IAgileOutlookAddIn.cs" />
-    <Compile Include="IAOMailItemExtension.cs" />
+    <Compile Include="Mail\IAOMailItemExtension.cs" />
+    <Compile Include="Mail\IMailHandler.cs" />
+    <Compile Include="Mail\MailHelper.cs" />
+    <Compile Include="Mail\MailReceivedEventArgs.cs" />
+    <Compile Include="Mail\SyncItem.cs" />
+    <Compile Include="Mail\SyncItems.cs" />
+    <Compile Include="Mail\SyncTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

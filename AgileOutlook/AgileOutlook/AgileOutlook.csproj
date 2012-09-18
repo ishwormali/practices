@@ -222,6 +222,8 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Mail\MailHandler.cs" />
+    <Compile Include="PluginLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -261,10 +263,6 @@
     <ProjectReference Include="..\AgileOutlook.Core\AgileOutlook.Core.csproj">
       <Project>{46362F8A-82C8-4B1F-B487-8849C06FC220}</Project>
       <Name>AgileOutlook.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AgileOutlook.Extensions\AgileOutlook.Extensions.csproj">
-      <Project>{3B1C7753-FDF7-4D40-8621-2B1839C0BE24}</Project>
-      <Name>AgileOutlook.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestWpfApp\TestWpfApp.csproj">
       <Project>{F95E25D8-FF41-4C43-A105-30E60401A657}</Project>

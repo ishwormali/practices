@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AgileOutlook.Extensions.Tag
+namespace AgileOutlook.Core.Mail
 {
     public class SyncItem
     {

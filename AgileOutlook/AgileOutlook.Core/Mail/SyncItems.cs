@@ -7,7 +7,7 @@ using System.IO;
 using System.Xml;
 using System.Runtime.InteropServices;
 
-namespace AgileOutlook.Extensions.Tag
+namespace AgileOutlook.Core.Mail
 {
     public class SyncItems
     {

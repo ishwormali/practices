@@ -113,9 +113,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Tag\SyncItem.cs" />
-    <Compile Include="Tag\SyncItems.cs" />
-    <Compile Include="Tag\SyncTime.cs" />
     <Compile Include="Tag\Tag.cs" />
     <Compile Include="Tag\TagCollection.cs" />
     <Compile Include="Tag\Tagger.cs" />

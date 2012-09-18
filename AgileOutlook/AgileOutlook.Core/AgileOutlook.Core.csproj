@@ -70,6 +70,7 @@
     <Compile Include="AOMailItem.cs" />
     <Compile Include="EventMediator.cs" />
     <Compile Include="AOContextMenuItem.cs" />
+    <Compile Include="IAgileOutlookAddIn.cs" />
     <Compile Include="IAOMailItemExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

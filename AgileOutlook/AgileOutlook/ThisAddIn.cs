@@ -13,11 +13,13 @@ using System.IO;
 
 namespace AgileOutlook
 {
-    public partial class ThisAddIn
+    public partial class ThisAddIn:IAgileOutlookAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             ComposeExtensions();
+            Plugins.ToList().ForEach(m => m.Startup(this));
+
             this.Application.ItemContextMenuDisplay += new Outlook.ApplicationEvents_11_ItemContextMenuDisplayEventHandler(Application_ItemContextMenuDisplay);
         }
 
@@ -75,7 +77,13 @@ namespace AgileOutlook
                 DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
                 catalogs.Catalogs.Add(dirCatalog);
             }
-            
+            pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+            if (Directory.Exists(pluginDirectory))
+            {
+                DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
+                catalogs.Catalogs.Add(dirCatalog);
+            }
+
             CompositionContainer container = new CompositionContainer(catalogs);
             
             container.ComposeParts(this);
@@ -104,5 +112,10 @@ namespace AgileOutlook
         }
         
         #endregion
+
+        public Outlook.Application OutlookApp{
+            get { return this.Application; }
+        }
+        
     }
 }

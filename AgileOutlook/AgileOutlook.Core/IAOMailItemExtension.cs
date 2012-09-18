@@ -10,9 +10,9 @@ namespace AgileOutlook.Core
     
     public interface IAOMailItemExtension
     {
-        void Startup(OutlookAddInBase baseAddin);
+        void Startup(IAgileOutlookAddIn baseAddin);
 
-        void ShutDown(OutlookAddInBase baseAddin);
+        void ShutDown();
 
         IEnumerable<Office.CommandBarControl> OnMailItemContextMenu(Office.CommandBar CommandBar, Office.CommandBarPopup agileCommand, IEnumerable<Outlook.MailItem> selectedMailItems);
     }

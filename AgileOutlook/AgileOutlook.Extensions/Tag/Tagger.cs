@@ -47,6 +47,7 @@ namespace AgileOutlook.Extensions.Tag
             var taggerMenuItem = (Office.CommandBarButton)agileCommand.Controls.Add(Office.MsoControlType.msoControlButton, Type.Missing, Type.Missing, Type.Missing, true);
 
             taggerMenuItem.Caption = "Tag";
+            
             taggerMenuItem.Click += new Office._CommandBarButtonEvents_ClickEventHandler(taggerMenuItem_Click);
             return new List<Office.CommandBarControl>() { taggerMenuItem };
 

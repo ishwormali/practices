@@ -137,8 +137,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>xcopy $(SolutionDir)plugins\*.dll $(TargetDir)plugins\</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -264,10 +263,9 @@
       <Project>{46362F8A-82C8-4B1F-B487-8849C06FC220}</Project>
       <Name>AgileOutlook.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestWpfApp\TestWpfApp.csproj">
-      <Project>{F95E25D8-FF41-4C43-A105-30E60401A657}</Project>
-      <Name>TestWpfApp</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="plugins\" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

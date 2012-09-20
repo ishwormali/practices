@@ -121,12 +121,6 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AgileOutlook.Extensions\AgileOutlook.Extensions.csproj">
-      <Project>{3B1C7753-FDF7-4D40-8621-2B1839C0BE24}</Project>
-      <Name>AgileOutlook.Extensions</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -23,12 +23,12 @@ namespace AgileOutlook
                 catalogs.Catalogs.Add(dirCatalog);
             }
 
-            pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-            if (Directory.Exists(pluginDirectory))
-            {
-                DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
-                catalogs.Catalogs.Add(dirCatalog);
-            }
+            //pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+            //if (Directory.Exists(pluginDirectory))
+            //{
+            //    DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);
+            //    catalogs.Catalogs.Add(dirCatalog);
+            //}
 
             CompositionContainer container = new CompositionContainer(catalogs);
 

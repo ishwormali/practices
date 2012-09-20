@@ -113,9 +113,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Tag\ITagger.cs" />
     <Compile Include="Tag\Tag.cs" />
     <Compile Include="Tag\TagCollection.cs" />
-    <Compile Include="Tag\Tagger.cs" />
+    <Compile Include="Tag\TagManager.cs" />
     <Compile Include="Tag\TaggerWindow.xaml.cs">
       <DependentUpon>TaggerWindow.xaml</DependentUpon>
     </Compile>

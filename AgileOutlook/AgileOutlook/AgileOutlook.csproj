@@ -137,7 +137,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>xcopy $(SolutionDir)plugins\*.dll $(TargetDir)plugins\</PostBuildEvent>
+    <PostBuildEvent>xcopy /y $(SolutionDir)plugins\*.dll $(TargetDir)plugins\</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>

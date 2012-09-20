@@ -16,7 +16,7 @@ namespace AgileOutlook
             AssemblyCatalog catalog = new AssemblyCatalog(typeof(PluginLocator).Assembly);
 
             AggregateCatalog catalogs = new AggregateCatalog(catalog);
-            var pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"\plugins");
+            var pluginDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "plugins");
             if (Directory.Exists(pluginDirectory))
             {
                 DirectoryCatalog dirCatalog = new DirectoryCatalog(pluginDirectory);

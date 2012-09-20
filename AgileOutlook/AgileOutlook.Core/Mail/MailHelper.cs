@@ -7,6 +7,7 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 using Office = Microsoft.Office.Core;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace AgileOutlook.Core.Mail
 {
@@ -83,6 +84,47 @@ namespace AgileOutlook.Core.Mail
             var mailItem = item as Outlook.MailItem;
             return mailItem;
 
+        }
+
+        public static Outlook.OlUserPropertyType GetOutlookPropertyType(object t)
+        {
+            if (t == null)
+            {
+                return Outlook.OlUserPropertyType.olCombination;
+            }
+
+            double d;
+            int i;
+            if (t is bool)
+            {
+                return Outlook.OlUserPropertyType.olYesNo;
+            }
+            else if (t is string)
+            {
+                return Outlook.OlUserPropertyType.olText;
+            }
+            else if (int.TryParse(t.ToString(),out i) )
+            {
+                return Outlook.OlUserPropertyType.olInteger;
+            }
+            else if (double.TryParse(t.ToString(),out d))
+            {
+                return Outlook.OlUserPropertyType.olNumber;
+            }
+            else if (t is IEnumerable)
+            {
+                return Outlook.OlUserPropertyType.olEnumeration;
+            }
+            else if (t is DateTime)
+            {
+                return Outlook.OlUserPropertyType.olDateTime;
+            }
+            else
+            {
+                return Outlook.OlUserPropertyType.olCombination;
+            }
+
+            return Outlook.OlUserPropertyType.olText;
         }
     }
 }

@@ -16,11 +16,11 @@ namespace AgileOutlook.Extensions.Tag
 {
 
     [Export(typeof(IAOMailItemExtension))]
-    public class Tagger : IAOMailItemExtension
+    public class TagManager : IAOMailItemExtension
     {
        
 
-        public Tagger()
+        public TagManager()
         {
             
         }
@@ -34,7 +34,7 @@ namespace AgileOutlook.Extensions.Tag
         {
             
             System.Diagnostics.Debug.WriteLine(
-                String.Format("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,e.OutlookMailItem.Sender.Name,e.OutlookMailItem.Subject, Environment.NewLine));
+                String.Format("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,e.OutlookMailItem.SenderName,e.OutlookMailItem.Subject, Environment.NewLine));
         }
 
         public void ShutDown()

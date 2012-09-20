@@ -16,8 +16,11 @@ namespace AgileOutlook
 {
     public partial class ThisAddIn:IAgileOutlookAddIn
     {
+
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            this.OutlookApp = this.Application;
+            
             PluginLocator.ComposeParts(this);
             mailHandler.Startup(this);
 
@@ -71,8 +74,10 @@ namespace AgileOutlook
             mailHandler.ShutDown();
         }
 
-        public Outlook.Application OutlookApp{
-            get { return this.Application; }
+        public Outlook.Application OutlookApp
+        {
+            get;
+            set;
         }
 
 
@@ -97,8 +102,11 @@ namespace AgileOutlook
         {
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
+            
 
         }
+
+        
 
         #endregion
 

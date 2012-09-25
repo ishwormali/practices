@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.ComponentModel.Composition;
 
 namespace AgileOutlook.Extensions.Tag
 {
+    [Export(typeof(ITagger))]
     public class JiraTagger:ITagger
     {
         TagManager tagManager;

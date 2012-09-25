@@ -28,6 +28,11 @@ namespace AgileOutlook.Extensions.Tag
 
         public void Startup(IAgileOutlookAddIn baseAddin,IMailHandler mailHandler)
         {
+            foreach (var tagger in Taggers)
+            {
+                tagger.Startup(baseAddin, this);
+
+            }
             mailHandler.MailReceived += new MailReceivedEvent(Mail_Received);
         }
 
@@ -96,5 +101,9 @@ namespace AgileOutlook.Extensions.Tag
 
         [ImportMany(typeof(ITagger))]
         public IEnumerable<ITagger> Taggers;
+
+        //[Import(typeof(ITagger))]
+        //public ITagger Tagger;
+
     }
 }

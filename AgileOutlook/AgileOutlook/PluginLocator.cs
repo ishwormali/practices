@@ -13,6 +13,7 @@ namespace AgileOutlook
     {
         public static void ComposeParts(params object[] attributedParts)
         {
+            
             AssemblyCatalog catalog = new AssemblyCatalog(typeof(PluginLocator).Assembly);
 
             AggregateCatalog catalogs = new AggregateCatalog(catalog);

@@ -40,10 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cinch.WPF">
-      <HintPath>..\packages\Cinch.2.0.2\lib\net40\Cinch.WPF.dll</HintPath>
+      <HintPath>..\packages\Cinch.2.0.1\lib\net40\Cinch.WPF.dll</HintPath>
     </Reference>
     <Reference Include="MEFedMVVM.WPF">
-      <HintPath>..\packages\Cinch.2.0.2\lib\net40\MEFedMVVM.WPF.dll</HintPath>
+      <HintPath>..\packages\Cinch.2.0.1\lib\net40\MEFedMVVM.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Cinch.2.0.2\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>

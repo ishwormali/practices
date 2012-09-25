@@ -114,6 +114,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Tag\ITagger.cs" />
+    <Compile Include="Tag\JiraTagger.cs" />
     <Compile Include="Tag\Tag.cs" />
     <Compile Include="Tag\TagCollection.cs" />
     <Compile Include="Tag\TagManager.cs" />
@@ -135,6 +136,10 @@
     <ProjectReference Include="..\AgileOutlook.Core\AgileOutlook.Core.csproj">
       <Project>{46362F8A-82C8-4B1F-B487-8849C06FC220}</Project>
       <Name>AgileOutlook.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgileOutlook\AgileOutlook.csproj">
+      <Project>{6224444F-B94C-448A-B07D-CC8D47E85930}</Project>
+      <Name>AgileOutlook</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

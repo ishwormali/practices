@@ -18,6 +18,6 @@ namespace AgileOutlook.Extensions.Tag
 
         string TagSource { get; set; }
 
-        IList<Tag> GetTags(Outlook.MailItem mailItem);
+        IList<Tag> GetTags(AOMailItem mailItem);
     }
 }

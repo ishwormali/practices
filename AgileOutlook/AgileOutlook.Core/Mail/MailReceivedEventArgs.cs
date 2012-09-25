@@ -12,7 +12,9 @@ namespace AgileOutlook.Core.Mail
     {
         public SyncItem Item { get; set; }
 
-        public Outlook.MailItem OutlookMailItem { get; set; }
+        //public Outlook.MailItem OutlookMailItem { get; set; }
+
+        public AOMailItem MailItem { get; set; }
 
         public Outlook.Application OutlookApplication { get; set; }
 

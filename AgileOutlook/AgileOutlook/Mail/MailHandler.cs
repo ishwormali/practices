@@ -101,11 +101,14 @@ namespace AgileOutlook.Mail
         {
             // Use this event to handle all incoming e-mails 
 
+            var outlookMailItem = MailHelper.GetMailItemFromId(this.BaseAddIn.OutlookApp, e.EntryID);
+
             var eventArg = new MailReceivedEventArgs
             {
                 Item=e,
                 OutlookApplication=this.BaseAddIn.OutlookApp,
-                OutlookMailItem=MailHelper.GetMailItemFromId(this.BaseAddIn.OutlookApp,e.EntryID)
+                //OutlookMailItem = outlookMailItem,
+                MailItem=new AOMailItem(outlookMailItem)
             };
 
 

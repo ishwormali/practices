@@ -16,7 +16,7 @@ namespace AgileOutlook.Extensions.Tag
         {
             this.baseAddin = baseAddin;
             this.tagManager = tagManager;
-            regEx = @"CM-\d";
+            regEx = @"CM-\w+";
         }
 
         public void Shutdown()
@@ -39,16 +39,19 @@ namespace AgileOutlook.Extensions.Tag
 
         public IList<Tag> GetTags(Core.AOMailItem mailItem)
         {
+            var tags = new List<Tag>();
+
             Regex rg = new Regex(regEx);
-            var mtch=rg.Match(mailItem.OutlookMailItem.Subject);
-            if (mtch.Success)
+            var mtches=rg.Matches(mailItem.OutlookMailItem.Subject);
+            foreach (Match match in mtches)
             {
-                foreach (var grp in mtch.Groups)
+                foreach (Capture capture in match.Captures)
                 {
-                       
+                    tags.Add(new Tag(){TagSource = TagSource,TagName = capture.Value});
                 }
             }
-            throw new NotImplementedException();
+
+            return tags;
         }
     }
 }

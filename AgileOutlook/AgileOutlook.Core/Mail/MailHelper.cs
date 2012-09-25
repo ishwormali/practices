@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Office.Interop.Outlook;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
 using Office = Microsoft.Office.Core;
@@ -121,10 +122,47 @@ namespace AgileOutlook.Core.Mail
             }
             else
             {
-                return Outlook.OlUserPropertyType.olCombination;
+                return Outlook.OlUserPropertyType.olText;
             }
 
-            return Outlook.OlUserPropertyType.olText;
+            
+        }
+
+        public static T GetUserPropertyAs<T>(Outlook.MailItem mailItem, string propName)
+        {
+            if (mailItem.UserProperties[propName] == null)
+            {
+                return default(T);
+            }
+
+            return (T)mailItem.UserProperties[propName].Value;
+        }
+
+        public static void SetUserProperty<T>(Outlook.MailItem mailItem, string propName, T propValue)
+        {
+            Outlook.UserProperty prop = mailItem.UserProperties[propName];
+            if (mailItem.UserProperties[propName] == null)
+            {
+                prop = mailItem.UserProperties.Add(propName, MailHelper.GetOutlookPropertyType(propValue));
+            }
+
+            prop.Value = propValue;
+        }
+
+        public static Outlook.UserProperty GetOrCreateUserProperty(Outlook.MailItem mailItem, string propName,OlUserPropertyType propertyType)
+        {
+            var prop=mailItem.UserProperties[propName];
+            if (prop!=null)
+            {
+                return prop;
+            }
+            else
+            {
+                prop = mailItem.UserProperties.Add(propName, propertyType);
+
+            }
+
+            return prop;
         }
     }
 }

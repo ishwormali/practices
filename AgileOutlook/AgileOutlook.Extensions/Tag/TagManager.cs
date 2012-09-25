@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AgileOutlook.Core;
+using Microsoft.Office.Interop.Outlook;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using System.ComponentModel.Composition;
 using Office = Microsoft.Office.Core;
@@ -35,7 +36,38 @@ namespace AgileOutlook.Extensions.Tag
             
             System.Diagnostics.Debug.WriteLine(
                 String.Format("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,e.MailItem.OutlookMailItem.SenderName,e.MailItem.OutlookMailItem.Subject, Environment.NewLine));
+            
+            
+            var newTags = new List<Tag>();
 
+            foreach (var tagger in Taggers)
+            {
+                var tgs=tagger.GetTags(e.MailItem);
+                newTags.AddRange(tgs);    
+            }
+            if (newTags.Any())
+            {
+                var prop = MailHelper.GetOrCreateUserProperty(e.MailItem.OutlookMailItem, "TagManager.Tags",
+                                                          OlUserPropertyType.olEnumeration);
+
+                var existingTags = prop.Value as IList<Tag>;
+                if (existingTags == null)
+                {
+                    existingTags = new List<Tag>();
+                }
+
+                var newFilteredTags = newTags.Where(
+                m =>
+                !existingTags.Any(
+                    ex =>
+                    string.Compare(m.TagName, ex.TagName, StringComparison.OrdinalIgnoreCase) == 0 &&
+                    string.Compare(m.TagSource, m.TagName, StringComparison.OrdinalIgnoreCase) == 0));
+
+                foreach (var newFilteredTag in newFilteredTags)
+                {
+                    existingTags.Add(newFilteredTag);
+                }
+            }
             
         }
 
@@ -55,11 +87,14 @@ namespace AgileOutlook.Extensions.Tag
 
         }
 
+
+
         void taggerMenuItem_Click(Office.CommandBarButton Ctrl, ref bool CancelDefault)
         {
 
         }
 
-
+        [ImportMany(typeof(ITagger))]
+        public IEnumerable<ITagger> Taggers;
     }
 }

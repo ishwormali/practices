@@ -28,7 +28,7 @@ namespace AgileOutlook.Core.Mail
             get
             {
                 string AppDataFolder = Path.Combine(Environment.GetFolderPath(
-                    Environment.SpecialFolder.ApplicationData), "NewMailUnleashed");
+                    Environment.SpecialFolder.ApplicationData), "AgileOutlook");
                 return AppDataFolder;
             }
         }

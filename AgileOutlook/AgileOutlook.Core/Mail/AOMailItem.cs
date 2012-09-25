@@ -23,26 +23,7 @@ namespace AgileOutlook.Core
             
         }
 
-        public T GetUserPropertyAs<T>(string propName)
-        {
-            if (OutlookMailItem.UserProperties[propName] == null)
-            {
-                return default(T);
-            }
-            
-            return (T)OutlookMailItem.UserProperties[propName].Value;
-        }
-
-        public void SetUserProperty<T>(string propName,T propValue)
-        {
-            Outlook.UserProperty prop = OutlookMailItem.UserProperties[propName];
-            if (OutlookMailItem.UserProperties[propName] == null)
-            {
-                prop = OutlookMailItem.UserProperties.Add(propName, MailHelper.GetOutlookPropertyType(propValue));
-            }
-
-            prop.Value = propValue;
-        }
+        
 
 
         public void Dispose()

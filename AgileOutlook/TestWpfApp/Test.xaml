@@ -3,6 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Test" Height="300" Width="300">
     <Grid>
-        
+        <Button Content="Regex practice" Height="62" HorizontalAlignment="Left" Margin="10,10,0,0" Name="button1" VerticalAlignment="Top" Width="156" Click="button1_Click" />
     </Grid>
 </Window>

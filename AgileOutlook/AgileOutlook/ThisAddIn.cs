@@ -19,6 +19,12 @@ namespace AgileOutlook
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            log4net.Config.XmlConfigurator.Configure(
+                new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AgileOutlook.log.config")));
+
+            //var someValue = System.Configuration.ConfigurationManager.AppSettings["somesetting"];
+
+            Logger.Log.Debug("starting up the addin.");
             this.OutlookApp = this.Application;
             
             PluginLocator.ComposeParts(this);

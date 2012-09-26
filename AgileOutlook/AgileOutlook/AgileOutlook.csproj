@@ -156,6 +156,10 @@
     <Reference Include="Cinch.WPF">
       <HintPath>..\packages\Cinch.2.0.1\lib\net40\Cinch.WPF.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MEFedMVVM.WPF">
       <HintPath>..\packages\Cinch.2.0.1\lib\net40\MEFedMVVM.WPF.dll</HintPath>
     </Reference>
@@ -166,6 +170,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -237,6 +242,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AgileOutlook_TemporaryKey.pfx" />
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -266,6 +272,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AgileOutlook.log.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

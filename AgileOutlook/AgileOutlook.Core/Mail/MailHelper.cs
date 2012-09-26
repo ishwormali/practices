@@ -9,6 +9,7 @@ using Office = Microsoft.Office.Core;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Collections;
+using Exception = System.Exception;
 
 namespace AgileOutlook.Core.Mail
 {
@@ -128,41 +129,59 @@ namespace AgileOutlook.Core.Mail
             
         }
 
-        public static T GetUserPropertyAs<T>(Outlook.MailItem mailItem, string propName)
+        public static object GetUserProperty(Outlook.MailItem mailItem, string propName)
         {
             if (mailItem.UserProperties[propName] == null)
             {
-                return default(T);
+                return null;
             }
 
-            return (T)mailItem.UserProperties[propName].Value;
+            return mailItem.UserProperties[propName].Value;
         }
 
-        public static void SetUserProperty<T>(Outlook.MailItem mailItem, string propName, T propValue)
+        public static void SetUserProperty(Outlook.MailItem mailItem, string propName, object propValue)
         {
             Outlook.UserProperty prop = mailItem.UserProperties[propName];
             if (mailItem.UserProperties[propName] == null)
             {
                 prop = mailItem.UserProperties.Add(propName, MailHelper.GetOutlookPropertyType(propValue));
+                mailItem.Save();
             }
 
-            prop.Value = propValue;
+            mailItem.UserProperties[propName].Value = propValue;
+            mailItem.Save();
+            //prop.Value = propValue;
+            
         }
 
         public static Outlook.UserProperty GetOrCreateUserProperty(Outlook.MailItem mailItem, string propName,OlUserPropertyType propertyType)
         {
-            var prop=mailItem.UserProperties[propName];
-            if (prop!=null)
+            try
             {
+                var prop = mailItem.UserProperties[propName];
+                if (prop != null)
+                {
+                    return prop;
+                }
+                else
+                {
+                    prop = mailItem.UserProperties.Add(propName, propertyType);
+                    mailItem.Save();
+                    
+
+                }
+
                 return prop;
             }
-            else
+            catch (Exception ex)
             {
-                prop = mailItem.UserProperties.Add(propName, propertyType);
-
+                
+                Logger.Log.Error(ex.Message,ex);
+                throw ex;
             }
+           
 
-            return prop;
+            
         }
     }
 }

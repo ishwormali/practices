@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using AgileOutlook.Core;
@@ -12,6 +13,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using AgileOutlook.Core.Mail;
+using Exception = System.Exception;
 
 namespace AgileOutlook.Extensions.Tag
 {
@@ -38,10 +40,10 @@ namespace AgileOutlook.Extensions.Tag
 
         void Mail_Received(object sender, MailReceivedEventArgs e)
         {
-            
-            System.Diagnostics.Debug.WriteLine(
-                String.Format("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,e.MailItem.OutlookMailItem.SenderName,e.MailItem.OutlookMailItem.Subject, Environment.NewLine));
-            
+
+            Logger.Log.DebugFormat("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,
+                       e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.Subject, Environment.NewLine);
+
             
             var newTags = new List<Tag>();
 
@@ -52,26 +54,57 @@ namespace AgileOutlook.Extensions.Tag
             }
             if (newTags.Any())
             {
-                var prop = MailHelper.GetOrCreateUserProperty(e.MailItem.OutlookMailItem, "TagManager.Tags",
-                                                          OlUserPropertyType.olEnumeration);
-
-                var existingTags = prop.Value as IList<Tag>;
-                if (existingTags == null)
+                try
                 {
-                    existingTags = new List<Tag>();
+                    var existingTags = new List<Tag>();
+
+                    var prop = MailHelper.GetOrCreateUserProperty(e.MailItem.OutlookMailItem, "TagManager.Tags",
+                                                          OlUserPropertyType.olText);
+                    var propValue = prop.Value as string;
+                    propValue = propValue ?? string.Empty;
+                    propValue.Split(new string[]{";"},StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(delegate(string str)
+                                                              {
+                                                                  var strBroken = str.Split(new string[]{"."},StringSplitOptions.RemoveEmptyEntries);
+                                                                  var tg = new Tag()
+                                                                               {
+                                                                                   TagSource = strBroken[0],
+                                                                                   TagName = strBroken[1]
+                                                                               };
+                                                                  existingTags.Add(tg);
+
+                                                              });
+                    
+                    //if (string.IsNullOrWhiteSpace(existingTags))
+                    //{
+                    //    existingTags = new List<Tag>();
+                    //}
+
+                    var newFilteredTags = newTags.Where(
+                    m =>
+                    !existingTags.Any(
+                        ex =>
+                        string.Compare(m.TagName, ex.TagName, StringComparison.OrdinalIgnoreCase) == 0 &&
+                        string.Compare(m.TagSource, m.TagName, StringComparison.OrdinalIgnoreCase) == 0));
+
+                    foreach (var newFilteredTag in newFilteredTags)
+                    {
+                        existingTags.Add(newFilteredTag);
+                    }
+
+                    var existingTagsString = string.Join(";",
+                                                         existingTags.Select(
+                                                             m =>
+                                                             string.Format(CultureInfo.InvariantCulture, "{0}.{1}",
+                                                                           m.TagSource, m.TagName)));
+
+                    MailHelper.SetUserProperty(e.MailItem.OutlookMailItem, "TagManager.Tags", existingTagsString);
                 }
-
-                var newFilteredTags = newTags.Where(
-                m =>
-                !existingTags.Any(
-                    ex =>
-                    string.Compare(m.TagName, ex.TagName, StringComparison.OrdinalIgnoreCase) == 0 &&
-                    string.Compare(m.TagSource, m.TagName, StringComparison.OrdinalIgnoreCase) == 0));
-
-                foreach (var newFilteredTag in newFilteredTags)
+                catch (Exception ex)
                 {
-                    existingTags.Add(newFilteredTag);
+                    
+                    Logger.Log.Error(ex.Message,ex);
                 }
+                
             }
             
         }

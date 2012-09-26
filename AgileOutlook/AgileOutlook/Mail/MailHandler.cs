@@ -18,6 +18,7 @@ namespace AgileOutlook.Mail
     [Export(typeof(IMailHandler))]
     public class MailHandler:IMailHandler
     {
+        
         private SyncItems syncItems = new SyncItems();
         IAgileOutlookAddIn BaseAddIn;
         Timer mailCheckTimer;
@@ -26,13 +27,13 @@ namespace AgileOutlook.Mail
         public MailHandler()
         {
             mailCheckTimer = new Timer();
-            mailCheckTimer.Interval = 1000;
+            mailCheckTimer.Interval = 5000;
             mailCheckTimer.Tick += new EventHandler(mailCheckTimer_Tick);
 
         }
         public void Startup(IAgileOutlookAddIn baseAddin)
         {
-            
+            Logger.Log.Debug("mail handler startup.");
             BaseAddIn = baseAddin;
 
             Plugins.ToList().ForEach(m => m.Startup(baseAddin,this));
@@ -122,7 +123,9 @@ namespace AgileOutlook.Mail
         {
             //this.SendMessage(0x04001, IntPtr.Zero, IntPtr.Zero);
             mailCheckTimer.Stop();
+            Logger.Log.Debug("mailchecktimer ticked.");
             LoopThroughAccountFolders();
+            Logger.Log.Debug("mailchecktimer ticked complete.");
         }
 
         DateTime LastReceivedDate;
@@ -133,6 +136,9 @@ namespace AgileOutlook.Mail
             for (int i = 1; i <= accountFolders.Count; i++)
             {
                 Outlook.MAPIFolder accountFolder = accountFolders[i];
+                Logger.Log.Debug(string.Format("looping through :{0}", accountFolder.FolderPath));
+
+
                 SyncTime syncTime = syncItems.SyncTimes.Find(
                     s => s.AccountID == accountFolder.EntryID);
 
@@ -161,8 +167,11 @@ namespace AgileOutlook.Mail
 
         private void ScanFolder(Outlook.MAPIFolder folder, DateTime receivedTime, string accountId)
         {
+
             if (folder.DefaultItemType == Outlook.OlItemType.olMailItem)
             {
+                Logger.Log.Debug(string.Format("scanning folder :{0} and receivedTime", folder.FolderPath,receivedTime));
+
                 Outlook.Items folderItems = folder.Items;
                 Outlook.Items filteredItems = folderItems.Restrict(
                     String.Format("[ReceivedTime] >= '{0}'",
@@ -177,7 +186,10 @@ namespace AgileOutlook.Mail
                     {
                         if (outlookItem is Outlook.MailItem)
                         {
+
                             Outlook.MailItem outlookMail = (Outlook.MailItem)outlookItem;
+
+                            Logger.Log.Debug(string.Format("syncing mail item from :{0} and subject:", outlookMail.SenderEmailAddress, outlookMail.Subject));
 
                             SyncItem syncItem = new SyncItem();
                             syncItem.EntryID = outlookMail.EntryID;

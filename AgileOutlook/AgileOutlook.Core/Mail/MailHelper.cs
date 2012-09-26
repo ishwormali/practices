@@ -88,6 +88,18 @@ namespace AgileOutlook.Core.Mail
 
         }
 
+        public static bool HasUserProperty(Outlook.MailItem mailItem,string propName)
+        {
+            if (mailItem.UserProperties[propName] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public static Outlook.OlUserPropertyType GetOutlookPropertyType(object t)
         {
             if (t == null)

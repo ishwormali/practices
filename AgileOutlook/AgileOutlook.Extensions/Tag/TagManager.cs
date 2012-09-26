@@ -44,40 +44,28 @@ namespace AgileOutlook.Extensions.Tag
             Logger.Log.DebugFormat("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,
                        e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.Subject, Environment.NewLine);
 
-            
             var newTags = new List<Tag>();
 
             foreach (var tagger in Taggers)
             {
                 var tgs=tagger.GetTags(e.MailItem);
-                newTags.AddRange(tgs);    
+                if (tgs != null && tgs.Any())
+                {
+                    newTags.AddRange(tgs);    
+                }
+                
             }
+
             if (newTags.Any())
             {
                 try
                 {
-                    var existingTags = new List<Tag>();
+                    var existingTags = GetTags(e.MailItem.OutlookMailItem);
 
-                    var prop = MailHelper.GetOrCreateUserProperty(e.MailItem.OutlookMailItem, "TagManager.Tags",
+                    var prop = MailHelper.GetOrCreateUserProperty(e.MailItem.OutlookMailItem, PropName,
                                                           OlUserPropertyType.olText);
-                    var propValue = prop.Value as string;
-                    propValue = propValue ?? string.Empty;
-                    propValue.Split(new string[]{";"},StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(delegate(string str)
-                                                              {
-                                                                  var strBroken = str.Split(new string[]{"."},StringSplitOptions.RemoveEmptyEntries);
-                                                                  var tg = new Tag()
-                                                                               {
-                                                                                   TagSource = strBroken[0],
-                                                                                   TagName = strBroken[1]
-                                                                               };
-                                                                  existingTags.Add(tg);
 
-                                                              });
-                    
-                    //if (string.IsNullOrWhiteSpace(existingTags))
-                    //{
-                    //    existingTags = new List<Tag>();
-                    //}
+                    existingTags = existingTags ?? new List<Tag>();
 
                     var newFilteredTags = newTags.Where(
                     m =>
@@ -91,13 +79,9 @@ namespace AgileOutlook.Extensions.Tag
                         existingTags.Add(newFilteredTag);
                     }
 
-                    var existingTagsString = string.Join(";",
-                                                         existingTags.Select(
-                                                             m =>
-                                                             string.Format(CultureInfo.InvariantCulture, "{0}.{1}",
-                                                                           m.TagSource, m.TagName)));
+                    var existingTagsString=string.Join(";",existingTags.Select(m=>ParseToString(m)));
 
-                    MailHelper.SetUserProperty(e.MailItem.OutlookMailItem, "TagManager.Tags", existingTagsString);
+                    MailHelper.SetUserProperty(e.MailItem.OutlookMailItem, PropName, existingTagsString);
                 }
                 catch (Exception ex)
                 {
@@ -132,9 +116,46 @@ namespace AgileOutlook.Extensions.Tag
 
         }
 
+        public IList<Tag> GetTags(Outlook.MailItem mailItem)
+        {
+            var existingTags=new List<Tag>();
+            if(!MailHelper.HasUserProperty(mailItem,PropName))
+            {
+                return null;
+            }
+
+            var propValue=MailHelper.GetUserProperty(mailItem, PropName);
+            var propString = propValue != null ? propValue.ToString() : string.Empty;
+
+            propString.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries).ToList().ForEach(delegate(string str)
+                                                              {
+                                                                  var strBroken = str.Split(new string[]{"."},StringSplitOptions.RemoveEmptyEntries);
+                                                                  var tg = new Tag()
+                                                                               {
+                                                                                   TagSource = strBroken[0],
+                                                                                   TagName = strBroken[1]
+                                                                               };
+                                                                  existingTags.Add(tg);
+
+                                                              });
+            return existingTags;
+        }
+
+        public string ParseToString(Tag tag)
+        {
+            return string.Format(CultureInfo.InvariantCulture, "{0}.{1}",
+                                                                           tag.TagSource, tag.TagName);
+        }
+
         [ImportMany(typeof(ITagger))]
         public IEnumerable<ITagger> Taggers;
 
+        public string PropName{
+            get
+            {
+                return "TagManager.Tags";
+            }
+        }
         //[Import(typeof(ITagger))]
         //public ITagger Tagger;
 

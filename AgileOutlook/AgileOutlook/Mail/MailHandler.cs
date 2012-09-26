@@ -136,6 +136,7 @@ namespace AgileOutlook.Mail
             for (int i = 1; i <= accountFolders.Count; i++)
             {
                 Outlook.MAPIFolder accountFolder = accountFolders[i];
+
                 Logger.Log.Debug(string.Format("looping through :{0}", accountFolder.FolderPath));
 
 

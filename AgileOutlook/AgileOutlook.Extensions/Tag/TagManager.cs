@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using AgileOutlook.Core;
 using Microsoft.Office.Interop.Outlook;
+using log4net;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using System.ComponentModel.Composition;
 using Office = Microsoft.Office.Core;
@@ -21,7 +22,8 @@ namespace AgileOutlook.Extensions.Tag
     [Export(typeof(IAOMailItemExtension))]
     public class TagManager : IAOMailItemExtension
     {
-       
+
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public TagManager()
         {
@@ -35,14 +37,14 @@ namespace AgileOutlook.Extensions.Tag
                 tagger.Startup(baseAddin, this);
 
             }
-            mailHandler.MailReceived += new MailReceivedEvent(Mail_Received);
+            mailHandler.MailReceived += new MailEvent(Mail_Received);
         }
 
         void Mail_Received(object sender, MailReceivedEventArgs e)
         {
 
-            Logger.Log.DebugFormat("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,
-                       e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.Subject, Environment.NewLine);
+            //Logger.Log.DebugFormat("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,
+            //           e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.Subject, Environment.NewLine);
 
             var newTags = new List<Tag>();
 
@@ -82,13 +84,24 @@ namespace AgileOutlook.Extensions.Tag
                     var existingTagsString=string.Join(";",existingTags.Select(m=>ParseToString(m)));
 
                     MailHelper.SetUserProperty(e.MailItem.OutlookMailItem, PropName, existingTagsString);
+                    e.MailItem.OutlookMailItem.Save();
+                    Log.DebugFormat("Tagging Mail Item as:{0}, Sent By:{1}, To:{2}, Subject:{3}", existingTagsString,
+                                    e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.ReceivedByName,e.MailItem.OutlookMailItem.Subject);
+
+
                 }
                 catch (Exception ex)
                 {
                     
-                    Logger.Log.Error(ex.Message,ex);
+                    Log.Error(ex.Message,ex);
                 }
                 
+            }
+            else
+            {
+                Log.DebugFormat("No tag found Sent By:{0}, To:{1}, Subject:{2}",
+                                    e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.ReceivedByName, e.MailItem.OutlookMailItem.Subject);
+
             }
             
         }

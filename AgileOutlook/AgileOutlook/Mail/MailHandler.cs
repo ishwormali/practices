@@ -6,6 +6,8 @@ using AgileOutlook.Core.Mail;
 using System.Windows.Forms;
 using AgileOutlook.Core;
 using System.Reflection;
+using Microsoft.Office.Interop.Outlook;
+using log4net;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
 using Office = Microsoft.Office.Core;
@@ -18,32 +20,35 @@ namespace AgileOutlook.Mail
     [Export(typeof(IMailHandler))]
     public class MailHandler:IMailHandler
     {
-        
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private SyncItems syncItems = new SyncItems();
         IAgileOutlookAddIn BaseAddIn;
         Timer mailCheckTimer;
-        public MailReceivedEvent MailReceived{get;set;}
-
+        public MailEvent MailReceived{get;set;}
+        public MailEvent MailSent { get; set; }
+        
         public MailHandler()
         {
             mailCheckTimer = new Timer();
-            mailCheckTimer.Interval = 5000;
+            mailCheckTimer.Interval = 20000;
             mailCheckTimer.Tick += new EventHandler(mailCheckTimer_Tick);
 
         }
+
         public void Startup(IAgileOutlookAddIn baseAddin)
         {
-            Logger.Log.Debug("mail handler startup.");
+            Log.Debug("mail handler startup.");
             BaseAddIn = baseAddin;
 
             Plugins.ToList().ForEach(m => m.Startup(baseAddin,this));
-            syncItems.NewMailReceived += syncItems_NewMailReceived;
+            syncItems.ItemSync += SyncItems_ItemSync;
 
             if (!File.Exists(syncItems.FileName))
             {
                 Microsoft.Office.Tools.Outlook.OutlookAddInBase a;
 
-                syncItems.InitializeSyncTimesAccounts(DateTime.Now, BaseAddIn.OutlookApp);
+                syncItems.InitializeSyncTimesAccounts(DateTime.Now, this);
                 syncItems.Save();
             }
             else
@@ -52,9 +57,16 @@ namespace AgileOutlook.Mail
             }
 
             BaseAddIn.OutlookApp.NewMailEx += new Outlook.ApplicationEvents_11_NewMailExEventHandler(OutlookApp_NewMailEx);
+            baseAddin.OutlookApp.ItemSend += new Outlook.ApplicationEvents_11_ItemSendEventHandler(OutlookApp_ItemSend);
             mailCheckTimer.Enabled = true;
 
             mailCheckTimer.Start();
+        }
+
+        void OutlookApp_ItemSend(object Item, ref bool Cancel)
+        {
+            SyncMailItem(Item);
+            syncItems.Save();
         }
 
 
@@ -67,29 +79,24 @@ namespace AgileOutlook.Mail
             {
                 nameSpace = BaseAddIn.OutlookApp.GetNamespace("MAPI");
 
-                string[] entryIds = EntryIDCollection.Split(',');
-                for (int i = 0; i < entryIds.Length; i++)
+                var entryIds = EntryIDCollection.Split(',');
+                foreach (string t in entryIds)
                 {
-                    outlookItem = nameSpace.GetItemFromID(entryIds[i]);
+                    outlookItem = nameSpace.GetItemFromID(t);
 
                     if (outlookItem != null)
                     {
                         if (outlookItem is Outlook.MailItem)
                         {
-                            Outlook.MailItem outlookMail = (Outlook.MailItem)outlookItem;
+                            var syncItem = SyncMailItem(outlookItem);
                             
-                            SyncItem syncItem = new SyncItem();
-                            syncItem.EntryID = outlookMail.EntryID;
-                            syncItem.SenderSubject = outlookMail.Subject;
-                            syncItem.ReceivedTime = outlookMail.ReceivedTime;
-                            syncItem.AccountID = MailHelper.GetItemAccountID(outlookItem);
-                            syncItems.Add(syncItem);
-                            syncItems.Save();
                         }
 
                         Marshal.ReleaseComObject(outlookItem);
                     }
                 }
+
+                syncItems.Save();
             }
             finally
             {
@@ -98,12 +105,25 @@ namespace AgileOutlook.Mail
             }
         }
 
-        void syncItems_NewMailReceived(object sender, SyncItem e)
+        private SyncItem SyncMailItem(object outlookItem)
+        {
+            var outlookMail = (Outlook.MailItem) outlookItem;
+
+            var syncItem = new SyncItem();
+            syncItem.EntryID = outlookMail.EntryID;
+            syncItem.SenderSubject = outlookMail.Subject;
+            syncItem.ReceivedTime = outlookMail.ReceivedTime;
+            syncItem.AccountID = MailHelper.GetItemAccountID(outlookItem);
+            syncItems.Add(syncItem);
+            return syncItem;
+        }
+
+        void SyncItems_ItemSync(object sender, SyncItem e)
         {
             // Use this event to handle all incoming e-mails 
-
+            
             var outlookMailItem = MailHelper.GetMailItemFromId(this.BaseAddIn.OutlookApp, e.EntryID);
-
+            
             var eventArg = new MailReceivedEventArgs
             {
                 Item=e,
@@ -112,37 +132,51 @@ namespace AgileOutlook.Mail
                 MailItem=new AOMailItem(outlookMailItem)
             };
 
-
-            if (MailReceived != null)
+            if (MailHelper.IsSentItem(outlookMailItem))
             {
-                MailReceived(sender, eventArg);
+                if (MailSent != null)
+                {
+                    MailSent(this, eventArg);
+                }
             }
+            else
+            {
+                if (MailReceived != null)
+                {
+                    MailReceived(this, eventArg);
+                }
+            }
+            
         }
 
         private void mailCheckTimer_Tick(object sender, EventArgs e)
         {
             //this.SendMessage(0x04001, IntPtr.Zero, IntPtr.Zero);
             mailCheckTimer.Stop();
-            Logger.Log.Debug("mailchecktimer ticked.");
+            //Log.Debug("mailchecktimer ticked.");
+            
             LoopThroughAccountFolders();
-            Logger.Log.Debug("mailchecktimer ticked complete.");
+
+            mailCheckTimer.Start();
+            //Log.Debug("mailchecktimer ticked complete.");
         }
 
         DateTime LastReceivedDate;
         private void LoopThroughAccountFolders()
         {
             Outlook.NameSpace nameSpace = BaseAddIn.OutlookApp.GetNamespace("MAPI");
-            Outlook.Folders accountFolders = nameSpace.Folders;
-            for (int i = 1; i <= accountFolders.Count; i++)
+            //var defaultInboxFolder=nameSpace.GetDefaultFolder(OlDefaultFolders.olFolderInbox);
+            var accountFolders = GetWatchFolders();
+            //Outlook.Folders accountFolders = nameSpace.Folders;
+            for (int i = 0; i < accountFolders.Count; i++)
             {
                 Outlook.MAPIFolder accountFolder = accountFolders[i];
-
-                Logger.Log.Debug(string.Format("looping through :{0}", accountFolder.FolderPath));
-
+                
+                //Log.Debug(string.Format("looping through :{0}", accountFolder.FolderPath));
 
                 SyncTime syncTime = syncItems.SyncTimes.Find(
                     s => s.AccountID == accountFolder.EntryID);
-
+                
                 if (syncTime != null)
                 {
                     LastReceivedDate = DateTime.MinValue;
@@ -158,12 +192,15 @@ namespace AgileOutlook.Mail
                 if (accountFolder != null)
                     Marshal.ReleaseComObject(accountFolder);
             }
+
             if (accountFolders != null)
-                Marshal.ReleaseComObject(accountFolders);
+            {
+                accountFolders.ToList().ForEach(m => Marshal.ReleaseComObject(m));// Marshal.ReleaseComObject(accountFolders);
+            }
+                
             if (nameSpace != null)
                 Marshal.ReleaseComObject(nameSpace);
 
-            mailCheckTimer.Start();
         }
 
         private void ScanFolder(Outlook.MAPIFolder folder, DateTime receivedTime, string accountId)
@@ -171,7 +208,7 @@ namespace AgileOutlook.Mail
 
             if (folder.DefaultItemType == Outlook.OlItemType.olMailItem)
             {
-                Logger.Log.Debug(string.Format("scanning folder :{0} and receivedTime", folder.FolderPath,receivedTime));
+                //Log.Debug(string.Format("scanning folder :{0} and receivedTime:{1}", folder.FolderPath,receivedTime));
 
                 Outlook.Items folderItems = folder.Items;
                 Outlook.Items filteredItems = folderItems.Restrict(
@@ -183,26 +220,21 @@ namespace AgileOutlook.Mail
                 {
                     object outlookItem = filteredItems[i];
 
-                    if (!MailHelper.IsSentItem(outlookItem))
-                    {
+                    //if (!MailHelper.IsSentItem(outlookItem))
+                    //{
                         if (outlookItem is Outlook.MailItem)
                         {
 
                             Outlook.MailItem outlookMail = (Outlook.MailItem)outlookItem;
 
-                            Logger.Log.Debug(string.Format("syncing mail item from :{0} and subject:", outlookMail.SenderEmailAddress, outlookMail.Subject));
+                            //Log.Debug(string.Format("syncing mail item from :{0} and subject:", outlookMail.SenderName, outlookMail.Subject));
 
-                            SyncItem syncItem = new SyncItem();
-                            syncItem.EntryID = outlookMail.EntryID;
-                            syncItem.SenderSubject = outlookMail.Subject;
-                            syncItem.ReceivedTime = outlookMail.ReceivedTime;
-                            syncItem.AccountID = accountId;
-                            syncItems.Add(syncItem);
-
+                            var syncItem = SyncMailItem(outlookMail);
+                            
                             if (syncItem.ReceivedTime > LastReceivedDate)
                                 LastReceivedDate = syncItem.ReceivedTime;
                         }
-                    }
+                    //}
 
                     Marshal.ReleaseComObject(outlookItem);
                 }
@@ -221,8 +253,8 @@ namespace AgileOutlook.Mail
 
         public void ShutDown()
         {
-
-
+            mailCheckTimer.Enabled = false;
+            mailCheckTimer.Stop();
         }
 
         public IEnumerable<Office.CommandBarControl> OnMailItemContextMenu(Office.CommandBar CommandBar, Office.CommandBarPopup agileCommand, IEnumerable<Outlook.MailItem> selectedMailItems)
@@ -241,6 +273,19 @@ namespace AgileOutlook.Mail
 
             return contextMenus;
 
+        }
+
+        public IList<MAPIFolder> GetWatchFolders()
+        {
+            var folders = new List<MAPIFolder>();
+            Outlook.NameSpace nameSpace = BaseAddIn.OutlookApp.GetNamespace("MAPI");
+            var defaultInboxFolder = nameSpace.GetDefaultFolder(OlDefaultFolders.olFolderInbox);
+            
+            var sentFolder = nameSpace.GetDefaultFolder(OlDefaultFolders.olFolderSentMail);
+            folders.Add(defaultInboxFolder);
+            folders.Add(sentFolder);
+
+            return folders;
         }
 
         [ImportMany(typeof(IAOMailItemExtension))]

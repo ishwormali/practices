@@ -23,7 +23,6 @@ namespace AgileOutlook.Core
             
         }
 
-        
 
 
         public void Dispose()

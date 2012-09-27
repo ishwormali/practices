@@ -14,8 +14,8 @@ namespace AgileOutlook.Core.Mail
         public List<SyncItem> Items;
         public List<SyncTime> SyncTimes;
 
-        public delegate void NewMailReceivedHandler(object sender, SyncItem e);
-        public event NewMailReceivedHandler NewMailReceived;
+        public delegate void ItemSyncEvent(object sender, SyncItem e);
+        public event ItemSyncEvent ItemSync;
 
         public SyncItems()
         {
@@ -212,9 +212,9 @@ namespace AgileOutlook.Core.Mail
             if (!Contains(itemToAdd))
             {
                 Items.Add(itemToAdd);
-                if (NewMailReceived != null)
+                if (ItemSync != null)
                 {
-                    NewMailReceived(this, itemToAdd);
+                    ItemSync(this, itemToAdd);
                 }
             }
         }
@@ -256,39 +256,47 @@ namespace AgileOutlook.Core.Mail
         }
 
         public void InitializeSyncTimesAccounts(DateTime time,
-            Outlook._Application OutlookApp)
+            IMailHandler mailHandler)
         {
             SyncTimes.Clear();
-            Outlook.NameSpace nameSpace = null;
-            Outlook.Folders profileFolders = null;
+            //Outlook.NameSpace nameSpace = null;
+            //Outlook.Folders profileFolders = null;
+            var profileFolders = mailHandler.GetWatchFolders();
             try
             {
-                if (OutlookApp == null) return;
-                nameSpace = OutlookApp.GetNamespace("MAPI");
-                if (nameSpace != null)
-                {
-                    profileFolders = nameSpace.Folders;
-                    int numberOfProfiles = profileFolders.Count;
-                    for (int i = 1; i <= numberOfProfiles; i++)
+                //if (mailHandler.OutlookApp == null) return;
+                //nameSpace = OutlookApp.GetNamespace("MAPI");
+                //if (nameSpace != null)
+                //{
+                //    profileFolders = nameSpace.Folders;
+                //    int numberOfProfiles = profileFolders.Count;
+                for (int i = 0; i < profileFolders.Count; i++)
                     {
-                        Outlook.MAPIFolder currProfile = profileFolders[i];
+                        var currProfile = profileFolders[i];
                         if (currProfile != null)
                         {
                             SyncTime NewTime = new SyncTime();
                             NewTime.AccountID = currProfile.EntryID;
                             NewTime.LatestTime = time;
                             SyncTimes.Add(NewTime);
-                            Marshal.ReleaseComObject(currProfile);
+                            //Marshal.ReleaseComObject(currProfile);
                         }
                     }
-                }
+                //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             finally
             {
-                if (nameSpace != null)
-                    Marshal.ReleaseComObject(nameSpace);
+                //if (nameSpace != null)
+                    //Marshal.ReleaseComObject(nameSpace);
                 if (profileFolders != null)
-                    Marshal.ReleaseComObject(profileFolders);
+                {
+                    profileFolders.ToList().ForEach(m => Marshal.ReleaseComObject(m));
+                }
+                    //Marshal.ReleaseComObject(profileFolders);
             }
         }
 

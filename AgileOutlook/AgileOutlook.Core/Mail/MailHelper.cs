@@ -157,11 +157,11 @@ namespace AgileOutlook.Core.Mail
             if (mailItem.UserProperties[propName] == null)
             {
                 prop = mailItem.UserProperties.Add(propName, MailHelper.GetOutlookPropertyType(propValue));
-                mailItem.Save();
+                
             }
 
             mailItem.UserProperties[propName].Value = propValue;
-            mailItem.Save();
+            
             //prop.Value = propValue;
             
         }
@@ -178,9 +178,7 @@ namespace AgileOutlook.Core.Mail
                 else
                 {
                     prop = mailItem.UserProperties.Add(propName, propertyType);
-                    mailItem.Save();
                     
-
                 }
 
                 return prop;

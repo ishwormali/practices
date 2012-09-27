@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
+using log4net;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Office = Microsoft.Office.Core;
 using System.ComponentModel.Composition.Hosting;
@@ -16,6 +18,7 @@ namespace AgileOutlook
 {
     public partial class ThisAddIn:IAgileOutlookAddIn
     {
+        private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -24,7 +27,7 @@ namespace AgileOutlook
 
             //var someValue = System.Configuration.ConfigurationManager.AppSettings["somesetting"];
 
-            Logger.Log.Debug("starting up the addin.");
+            Log.Debug("starting up the addin.");
             this.OutlookApp = this.Application;
             
             PluginLocator.ComposeParts(this);

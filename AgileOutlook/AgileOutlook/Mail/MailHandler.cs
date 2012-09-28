@@ -73,7 +73,7 @@ namespace AgileOutlook.Mail
         void OutlookApp_NewMailEx(string EntryIDCollection)
         {
             Outlook.NameSpace nameSpace = null;
-            object outlookItem = null;
+            Outlook.MailItem outlookItem = null;
 
             try
             {
@@ -82,10 +82,11 @@ namespace AgileOutlook.Mail
                 var entryIds = EntryIDCollection.Split(',');
                 foreach (string t in entryIds)
                 {
-                    outlookItem = nameSpace.GetItemFromID(t);
+                    outlookItem = nameSpace.GetItemFromID(t) as Outlook.MailItem;
 
                     if (outlookItem != null)
                     {
+                        Log.DebugFormat("Mail received:sender:{0}, received:{1},subject:{2}",outlookItem.SenderName,outlookItem.ReceivedByName,outlookItem.Subject);
                         if (outlookItem is Outlook.MailItem)
                         {
                             var syncItem = SyncMailItem(outlookItem);

@@ -57,7 +57,8 @@ namespace AgileOutlook.Mail
             }
 
             BaseAddIn.OutlookApp.NewMailEx += new Outlook.ApplicationEvents_11_NewMailExEventHandler(OutlookApp_NewMailEx);
-            baseAddin.OutlookApp.ItemSend += new Outlook.ApplicationEvents_11_ItemSendEventHandler(OutlookApp_ItemSend);
+            //baseAddin.OutlookApp.ItemSend += new Outlook.ApplicationEvents_11_ItemSendEventHandler(OutlookApp_ItemSend);
+            HookupSentMail();
             mailCheckTimer.Enabled = true;
 
             mailCheckTimer.Start();
@@ -65,8 +66,8 @@ namespace AgileOutlook.Mail
 
         void OutlookApp_ItemSend(object Item, ref bool Cancel)
         {
-            SyncMailItem(Item);
-            syncItems.Save();
+            //SyncMailItem(Item);
+            //syncItems.Save();
         }
 
 
@@ -287,6 +288,31 @@ namespace AgileOutlook.Mail
             folders.Add(sentFolder);
 
             return folders;
+        }
+
+        private void HookupSentMail()
+        {
+            var sentMailFolder = GetDefaultNamespace().GetDefaultFolder(OlDefaultFolders.olFolderSentMail);
+            sentMailFolder.Items.ItemAdd-=new ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
+            sentMailFolder.Items.ItemAdd += new ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
+            
+        }
+
+        void Items_ItemAdd(object Item)
+        {
+            var sentMail=Item as MailItem;
+
+            Log.DebugFormat("mail sent: sent to:{0} as subject line:{1}", sentMail.ReceivedByName, sentMail.Subject);
+
+            SyncMailItem(Item);
+            syncItems.Save();
+
+        }
+
+        private Outlook.NameSpace GetDefaultNamespace()
+        {
+            return BaseAddIn.OutlookApp.GetNamespace("MAPI");
+
         }
 
         [ImportMany(typeof(IAOMailItemExtension))]

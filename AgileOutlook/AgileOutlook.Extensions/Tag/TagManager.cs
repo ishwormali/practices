@@ -38,6 +38,7 @@ namespace AgileOutlook.Extensions.Tag
 
             }
             mailHandler.MailReceived += new MailEvent(Mail_Received);
+            mailHandler.MailSent += new MailEvent(Mail_Sent);
         }
 
         void Mail_Received(object sender, MailReceivedEventArgs e)
@@ -46,25 +47,41 @@ namespace AgileOutlook.Extensions.Tag
             //Logger.Log.DebugFormat("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,
             //           e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.Subject, Environment.NewLine);
 
+            TagMailItem(e.MailItem);
+            
+        }
+
+        void Mail_Sent(object sender, MailReceivedEventArgs e)
+        {
+
+            //Logger.Log.DebugFormat("{0} ->{1},from:{2},subject:{3},{4}", e.Item.ReceivedTime, e.Item.EntryID,
+            //           e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.Subject, Environment.NewLine);
+
+            TagMailItem(e.MailItem);
+
+        }
+
+        private void TagMailItem(AOMailItem mailItem)
+        {
             var newTags = new List<Tag>();
 
             foreach (var tagger in Taggers)
             {
-                var tgs=tagger.GetTags(e.MailItem);
+                var tgs = tagger.GetTags(mailItem);
                 if (tgs != null && tgs.Any())
                 {
-                    newTags.AddRange(tgs);    
+                    newTags.AddRange(tgs);
                 }
-                
+
             }
 
             if (newTags.Any())
             {
                 try
                 {
-                    var existingTags = GetTags(e.MailItem.OutlookMailItem);
+                    var existingTags = GetTags(mailItem.OutlookMailItem);
 
-                    var prop = MailHelper.GetOrCreateUserProperty(e.MailItem.OutlookMailItem, PropName,
+                    var prop = MailHelper.GetOrCreateUserProperty(mailItem.OutlookMailItem, PropName,
                                                           OlUserPropertyType.olText);
 
                     existingTags = existingTags ?? new List<Tag>();
@@ -81,29 +98,27 @@ namespace AgileOutlook.Extensions.Tag
                         existingTags.Add(newFilteredTag);
                     }
 
-                    var existingTagsString=string.Join(";",existingTags.Select(m=>ParseToString(m)));
+                    var existingTagsString = string.Join(";", existingTags.Select(m => ParseToString(m)));
 
-                    MailHelper.SetUserProperty(e.MailItem.OutlookMailItem, PropName, existingTagsString);
-                    e.MailItem.OutlookMailItem.Save();
+                    MailHelper.SetUserProperty(mailItem.OutlookMailItem, PropName, existingTagsString);
+                    mailItem.OutlookMailItem.Save();
                     Log.DebugFormat("Tagging Mail Item as:{0}, Sent By:{1}, To:{2}, Subject:{3}", existingTagsString,
-                                    e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.ReceivedByName,e.MailItem.OutlookMailItem.Subject);
-
+                                    mailItem.OutlookMailItem.SenderName, mailItem.OutlookMailItem.ReceivedByName, mailItem.OutlookMailItem.Subject);
 
                 }
                 catch (Exception ex)
                 {
-                    
-                    Log.Error(ex.Message,ex);
+
+                    Log.Error(ex.Message, ex);
                 }
-                
+
             }
             else
             {
                 Log.DebugFormat("No tag found Sent By:{0}, To:{1}, Subject:{2}",
-                                    e.MailItem.OutlookMailItem.SenderName, e.MailItem.OutlookMailItem.ReceivedByName, e.MailItem.OutlookMailItem.Subject);
+                                    mailItem.OutlookMailItem.SenderName, mailItem.OutlookMailItem.ReceivedByName, mailItem.OutlookMailItem.Subject);
 
             }
-            
         }
 
         public void ShutDown()

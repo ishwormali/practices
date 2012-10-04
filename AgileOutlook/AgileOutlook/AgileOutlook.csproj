@@ -232,11 +232,23 @@
     <Compile Include="Mail\FormRegion1.Designer.cs">
       <DependentUpon>FormRegion1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mail\MailFormRegion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mail\MailFormRegion.Designer.cs">
+      <DependentUpon>MailFormRegion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mail\MailHandler.cs" />
+    <Compile Include="Mail\MailRegionContent.xaml.cs">
+      <DependentUpon>MailRegionContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PluginLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Mail\MailFormRegion.resx">
+      <DependentUpon>MailFormRegion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -283,6 +295,12 @@
     <None Include="AgileOutlook.log.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Mail\MailRegionContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -292,16 +292,21 @@ namespace AgileOutlook.Mail
 
         private void HookupSentMail()
         {
-            var sentMailFolder = GetDefaultNamespace().GetDefaultFolder(OlDefaultFolders.olFolderSentMail);
-            sentMailFolder.Items.ItemAdd-=new ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
-            sentMailFolder.Items.ItemAdd += new ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
+            if (SentItems != null)
+            {
+                SentItems.ItemAdd -= new ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
+            }
+
+            SentItems = GetDefaultNamespace().GetDefaultFolder(OlDefaultFolders.olFolderSentMail).Items;
+
+            SentItems.ItemAdd += new ItemsEvents_ItemAddEventHandler(Items_ItemAdd);
             
         }
 
         void Items_ItemAdd(object Item)
         {
             var sentMail=Item as MailItem;
-
+            
             Log.DebugFormat("mail sent: sent to:{0} as subject line:{1}", sentMail.ReceivedByName, sentMail.Subject);
 
             SyncMailItem(Item);
@@ -314,6 +319,8 @@ namespace AgileOutlook.Mail
             return BaseAddIn.OutlookApp.GetNamespace("MAPI");
 
         }
+
+        private Outlook.Items SentItems { get; set; }
 
         [ImportMany(typeof(IAOMailItemExtension))]
         public IEnumerable<IAOMailItemExtension> Plugins;

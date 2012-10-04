@@ -11,6 +11,8 @@ namespace AgileOutlook.Core.Mail
     public interface IMailHandler
     {
         MailEvent MailReceived{get;set;}
+        MailEvent MailSent { get; set; }
+
         void Startup(IAgileOutlookAddIn baseAddin);
         IEnumerable<Office.CommandBarControl> OnMailItemContextMenu(Office.CommandBar CommandBar, Office.CommandBarPopup agileCommand, IEnumerable<Outlook.MailItem> selectedMailItems);
 

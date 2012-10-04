@@ -226,12 +226,6 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Mail\FormRegion1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mail\FormRegion1.Designer.cs">
-      <DependentUpon>FormRegion1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mail\MailFormRegion.cs">
       <SubType>UserControl</SubType>
     </Compile>

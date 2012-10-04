@@ -93,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Tag\JiraSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tag\TaggerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +129,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Tag\ITagger.cs" />
+    <Compile Include="Tag\JiraSummary.cs" />
+    <Compile Include="Tag\JiraSummaryControl.xaml.cs">
+      <DependentUpon>JiraSummaryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag\JiraTagger.cs" />
     <Compile Include="Tag\Tag.cs" />
     <Compile Include="Tag\TagCollection.cs" />

@@ -21,12 +21,13 @@ namespace AgileOutlook.Mail
 
             
             [ImportMany("MailFormRegion",typeof(IMailRegion))]
-            public IList<IMailRegion> MailRegions { get; set; }
+            public IEnumerable<IMailRegion> MailRegions { get; set; }
             // Occurs before the form region is initialized.
             // To prevent the form region from appearing, set e.Cancel to true.
             // Use e.OutlookItem to get a reference to the current Outlook item.
             private void MailFormRegionFactory_FormRegionInitializing(object sender, Microsoft.Office.Tools.Outlook.FormRegionInitializingEventArgs e)
             {
+                //System.Diagnostics.Debugger.Break();
                 if (!MailRegions.Any())
                 {
                     e.Cancel = true;
@@ -41,7 +42,14 @@ namespace AgileOutlook.Mail
         // Use this.OutlookFormRegion to get a reference to the form region.
         private void MailFormRegion_FormRegionShowing(object sender, System.EventArgs e)
         {
-            
+            foreach (var item in GetFactory().MailRegions)
+            {
+                var manifestOption = item.GetManifestOption();
+                var cnt=this.elementHost2.Child as MailRegionContent;
+                cnt.AddRegionControl(item.GetView(this.OutlookItem as Outlook.MailItem));
+                
+                //this.
+            }
         }
 
         // Occurs when the form region is closed.

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AgileOutlook.Extensions.Tag.JiraSummaryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="132" d:DesignWidth="300">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="86*" />
+        </Grid.RowDefinitions>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,0,0,0" Name="textBlock1" Text="Jira" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="12,0,0,0" Name="textBlock2" Text="TextBlock" VerticalAlignment="Top" />
+    </Grid>
+</UserControl>

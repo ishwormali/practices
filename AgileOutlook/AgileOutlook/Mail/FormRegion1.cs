@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Office = Microsoft.Office.Core;
 using Outlook = Microsoft.Office.Interop.Outlook;
+using System.ComponentModel.Composition;
+using AgileOutlook.Core.Mail;
 
 namespace AgileOutlook.Mail
 {
@@ -15,11 +17,19 @@ namespace AgileOutlook.Mail
         [Microsoft.Office.Tools.Outlook.FormRegionName("AgileOutlook.FormRegion1")]
         public partial class FormRegion1Factory
         {
+            [ImportMany("MailFormRegion", typeof(IMailRegion))]
+            public IEnumerable<IMailRegion> MailRegions { get; set; }
+
             // Occurs before the form region is initialized.
             // To prevent the form region from appearing, set e.Cancel to true.
             // Use e.OutlookItem to get a reference to the current Outlook item.
             private void FormRegion1Factory_FormRegionInitializing(object sender, Microsoft.Office.Tools.Outlook.FormRegionInitializingEventArgs e)
             {
+                e.Cancel = true;
+                //if (!MailRegions.Any())
+                //{
+                //    e.Cancel = true;
+                //}
             }
         }
 
@@ -30,6 +40,14 @@ namespace AgileOutlook.Mail
         // Use this.OutlookFormRegion to get a reference to the form region.
         private void FormRegion1_FormRegionShowing(object sender, System.EventArgs e)
         {
+            foreach (var item in GetFactory().MailRegions)
+            {
+                var manifestOption = item.GetManifestOption();
+                var cnt = this.elementHost2.Child as MailRegionContent;
+                cnt.AddRegionControl(item.GetView(this.OutlookItem as Outlook.MailItem));
+
+                //this.
+            }
         }
 
         // Occurs when the form region is closed.
@@ -37,6 +55,11 @@ namespace AgileOutlook.Mail
         // Use this.OutlookFormRegion to get a reference to the form region.
         private void FormRegion1_FormRegionClosed(object sender, System.EventArgs e)
         {
+        }
+
+        private FormRegion1Factory GetFactory()
+        {
+            return (FormRegion1Factory)this.Factory;
         }
     }
 }

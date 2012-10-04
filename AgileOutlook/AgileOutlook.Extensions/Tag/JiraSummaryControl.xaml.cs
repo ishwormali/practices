@@ -12,21 +12,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AgileOutlook.Mail
+namespace AgileOutlook.Extensions.Tag
 {
     /// <summary>
-    /// Interaction logic for MailRegionContent.xaml
+    /// Interaction logic for JiraSummaryControl.xaml
     /// </summary>
-    public partial class MailRegionContent : UserControl
+    public partial class JiraSummaryControl : UserControl
     {
-        public MailRegionContent()
+        public JiraSummaryControl()
         {
             InitializeComponent();
-        }
-
-        public void AddRegionControl(UserControl control)
-        {
-            stackPanel1.Children.Add(control);
         }
     }
 }

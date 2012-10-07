@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" x:Name="stackPanel1"  />
+        <StackPanel HorizontalAlignment="Left" x:Name="stackPanel1" Height="200" Width="200"   />
     </Grid>
 </UserControl>

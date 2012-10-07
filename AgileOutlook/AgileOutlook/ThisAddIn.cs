@@ -89,6 +89,7 @@ namespace AgileOutlook
             set;
         }
 
+        
 
         //[ImportMany(typeof(IMailHandler))]
         //public IEnumerable<IMailHandler> mailHandlers { get; set; }

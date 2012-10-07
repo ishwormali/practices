@@ -101,6 +101,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tag\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -128,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Tag\Test.cs" />
     <Compile Include="Tag\ITagger.cs" />
     <Compile Include="Tag\JiraSummary.cs" />
     <Compile Include="Tag\JiraSummaryControl.xaml.cs">
@@ -139,6 +144,9 @@
     <Compile Include="Tag\TagManager.cs" />
     <Compile Include="Tag\TaggerWindow.xaml.cs">
       <DependentUpon>TaggerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

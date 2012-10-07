@@ -10,7 +10,7 @@ using System.Windows.Controls;
 namespace AgileOutlook.Extensions.Tag
 {
     [Export("MailFormRegion", typeof(IMailRegion))]
-    class Test:IMailRegion
+    class JiraSummary:IMailRegion
     {
 
         public ManifestOption GetManifestOption()
@@ -21,7 +21,7 @@ namespace AgileOutlook.Extensions.Tag
 
         public UserControl GetView(Microsoft.Office.Interop.Outlook.MailItem mailItem)
         {
-            return new JiraSummaryControl();
+            return new UserControl1();
         }
     }
 }

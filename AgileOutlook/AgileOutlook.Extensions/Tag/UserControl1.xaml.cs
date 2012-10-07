@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace AgileOutlook.Extensions.Tag
 {
     /// <summary>
-    /// Interaction logic for JiraSummaryControl.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class JiraSummaryControl : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public JiraSummaryControl()
+        public UserControl1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("message from button");
         }
     }
 }

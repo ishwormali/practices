@@ -22,5 +22,15 @@ namespace AgileOutlook.Extensions.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        public string AgileOutlook_Extensions_JiraSoapService_JiraSoapServiceService {
+            get {
+                return ((string)(this["AgileOutlook_Extensions_JiraSoapService_JiraSoapServiceService"]));
+            }
+        }
     }
 }

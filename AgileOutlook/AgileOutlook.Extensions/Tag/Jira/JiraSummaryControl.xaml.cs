@@ -11,14 +11,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Outlook = Microsoft.Office.Interop.Outlook;
+using Office = Microsoft.Office.Core;
 
-namespace AgileOutlook.Extensions.Tag
+namespace AgileOutlook.Extensions.Tag.Jira
 {
     /// <summary>
     /// Interaction logic for JiraSummaryControl.xaml
     /// </summary>
     public partial class JiraSummaryControl : UserControl
     {
+        public Outlook.MailItem MailItem { get; set; }
         public JiraSummaryControl()
         {
             InitializeComponent();
@@ -27,6 +30,9 @@ namespace AgileOutlook.Extensions.Tag
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("message from button");
+            IJiraService service = new JiraServiceImpl();
+            var a= service.GetJiraByIssueNumber("CM-2760");
+            textBlock2.Text = a.Description;
         }
     }
 }

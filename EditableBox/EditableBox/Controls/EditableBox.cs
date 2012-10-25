@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Controls.Primitives;
 using System.Collections;
 
-namespace AgileOutlook.Extensions.Controls
+namespace EditableBox.Controls
 {
     /// <summary>
     

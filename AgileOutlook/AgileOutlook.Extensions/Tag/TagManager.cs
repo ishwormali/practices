@@ -27,7 +27,7 @@ namespace AgileOutlook.Extensions.Tag
 
         public TagManager()
         {
-            
+            ServiceRegistrar.RegisterService(typeof(TagManager), this);
         }
 
         public void Startup(IAgileOutlookAddIn baseAddin,IMailHandler mailHandler)
@@ -175,6 +175,8 @@ namespace AgileOutlook.Extensions.Tag
                                                                            tag.TagSource, tag.TagName);
         }
 
+        
+
         [ImportMany(typeof(ITagger))]
         public IEnumerable<ITagger> Taggers;
 
@@ -187,5 +189,9 @@ namespace AgileOutlook.Extensions.Tag
         //[Import(typeof(ITagger))]
         //public ITagger Tagger;
 
+        ~TagManager()
+        {
+            ServiceRegistrar.UnRegisterService(typeof(TagManager));
+        }
     }
 }

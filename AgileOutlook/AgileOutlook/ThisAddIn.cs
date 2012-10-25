@@ -20,8 +20,10 @@ namespace AgileOutlook
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+        
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            ServiceRegistrar.RegisterService(typeof(IAgileOutlookAddIn), this);
             log4net.Config.XmlConfigurator.Configure(
                 new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AgileOutlook.log.config")));
 
@@ -81,6 +83,7 @@ namespace AgileOutlook
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
             mailHandler.ShutDown();
+            ServiceRegistrar.UnRegisterService(typeof(IAgileOutlookAddIn));
         }
 
         public Outlook.Application OutlookApp

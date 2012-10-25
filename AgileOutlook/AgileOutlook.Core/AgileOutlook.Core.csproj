@@ -87,6 +87,7 @@
     <Compile Include="Mail\SyncTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComponentLocator.cs" />
+    <Compile Include="ServiceRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

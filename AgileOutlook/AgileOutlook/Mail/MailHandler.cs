@@ -30,6 +30,7 @@ namespace AgileOutlook.Mail
         
         public MailHandler()
         {
+            ServiceRegistrar.RegisterService(typeof(IMailHandler), this);
             mailCheckTimer = new Timer();
             mailCheckTimer.Interval = 20000;
             mailCheckTimer.Tick += new EventHandler(mailCheckTimer_Tick);
@@ -318,6 +319,11 @@ namespace AgileOutlook.Mail
         {
             return BaseAddIn.OutlookApp.GetNamespace("MAPI");
 
+        }
+
+        ~MailHandler()
+        {
+            ServiceRegistrar.UnRegisterService(typeof(IAgileOutlookAddIn));
         }
 
         private Outlook.Items SentItems { get; set; }

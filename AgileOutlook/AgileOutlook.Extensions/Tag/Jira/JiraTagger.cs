@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.ComponentModel.Composition;
+using AgileOutlook.Core;
 
-namespace AgileOutlook.Extensions.Tag
+namespace AgileOutlook.Extensions.Tag.Jira
 {
     [Export(typeof(ITagger))]
     public class JiraTagger:ITagger
@@ -13,6 +14,11 @@ namespace AgileOutlook.Extensions.Tag
         TagManager tagManager;
         string regEx;
         Core.IAgileOutlookAddIn baseAddin;
+
+        public JiraTagger()
+        {
+            ServiceRegistrar.RegisterService(typeof(JiraTagger), this);
+        }
 
         public void Startup(Core.IAgileOutlookAddIn baseAddin, TagManager tagManager)
         {
@@ -54,6 +60,13 @@ namespace AgileOutlook.Extensions.Tag
             }
 
             return tags;
+        }
+
+        
+
+        ~JiraTagger()
+        {
+            ServiceRegistrar.UnRegisterService(typeof(JiraTagger));
         }
     }
 }

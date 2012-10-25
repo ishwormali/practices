@@ -7,7 +7,7 @@ using System.Windows;
 using System.ComponentModel.Composition;
 using System.Windows.Controls;
 
-namespace AgileOutlook.Extensions.Tag
+namespace AgileOutlook.Extensions.Tag.Jira
 {
     [Export("MailFormRegion", typeof(IMailRegion))]
     class Test:IMailRegion

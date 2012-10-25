@@ -23,7 +23,8 @@
             <controls:EditableBox EnableAutoComplete="True" Text="{Binding TagName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoCompleteCollector="{StaticResource collector}"   BorderThickness="0" Background="Transparent" TextChanged="EditableBox_TextChanged">
                 <controls:EditableBox.AutoCompleteItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding TagName}" Background="AliceBlue" ></TextBlock>
+                        <TextBlock Text="{Binding TagName, Mode=OneWay }" Background="Transparent" ></TextBlock>
+                        
                     </DataTemplate>
                 </controls:EditableBox.AutoCompleteItemTemplate>
             </controls:EditableBox>
@@ -63,7 +64,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="true">
-                                <Setter Property="Background" TargetName="Bd" Value="Blue"/>
+                                <Setter Property="Background" TargetName="Bd" Value="#FFDCE2D6"/>
                                 <Setter Property="Foreground" Value="White"/>
                                 
                             </Trigger>

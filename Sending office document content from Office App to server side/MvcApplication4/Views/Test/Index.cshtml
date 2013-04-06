@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<script src="~/Scripts/test.js"></script>
+<input type="button" value="Send content to server" onclick="saveContent()" />
+
+<script type="text/javascript">
+    
+    Office.initialize = function (reason) {
+        
+    }
+
+    var saveContentUrl = '@Url.Action("SaveContent","test")';
+    
+</script>

@@ -1,0 +1,32 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using System.Web.Routing
+@inherits System.Web.Mvc.WebViewPage<ProfessionalMVCTest.Models.FormViewModel>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using(Html.BeginForm("SimpleType","Forms"))
+{
+    <input type="text" name="myName" />
+@*<input type="text" name="person.myName" />*@ @*this will not be bound in SimpleType action method*@
+    <br />
+    @:Checkbox
+    <input type="checkbox" value="my checkbox value" name="checkboxvalue" />
+    <br />
+    @:Checkbox array
+    <input type="checkbox" value="value1" name="checkBoxValueArray" />@:Value1 <br />
+    <input type="checkbox" value="value2" name="checkBoxValueArray" />@:Value2 <br />
+    <input type="checkbox" value="value3" name="checkBoxValueArray" />@:Value3 <br />
+    <input type="checkbox" value="value4" name="checkBoxValueArray" />@:Value4 <br />
+
+    <br /><br />
+    <input type="submit" value="submit" />
+}
+
+<br />

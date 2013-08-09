@@ -1,0 +1,12 @@
+﻿@using ProfessionalMVCTest.Models
+
+@inherits System.Web.Mvc.WebViewPage<Address>
+
+@using System.Web.Mvc.Html
+
+@*@model Address*@
+
+
+@Html.TextAreaFor(m=>m.StreetAddress)
+<br />
+@Html.TextBox("City")

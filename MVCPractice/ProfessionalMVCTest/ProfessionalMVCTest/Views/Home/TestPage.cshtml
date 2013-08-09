@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "TestPage";
+}
+
+<h2>TestPage</h2>
+
+
+
+ <input type="button" value="Call Public Action" id="callaction" />
+    <br />
+<input type="button" value="Call Js Action" id="jsaction" />
+
+@section scripts{
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#callaction').click(function () {
+                $.ajax({
+                    url: '@Url.Action("PublicAction","Home")'
+            }).done(function (data) {
+                alert('donning');
+            });
+            });
+
+            $('#jsaction').click(function () {
+                $.ajax({
+                    url: '@Url.Action("GetJS","Home")'
+                 }).done(function (data) {
+                     alert('donning');
+                 });
+            });
+
+            $().children().first()
+    });
+
+</script>
+
+}

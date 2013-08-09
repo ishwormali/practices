@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "TestIdGeneration";
+}
+
+@using ProfessionalMVCTest.Models
+@model Person
+
+<h2>TestIdGeneration</h2>
+@using (Html.BeginForm())
+{
+
+    @Html.TextBox("Name")
+    <br />
+    @Html.TextBoxFor(m => m.DateOfBirth)
+    <br />@*
+    
+    
+   @Html.TextAreaFor(m=>m.Address.StreetAddress)
+<br />
+@Html.TextBox("Address.City")
+     
+    *@
+    
+    Html.RenderPartial("Address", Model != null ?
+          Model.Address : new Address(),
+          new ViewDataDictionary { TemplateInfo = new System.Web.Mvc.TemplateInfo { HtmlFieldPrefix = "Add" } });
+}
+ 
+@* @{Html.RenderPartial("Address", Model != null ?
+          Model.Address : new Address(),
+          new ViewDataDictionary { TemplateInfo = new System.Web.Mvc.TemplateInfo { HtmlFieldPrefix = "Add" } });}*@

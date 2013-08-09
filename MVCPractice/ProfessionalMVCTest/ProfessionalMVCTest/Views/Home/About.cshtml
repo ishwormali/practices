@@ -1,0 +1,95 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@using System.Web.Mvc.Html
+
+@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        Use this area to provide additional information.
+    </p>
+
+    <p>
+        Use this area to provide additional information.
+    </p>
+
+    <p>
+        Use this area to provide additional information.
+    </p>
+    
+<span>somename@gmail.com</span>
+
+@{
+    var assemblyName = GetType().Assembly.GetName().Name;
+
+}
+
+@Html.Raw("<a href='www.gmail.com'>go to my mail</a>")
+
+
+</article>
+
+@(TestApp.Models.HelpMe.GenericMethod<string>("something"))
+
+<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>
+
+<style type="text/css">
+    .somecss {
+        background-color:green;
+    }
+</style>
+
+<br />
+
+@{
+    var someProp = "somecss";
+    
+}
+
+<input type="text" class="@someProp" />
+
+
+@{
+    string someProp2=null;
+    
+}
+
+<input type="text" class="@someProp2" />
+
+
+<input type="text" @(someProp2!=null?"class="+@someProp2+"":"") />
+
+
+<br />
+
+
+
+<input type="text"  />
+<br />
+<input type="text" class="null" />
+
+@{
+    
+    var isDisabled = false;
+}
+
+<input type="text" disabled="@isDisabled" />
+
+
+<img src="~/Images/bullet.png"/>

@@ -1,0 +1,32 @@
+﻿@model ProfessionalMVCTest.Models.TemplateModel
+
+
+    <fieldset>
+        <legend>TemplateModel</legend>
+        Using Template
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModelKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModelKey)
+            @Html.ValidationMessageFor(model => model.ModelKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prop1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prop1)
+            @Html.ValidationMessageFor(model => model.Prop1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HiddenProperty2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HiddenProperty2)
+            @Html.ValidationMessageFor(model => model.HiddenProperty2)
+        </div>
+
+      
+    </fieldset>

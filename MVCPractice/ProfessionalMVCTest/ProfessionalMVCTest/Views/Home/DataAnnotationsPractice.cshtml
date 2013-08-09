@@ -1,0 +1,19 @@
+﻿@using ProfessionalMVCTest.Models
+
+@model PersonalDetail
+@{
+    ViewBag.Title = "DataAnnotationsPractice";
+}
+
+<h2>DataAnnotationsPractice</h2>
+
+@using(Html.BeginForm()){
+@Html.EditorForModel()
+
+@*@Html.EditorFor(m=>m.FirstName)
+
+<br />
+@Html.EditorFor(m=>m.UserId)*@
+    
+    <input type="submit" value="Submit" />
+}

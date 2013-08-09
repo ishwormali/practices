@@ -1,0 +1,34 @@
+﻿@model ProfessionalMVCTest.Models.Person
+
+@{
+    ViewBag.Title = "ValidationTest";
+}
+
+<h2>ValidationTest</h2>
+
+@using (Html.BeginForm())
+{
+    Html.EnableClientValidation(false);
+    //ViewData.ModelState.AddModelError("","some model error");
+    
+    @Html.ValidationSummary(true)
+
+@:Name: @Html.TextBoxFor(m => m.Name)
+@*
+
+    <input type="text" value="" name="Name" id="Name" data-val-required="The Name field is required." data-val="true" class="input-validation-error">*@
+    
+@:DOB: @Html.TextBoxFor(m => m.DateOfBirth)
+    
+@:Street    @Html.TextBoxFor(m => m.Address.StreetAddress)
+@:City        @Html.TextBoxFor(m => m.Address.City)
+@:Age @Html.TextBoxFor(m=>m.Age)
+
+    <input type="submit" />
+
+}
+
+@section scripts{
+
+         <script src="~/Scripts/website/plugins.js"></script>
+}

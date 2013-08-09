@@ -1,0 +1,26 @@
+﻿
+@inherits System.Web.Mvc.WebViewPage<ProfessionalMVCTest.Models.ModelBinderModel>
+@using System.Web.Mvc.Html
+
+@*@model ProfessionalMVCTest.Models.ModelBinderModel*@
+
+@{
+    ViewBag.Title = "ModelBindingTest";
+}
+
+<h2>Model Binding Test</h2>
+
+
+@using(Html.BeginForm()){
+    
+@Html.EditorForModel()
+
+    <br />
+    
+    @Html.TextBoxFor(m=>m.SubModel.Key)
+    <br />
+    @Html.TextBoxFor(m=>m.SubModel.Prop1)
+
+    <input type="submit" />
+}
+

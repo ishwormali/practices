@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "RazorTest";
+}
+
+<h2>RazorTest</h2>
+
+@{
+    Func<string, HelperResult> someDel =@<span style="font-size:large;font-weight:bold">@item </span>;
+}
+
+@someDel("something to bold using delegate")
+
+<br />
+
+
+@TestApp.Models.HelpMe.RenderDelegate(@<span style="font-size:large;font-weight:bold">@item</span>)
+                                                                                               
+
+@SomeFunction()
+

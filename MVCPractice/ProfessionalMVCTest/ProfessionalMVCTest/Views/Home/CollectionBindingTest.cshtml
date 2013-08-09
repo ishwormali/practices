@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "CollectionBindingTest";
+}
+
+<h2>CollectionBindingTest</h2>
+
+@*@using (Html.BeginForm())
+{
+
+    @:Index 0 <input type="text" name="coll[0]" />
+    <br />
+    @:Index 1 <input type="text" name="coll[1]" />
+    <br />
+@:Index 2 <input type="text" name="coll[2]" />
+    <br />
+@:Index 3 <input type="text" name="coll[3]" />
+    <br />
+
+    <input type="submit" />
+}*@
+
+@*@using (Html.BeginForm())
+{
+    <input type="hidden" name="coll.index" value="0" />
+    @:Index 0 <input type="text" name="coll[0]" />
+    <br />
+    <input type="hidden" name="coll.index" value="1" />
+    @:Index 1 <input type="text" name="coll[1]" />
+    <br />
+    <input type="hidden" name="coll.index" value="3" />
+@:Index 3 <input type="text" name="coll[3]" />
+    <br />
+
+    <input type="submit" />
+}*@
+
+@*@using (Html.BeginForm("CollectionBindingTestWithEnum","Home"))
+{
+    
+        @:Index 0 <input type="text" name="coll[0]" />
+    <br />
+    @:Index 1 <input type="text" name="coll[1]" />
+    <br />
+@:Index 3 <input type="text" name="coll[3]" />
+    <br />
+
+    <input type="submit" />
+}*@
+
+@*@using (Html.BeginForm("CollectionBindingTestWithEnum","Home"))
+{
+    
+        @:Index 0 <input type="text" name="coll" />
+    <br />
+    @:Index 1 <input type="text" name="coll" />
+    <br />
+@:Index 3 <input type="text" name="coll" />
+    <br />
+
+    <input type="submit" />
+}*@
+
+@using (Html.BeginForm())
+{
+    
+        @:Index 0 <input type="text" name="coll" />
+    <br />
+    @:Index 1 <input type="text" name="coll" />
+    <br />
+@:Index 3 <input type="text" name="coll" />
+    <br />
+
+    <input type="submit" />
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="coll.index" value="0" />
+    @:Index 0 Name <input type="text" name="coll[0].Name" />
+     @:Index 0 Age <input type="text" name="coll[0].Age" />
+    <br />
+   <input type="hidden" name="coll.index" value="1" />
+    @:Index 1 Name <input type="text" name="coll[1].Name" />
+     @:Index 1 Age <input type="text" name="coll[1].Age" />
+    <br />
+
+    <input type="hidden" name="coll.index" value="3" />
+    @:Index 3 Name <input type="text" name="coll[3].Name" />
+     @:Index 3 Age <input type="text" name="coll[3].Age" />
+    <br />
+    
+    <input type="submit" />
+}

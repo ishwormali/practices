@@ -1,0 +1,15 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@using System.Web.Mvc.Html
+
+@{
+    ViewBag.Title = "About";
+}
+
+@{
+    ViewBag.Title = "ChildActionWithOutputCacheTest";
+}
+
+<h2>ParentAction</h2>
+
+
+@Html.Action("ChildActionWithOutputCacheTest")

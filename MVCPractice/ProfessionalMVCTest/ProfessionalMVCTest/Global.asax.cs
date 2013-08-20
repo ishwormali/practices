@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ninject;
+using ProfessionalMVCTest.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,6 +26,61 @@ namespace ProfessionalMVCTest
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
             
+            /*
+             * controller factory
+            //method 1
+            //ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+            
+            //method 2
+            //DependencyResolver.SetResolver((t) => {
+            //    if (typeof(IControllerFactory).IsAssignableFrom(t))
+            //    {
+            //        return new CustomControllerFactory();
+            //    }
+
+            //    return null;
+            //}, t => 
+            //{ 
+            //    return new List<object>(); 
+            //});
+            
+            //method 3
+            //var kernel = new StandardKernel();
+            //kernel.Bind<IControllerFactory>().To<CustomControllerFactory>();
+            //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+            //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+            */
+            
         }
     }
+
+    public class NinjectDependencyResolver : IDependencyResolver
+    {
+        private readonly IKernel _kernel;
+
+        public NinjectDependencyResolver(IKernel kernel)
+        {
+            _kernel = kernel;
+        }
+
+        public object GetService(Type serviceType)
+        {
+            return _kernel.TryGet(serviceType);
+        }
+
+        public IEnumerable<object> GetServices(Type serviceType)
+        {
+            try
+            {
+                return _kernel.GetAll(serviceType);
+            }
+            catch (Exception)
+            {
+                return new List<object>();
+            }
+        }
+    }
+
+
+
 }

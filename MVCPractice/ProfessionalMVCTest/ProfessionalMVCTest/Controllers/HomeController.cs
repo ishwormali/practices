@@ -133,11 +133,29 @@ namespace ProfessionalMVCTest.Controllers
         }
 
         [Authorize]
+        [OutputCache()] //authorization fails when applied 
         public ActionResult SecuredView()
         {
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult ParentAction()
+        {
+
+            return View();
+        }
+
+        
+        [Authorize]
+        [OutputCache()] //authorization fails when applied 
+        public ActionResult ChildActionWithOutputCacheTest(string someValue)
+        {
+
+            return View();
+        }
+
 
 
     }

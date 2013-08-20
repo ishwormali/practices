@@ -13,6 +13,24 @@ namespace ProfessionalMVCTest
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            /*
+            //using constraints
+            //routes.MapRoute("DinasorusRoute", "{college}/{year}/Students", new
+            //{
+            //    controller = "College",
+            //    action = "GrandPas"
+            //    //, extraParam = "this is extra param" 
+            //}, new { year = @"(18[0-9]{2})" });
+
+            
+            routes.MapRoute("CollegeRoute", "{college}/{year}/Students", new
+            {
+                controller = "College",
+                action = "Students"
+                //, extraParam = "this is extra param" 
+            });
+            */
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

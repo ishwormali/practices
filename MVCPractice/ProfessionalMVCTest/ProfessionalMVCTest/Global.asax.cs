@@ -50,36 +50,45 @@ namespace ProfessionalMVCTest
             //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
             //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
             */
-            
+
+            //model binders example
+            //ModelBinders.Binders.Add(typeof(ApplicationSetting), new ApplicationSettingModelBinder());
+
+
+            //value provider factories
+            //ValueProviderFactories.Factories.Add(new AppSettingValueProviderFactory());
+            //var kernel = new StandardKernel();
+            //kernel.Bind<ValueProviderFactory>().To<AppSettingValueProviderFactory>();
+            //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
     }
 
-    public class NinjectDependencyResolver : IDependencyResolver
-    {
-        private readonly IKernel _kernel;
+    //public class NinjectDependencyResolver : IDependencyResolver
+    //{
+    //    private readonly IKernel _kernel;
 
-        public NinjectDependencyResolver(IKernel kernel)
-        {
-            _kernel = kernel;
-        }
+    //    public NinjectDependencyResolver(IKernel kernel)
+    //    {
+    //        _kernel = kernel;
+    //    }
 
-        public object GetService(Type serviceType)
-        {
-            return _kernel.TryGet(serviceType);
-        }
+    //    public object GetService(Type serviceType)
+    //    {
+    //        return _kernel.TryGet(serviceType);
+    //    }
 
-        public IEnumerable<object> GetServices(Type serviceType)
-        {
-            try
-            {
-                return _kernel.GetAll(serviceType);
-            }
-            catch (Exception)
-            {
-                return new List<object>();
-            }
-        }
-    }
+    //    public IEnumerable<object> GetServices(Type serviceType)
+    //    {
+    //        try
+    //        {
+    //            return _kernel.GetAll(serviceType);
+    //        }
+    //        catch (Exception)
+    //        {
+    //            return new List<object>();
+    //        }
+    //    }
+    //}
 
 
 

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using ProfessionalMVCTest.Models
+
+@model ApplicationSetting
+
+<h2>Index</h2>
+
+Application Name: @Model.ApplicationName
+<br/>
+Version : @Model.Version
+<br/>
+Released Date : @Model.ReleasedDate
+<br/>
+Is Offline : @(Model.IsOffline?"Offline":"Online")

@@ -10,6 +10,8 @@ namespace ProfessionalMVCTest.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using System.Web.Mvc;
+    using ProfessionalMVCTest.Models;
 
     public static class NinjectWebCommon 
     {
@@ -53,6 +55,7 @@ namespace ProfessionalMVCTest.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            //kernel.Bind<IControllerFactory>().To<CustomControllerFactory>();
         }        
     }
 }

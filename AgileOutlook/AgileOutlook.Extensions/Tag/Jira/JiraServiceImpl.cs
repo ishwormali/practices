@@ -20,7 +20,7 @@ namespace AgileOutlook.Extensions.Tag.Jira
 
         public JiraInfo GetJiraByIssueNumber(string issueNumber)
         {
-            var token=client.login("i80398","984119031984Im");
+            var token=client.login("ishwor","p@ssw0rd");
             var ret=client.getIssueById(token,issueNumber);
             return new JiraInfo() { Description = ret.description };
             

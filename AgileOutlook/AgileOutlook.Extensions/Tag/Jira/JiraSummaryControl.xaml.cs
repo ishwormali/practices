@@ -31,7 +31,9 @@ namespace AgileOutlook.Extensions.Tag.Jira
         {
             MessageBox.Show("message from button");
             IJiraService service = new JiraServiceImpl();
-            var a= service.GetJiraByIssueNumber("CM-2760");
+            //var a= service.GetJiraByIssueNumber("CM-2760");
+            var a = service.GetJiraByIssueNumber("SIM-1");
+            
             textBlock2.Text = a.Description;
         }
     }

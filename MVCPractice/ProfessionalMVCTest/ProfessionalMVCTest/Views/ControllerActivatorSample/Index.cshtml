@@ -1,0 +1,13 @@
+﻿@model IList<ProfessionalMVCTest.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var item in Model)
+{
+    <span style="font-weight:bold">@item.Name</span>
+    <br />
+}

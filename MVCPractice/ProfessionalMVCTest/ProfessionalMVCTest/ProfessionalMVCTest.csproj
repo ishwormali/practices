@@ -176,6 +176,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActionSelectionController.cs" />
+    <Compile Include="Controllers\ControllerActivatorSampleController.cs" />
     <Compile Include="Controllers\CustomBinderController.cs" />
     <Compile Include="Controllers\FormsController.cs" />
     <Compile Include="Controllers\CollegeController.cs" />
@@ -189,11 +190,13 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicationSettingModelBinder.cs" />
     <Compile Include="Models\AppSettingValueProvider.cs" />
+    <Compile Include="Models\CustomControllerActivator.cs" />
     <Compile Include="Models\CustomControllerFactory.cs" />
     <Compile Include="Models\CustomView.cs" />
     <Compile Include="Models\DB\UserInfoContext.cs" />
     <Compile Include="Models\FormViewModel.cs" />
     <Compile Include="Models\HelpMe.cs" />
+    <Compile Include="Models\IPersonService.cs" />
     <Compile Include="Models\ModelBinderModel.cs" />
     <Compile Include="Models\NoSpaceAttribute.cs" />
     <Compile Include="Models\Person.cs" />
@@ -347,6 +350,7 @@
     <Content Include="Views\ActionSelection\Form.cshtml" />
     <Content Include="Views\ActionSelection\BrowserView.cshtml" />
     <Content Include="Views\CustomBinder\Index.cshtml" />
+    <Content Include="Views\ControllerActivatorSample\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,95 +26,17 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="jirasoapservice-v2SoapBinding", Namespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="jirasoapservice-v2SoapBinding", Namespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteRoleActor))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteFieldValue))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteCustomFieldValue))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemotePermissionMapping))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(AbstractRemoteEntity))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemotePermissionMapping))]
     public partial class JiraSoapServiceService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback getCommentOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getServerInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getGroupOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback createGroupOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getConfigurationOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback loginOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback createUserOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getUserOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getIssueOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback addCommentOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback createIssueOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getComponentsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback updateUserOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback updateGroupOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback addUserToGroupOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback removeUserFromGroupOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback updateIssueOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback deleteIssueOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getAvailableActionsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getSecurityLevelOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback createProjectOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback updateProjectOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getProjectByKeyOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback removeAllRoleActorsByProjectOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getPrioritiesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getResolutionsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getIssueTypesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getSubTaskIssueTypesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getStatusesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getIssueTypesForProjectOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getProjectRolesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getProjectRoleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getProjectRoleActorsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getDefaultRoleActorsOperationCompleted;
-        
         private System.Threading.SendOrPostCallback removeAllRoleActorsByNameAndTypeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback deleteProjectRoleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback updateProjectRoleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback createProjectRoleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback isProjectRoleNameUniqueOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback addActorsToProjectRoleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback removeActorsFromProjectRoleOperationCompleted;
         
         private System.Threading.SendOrPostCallback addDefaultActorsToProjectRoleOperationCompleted;
         
@@ -124,15 +46,67 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         private System.Threading.SendOrPostCallback getAssociatedPermissionSchemesOperationCompleted;
         
-        private System.Threading.SendOrPostCallback deleteProjectOperationCompleted;
+        private System.Threading.SendOrPostCallback getUserOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getProjectByIdOperationCompleted;
+        private System.Threading.SendOrPostCallback getIssueOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createIssueOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateIssueOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteIssueOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getGroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createGroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getServerInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback loginOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback logoutOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addWorklogWithNewRemainingEstimateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addWorklogAndRetainRemainingEstimateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getIssueByIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getWorklogsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteGroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addVersionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getStatusesOperationCompleted;
         
         private System.Threading.SendOrPostCallback getVersionsOperationCompleted;
         
         private System.Threading.SendOrPostCallback getCommentsOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getFavouriteFiltersOperationCompleted;
+        private System.Threading.SendOrPostCallback updateGroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getConfigurationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getSubTaskIssueTypesForProjectOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getCustomFieldsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getIssueTypesForProjectOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback isProjectRoleNameUniqueOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addActorsToProjectRoleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback removeActorsFromProjectRoleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addCommentOperationCompleted;
         
         private System.Threading.SendOrPostCallback releaseVersionOperationCompleted;
         
@@ -142,15 +116,13 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         private System.Threading.SendOrPostCallback getFieldsForEditOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getSubTaskIssueTypesForProjectOperationCompleted;
+        private System.Threading.SendOrPostCallback getIssuesFromTextSearchWithProjectOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getCustomFieldsOperationCompleted;
+        private System.Threading.SendOrPostCallback addBase64EncodedAttachmentsToIssueOperationCompleted;
         
-        private System.Threading.SendOrPostCallback logoutOperationCompleted;
+        private System.Threading.SendOrPostCallback getIssuesFromTextSearchWithLimitOperationCompleted;
         
-        private System.Threading.SendOrPostCallback editCommentOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getProjectWithSchemesByIdOperationCompleted;
+        private System.Threading.SendOrPostCallback removeAllRoleActorsByProjectOperationCompleted;
         
         private System.Threading.SendOrPostCallback getSecurityLevelsOperationCompleted;
         
@@ -162,13 +134,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         private System.Threading.SendOrPostCallback deleteProjectAvatarOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getNotificationSchemesOperationCompleted;
-        
         private System.Threading.SendOrPostCallback getPermissionSchemesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback createPermissionSchemeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback deletePermissionSchemeOperationCompleted;
         
         private System.Threading.SendOrPostCallback addPermissionToOperationCompleted;
         
@@ -176,25 +142,39 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         private System.Threading.SendOrPostCallback getAllPermissionsOperationCompleted;
         
-        private System.Threading.SendOrPostCallback createIssueWithSecurityLevelOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback hasPermissionToEditCommentOperationCompleted;
-        
         private System.Threading.SendOrPostCallback getFieldsForActionOperationCompleted;
         
-        private System.Threading.SendOrPostCallback progressWorkflowActionOperationCompleted;
+        private System.Threading.SendOrPostCallback setUserPasswordOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getIssueByIdOperationCompleted;
+        private System.Threading.SendOrPostCallback refreshCustomFieldsOperationCompleted;
         
-        private System.Threading.SendOrPostCallback addAttachmentsToIssueOperationCompleted;
+        private System.Threading.SendOrPostCallback getProjectsNoSchemesOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getAttachmentsFromIssueOperationCompleted;
+        private System.Threading.SendOrPostCallback getSavedFiltersOperationCompleted;
         
-        private System.Threading.SendOrPostCallback addWorklogWithNewRemainingEstimateOperationCompleted;
+        private System.Threading.SendOrPostCallback getSecuritySchemesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getIssuesFromFilterOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback setNewProjectAvatarOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addUserToGroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback removeUserFromGroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getComponentsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getSecurityLevelOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createProjectOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateProjectOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProjectByKeyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback editCommentOperationCompleted;
         
         private System.Threading.SendOrPostCallback addWorklogAndAutoAdjustRemainingEstimateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback addWorklogAndRetainRemainingEstimateOperationCompleted;
         
         private System.Threading.SendOrPostCallback deleteWorklogAndAutoAdjustRemainingEstimateOperationCompleted;
         
@@ -208,7 +188,55 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         private System.Threading.SendOrPostCallback updateWorklogWithNewRemainingEstimateOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getWorklogsOperationCompleted;
+        private System.Threading.SendOrPostCallback createIssueWithParentWithSecurityLevelOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getPrioritiesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getResolutionsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getIssueTypesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getSubTaskIssueTypesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProjectRolesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProjectRoleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProjectRoleActorsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getDefaultRoleActorsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteProjectRoleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback updateProjectRoleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createProjectRoleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteProjectOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProjectByIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getFavouriteFiltersOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getAvailableActionsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getProjectWithSchemesByIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getNotificationSchemesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createPermissionSchemeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deletePermissionSchemeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback createIssueWithSecurityLevelOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback hasPermissionToEditCommentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback progressWorkflowActionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addAttachmentsToIssueOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getAttachmentsFromIssueOperationCompleted;
         
         private System.Threading.SendOrPostCallback hasPermissionToCreateWorklogOperationCompleted;
         
@@ -224,41 +252,13 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         private System.Threading.SendOrPostCallback getIssuesFromTextSearchOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getIssuesFromTextSearchWithProjectOperationCompleted;
-        
         private System.Threading.SendOrPostCallback getIssuesFromJqlSearchOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback setUserPasswordOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback deleteUserOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback deleteGroupOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback refreshCustomFieldsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getProjectsNoSchemesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback addVersionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getSavedFiltersOperationCompleted;
         
         private System.Threading.SendOrPostCallback createIssueWithParentOperationCompleted;
         
-        private System.Threading.SendOrPostCallback createIssueWithParentWithSecurityLevelOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback addBase64EncodedAttachmentsToIssueOperationCompleted;
-        
         private System.Threading.SendOrPostCallback createProjectFromObjectOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getSecuritySchemesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getIssuesFromFilterOperationCompleted;
-        
         private System.Threading.SendOrPostCallback getIssuesFromFilterWithLimitOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getIssuesFromTextSearchWithLimitOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback setNewProjectAvatarOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -302,124 +302,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event getCommentCompletedEventHandler getCommentCompleted;
         
         /// <remarks/>
-        public event getServerInfoCompletedEventHandler getServerInfoCompleted;
-        
-        /// <remarks/>
-        public event getGroupCompletedEventHandler getGroupCompleted;
-        
-        /// <remarks/>
-        public event createGroupCompletedEventHandler createGroupCompleted;
-        
-        /// <remarks/>
-        public event getConfigurationCompletedEventHandler getConfigurationCompleted;
-        
-        /// <remarks/>
-        public event loginCompletedEventHandler loginCompleted;
-        
-        /// <remarks/>
-        public event createUserCompletedEventHandler createUserCompleted;
-        
-        /// <remarks/>
-        public event getUserCompletedEventHandler getUserCompleted;
-        
-        /// <remarks/>
-        public event getIssueCompletedEventHandler getIssueCompleted;
-        
-        /// <remarks/>
-        public event addCommentCompletedEventHandler addCommentCompleted;
-        
-        /// <remarks/>
-        public event createIssueCompletedEventHandler createIssueCompleted;
-        
-        /// <remarks/>
-        public event getComponentsCompletedEventHandler getComponentsCompleted;
-        
-        /// <remarks/>
-        public event updateUserCompletedEventHandler updateUserCompleted;
-        
-        /// <remarks/>
-        public event updateGroupCompletedEventHandler updateGroupCompleted;
-        
-        /// <remarks/>
-        public event addUserToGroupCompletedEventHandler addUserToGroupCompleted;
-        
-        /// <remarks/>
-        public event removeUserFromGroupCompletedEventHandler removeUserFromGroupCompleted;
-        
-        /// <remarks/>
-        public event updateIssueCompletedEventHandler updateIssueCompleted;
-        
-        /// <remarks/>
-        public event deleteIssueCompletedEventHandler deleteIssueCompleted;
-        
-        /// <remarks/>
-        public event getAvailableActionsCompletedEventHandler getAvailableActionsCompleted;
-        
-        /// <remarks/>
-        public event getSecurityLevelCompletedEventHandler getSecurityLevelCompleted;
-        
-        /// <remarks/>
-        public event createProjectCompletedEventHandler createProjectCompleted;
-        
-        /// <remarks/>
-        public event updateProjectCompletedEventHandler updateProjectCompleted;
-        
-        /// <remarks/>
-        public event getProjectByKeyCompletedEventHandler getProjectByKeyCompleted;
-        
-        /// <remarks/>
-        public event removeAllRoleActorsByProjectCompletedEventHandler removeAllRoleActorsByProjectCompleted;
-        
-        /// <remarks/>
-        public event getPrioritiesCompletedEventHandler getPrioritiesCompleted;
-        
-        /// <remarks/>
-        public event getResolutionsCompletedEventHandler getResolutionsCompleted;
-        
-        /// <remarks/>
-        public event getIssueTypesCompletedEventHandler getIssueTypesCompleted;
-        
-        /// <remarks/>
-        public event getSubTaskIssueTypesCompletedEventHandler getSubTaskIssueTypesCompleted;
-        
-        /// <remarks/>
-        public event getStatusesCompletedEventHandler getStatusesCompleted;
-        
-        /// <remarks/>
-        public event getIssueTypesForProjectCompletedEventHandler getIssueTypesForProjectCompleted;
-        
-        /// <remarks/>
-        public event getProjectRolesCompletedEventHandler getProjectRolesCompleted;
-        
-        /// <remarks/>
-        public event getProjectRoleCompletedEventHandler getProjectRoleCompleted;
-        
-        /// <remarks/>
-        public event getProjectRoleActorsCompletedEventHandler getProjectRoleActorsCompleted;
-        
-        /// <remarks/>
-        public event getDefaultRoleActorsCompletedEventHandler getDefaultRoleActorsCompleted;
-        
-        /// <remarks/>
         public event removeAllRoleActorsByNameAndTypeCompletedEventHandler removeAllRoleActorsByNameAndTypeCompleted;
-        
-        /// <remarks/>
-        public event deleteProjectRoleCompletedEventHandler deleteProjectRoleCompleted;
-        
-        /// <remarks/>
-        public event updateProjectRoleCompletedEventHandler updateProjectRoleCompleted;
-        
-        /// <remarks/>
-        public event createProjectRoleCompletedEventHandler createProjectRoleCompleted;
-        
-        /// <remarks/>
-        public event isProjectRoleNameUniqueCompletedEventHandler isProjectRoleNameUniqueCompleted;
-        
-        /// <remarks/>
-        public event addActorsToProjectRoleCompletedEventHandler addActorsToProjectRoleCompleted;
-        
-        /// <remarks/>
-        public event removeActorsFromProjectRoleCompletedEventHandler removeActorsFromProjectRoleCompleted;
         
         /// <remarks/>
         public event addDefaultActorsToProjectRoleCompletedEventHandler addDefaultActorsToProjectRoleCompleted;
@@ -434,10 +317,58 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event getAssociatedPermissionSchemesCompletedEventHandler getAssociatedPermissionSchemesCompleted;
         
         /// <remarks/>
-        public event deleteProjectCompletedEventHandler deleteProjectCompleted;
+        public event getUserCompletedEventHandler getUserCompleted;
         
         /// <remarks/>
-        public event getProjectByIdCompletedEventHandler getProjectByIdCompleted;
+        public event getIssueCompletedEventHandler getIssueCompleted;
+        
+        /// <remarks/>
+        public event createIssueCompletedEventHandler createIssueCompleted;
+        
+        /// <remarks/>
+        public event updateIssueCompletedEventHandler updateIssueCompleted;
+        
+        /// <remarks/>
+        public event deleteIssueCompletedEventHandler deleteIssueCompleted;
+        
+        /// <remarks/>
+        public event getGroupCompletedEventHandler getGroupCompleted;
+        
+        /// <remarks/>
+        public event createGroupCompletedEventHandler createGroupCompleted;
+        
+        /// <remarks/>
+        public event getServerInfoCompletedEventHandler getServerInfoCompleted;
+        
+        /// <remarks/>
+        public event loginCompletedEventHandler loginCompleted;
+        
+        /// <remarks/>
+        public event logoutCompletedEventHandler logoutCompleted;
+        
+        /// <remarks/>
+        public event addWorklogWithNewRemainingEstimateCompletedEventHandler addWorklogWithNewRemainingEstimateCompleted;
+        
+        /// <remarks/>
+        public event addWorklogAndRetainRemainingEstimateCompletedEventHandler addWorklogAndRetainRemainingEstimateCompleted;
+        
+        /// <remarks/>
+        public event getIssueByIdCompletedEventHandler getIssueByIdCompleted;
+        
+        /// <remarks/>
+        public event getWorklogsCompletedEventHandler getWorklogsCompleted;
+        
+        /// <remarks/>
+        public event deleteUserCompletedEventHandler deleteUserCompleted;
+        
+        /// <remarks/>
+        public event deleteGroupCompletedEventHandler deleteGroupCompleted;
+        
+        /// <remarks/>
+        public event addVersionCompletedEventHandler addVersionCompleted;
+        
+        /// <remarks/>
+        public event getStatusesCompletedEventHandler getStatusesCompleted;
         
         /// <remarks/>
         public event getVersionsCompletedEventHandler getVersionsCompleted;
@@ -446,7 +377,37 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event getCommentsCompletedEventHandler getCommentsCompleted;
         
         /// <remarks/>
-        public event getFavouriteFiltersCompletedEventHandler getFavouriteFiltersCompleted;
+        public event updateGroupCompletedEventHandler updateGroupCompleted;
+        
+        /// <remarks/>
+        public event updateUserCompletedEventHandler updateUserCompleted;
+        
+        /// <remarks/>
+        public event getConfigurationCompletedEventHandler getConfigurationCompleted;
+        
+        /// <remarks/>
+        public event getSubTaskIssueTypesForProjectCompletedEventHandler getSubTaskIssueTypesForProjectCompleted;
+        
+        /// <remarks/>
+        public event getCustomFieldsCompletedEventHandler getCustomFieldsCompleted;
+        
+        /// <remarks/>
+        public event getIssueTypesForProjectCompletedEventHandler getIssueTypesForProjectCompleted;
+        
+        /// <remarks/>
+        public event isProjectRoleNameUniqueCompletedEventHandler isProjectRoleNameUniqueCompleted;
+        
+        /// <remarks/>
+        public event addActorsToProjectRoleCompletedEventHandler addActorsToProjectRoleCompleted;
+        
+        /// <remarks/>
+        public event removeActorsFromProjectRoleCompletedEventHandler removeActorsFromProjectRoleCompleted;
+        
+        /// <remarks/>
+        public event createUserCompletedEventHandler createUserCompleted;
+        
+        /// <remarks/>
+        public event addCommentCompletedEventHandler addCommentCompleted;
         
         /// <remarks/>
         public event releaseVersionCompletedEventHandler releaseVersionCompleted;
@@ -461,19 +422,16 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event getFieldsForEditCompletedEventHandler getFieldsForEditCompleted;
         
         /// <remarks/>
-        public event getSubTaskIssueTypesForProjectCompletedEventHandler getSubTaskIssueTypesForProjectCompleted;
+        public event getIssuesFromTextSearchWithProjectCompletedEventHandler getIssuesFromTextSearchWithProjectCompleted;
         
         /// <remarks/>
-        public event getCustomFieldsCompletedEventHandler getCustomFieldsCompleted;
+        public event addBase64EncodedAttachmentsToIssueCompletedEventHandler addBase64EncodedAttachmentsToIssueCompleted;
         
         /// <remarks/>
-        public event logoutCompletedEventHandler logoutCompleted;
+        public event getIssuesFromTextSearchWithLimitCompletedEventHandler getIssuesFromTextSearchWithLimitCompleted;
         
         /// <remarks/>
-        public event editCommentCompletedEventHandler editCommentCompleted;
-        
-        /// <remarks/>
-        public event getProjectWithSchemesByIdCompletedEventHandler getProjectWithSchemesByIdCompleted;
+        public event removeAllRoleActorsByProjectCompletedEventHandler removeAllRoleActorsByProjectCompleted;
         
         /// <remarks/>
         public event getSecurityLevelsCompletedEventHandler getSecurityLevelsCompleted;
@@ -491,16 +449,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event deleteProjectAvatarCompletedEventHandler deleteProjectAvatarCompleted;
         
         /// <remarks/>
-        public event getNotificationSchemesCompletedEventHandler getNotificationSchemesCompleted;
-        
-        /// <remarks/>
         public event getPermissionSchemesCompletedEventHandler getPermissionSchemesCompleted;
-        
-        /// <remarks/>
-        public event createPermissionSchemeCompletedEventHandler createPermissionSchemeCompleted;
-        
-        /// <remarks/>
-        public event deletePermissionSchemeCompletedEventHandler deletePermissionSchemeCompleted;
         
         /// <remarks/>
         public event addPermissionToCompletedEventHandler addPermissionToCompleted;
@@ -512,34 +461,55 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event getAllPermissionsCompletedEventHandler getAllPermissionsCompleted;
         
         /// <remarks/>
-        public event createIssueWithSecurityLevelCompletedEventHandler createIssueWithSecurityLevelCompleted;
-        
-        /// <remarks/>
-        public event hasPermissionToEditCommentCompletedEventHandler hasPermissionToEditCommentCompleted;
-        
-        /// <remarks/>
         public event getFieldsForActionCompletedEventHandler getFieldsForActionCompleted;
         
         /// <remarks/>
-        public event progressWorkflowActionCompletedEventHandler progressWorkflowActionCompleted;
+        public event setUserPasswordCompletedEventHandler setUserPasswordCompleted;
         
         /// <remarks/>
-        public event getIssueByIdCompletedEventHandler getIssueByIdCompleted;
+        public event refreshCustomFieldsCompletedEventHandler refreshCustomFieldsCompleted;
         
         /// <remarks/>
-        public event addAttachmentsToIssueCompletedEventHandler addAttachmentsToIssueCompleted;
+        public event getProjectsNoSchemesCompletedEventHandler getProjectsNoSchemesCompleted;
         
         /// <remarks/>
-        public event getAttachmentsFromIssueCompletedEventHandler getAttachmentsFromIssueCompleted;
+        public event getSavedFiltersCompletedEventHandler getSavedFiltersCompleted;
         
         /// <remarks/>
-        public event addWorklogWithNewRemainingEstimateCompletedEventHandler addWorklogWithNewRemainingEstimateCompleted;
+        public event getSecuritySchemesCompletedEventHandler getSecuritySchemesCompleted;
+        
+        /// <remarks/>
+        public event getIssuesFromFilterCompletedEventHandler getIssuesFromFilterCompleted;
+        
+        /// <remarks/>
+        public event setNewProjectAvatarCompletedEventHandler setNewProjectAvatarCompleted;
+        
+        /// <remarks/>
+        public event addUserToGroupCompletedEventHandler addUserToGroupCompleted;
+        
+        /// <remarks/>
+        public event removeUserFromGroupCompletedEventHandler removeUserFromGroupCompleted;
+        
+        /// <remarks/>
+        public event getComponentsCompletedEventHandler getComponentsCompleted;
+        
+        /// <remarks/>
+        public event getSecurityLevelCompletedEventHandler getSecurityLevelCompleted;
+        
+        /// <remarks/>
+        public event createProjectCompletedEventHandler createProjectCompleted;
+        
+        /// <remarks/>
+        public event updateProjectCompletedEventHandler updateProjectCompleted;
+        
+        /// <remarks/>
+        public event getProjectByKeyCompletedEventHandler getProjectByKeyCompleted;
+        
+        /// <remarks/>
+        public event editCommentCompletedEventHandler editCommentCompleted;
         
         /// <remarks/>
         public event addWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler addWorklogAndAutoAdjustRemainingEstimateCompleted;
-        
-        /// <remarks/>
-        public event addWorklogAndRetainRemainingEstimateCompletedEventHandler addWorklogAndRetainRemainingEstimateCompleted;
         
         /// <remarks/>
         public event deleteWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler deleteWorklogAndAutoAdjustRemainingEstimateCompleted;
@@ -560,7 +530,79 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event updateWorklogWithNewRemainingEstimateCompletedEventHandler updateWorklogWithNewRemainingEstimateCompleted;
         
         /// <remarks/>
-        public event getWorklogsCompletedEventHandler getWorklogsCompleted;
+        public event createIssueWithParentWithSecurityLevelCompletedEventHandler createIssueWithParentWithSecurityLevelCompleted;
+        
+        /// <remarks/>
+        public event getPrioritiesCompletedEventHandler getPrioritiesCompleted;
+        
+        /// <remarks/>
+        public event getResolutionsCompletedEventHandler getResolutionsCompleted;
+        
+        /// <remarks/>
+        public event getIssueTypesCompletedEventHandler getIssueTypesCompleted;
+        
+        /// <remarks/>
+        public event getSubTaskIssueTypesCompletedEventHandler getSubTaskIssueTypesCompleted;
+        
+        /// <remarks/>
+        public event getProjectRolesCompletedEventHandler getProjectRolesCompleted;
+        
+        /// <remarks/>
+        public event getProjectRoleCompletedEventHandler getProjectRoleCompleted;
+        
+        /// <remarks/>
+        public event getProjectRoleActorsCompletedEventHandler getProjectRoleActorsCompleted;
+        
+        /// <remarks/>
+        public event getDefaultRoleActorsCompletedEventHandler getDefaultRoleActorsCompleted;
+        
+        /// <remarks/>
+        public event deleteProjectRoleCompletedEventHandler deleteProjectRoleCompleted;
+        
+        /// <remarks/>
+        public event updateProjectRoleCompletedEventHandler updateProjectRoleCompleted;
+        
+        /// <remarks/>
+        public event createProjectRoleCompletedEventHandler createProjectRoleCompleted;
+        
+        /// <remarks/>
+        public event deleteProjectCompletedEventHandler deleteProjectCompleted;
+        
+        /// <remarks/>
+        public event getProjectByIdCompletedEventHandler getProjectByIdCompleted;
+        
+        /// <remarks/>
+        public event getFavouriteFiltersCompletedEventHandler getFavouriteFiltersCompleted;
+        
+        /// <remarks/>
+        public event getAvailableActionsCompletedEventHandler getAvailableActionsCompleted;
+        
+        /// <remarks/>
+        public event getProjectWithSchemesByIdCompletedEventHandler getProjectWithSchemesByIdCompleted;
+        
+        /// <remarks/>
+        public event getNotificationSchemesCompletedEventHandler getNotificationSchemesCompleted;
+        
+        /// <remarks/>
+        public event createPermissionSchemeCompletedEventHandler createPermissionSchemeCompleted;
+        
+        /// <remarks/>
+        public event deletePermissionSchemeCompletedEventHandler deletePermissionSchemeCompleted;
+        
+        /// <remarks/>
+        public event createIssueWithSecurityLevelCompletedEventHandler createIssueWithSecurityLevelCompleted;
+        
+        /// <remarks/>
+        public event hasPermissionToEditCommentCompletedEventHandler hasPermissionToEditCommentCompleted;
+        
+        /// <remarks/>
+        public event progressWorkflowActionCompletedEventHandler progressWorkflowActionCompleted;
+        
+        /// <remarks/>
+        public event addAttachmentsToIssueCompletedEventHandler addAttachmentsToIssueCompleted;
+        
+        /// <remarks/>
+        public event getAttachmentsFromIssueCompletedEventHandler getAttachmentsFromIssueCompleted;
         
         /// <remarks/>
         public event hasPermissionToCreateWorklogCompletedEventHandler hasPermissionToCreateWorklogCompleted;
@@ -584,61 +626,19 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         public event getIssuesFromTextSearchCompletedEventHandler getIssuesFromTextSearchCompleted;
         
         /// <remarks/>
-        public event getIssuesFromTextSearchWithProjectCompletedEventHandler getIssuesFromTextSearchWithProjectCompleted;
-        
-        /// <remarks/>
         public event getIssuesFromJqlSearchCompletedEventHandler getIssuesFromJqlSearchCompleted;
-        
-        /// <remarks/>
-        public event setUserPasswordCompletedEventHandler setUserPasswordCompleted;
-        
-        /// <remarks/>
-        public event deleteUserCompletedEventHandler deleteUserCompleted;
-        
-        /// <remarks/>
-        public event deleteGroupCompletedEventHandler deleteGroupCompleted;
-        
-        /// <remarks/>
-        public event refreshCustomFieldsCompletedEventHandler refreshCustomFieldsCompleted;
-        
-        /// <remarks/>
-        public event getProjectsNoSchemesCompletedEventHandler getProjectsNoSchemesCompleted;
-        
-        /// <remarks/>
-        public event addVersionCompletedEventHandler addVersionCompleted;
-        
-        /// <remarks/>
-        public event getSavedFiltersCompletedEventHandler getSavedFiltersCompleted;
         
         /// <remarks/>
         public event createIssueWithParentCompletedEventHandler createIssueWithParentCompleted;
         
         /// <remarks/>
-        public event createIssueWithParentWithSecurityLevelCompletedEventHandler createIssueWithParentWithSecurityLevelCompleted;
-        
-        /// <remarks/>
-        public event addBase64EncodedAttachmentsToIssueCompletedEventHandler addBase64EncodedAttachmentsToIssueCompleted;
-        
-        /// <remarks/>
         public event createProjectFromObjectCompletedEventHandler createProjectFromObjectCompleted;
-        
-        /// <remarks/>
-        public event getSecuritySchemesCompletedEventHandler getSecuritySchemesCompleted;
-        
-        /// <remarks/>
-        public event getIssuesFromFilterCompletedEventHandler getIssuesFromFilterCompleted;
         
         /// <remarks/>
         public event getIssuesFromFilterWithLimitCompletedEventHandler getIssuesFromFilterWithLimitCompleted;
         
         /// <remarks/>
-        public event getIssuesFromTextSearchWithLimitCompletedEventHandler getIssuesFromTextSearchWithLimitCompleted;
-        
-        /// <remarks/>
-        public event setNewProjectAvatarCompletedEventHandler setNewProjectAvatarCompleted;
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("getCommentReturn")]
         public RemoteComment getComment(string in0, long in1) {
             object[] results = this.Invoke("getComment", new object[] {
@@ -670,37 +670,331 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getServerInfoReturn")]
-        public RemoteServerInfo getServerInfo(string in0) {
-            object[] results = this.Invoke("getServerInfo", new object[] {
-                        in0});
-            return ((RemoteServerInfo)(results[0]));
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void removeAllRoleActorsByNameAndType(string in0, string in1, string in2) {
+            this.Invoke("removeAllRoleActorsByNameAndType", new object[] {
+                        in0,
+                        in1,
+                        in2});
         }
         
         /// <remarks/>
-        public void getServerInfoAsync(string in0) {
-            this.getServerInfoAsync(in0, null);
+        public void removeAllRoleActorsByNameAndTypeAsync(string in0, string in1, string in2) {
+            this.removeAllRoleActorsByNameAndTypeAsync(in0, in1, in2, null);
         }
         
         /// <remarks/>
-        public void getServerInfoAsync(string in0, object userState) {
-            if ((this.getServerInfoOperationCompleted == null)) {
-                this.getServerInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetServerInfoOperationCompleted);
+        public void removeAllRoleActorsByNameAndTypeAsync(string in0, string in1, string in2, object userState) {
+            if ((this.removeAllRoleActorsByNameAndTypeOperationCompleted == null)) {
+                this.removeAllRoleActorsByNameAndTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveAllRoleActorsByNameAndTypeOperationCompleted);
             }
-            this.InvokeAsync("getServerInfo", new object[] {
-                        in0}, this.getServerInfoOperationCompleted, userState);
+            this.InvokeAsync("removeAllRoleActorsByNameAndType", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.removeAllRoleActorsByNameAndTypeOperationCompleted, userState);
         }
         
-        private void OngetServerInfoOperationCompleted(object arg) {
-            if ((this.getServerInfoCompleted != null)) {
+        private void OnremoveAllRoleActorsByNameAndTypeOperationCompleted(object arg) {
+            if ((this.removeAllRoleActorsByNameAndTypeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getServerInfoCompleted(this, new getServerInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.removeAllRoleActorsByNameAndTypeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void addDefaultActorsToProjectRole(string in0, string[] in1, RemoteProjectRole in2, string in3) {
+            this.Invoke("addDefaultActorsToProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+        }
+        
+        /// <remarks/>
+        public void addDefaultActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3) {
+            this.addDefaultActorsToProjectRoleAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void addDefaultActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3, object userState) {
+            if ((this.addDefaultActorsToProjectRoleOperationCompleted == null)) {
+                this.addDefaultActorsToProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddDefaultActorsToProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("addDefaultActorsToProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.addDefaultActorsToProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OnaddDefaultActorsToProjectRoleOperationCompleted(object arg) {
+            if ((this.addDefaultActorsToProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addDefaultActorsToProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void removeDefaultActorsFromProjectRole(string in0, string[] in1, RemoteProjectRole in2, string in3) {
+            this.Invoke("removeDefaultActorsFromProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+        }
+        
+        /// <remarks/>
+        public void removeDefaultActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3) {
+            this.removeDefaultActorsFromProjectRoleAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void removeDefaultActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3, object userState) {
+            if ((this.removeDefaultActorsFromProjectRoleOperationCompleted == null)) {
+                this.removeDefaultActorsFromProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveDefaultActorsFromProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("removeDefaultActorsFromProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.removeDefaultActorsFromProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OnremoveDefaultActorsFromProjectRoleOperationCompleted(object arg) {
+            if ((this.removeDefaultActorsFromProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.removeDefaultActorsFromProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getAssociatedNotificationSchemesReturn")]
+        public RemoteScheme[] getAssociatedNotificationSchemes(string in0, RemoteProjectRole in1) {
+            object[] results = this.Invoke("getAssociatedNotificationSchemes", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteScheme[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAssociatedNotificationSchemesAsync(string in0, RemoteProjectRole in1) {
+            this.getAssociatedNotificationSchemesAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getAssociatedNotificationSchemesAsync(string in0, RemoteProjectRole in1, object userState) {
+            if ((this.getAssociatedNotificationSchemesOperationCompleted == null)) {
+                this.getAssociatedNotificationSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAssociatedNotificationSchemesOperationCompleted);
+            }
+            this.InvokeAsync("getAssociatedNotificationSchemes", new object[] {
+                        in0,
+                        in1}, this.getAssociatedNotificationSchemesOperationCompleted, userState);
+        }
+        
+        private void OngetAssociatedNotificationSchemesOperationCompleted(object arg) {
+            if ((this.getAssociatedNotificationSchemesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAssociatedNotificationSchemesCompleted(this, new getAssociatedNotificationSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getAssociatedPermissionSchemesReturn")]
+        public RemoteScheme[] getAssociatedPermissionSchemes(string in0, RemoteProjectRole in1) {
+            object[] results = this.Invoke("getAssociatedPermissionSchemes", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteScheme[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAssociatedPermissionSchemesAsync(string in0, RemoteProjectRole in1) {
+            this.getAssociatedPermissionSchemesAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getAssociatedPermissionSchemesAsync(string in0, RemoteProjectRole in1, object userState) {
+            if ((this.getAssociatedPermissionSchemesOperationCompleted == null)) {
+                this.getAssociatedPermissionSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAssociatedPermissionSchemesOperationCompleted);
+            }
+            this.InvokeAsync("getAssociatedPermissionSchemes", new object[] {
+                        in0,
+                        in1}, this.getAssociatedPermissionSchemesOperationCompleted, userState);
+        }
+        
+        private void OngetAssociatedPermissionSchemesOperationCompleted(object arg) {
+            if ((this.getAssociatedPermissionSchemesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAssociatedPermissionSchemesCompleted(this, new getAssociatedPermissionSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getUserReturn")]
+        public RemoteUser getUser(string in0, string in1) {
+            object[] results = this.Invoke("getUser", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteUser)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getUserAsync(string in0, string in1) {
+            this.getUserAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getUserAsync(string in0, string in1, object userState) {
+            if ((this.getUserOperationCompleted == null)) {
+                this.getUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUserOperationCompleted);
+            }
+            this.InvokeAsync("getUser", new object[] {
+                        in0,
+                        in1}, this.getUserOperationCompleted, userState);
+        }
+        
+        private void OngetUserOperationCompleted(object arg) {
+            if ((this.getUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getUserCompleted(this, new getUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssueReturn")]
+        public RemoteIssue getIssue(string in0, string in1) {
+            object[] results = this.Invoke("getIssue", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssueAsync(string in0, string in1) {
+            this.getIssueAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getIssueAsync(string in0, string in1, object userState) {
+            if ((this.getIssueOperationCompleted == null)) {
+                this.getIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueOperationCompleted);
+            }
+            this.InvokeAsync("getIssue", new object[] {
+                        in0,
+                        in1}, this.getIssueOperationCompleted, userState);
+        }
+        
+        private void OngetIssueOperationCompleted(object arg) {
+            if ((this.getIssueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssueCompleted(this, new getIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("createIssueReturn")]
+        public RemoteIssue createIssue(string in0, RemoteIssue in1) {
+            object[] results = this.Invoke("createIssue", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void createIssueAsync(string in0, RemoteIssue in1) {
+            this.createIssueAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void createIssueAsync(string in0, RemoteIssue in1, object userState) {
+            if ((this.createIssueOperationCompleted == null)) {
+                this.createIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateIssueOperationCompleted);
+            }
+            this.InvokeAsync("createIssue", new object[] {
+                        in0,
+                        in1}, this.createIssueOperationCompleted, userState);
+        }
+        
+        private void OncreateIssueOperationCompleted(object arg) {
+            if ((this.createIssueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.createIssueCompleted(this, new createIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("updateIssueReturn")]
+        public RemoteIssue updateIssue(string in0, string in1, RemoteFieldValue[] in2) {
+            object[] results = this.Invoke("updateIssue", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateIssueAsync(string in0, string in1, RemoteFieldValue[] in2) {
+            this.updateIssueAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void updateIssueAsync(string in0, string in1, RemoteFieldValue[] in2, object userState) {
+            if ((this.updateIssueOperationCompleted == null)) {
+                this.updateIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateIssueOperationCompleted);
+            }
+            this.InvokeAsync("updateIssue", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.updateIssueOperationCompleted, userState);
+        }
+        
+        private void OnupdateIssueOperationCompleted(object arg) {
+            if ((this.updateIssueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateIssueCompleted(this, new updateIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deleteIssue(string in0, string in1) {
+            this.Invoke("deleteIssue", new object[] {
+                        in0,
+                        in1});
+        }
+        
+        /// <remarks/>
+        public void deleteIssueAsync(string in0, string in1) {
+            this.deleteIssueAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void deleteIssueAsync(string in0, string in1, object userState) {
+            if ((this.deleteIssueOperationCompleted == null)) {
+                this.deleteIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteIssueOperationCompleted);
+            }
+            this.InvokeAsync("deleteIssue", new object[] {
+                        in0,
+                        in1}, this.deleteIssueOperationCompleted, userState);
+        }
+        
+        private void OndeleteIssueOperationCompleted(object arg) {
+            if ((this.deleteIssueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteIssueCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("getGroupReturn")]
         public RemoteGroup getGroup(string in0, string in1) {
             object[] results = this.Invoke("getGroup", new object[] {
@@ -732,7 +1026,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("createGroupReturn")]
         public RemoteGroup createGroup(string in0, string in1, RemoteUser in2) {
             object[] results = this.Invoke("createGroup", new object[] {
@@ -766,37 +1060,37 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getConfigurationReturn")]
-        public RemoteConfiguration getConfiguration(string in0) {
-            object[] results = this.Invoke("getConfiguration", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getServerInfoReturn")]
+        public RemoteServerInfo getServerInfo(string in0) {
+            object[] results = this.Invoke("getServerInfo", new object[] {
                         in0});
-            return ((RemoteConfiguration)(results[0]));
+            return ((RemoteServerInfo)(results[0]));
         }
         
         /// <remarks/>
-        public void getConfigurationAsync(string in0) {
-            this.getConfigurationAsync(in0, null);
+        public void getServerInfoAsync(string in0) {
+            this.getServerInfoAsync(in0, null);
         }
         
         /// <remarks/>
-        public void getConfigurationAsync(string in0, object userState) {
-            if ((this.getConfigurationOperationCompleted == null)) {
-                this.getConfigurationOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetConfigurationOperationCompleted);
+        public void getServerInfoAsync(string in0, object userState) {
+            if ((this.getServerInfoOperationCompleted == null)) {
+                this.getServerInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetServerInfoOperationCompleted);
             }
-            this.InvokeAsync("getConfiguration", new object[] {
-                        in0}, this.getConfigurationOperationCompleted, userState);
+            this.InvokeAsync("getServerInfo", new object[] {
+                        in0}, this.getServerInfoOperationCompleted, userState);
         }
         
-        private void OngetConfigurationOperationCompleted(object arg) {
-            if ((this.getConfigurationCompleted != null)) {
+        private void OngetServerInfoOperationCompleted(object arg) {
+            if ((this.getServerInfoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getConfigurationCompleted(this, new getConfigurationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getServerInfoCompleted(this, new getServerInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("loginReturn")]
         public string login(string in0, string in1) {
             object[] results = this.Invoke("login", new object[] {
@@ -828,7 +1122,653 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("logoutReturn")]
+        public bool logout(string in0) {
+            object[] results = this.Invoke("logout", new object[] {
+                        in0});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void logoutAsync(string in0) {
+            this.logoutAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void logoutAsync(string in0, object userState) {
+            if ((this.logoutOperationCompleted == null)) {
+                this.logoutOperationCompleted = new System.Threading.SendOrPostCallback(this.OnlogoutOperationCompleted);
+            }
+            this.InvokeAsync("logout", new object[] {
+                        in0}, this.logoutOperationCompleted, userState);
+        }
+        
+        private void OnlogoutOperationCompleted(object arg) {
+            if ((this.logoutCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.logoutCompleted(this, new logoutCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogWithNewRemainingEstimateReturn")]
+        public RemoteWorklog addWorklogWithNewRemainingEstimate(string in0, string in1, RemoteWorklog in2, string in3) {
+            object[] results = this.Invoke("addWorklogWithNewRemainingEstimate", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((RemoteWorklog)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addWorklogWithNewRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2, string in3) {
+            this.addWorklogWithNewRemainingEstimateAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void addWorklogWithNewRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2, string in3, object userState) {
+            if ((this.addWorklogWithNewRemainingEstimateOperationCompleted == null)) {
+                this.addWorklogWithNewRemainingEstimateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddWorklogWithNewRemainingEstimateOperationCompleted);
+            }
+            this.InvokeAsync("addWorklogWithNewRemainingEstimate", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.addWorklogWithNewRemainingEstimateOperationCompleted, userState);
+        }
+        
+        private void OnaddWorklogWithNewRemainingEstimateOperationCompleted(object arg) {
+            if ((this.addWorklogWithNewRemainingEstimateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addWorklogWithNewRemainingEstimateCompleted(this, new addWorklogWithNewRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndRetainRemainingEstimateReturn")]
+        public RemoteWorklog addWorklogAndRetainRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
+            object[] results = this.Invoke("addWorklogAndRetainRemainingEstimate", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteWorklog)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addWorklogAndRetainRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2) {
+            this.addWorklogAndRetainRemainingEstimateAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void addWorklogAndRetainRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2, object userState) {
+            if ((this.addWorklogAndRetainRemainingEstimateOperationCompleted == null)) {
+                this.addWorklogAndRetainRemainingEstimateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddWorklogAndRetainRemainingEstimateOperationCompleted);
+            }
+            this.InvokeAsync("addWorklogAndRetainRemainingEstimate", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.addWorklogAndRetainRemainingEstimateOperationCompleted, userState);
+        }
+        
+        private void OnaddWorklogAndRetainRemainingEstimateOperationCompleted(object arg) {
+            if ((this.addWorklogAndRetainRemainingEstimateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addWorklogAndRetainRemainingEstimateCompleted(this, new addWorklogAndRetainRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssueByIdReturn")]
+        public RemoteIssue getIssueById(string in0, string in1) {
+            object[] results = this.Invoke("getIssueById", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssueByIdAsync(string in0, string in1) {
+            this.getIssueByIdAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getIssueByIdAsync(string in0, string in1, object userState) {
+            if ((this.getIssueByIdOperationCompleted == null)) {
+                this.getIssueByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueByIdOperationCompleted);
+            }
+            this.InvokeAsync("getIssueById", new object[] {
+                        in0,
+                        in1}, this.getIssueByIdOperationCompleted, userState);
+        }
+        
+        private void OngetIssueByIdOperationCompleted(object arg) {
+            if ((this.getIssueByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssueByIdCompleted(this, new getIssueByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getWorklogsReturn")]
+        public RemoteWorklog[] getWorklogs(string in0, string in1) {
+            object[] results = this.Invoke("getWorklogs", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteWorklog[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getWorklogsAsync(string in0, string in1) {
+            this.getWorklogsAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getWorklogsAsync(string in0, string in1, object userState) {
+            if ((this.getWorklogsOperationCompleted == null)) {
+                this.getWorklogsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetWorklogsOperationCompleted);
+            }
+            this.InvokeAsync("getWorklogs", new object[] {
+                        in0,
+                        in1}, this.getWorklogsOperationCompleted, userState);
+        }
+        
+        private void OngetWorklogsOperationCompleted(object arg) {
+            if ((this.getWorklogsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getWorklogsCompleted(this, new getWorklogsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deleteUser(string in0, string in1) {
+            this.Invoke("deleteUser", new object[] {
+                        in0,
+                        in1});
+        }
+        
+        /// <remarks/>
+        public void deleteUserAsync(string in0, string in1) {
+            this.deleteUserAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void deleteUserAsync(string in0, string in1, object userState) {
+            if ((this.deleteUserOperationCompleted == null)) {
+                this.deleteUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteUserOperationCompleted);
+            }
+            this.InvokeAsync("deleteUser", new object[] {
+                        in0,
+                        in1}, this.deleteUserOperationCompleted, userState);
+        }
+        
+        private void OndeleteUserOperationCompleted(object arg) {
+            if ((this.deleteUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deleteGroup(string in0, string in1, string in2) {
+            this.Invoke("deleteGroup", new object[] {
+                        in0,
+                        in1,
+                        in2});
+        }
+        
+        /// <remarks/>
+        public void deleteGroupAsync(string in0, string in1, string in2) {
+            this.deleteGroupAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void deleteGroupAsync(string in0, string in1, string in2, object userState) {
+            if ((this.deleteGroupOperationCompleted == null)) {
+                this.deleteGroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteGroupOperationCompleted);
+            }
+            this.InvokeAsync("deleteGroup", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.deleteGroupOperationCompleted, userState);
+        }
+        
+        private void OndeleteGroupOperationCompleted(object arg) {
+            if ((this.deleteGroupCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteGroupCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("addVersionReturn")]
+        public RemoteVersion addVersion(string in0, string in1, RemoteVersion in2) {
+            object[] results = this.Invoke("addVersion", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteVersion)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addVersionAsync(string in0, string in1, RemoteVersion in2) {
+            this.addVersionAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void addVersionAsync(string in0, string in1, RemoteVersion in2, object userState) {
+            if ((this.addVersionOperationCompleted == null)) {
+                this.addVersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddVersionOperationCompleted);
+            }
+            this.InvokeAsync("addVersion", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.addVersionOperationCompleted, userState);
+        }
+        
+        private void OnaddVersionOperationCompleted(object arg) {
+            if ((this.addVersionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addVersionCompleted(this, new addVersionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getStatusesReturn")]
+        public RemoteStatus[] getStatuses(string in0) {
+            object[] results = this.Invoke("getStatuses", new object[] {
+                        in0});
+            return ((RemoteStatus[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getStatusesAsync(string in0) {
+            this.getStatusesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getStatusesAsync(string in0, object userState) {
+            if ((this.getStatusesOperationCompleted == null)) {
+                this.getStatusesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetStatusesOperationCompleted);
+            }
+            this.InvokeAsync("getStatuses", new object[] {
+                        in0}, this.getStatusesOperationCompleted, userState);
+        }
+        
+        private void OngetStatusesOperationCompleted(object arg) {
+            if ((this.getStatusesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getStatusesCompleted(this, new getStatusesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getVersionsReturn")]
+        public RemoteVersion[] getVersions(string in0, string in1) {
+            object[] results = this.Invoke("getVersions", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteVersion[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getVersionsAsync(string in0, string in1) {
+            this.getVersionsAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getVersionsAsync(string in0, string in1, object userState) {
+            if ((this.getVersionsOperationCompleted == null)) {
+                this.getVersionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetVersionsOperationCompleted);
+            }
+            this.InvokeAsync("getVersions", new object[] {
+                        in0,
+                        in1}, this.getVersionsOperationCompleted, userState);
+        }
+        
+        private void OngetVersionsOperationCompleted(object arg) {
+            if ((this.getVersionsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getVersionsCompleted(this, new getVersionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getCommentsReturn")]
+        public RemoteComment[] getComments(string in0, string in1) {
+            object[] results = this.Invoke("getComments", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteComment[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getCommentsAsync(string in0, string in1) {
+            this.getCommentsAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getCommentsAsync(string in0, string in1, object userState) {
+            if ((this.getCommentsOperationCompleted == null)) {
+                this.getCommentsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCommentsOperationCompleted);
+            }
+            this.InvokeAsync("getComments", new object[] {
+                        in0,
+                        in1}, this.getCommentsOperationCompleted, userState);
+        }
+        
+        private void OngetCommentsOperationCompleted(object arg) {
+            if ((this.getCommentsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCommentsCompleted(this, new getCommentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("updateGroupReturn")]
+        public RemoteGroup updateGroup(string in0, RemoteGroup in1) {
+            object[] results = this.Invoke("updateGroup", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteGroup)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateGroupAsync(string in0, RemoteGroup in1) {
+            this.updateGroupAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void updateGroupAsync(string in0, RemoteGroup in1, object userState) {
+            if ((this.updateGroupOperationCompleted == null)) {
+                this.updateGroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateGroupOperationCompleted);
+            }
+            this.InvokeAsync("updateGroup", new object[] {
+                        in0,
+                        in1}, this.updateGroupOperationCompleted, userState);
+        }
+        
+        private void OnupdateGroupOperationCompleted(object arg) {
+            if ((this.updateGroupCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateGroupCompleted(this, new updateGroupCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("updateUserReturn")]
+        public RemoteUser updateUser(string in0, RemoteUser in1) {
+            object[] results = this.Invoke("updateUser", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteUser)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateUserAsync(string in0, RemoteUser in1) {
+            this.updateUserAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void updateUserAsync(string in0, RemoteUser in1, object userState) {
+            if ((this.updateUserOperationCompleted == null)) {
+                this.updateUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateUserOperationCompleted);
+            }
+            this.InvokeAsync("updateUser", new object[] {
+                        in0,
+                        in1}, this.updateUserOperationCompleted, userState);
+        }
+        
+        private void OnupdateUserOperationCompleted(object arg) {
+            if ((this.updateUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateUserCompleted(this, new updateUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getConfigurationReturn")]
+        public RemoteConfiguration getConfiguration(string in0) {
+            object[] results = this.Invoke("getConfiguration", new object[] {
+                        in0});
+            return ((RemoteConfiguration)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getConfigurationAsync(string in0) {
+            this.getConfigurationAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getConfigurationAsync(string in0, object userState) {
+            if ((this.getConfigurationOperationCompleted == null)) {
+                this.getConfigurationOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetConfigurationOperationCompleted);
+            }
+            this.InvokeAsync("getConfiguration", new object[] {
+                        in0}, this.getConfigurationOperationCompleted, userState);
+        }
+        
+        private void OngetConfigurationOperationCompleted(object arg) {
+            if ((this.getConfigurationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getConfigurationCompleted(this, new getConfigurationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getSubTaskIssueTypesForProjectReturn")]
+        public RemoteIssueType[] getSubTaskIssueTypesForProject(string in0, string in1) {
+            object[] results = this.Invoke("getSubTaskIssueTypesForProject", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssueType[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getSubTaskIssueTypesForProjectAsync(string in0, string in1) {
+            this.getSubTaskIssueTypesForProjectAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getSubTaskIssueTypesForProjectAsync(string in0, string in1, object userState) {
+            if ((this.getSubTaskIssueTypesForProjectOperationCompleted == null)) {
+                this.getSubTaskIssueTypesForProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSubTaskIssueTypesForProjectOperationCompleted);
+            }
+            this.InvokeAsync("getSubTaskIssueTypesForProject", new object[] {
+                        in0,
+                        in1}, this.getSubTaskIssueTypesForProjectOperationCompleted, userState);
+        }
+        
+        private void OngetSubTaskIssueTypesForProjectOperationCompleted(object arg) {
+            if ((this.getSubTaskIssueTypesForProjectCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getSubTaskIssueTypesForProjectCompleted(this, new getSubTaskIssueTypesForProjectCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getCustomFieldsReturn")]
+        public RemoteField[] getCustomFields(string in0) {
+            object[] results = this.Invoke("getCustomFields", new object[] {
+                        in0});
+            return ((RemoteField[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getCustomFieldsAsync(string in0) {
+            this.getCustomFieldsAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getCustomFieldsAsync(string in0, object userState) {
+            if ((this.getCustomFieldsOperationCompleted == null)) {
+                this.getCustomFieldsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCustomFieldsOperationCompleted);
+            }
+            this.InvokeAsync("getCustomFields", new object[] {
+                        in0}, this.getCustomFieldsOperationCompleted, userState);
+        }
+        
+        private void OngetCustomFieldsOperationCompleted(object arg) {
+            if ((this.getCustomFieldsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCustomFieldsCompleted(this, new getCustomFieldsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssueTypesForProjectReturn")]
+        public RemoteIssueType[] getIssueTypesForProject(string in0, string in1) {
+            object[] results = this.Invoke("getIssueTypesForProject", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssueType[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssueTypesForProjectAsync(string in0, string in1) {
+            this.getIssueTypesForProjectAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getIssueTypesForProjectAsync(string in0, string in1, object userState) {
+            if ((this.getIssueTypesForProjectOperationCompleted == null)) {
+                this.getIssueTypesForProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueTypesForProjectOperationCompleted);
+            }
+            this.InvokeAsync("getIssueTypesForProject", new object[] {
+                        in0,
+                        in1}, this.getIssueTypesForProjectOperationCompleted, userState);
+        }
+        
+        private void OngetIssueTypesForProjectOperationCompleted(object arg) {
+            if ((this.getIssueTypesForProjectCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssueTypesForProjectCompleted(this, new getIssueTypesForProjectCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("isProjectRoleNameUniqueReturn")]
+        public bool isProjectRoleNameUnique(string in0, string in1) {
+            object[] results = this.Invoke("isProjectRoleNameUnique", new object[] {
+                        in0,
+                        in1});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void isProjectRoleNameUniqueAsync(string in0, string in1) {
+            this.isProjectRoleNameUniqueAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void isProjectRoleNameUniqueAsync(string in0, string in1, object userState) {
+            if ((this.isProjectRoleNameUniqueOperationCompleted == null)) {
+                this.isProjectRoleNameUniqueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnisProjectRoleNameUniqueOperationCompleted);
+            }
+            this.InvokeAsync("isProjectRoleNameUnique", new object[] {
+                        in0,
+                        in1}, this.isProjectRoleNameUniqueOperationCompleted, userState);
+        }
+        
+        private void OnisProjectRoleNameUniqueOperationCompleted(object arg) {
+            if ((this.isProjectRoleNameUniqueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.isProjectRoleNameUniqueCompleted(this, new isProjectRoleNameUniqueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void addActorsToProjectRole(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
+            this.Invoke("addActorsToProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3,
+                        in4});
+        }
+        
+        /// <remarks/>
+        public void addActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
+            this.addActorsToProjectRoleAsync(in0, in1, in2, in3, in4, null);
+        }
+        
+        /// <remarks/>
+        public void addActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4, object userState) {
+            if ((this.addActorsToProjectRoleOperationCompleted == null)) {
+                this.addActorsToProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddActorsToProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("addActorsToProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3,
+                        in4}, this.addActorsToProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OnaddActorsToProjectRoleOperationCompleted(object arg) {
+            if ((this.addActorsToProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addActorsToProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void removeActorsFromProjectRole(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
+            this.Invoke("removeActorsFromProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3,
+                        in4});
+        }
+        
+        /// <remarks/>
+        public void removeActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
+            this.removeActorsFromProjectRoleAsync(in0, in1, in2, in3, in4, null);
+        }
+        
+        /// <remarks/>
+        public void removeActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4, object userState) {
+            if ((this.removeActorsFromProjectRoleOperationCompleted == null)) {
+                this.removeActorsFromProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveActorsFromProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("removeActorsFromProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3,
+                        in4}, this.removeActorsFromProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OnremoveActorsFromProjectRoleOperationCompleted(object arg) {
+            if ((this.removeActorsFromProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.removeActorsFromProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("createUserReturn")]
         public RemoteUser createUser(string in0, string in1, string in2, string in3, string in4) {
             object[] results = this.Invoke("createUser", new object[] {
@@ -866,71 +1806,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getUserReturn")]
-        public RemoteUser getUser(string in0, string in1) {
-            object[] results = this.Invoke("getUser", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteUser)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getUserAsync(string in0, string in1) {
-            this.getUserAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getUserAsync(string in0, string in1, object userState) {
-            if ((this.getUserOperationCompleted == null)) {
-                this.getUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUserOperationCompleted);
-            }
-            this.InvokeAsync("getUser", new object[] {
-                        in0,
-                        in1}, this.getUserOperationCompleted, userState);
-        }
-        
-        private void OngetUserOperationCompleted(object arg) {
-            if ((this.getUserCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getUserCompleted(this, new getUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssueReturn")]
-        public RemoteIssue getIssue(string in0, string in1) {
-            object[] results = this.Invoke("getIssue", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteIssue)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssueAsync(string in0, string in1) {
-            this.getIssueAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getIssueAsync(string in0, string in1, object userState) {
-            if ((this.getIssueOperationCompleted == null)) {
-                this.getIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueOperationCompleted);
-            }
-            this.InvokeAsync("getIssue", new object[] {
-                        in0,
-                        in1}, this.getIssueOperationCompleted, userState);
-        }
-        
-        private void OngetIssueOperationCompleted(object arg) {
-            if ((this.getIssueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssueCompleted(this, new getIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void addComment(string in0, string in1, RemoteComment in2) {
             this.Invoke("addComment", new object[] {
                         in0,
@@ -962,135 +1838,819 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("createIssueReturn")]
-        public RemoteIssue createIssue(string in0, RemoteIssue in1) {
-            object[] results = this.Invoke("createIssue", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void releaseVersion(string in0, string in1, RemoteVersion in2) {
+            this.Invoke("releaseVersion", new object[] {
+                        in0,
+                        in1,
+                        in2});
+        }
+        
+        /// <remarks/>
+        public void releaseVersionAsync(string in0, string in1, RemoteVersion in2) {
+            this.releaseVersionAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void releaseVersionAsync(string in0, string in1, RemoteVersion in2, object userState) {
+            if ((this.releaseVersionOperationCompleted == null)) {
+                this.releaseVersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnreleaseVersionOperationCompleted);
+            }
+            this.InvokeAsync("releaseVersion", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.releaseVersionOperationCompleted, userState);
+        }
+        
+        private void OnreleaseVersionOperationCompleted(object arg) {
+            if ((this.releaseVersionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.releaseVersionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void archiveVersion(string in0, string in1, string in2, bool in3) {
+            this.Invoke("archiveVersion", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+        }
+        
+        /// <remarks/>
+        public void archiveVersionAsync(string in0, string in1, string in2, bool in3) {
+            this.archiveVersionAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void archiveVersionAsync(string in0, string in1, string in2, bool in3, object userState) {
+            if ((this.archiveVersionOperationCompleted == null)) {
+                this.archiveVersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnarchiveVersionOperationCompleted);
+            }
+            this.InvokeAsync("archiveVersion", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.archiveVersionOperationCompleted, userState);
+        }
+        
+        private void OnarchiveVersionOperationCompleted(object arg) {
+            if ((this.archiveVersionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.archiveVersionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getFieldsForCreateReturn")]
+        public RemoteField[] getFieldsForCreate(string in0, string in1, long in2) {
+            object[] results = this.Invoke("getFieldsForCreate", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteField[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getFieldsForCreateAsync(string in0, string in1, long in2) {
+            this.getFieldsForCreateAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void getFieldsForCreateAsync(string in0, string in1, long in2, object userState) {
+            if ((this.getFieldsForCreateOperationCompleted == null)) {
+                this.getFieldsForCreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFieldsForCreateOperationCompleted);
+            }
+            this.InvokeAsync("getFieldsForCreate", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.getFieldsForCreateOperationCompleted, userState);
+        }
+        
+        private void OngetFieldsForCreateOperationCompleted(object arg) {
+            if ((this.getFieldsForCreateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getFieldsForCreateCompleted(this, new getFieldsForCreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getFieldsForEditReturn")]
+        public RemoteField[] getFieldsForEdit(string in0, string in1) {
+            object[] results = this.Invoke("getFieldsForEdit", new object[] {
                         in0,
                         in1});
-            return ((RemoteIssue)(results[0]));
+            return ((RemoteField[])(results[0]));
         }
         
         /// <remarks/>
-        public void createIssueAsync(string in0, RemoteIssue in1) {
-            this.createIssueAsync(in0, in1, null);
+        public void getFieldsForEditAsync(string in0, string in1) {
+            this.getFieldsForEditAsync(in0, in1, null);
         }
         
         /// <remarks/>
-        public void createIssueAsync(string in0, RemoteIssue in1, object userState) {
-            if ((this.createIssueOperationCompleted == null)) {
-                this.createIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateIssueOperationCompleted);
+        public void getFieldsForEditAsync(string in0, string in1, object userState) {
+            if ((this.getFieldsForEditOperationCompleted == null)) {
+                this.getFieldsForEditOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFieldsForEditOperationCompleted);
             }
-            this.InvokeAsync("createIssue", new object[] {
+            this.InvokeAsync("getFieldsForEdit", new object[] {
                         in0,
-                        in1}, this.createIssueOperationCompleted, userState);
+                        in1}, this.getFieldsForEditOperationCompleted, userState);
         }
         
-        private void OncreateIssueOperationCompleted(object arg) {
-            if ((this.createIssueCompleted != null)) {
+        private void OngetFieldsForEditOperationCompleted(object arg) {
+            if ((this.getFieldsForEditCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.createIssueCompleted(this, new createIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getFieldsForEditCompleted(this, new getFieldsForEditCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getComponentsReturn")]
-        public RemoteComponent[] getComponents(string in0, string in1) {
-            object[] results = this.Invoke("getComponents", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromTextSearchWithProjectReturn")]
+        public RemoteIssue[] getIssuesFromTextSearchWithProject(string in0, string[] in1, string in2, int in3) {
+            object[] results = this.Invoke("getIssuesFromTextSearchWithProject", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((RemoteIssue[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromTextSearchWithProjectAsync(string in0, string[] in1, string in2, int in3) {
+            this.getIssuesFromTextSearchWithProjectAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromTextSearchWithProjectAsync(string in0, string[] in1, string in2, int in3, object userState) {
+            if ((this.getIssuesFromTextSearchWithProjectOperationCompleted == null)) {
+                this.getIssuesFromTextSearchWithProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromTextSearchWithProjectOperationCompleted);
+            }
+            this.InvokeAsync("getIssuesFromTextSearchWithProject", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.getIssuesFromTextSearchWithProjectOperationCompleted, userState);
+        }
+        
+        private void OngetIssuesFromTextSearchWithProjectOperationCompleted(object arg) {
+            if ((this.getIssuesFromTextSearchWithProjectCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssuesFromTextSearchWithProjectCompleted(this, new getIssuesFromTextSearchWithProjectCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("addBase64EncodedAttachmentsToIssueReturn")]
+        public bool addBase64EncodedAttachmentsToIssue(string in0, string in1, string[] in2, string[] in3) {
+            object[] results = this.Invoke("addBase64EncodedAttachmentsToIssue", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addBase64EncodedAttachmentsToIssueAsync(string in0, string in1, string[] in2, string[] in3) {
+            this.addBase64EncodedAttachmentsToIssueAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void addBase64EncodedAttachmentsToIssueAsync(string in0, string in1, string[] in2, string[] in3, object userState) {
+            if ((this.addBase64EncodedAttachmentsToIssueOperationCompleted == null)) {
+                this.addBase64EncodedAttachmentsToIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddBase64EncodedAttachmentsToIssueOperationCompleted);
+            }
+            this.InvokeAsync("addBase64EncodedAttachmentsToIssue", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.addBase64EncodedAttachmentsToIssueOperationCompleted, userState);
+        }
+        
+        private void OnaddBase64EncodedAttachmentsToIssueOperationCompleted(object arg) {
+            if ((this.addBase64EncodedAttachmentsToIssueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addBase64EncodedAttachmentsToIssueCompleted(this, new addBase64EncodedAttachmentsToIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromTextSearchWithLimitReturn")]
+        public RemoteIssue[] getIssuesFromTextSearchWithLimit(string in0, string in1, int in2, int in3) {
+            object[] results = this.Invoke("getIssuesFromTextSearchWithLimit", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((RemoteIssue[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromTextSearchWithLimitAsync(string in0, string in1, int in2, int in3) {
+            this.getIssuesFromTextSearchWithLimitAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromTextSearchWithLimitAsync(string in0, string in1, int in2, int in3, object userState) {
+            if ((this.getIssuesFromTextSearchWithLimitOperationCompleted == null)) {
+                this.getIssuesFromTextSearchWithLimitOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromTextSearchWithLimitOperationCompleted);
+            }
+            this.InvokeAsync("getIssuesFromTextSearchWithLimit", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.getIssuesFromTextSearchWithLimitOperationCompleted, userState);
+        }
+        
+        private void OngetIssuesFromTextSearchWithLimitOperationCompleted(object arg) {
+            if ((this.getIssuesFromTextSearchWithLimitCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssuesFromTextSearchWithLimitCompleted(this, new getIssuesFromTextSearchWithLimitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void removeAllRoleActorsByProject(string in0, RemoteProject in1) {
+            this.Invoke("removeAllRoleActorsByProject", new object[] {
                         in0,
                         in1});
-            return ((RemoteComponent[])(results[0]));
         }
         
         /// <remarks/>
-        public void getComponentsAsync(string in0, string in1) {
-            this.getComponentsAsync(in0, in1, null);
+        public void removeAllRoleActorsByProjectAsync(string in0, RemoteProject in1) {
+            this.removeAllRoleActorsByProjectAsync(in0, in1, null);
         }
         
         /// <remarks/>
-        public void getComponentsAsync(string in0, string in1, object userState) {
-            if ((this.getComponentsOperationCompleted == null)) {
-                this.getComponentsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetComponentsOperationCompleted);
+        public void removeAllRoleActorsByProjectAsync(string in0, RemoteProject in1, object userState) {
+            if ((this.removeAllRoleActorsByProjectOperationCompleted == null)) {
+                this.removeAllRoleActorsByProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveAllRoleActorsByProjectOperationCompleted);
             }
-            this.InvokeAsync("getComponents", new object[] {
+            this.InvokeAsync("removeAllRoleActorsByProject", new object[] {
                         in0,
-                        in1}, this.getComponentsOperationCompleted, userState);
+                        in1}, this.removeAllRoleActorsByProjectOperationCompleted, userState);
         }
         
-        private void OngetComponentsOperationCompleted(object arg) {
-            if ((this.getComponentsCompleted != null)) {
+        private void OnremoveAllRoleActorsByProjectOperationCompleted(object arg) {
+            if ((this.removeAllRoleActorsByProjectCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getComponentsCompleted(this, new getComponentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.removeAllRoleActorsByProjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("updateUserReturn")]
-        public RemoteUser updateUser(string in0, RemoteUser in1) {
-            object[] results = this.Invoke("updateUser", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getSecurityLevelsReturn")]
+        public RemoteSecurityLevel[] getSecurityLevels(string in0, string in1) {
+            object[] results = this.Invoke("getSecurityLevels", new object[] {
                         in0,
                         in1});
-            return ((RemoteUser)(results[0]));
+            return ((RemoteSecurityLevel[])(results[0]));
         }
         
         /// <remarks/>
-        public void updateUserAsync(string in0, RemoteUser in1) {
-            this.updateUserAsync(in0, in1, null);
+        public void getSecurityLevelsAsync(string in0, string in1) {
+            this.getSecurityLevelsAsync(in0, in1, null);
         }
         
         /// <remarks/>
-        public void updateUserAsync(string in0, RemoteUser in1, object userState) {
-            if ((this.updateUserOperationCompleted == null)) {
-                this.updateUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateUserOperationCompleted);
+        public void getSecurityLevelsAsync(string in0, string in1, object userState) {
+            if ((this.getSecurityLevelsOperationCompleted == null)) {
+                this.getSecurityLevelsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSecurityLevelsOperationCompleted);
             }
-            this.InvokeAsync("updateUser", new object[] {
+            this.InvokeAsync("getSecurityLevels", new object[] {
                         in0,
-                        in1}, this.updateUserOperationCompleted, userState);
+                        in1}, this.getSecurityLevelsOperationCompleted, userState);
         }
         
-        private void OnupdateUserOperationCompleted(object arg) {
-            if ((this.updateUserCompleted != null)) {
+        private void OngetSecurityLevelsOperationCompleted(object arg) {
+            if ((this.getSecurityLevelsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.updateUserCompleted(this, new updateUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getSecurityLevelsCompleted(this, new getSecurityLevelsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("updateGroupReturn")]
-        public RemoteGroup updateGroup(string in0, RemoteGroup in1) {
-            object[] results = this.Invoke("updateGroup", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectAvatarsReturn")]
+        public RemoteAvatar[] getProjectAvatars(string in0, string in1, bool in2) {
+            object[] results = this.Invoke("getProjectAvatars", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteAvatar[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectAvatarsAsync(string in0, string in1, bool in2) {
+            this.getProjectAvatarsAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectAvatarsAsync(string in0, string in1, bool in2, object userState) {
+            if ((this.getProjectAvatarsOperationCompleted == null)) {
+                this.getProjectAvatarsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectAvatarsOperationCompleted);
+            }
+            this.InvokeAsync("getProjectAvatars", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.getProjectAvatarsOperationCompleted, userState);
+        }
+        
+        private void OngetProjectAvatarsOperationCompleted(object arg) {
+            if ((this.getProjectAvatarsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectAvatarsCompleted(this, new getProjectAvatarsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void setProjectAvatar(string in0, string in1, long in2) {
+            this.Invoke("setProjectAvatar", new object[] {
+                        in0,
+                        in1,
+                        in2});
+        }
+        
+        /// <remarks/>
+        public void setProjectAvatarAsync(string in0, string in1, long in2) {
+            this.setProjectAvatarAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void setProjectAvatarAsync(string in0, string in1, long in2, object userState) {
+            if ((this.setProjectAvatarOperationCompleted == null)) {
+                this.setProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetProjectAvatarOperationCompleted);
+            }
+            this.InvokeAsync("setProjectAvatar", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.setProjectAvatarOperationCompleted, userState);
+        }
+        
+        private void OnsetProjectAvatarOperationCompleted(object arg) {
+            if ((this.setProjectAvatarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setProjectAvatarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectAvatarReturn")]
+        public RemoteAvatar getProjectAvatar(string in0, string in1) {
+            object[] results = this.Invoke("getProjectAvatar", new object[] {
                         in0,
                         in1});
-            return ((RemoteGroup)(results[0]));
+            return ((RemoteAvatar)(results[0]));
         }
         
         /// <remarks/>
-        public void updateGroupAsync(string in0, RemoteGroup in1) {
-            this.updateGroupAsync(in0, in1, null);
+        public void getProjectAvatarAsync(string in0, string in1) {
+            this.getProjectAvatarAsync(in0, in1, null);
         }
         
         /// <remarks/>
-        public void updateGroupAsync(string in0, RemoteGroup in1, object userState) {
-            if ((this.updateGroupOperationCompleted == null)) {
-                this.updateGroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateGroupOperationCompleted);
+        public void getProjectAvatarAsync(string in0, string in1, object userState) {
+            if ((this.getProjectAvatarOperationCompleted == null)) {
+                this.getProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectAvatarOperationCompleted);
             }
-            this.InvokeAsync("updateGroup", new object[] {
+            this.InvokeAsync("getProjectAvatar", new object[] {
                         in0,
-                        in1}, this.updateGroupOperationCompleted, userState);
+                        in1}, this.getProjectAvatarOperationCompleted, userState);
         }
         
-        private void OnupdateGroupOperationCompleted(object arg) {
-            if ((this.updateGroupCompleted != null)) {
+        private void OngetProjectAvatarOperationCompleted(object arg) {
+            if ((this.getProjectAvatarCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.updateGroupCompleted(this, new updateGroupCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getProjectAvatarCompleted(this, new getProjectAvatarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deleteProjectAvatar(string in0, long in1) {
+            this.Invoke("deleteProjectAvatar", new object[] {
+                        in0,
+                        in1});
+        }
+        
+        /// <remarks/>
+        public void deleteProjectAvatarAsync(string in0, long in1) {
+            this.deleteProjectAvatarAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void deleteProjectAvatarAsync(string in0, long in1, object userState) {
+            if ((this.deleteProjectAvatarOperationCompleted == null)) {
+                this.deleteProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteProjectAvatarOperationCompleted);
+            }
+            this.InvokeAsync("deleteProjectAvatar", new object[] {
+                        in0,
+                        in1}, this.deleteProjectAvatarOperationCompleted, userState);
+        }
+        
+        private void OndeleteProjectAvatarOperationCompleted(object arg) {
+            if ((this.deleteProjectAvatarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteProjectAvatarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getPermissionSchemesReturn")]
+        public RemotePermissionScheme[] getPermissionSchemes(string in0) {
+            object[] results = this.Invoke("getPermissionSchemes", new object[] {
+                        in0});
+            return ((RemotePermissionScheme[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getPermissionSchemesAsync(string in0) {
+            this.getPermissionSchemesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getPermissionSchemesAsync(string in0, object userState) {
+            if ((this.getPermissionSchemesOperationCompleted == null)) {
+                this.getPermissionSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetPermissionSchemesOperationCompleted);
+            }
+            this.InvokeAsync("getPermissionSchemes", new object[] {
+                        in0}, this.getPermissionSchemesOperationCompleted, userState);
+        }
+        
+        private void OngetPermissionSchemesOperationCompleted(object arg) {
+            if ((this.getPermissionSchemesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getPermissionSchemesCompleted(this, new getPermissionSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("addPermissionToReturn")]
+        public RemotePermissionScheme addPermissionTo(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
+            object[] results = this.Invoke("addPermissionTo", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((RemotePermissionScheme)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void addPermissionToAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
+            this.addPermissionToAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void addPermissionToAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3, object userState) {
+            if ((this.addPermissionToOperationCompleted == null)) {
+                this.addPermissionToOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddPermissionToOperationCompleted);
+            }
+            this.InvokeAsync("addPermissionTo", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.addPermissionToOperationCompleted, userState);
+        }
+        
+        private void OnaddPermissionToOperationCompleted(object arg) {
+            if ((this.addPermissionToCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addPermissionToCompleted(this, new addPermissionToCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("deletePermissionFromReturn")]
+        public RemotePermissionScheme deletePermissionFrom(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
+            object[] results = this.Invoke("deletePermissionFrom", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((RemotePermissionScheme)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void deletePermissionFromAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
+            this.deletePermissionFromAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void deletePermissionFromAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3, object userState) {
+            if ((this.deletePermissionFromOperationCompleted == null)) {
+                this.deletePermissionFromOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeletePermissionFromOperationCompleted);
+            }
+            this.InvokeAsync("deletePermissionFrom", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.deletePermissionFromOperationCompleted, userState);
+        }
+        
+        private void OndeletePermissionFromOperationCompleted(object arg) {
+            if ((this.deletePermissionFromCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deletePermissionFromCompleted(this, new deletePermissionFromCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getAllPermissionsReturn")]
+        public RemotePermission[] getAllPermissions(string in0) {
+            object[] results = this.Invoke("getAllPermissions", new object[] {
+                        in0});
+            return ((RemotePermission[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAllPermissionsAsync(string in0) {
+            this.getAllPermissionsAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getAllPermissionsAsync(string in0, object userState) {
+            if ((this.getAllPermissionsOperationCompleted == null)) {
+                this.getAllPermissionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAllPermissionsOperationCompleted);
+            }
+            this.InvokeAsync("getAllPermissions", new object[] {
+                        in0}, this.getAllPermissionsOperationCompleted, userState);
+        }
+        
+        private void OngetAllPermissionsOperationCompleted(object arg) {
+            if ((this.getAllPermissionsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAllPermissionsCompleted(this, new getAllPermissionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getFieldsForActionReturn")]
+        public RemoteField[] getFieldsForAction(string in0, string in1, string in2) {
+            object[] results = this.Invoke("getFieldsForAction", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteField[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getFieldsForActionAsync(string in0, string in1, string in2) {
+            this.getFieldsForActionAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void getFieldsForActionAsync(string in0, string in1, string in2, object userState) {
+            if ((this.getFieldsForActionOperationCompleted == null)) {
+                this.getFieldsForActionOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFieldsForActionOperationCompleted);
+            }
+            this.InvokeAsync("getFieldsForAction", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.getFieldsForActionOperationCompleted, userState);
+        }
+        
+        private void OngetFieldsForActionOperationCompleted(object arg) {
+            if ((this.getFieldsForActionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getFieldsForActionCompleted(this, new getFieldsForActionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void setUserPassword(string in0, RemoteUser in1, string in2) {
+            this.Invoke("setUserPassword", new object[] {
+                        in0,
+                        in1,
+                        in2});
+        }
+        
+        /// <remarks/>
+        public void setUserPasswordAsync(string in0, RemoteUser in1, string in2) {
+            this.setUserPasswordAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void setUserPasswordAsync(string in0, RemoteUser in1, string in2, object userState) {
+            if ((this.setUserPasswordOperationCompleted == null)) {
+                this.setUserPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetUserPasswordOperationCompleted);
+            }
+            this.InvokeAsync("setUserPassword", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.setUserPasswordOperationCompleted, userState);
+        }
+        
+        private void OnsetUserPasswordOperationCompleted(object arg) {
+            if ((this.setUserPasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setUserPasswordCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void refreshCustomFields(string in0) {
+            this.Invoke("refreshCustomFields", new object[] {
+                        in0});
+        }
+        
+        /// <remarks/>
+        public void refreshCustomFieldsAsync(string in0) {
+            this.refreshCustomFieldsAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void refreshCustomFieldsAsync(string in0, object userState) {
+            if ((this.refreshCustomFieldsOperationCompleted == null)) {
+                this.refreshCustomFieldsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnrefreshCustomFieldsOperationCompleted);
+            }
+            this.InvokeAsync("refreshCustomFields", new object[] {
+                        in0}, this.refreshCustomFieldsOperationCompleted, userState);
+        }
+        
+        private void OnrefreshCustomFieldsOperationCompleted(object arg) {
+            if ((this.refreshCustomFieldsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.refreshCustomFieldsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectsNoSchemesReturn")]
+        public RemoteProject[] getProjectsNoSchemes(string in0) {
+            object[] results = this.Invoke("getProjectsNoSchemes", new object[] {
+                        in0});
+            return ((RemoteProject[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectsNoSchemesAsync(string in0) {
+            this.getProjectsNoSchemesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectsNoSchemesAsync(string in0, object userState) {
+            if ((this.getProjectsNoSchemesOperationCompleted == null)) {
+                this.getProjectsNoSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectsNoSchemesOperationCompleted);
+            }
+            this.InvokeAsync("getProjectsNoSchemes", new object[] {
+                        in0}, this.getProjectsNoSchemesOperationCompleted, userState);
+        }
+        
+        private void OngetProjectsNoSchemesOperationCompleted(object arg) {
+            if ((this.getProjectsNoSchemesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectsNoSchemesCompleted(this, new getProjectsNoSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getSavedFiltersReturn")]
+        public RemoteFilter[] getSavedFilters(string in0) {
+            object[] results = this.Invoke("getSavedFilters", new object[] {
+                        in0});
+            return ((RemoteFilter[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getSavedFiltersAsync(string in0) {
+            this.getSavedFiltersAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getSavedFiltersAsync(string in0, object userState) {
+            if ((this.getSavedFiltersOperationCompleted == null)) {
+                this.getSavedFiltersOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSavedFiltersOperationCompleted);
+            }
+            this.InvokeAsync("getSavedFilters", new object[] {
+                        in0}, this.getSavedFiltersOperationCompleted, userState);
+        }
+        
+        private void OngetSavedFiltersOperationCompleted(object arg) {
+            if ((this.getSavedFiltersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getSavedFiltersCompleted(this, new getSavedFiltersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getSecuritySchemesReturn")]
+        public RemoteScheme[] getSecuritySchemes(string in0) {
+            object[] results = this.Invoke("getSecuritySchemes", new object[] {
+                        in0});
+            return ((RemoteScheme[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getSecuritySchemesAsync(string in0) {
+            this.getSecuritySchemesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getSecuritySchemesAsync(string in0, object userState) {
+            if ((this.getSecuritySchemesOperationCompleted == null)) {
+                this.getSecuritySchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSecuritySchemesOperationCompleted);
+            }
+            this.InvokeAsync("getSecuritySchemes", new object[] {
+                        in0}, this.getSecuritySchemesOperationCompleted, userState);
+        }
+        
+        private void OngetSecuritySchemesOperationCompleted(object arg) {
+            if ((this.getSecuritySchemesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getSecuritySchemesCompleted(this, new getSecuritySchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromFilterReturn")]
+        public RemoteIssue[] getIssuesFromFilter(string in0, string in1) {
+            object[] results = this.Invoke("getIssuesFromFilter", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssue[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromFilterAsync(string in0, string in1) {
+            this.getIssuesFromFilterAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromFilterAsync(string in0, string in1, object userState) {
+            if ((this.getIssuesFromFilterOperationCompleted == null)) {
+                this.getIssuesFromFilterOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromFilterOperationCompleted);
+            }
+            this.InvokeAsync("getIssuesFromFilter", new object[] {
+                        in0,
+                        in1}, this.getIssuesFromFilterOperationCompleted, userState);
+        }
+        
+        private void OngetIssuesFromFilterOperationCompleted(object arg) {
+            if ((this.getIssuesFromFilterCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssuesFromFilterCompleted(this, new getIssuesFromFilterCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void setNewProjectAvatar(string in0, string in1, string in2, string in3) {
+            this.Invoke("setNewProjectAvatar", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+        }
+        
+        /// <remarks/>
+        public void setNewProjectAvatarAsync(string in0, string in1, string in2, string in3) {
+            this.setNewProjectAvatarAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void setNewProjectAvatarAsync(string in0, string in1, string in2, string in3, object userState) {
+            if ((this.setNewProjectAvatarOperationCompleted == null)) {
+                this.setNewProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetNewProjectAvatarOperationCompleted);
+            }
+            this.InvokeAsync("setNewProjectAvatar", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.setNewProjectAvatarOperationCompleted, userState);
+        }
+        
+        private void OnsetNewProjectAvatarOperationCompleted(object arg) {
+            if ((this.setNewProjectAvatarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setNewProjectAvatarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void addUserToGroup(string in0, RemoteGroup in1, RemoteUser in2) {
             this.Invoke("addUserToGroup", new object[] {
                         in0,
@@ -1122,7 +2682,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void removeUserFromGroup(string in0, RemoteGroup in1, RemoteUser in2) {
             this.Invoke("removeUserFromGroup", new object[] {
                         in0,
@@ -1154,103 +2714,39 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("updateIssueReturn")]
-        public RemoteIssue updateIssue(string in0, string in1, RemoteFieldValue[] in2) {
-            object[] results = this.Invoke("updateIssue", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteIssue)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void updateIssueAsync(string in0, string in1, RemoteFieldValue[] in2) {
-            this.updateIssueAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void updateIssueAsync(string in0, string in1, RemoteFieldValue[] in2, object userState) {
-            if ((this.updateIssueOperationCompleted == null)) {
-                this.updateIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateIssueOperationCompleted);
-            }
-            this.InvokeAsync("updateIssue", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.updateIssueOperationCompleted, userState);
-        }
-        
-        private void OnupdateIssueOperationCompleted(object arg) {
-            if ((this.updateIssueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.updateIssueCompleted(this, new updateIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deleteIssue(string in0, string in1) {
-            this.Invoke("deleteIssue", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getComponentsReturn")]
+        public RemoteComponent[] getComponents(string in0, string in1) {
+            object[] results = this.Invoke("getComponents", new object[] {
                         in0,
                         in1});
+            return ((RemoteComponent[])(results[0]));
         }
         
         /// <remarks/>
-        public void deleteIssueAsync(string in0, string in1) {
-            this.deleteIssueAsync(in0, in1, null);
+        public void getComponentsAsync(string in0, string in1) {
+            this.getComponentsAsync(in0, in1, null);
         }
         
         /// <remarks/>
-        public void deleteIssueAsync(string in0, string in1, object userState) {
-            if ((this.deleteIssueOperationCompleted == null)) {
-                this.deleteIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteIssueOperationCompleted);
+        public void getComponentsAsync(string in0, string in1, object userState) {
+            if ((this.getComponentsOperationCompleted == null)) {
+                this.getComponentsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetComponentsOperationCompleted);
             }
-            this.InvokeAsync("deleteIssue", new object[] {
+            this.InvokeAsync("getComponents", new object[] {
                         in0,
-                        in1}, this.deleteIssueOperationCompleted, userState);
+                        in1}, this.getComponentsOperationCompleted, userState);
         }
         
-        private void OndeleteIssueOperationCompleted(object arg) {
-            if ((this.deleteIssueCompleted != null)) {
+        private void OngetComponentsOperationCompleted(object arg) {
+            if ((this.getComponentsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deleteIssueCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.getComponentsCompleted(this, new getComponentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getAvailableActionsReturn")]
-        public RemoteNamedObject[] getAvailableActions(string in0, string in1) {
-            object[] results = this.Invoke("getAvailableActions", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteNamedObject[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAvailableActionsAsync(string in0, string in1) {
-            this.getAvailableActionsAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getAvailableActionsAsync(string in0, string in1, object userState) {
-            if ((this.getAvailableActionsOperationCompleted == null)) {
-                this.getAvailableActionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAvailableActionsOperationCompleted);
-            }
-            this.InvokeAsync("getAvailableActions", new object[] {
-                        in0,
-                        in1}, this.getAvailableActionsOperationCompleted, userState);
-        }
-        
-        private void OngetAvailableActionsOperationCompleted(object arg) {
-            if ((this.getAvailableActionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAvailableActionsCompleted(this, new getAvailableActionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("getSecurityLevelReturn")]
         public RemoteSecurityLevel getSecurityLevel(string in0, string in1) {
             object[] results = this.Invoke("getSecurityLevel", new object[] {
@@ -1282,7 +2778,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("createProjectReturn")]
         public RemoteProject createProject(string in0, string in1, string in2, string in3, string in4, string in5, RemotePermissionScheme in6, RemoteScheme in7, RemoteScheme in8) {
             object[] results = this.Invoke("createProject", new object[] {
@@ -1328,7 +2824,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("updateProjectReturn")]
         public RemoteProject updateProject(string in0, RemoteProject in1) {
             object[] results = this.Invoke("updateProject", new object[] {
@@ -1360,7 +2856,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("getProjectByKeyReturn")]
         public RemoteProject getProjectByKey(string in0, string in1) {
             object[] results = this.Invoke("getProjectByKey", new object[] {
@@ -1392,1089 +2888,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void removeAllRoleActorsByProject(string in0, RemoteProject in1) {
-            this.Invoke("removeAllRoleActorsByProject", new object[] {
-                        in0,
-                        in1});
-        }
-        
-        /// <remarks/>
-        public void removeAllRoleActorsByProjectAsync(string in0, RemoteProject in1) {
-            this.removeAllRoleActorsByProjectAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void removeAllRoleActorsByProjectAsync(string in0, RemoteProject in1, object userState) {
-            if ((this.removeAllRoleActorsByProjectOperationCompleted == null)) {
-                this.removeAllRoleActorsByProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveAllRoleActorsByProjectOperationCompleted);
-            }
-            this.InvokeAsync("removeAllRoleActorsByProject", new object[] {
-                        in0,
-                        in1}, this.removeAllRoleActorsByProjectOperationCompleted, userState);
-        }
-        
-        private void OnremoveAllRoleActorsByProjectOperationCompleted(object arg) {
-            if ((this.removeAllRoleActorsByProjectCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.removeAllRoleActorsByProjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getPrioritiesReturn")]
-        public RemotePriority[] getPriorities(string in0) {
-            object[] results = this.Invoke("getPriorities", new object[] {
-                        in0});
-            return ((RemotePriority[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getPrioritiesAsync(string in0) {
-            this.getPrioritiesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getPrioritiesAsync(string in0, object userState) {
-            if ((this.getPrioritiesOperationCompleted == null)) {
-                this.getPrioritiesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetPrioritiesOperationCompleted);
-            }
-            this.InvokeAsync("getPriorities", new object[] {
-                        in0}, this.getPrioritiesOperationCompleted, userState);
-        }
-        
-        private void OngetPrioritiesOperationCompleted(object arg) {
-            if ((this.getPrioritiesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getPrioritiesCompleted(this, new getPrioritiesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getResolutionsReturn")]
-        public RemoteResolution[] getResolutions(string in0) {
-            object[] results = this.Invoke("getResolutions", new object[] {
-                        in0});
-            return ((RemoteResolution[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getResolutionsAsync(string in0) {
-            this.getResolutionsAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getResolutionsAsync(string in0, object userState) {
-            if ((this.getResolutionsOperationCompleted == null)) {
-                this.getResolutionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetResolutionsOperationCompleted);
-            }
-            this.InvokeAsync("getResolutions", new object[] {
-                        in0}, this.getResolutionsOperationCompleted, userState);
-        }
-        
-        private void OngetResolutionsOperationCompleted(object arg) {
-            if ((this.getResolutionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getResolutionsCompleted(this, new getResolutionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssueTypesReturn")]
-        public RemoteIssueType[] getIssueTypes(string in0) {
-            object[] results = this.Invoke("getIssueTypes", new object[] {
-                        in0});
-            return ((RemoteIssueType[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssueTypesAsync(string in0) {
-            this.getIssueTypesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getIssueTypesAsync(string in0, object userState) {
-            if ((this.getIssueTypesOperationCompleted == null)) {
-                this.getIssueTypesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueTypesOperationCompleted);
-            }
-            this.InvokeAsync("getIssueTypes", new object[] {
-                        in0}, this.getIssueTypesOperationCompleted, userState);
-        }
-        
-        private void OngetIssueTypesOperationCompleted(object arg) {
-            if ((this.getIssueTypesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssueTypesCompleted(this, new getIssueTypesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getSubTaskIssueTypesReturn")]
-        public RemoteIssueType[] getSubTaskIssueTypes(string in0) {
-            object[] results = this.Invoke("getSubTaskIssueTypes", new object[] {
-                        in0});
-            return ((RemoteIssueType[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getSubTaskIssueTypesAsync(string in0) {
-            this.getSubTaskIssueTypesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getSubTaskIssueTypesAsync(string in0, object userState) {
-            if ((this.getSubTaskIssueTypesOperationCompleted == null)) {
-                this.getSubTaskIssueTypesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSubTaskIssueTypesOperationCompleted);
-            }
-            this.InvokeAsync("getSubTaskIssueTypes", new object[] {
-                        in0}, this.getSubTaskIssueTypesOperationCompleted, userState);
-        }
-        
-        private void OngetSubTaskIssueTypesOperationCompleted(object arg) {
-            if ((this.getSubTaskIssueTypesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getSubTaskIssueTypesCompleted(this, new getSubTaskIssueTypesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getStatusesReturn")]
-        public RemoteStatus[] getStatuses(string in0) {
-            object[] results = this.Invoke("getStatuses", new object[] {
-                        in0});
-            return ((RemoteStatus[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getStatusesAsync(string in0) {
-            this.getStatusesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getStatusesAsync(string in0, object userState) {
-            if ((this.getStatusesOperationCompleted == null)) {
-                this.getStatusesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetStatusesOperationCompleted);
-            }
-            this.InvokeAsync("getStatuses", new object[] {
-                        in0}, this.getStatusesOperationCompleted, userState);
-        }
-        
-        private void OngetStatusesOperationCompleted(object arg) {
-            if ((this.getStatusesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getStatusesCompleted(this, new getStatusesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssueTypesForProjectReturn")]
-        public RemoteIssueType[] getIssueTypesForProject(string in0, string in1) {
-            object[] results = this.Invoke("getIssueTypesForProject", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteIssueType[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssueTypesForProjectAsync(string in0, string in1) {
-            this.getIssueTypesForProjectAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getIssueTypesForProjectAsync(string in0, string in1, object userState) {
-            if ((this.getIssueTypesForProjectOperationCompleted == null)) {
-                this.getIssueTypesForProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueTypesForProjectOperationCompleted);
-            }
-            this.InvokeAsync("getIssueTypesForProject", new object[] {
-                        in0,
-                        in1}, this.getIssueTypesForProjectOperationCompleted, userState);
-        }
-        
-        private void OngetIssueTypesForProjectOperationCompleted(object arg) {
-            if ((this.getIssueTypesForProjectCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssueTypesForProjectCompleted(this, new getIssueTypesForProjectCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectRolesReturn")]
-        public RemoteProjectRole[] getProjectRoles(string in0) {
-            object[] results = this.Invoke("getProjectRoles", new object[] {
-                        in0});
-            return ((RemoteProjectRole[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectRolesAsync(string in0) {
-            this.getProjectRolesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectRolesAsync(string in0, object userState) {
-            if ((this.getProjectRolesOperationCompleted == null)) {
-                this.getProjectRolesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectRolesOperationCompleted);
-            }
-            this.InvokeAsync("getProjectRoles", new object[] {
-                        in0}, this.getProjectRolesOperationCompleted, userState);
-        }
-        
-        private void OngetProjectRolesOperationCompleted(object arg) {
-            if ((this.getProjectRolesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectRolesCompleted(this, new getProjectRolesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectRoleReturn")]
-        public RemoteProjectRole getProjectRole(string in0, long in1) {
-            object[] results = this.Invoke("getProjectRole", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteProjectRole)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectRoleAsync(string in0, long in1) {
-            this.getProjectRoleAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectRoleAsync(string in0, long in1, object userState) {
-            if ((this.getProjectRoleOperationCompleted == null)) {
-                this.getProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("getProjectRole", new object[] {
-                        in0,
-                        in1}, this.getProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OngetProjectRoleOperationCompleted(object arg) {
-            if ((this.getProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectRoleCompleted(this, new getProjectRoleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectRoleActorsReturn")]
-        public RemoteProjectRoleActors getProjectRoleActors(string in0, RemoteProjectRole in1, RemoteProject in2) {
-            object[] results = this.Invoke("getProjectRoleActors", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteProjectRoleActors)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectRoleActorsAsync(string in0, RemoteProjectRole in1, RemoteProject in2) {
-            this.getProjectRoleActorsAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectRoleActorsAsync(string in0, RemoteProjectRole in1, RemoteProject in2, object userState) {
-            if ((this.getProjectRoleActorsOperationCompleted == null)) {
-                this.getProjectRoleActorsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectRoleActorsOperationCompleted);
-            }
-            this.InvokeAsync("getProjectRoleActors", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.getProjectRoleActorsOperationCompleted, userState);
-        }
-        
-        private void OngetProjectRoleActorsOperationCompleted(object arg) {
-            if ((this.getProjectRoleActorsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectRoleActorsCompleted(this, new getProjectRoleActorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getDefaultRoleActorsReturn")]
-        public RemoteRoleActors getDefaultRoleActors(string in0, RemoteProjectRole in1) {
-            object[] results = this.Invoke("getDefaultRoleActors", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteRoleActors)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getDefaultRoleActorsAsync(string in0, RemoteProjectRole in1) {
-            this.getDefaultRoleActorsAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getDefaultRoleActorsAsync(string in0, RemoteProjectRole in1, object userState) {
-            if ((this.getDefaultRoleActorsOperationCompleted == null)) {
-                this.getDefaultRoleActorsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetDefaultRoleActorsOperationCompleted);
-            }
-            this.InvokeAsync("getDefaultRoleActors", new object[] {
-                        in0,
-                        in1}, this.getDefaultRoleActorsOperationCompleted, userState);
-        }
-        
-        private void OngetDefaultRoleActorsOperationCompleted(object arg) {
-            if ((this.getDefaultRoleActorsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getDefaultRoleActorsCompleted(this, new getDefaultRoleActorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void removeAllRoleActorsByNameAndType(string in0, string in1, string in2) {
-            this.Invoke("removeAllRoleActorsByNameAndType", new object[] {
-                        in0,
-                        in1,
-                        in2});
-        }
-        
-        /// <remarks/>
-        public void removeAllRoleActorsByNameAndTypeAsync(string in0, string in1, string in2) {
-            this.removeAllRoleActorsByNameAndTypeAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void removeAllRoleActorsByNameAndTypeAsync(string in0, string in1, string in2, object userState) {
-            if ((this.removeAllRoleActorsByNameAndTypeOperationCompleted == null)) {
-                this.removeAllRoleActorsByNameAndTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveAllRoleActorsByNameAndTypeOperationCompleted);
-            }
-            this.InvokeAsync("removeAllRoleActorsByNameAndType", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.removeAllRoleActorsByNameAndTypeOperationCompleted, userState);
-        }
-        
-        private void OnremoveAllRoleActorsByNameAndTypeOperationCompleted(object arg) {
-            if ((this.removeAllRoleActorsByNameAndTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.removeAllRoleActorsByNameAndTypeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deleteProjectRole(string in0, RemoteProjectRole in1, bool in2) {
-            this.Invoke("deleteProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2});
-        }
-        
-        /// <remarks/>
-        public void deleteProjectRoleAsync(string in0, RemoteProjectRole in1, bool in2) {
-            this.deleteProjectRoleAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void deleteProjectRoleAsync(string in0, RemoteProjectRole in1, bool in2, object userState) {
-            if ((this.deleteProjectRoleOperationCompleted == null)) {
-                this.deleteProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("deleteProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.deleteProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OndeleteProjectRoleOperationCompleted(object arg) {
-            if ((this.deleteProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deleteProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void updateProjectRole(string in0, RemoteProjectRole in1) {
-            this.Invoke("updateProjectRole", new object[] {
-                        in0,
-                        in1});
-        }
-        
-        /// <remarks/>
-        public void updateProjectRoleAsync(string in0, RemoteProjectRole in1) {
-            this.updateProjectRoleAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void updateProjectRoleAsync(string in0, RemoteProjectRole in1, object userState) {
-            if ((this.updateProjectRoleOperationCompleted == null)) {
-                this.updateProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("updateProjectRole", new object[] {
-                        in0,
-                        in1}, this.updateProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OnupdateProjectRoleOperationCompleted(object arg) {
-            if ((this.updateProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.updateProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("createProjectRoleReturn")]
-        public RemoteProjectRole createProjectRole(string in0, RemoteProjectRole in1) {
-            object[] results = this.Invoke("createProjectRole", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteProjectRole)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void createProjectRoleAsync(string in0, RemoteProjectRole in1) {
-            this.createProjectRoleAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void createProjectRoleAsync(string in0, RemoteProjectRole in1, object userState) {
-            if ((this.createProjectRoleOperationCompleted == null)) {
-                this.createProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("createProjectRole", new object[] {
-                        in0,
-                        in1}, this.createProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OncreateProjectRoleOperationCompleted(object arg) {
-            if ((this.createProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.createProjectRoleCompleted(this, new createProjectRoleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("isProjectRoleNameUniqueReturn")]
-        public bool isProjectRoleNameUnique(string in0, string in1) {
-            object[] results = this.Invoke("isProjectRoleNameUnique", new object[] {
-                        in0,
-                        in1});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void isProjectRoleNameUniqueAsync(string in0, string in1) {
-            this.isProjectRoleNameUniqueAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void isProjectRoleNameUniqueAsync(string in0, string in1, object userState) {
-            if ((this.isProjectRoleNameUniqueOperationCompleted == null)) {
-                this.isProjectRoleNameUniqueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnisProjectRoleNameUniqueOperationCompleted);
-            }
-            this.InvokeAsync("isProjectRoleNameUnique", new object[] {
-                        in0,
-                        in1}, this.isProjectRoleNameUniqueOperationCompleted, userState);
-        }
-        
-        private void OnisProjectRoleNameUniqueOperationCompleted(object arg) {
-            if ((this.isProjectRoleNameUniqueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.isProjectRoleNameUniqueCompleted(this, new isProjectRoleNameUniqueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void addActorsToProjectRole(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
-            this.Invoke("addActorsToProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3,
-                        in4});
-        }
-        
-        /// <remarks/>
-        public void addActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
-            this.addActorsToProjectRoleAsync(in0, in1, in2, in3, in4, null);
-        }
-        
-        /// <remarks/>
-        public void addActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4, object userState) {
-            if ((this.addActorsToProjectRoleOperationCompleted == null)) {
-                this.addActorsToProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddActorsToProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("addActorsToProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3,
-                        in4}, this.addActorsToProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OnaddActorsToProjectRoleOperationCompleted(object arg) {
-            if ((this.addActorsToProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addActorsToProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void removeActorsFromProjectRole(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
-            this.Invoke("removeActorsFromProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3,
-                        in4});
-        }
-        
-        /// <remarks/>
-        public void removeActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4) {
-            this.removeActorsFromProjectRoleAsync(in0, in1, in2, in3, in4, null);
-        }
-        
-        /// <remarks/>
-        public void removeActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, RemoteProject in3, string in4, object userState) {
-            if ((this.removeActorsFromProjectRoleOperationCompleted == null)) {
-                this.removeActorsFromProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveActorsFromProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("removeActorsFromProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3,
-                        in4}, this.removeActorsFromProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OnremoveActorsFromProjectRoleOperationCompleted(object arg) {
-            if ((this.removeActorsFromProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.removeActorsFromProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void addDefaultActorsToProjectRole(string in0, string[] in1, RemoteProjectRole in2, string in3) {
-            this.Invoke("addDefaultActorsToProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-        }
-        
-        /// <remarks/>
-        public void addDefaultActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3) {
-            this.addDefaultActorsToProjectRoleAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void addDefaultActorsToProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3, object userState) {
-            if ((this.addDefaultActorsToProjectRoleOperationCompleted == null)) {
-                this.addDefaultActorsToProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddDefaultActorsToProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("addDefaultActorsToProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.addDefaultActorsToProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OnaddDefaultActorsToProjectRoleOperationCompleted(object arg) {
-            if ((this.addDefaultActorsToProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addDefaultActorsToProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void removeDefaultActorsFromProjectRole(string in0, string[] in1, RemoteProjectRole in2, string in3) {
-            this.Invoke("removeDefaultActorsFromProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-        }
-        
-        /// <remarks/>
-        public void removeDefaultActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3) {
-            this.removeDefaultActorsFromProjectRoleAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void removeDefaultActorsFromProjectRoleAsync(string in0, string[] in1, RemoteProjectRole in2, string in3, object userState) {
-            if ((this.removeDefaultActorsFromProjectRoleOperationCompleted == null)) {
-                this.removeDefaultActorsFromProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveDefaultActorsFromProjectRoleOperationCompleted);
-            }
-            this.InvokeAsync("removeDefaultActorsFromProjectRole", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.removeDefaultActorsFromProjectRoleOperationCompleted, userState);
-        }
-        
-        private void OnremoveDefaultActorsFromProjectRoleOperationCompleted(object arg) {
-            if ((this.removeDefaultActorsFromProjectRoleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.removeDefaultActorsFromProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getAssociatedNotificationSchemesReturn")]
-        public RemoteScheme[] getAssociatedNotificationSchemes(string in0, RemoteProjectRole in1) {
-            object[] results = this.Invoke("getAssociatedNotificationSchemes", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteScheme[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAssociatedNotificationSchemesAsync(string in0, RemoteProjectRole in1) {
-            this.getAssociatedNotificationSchemesAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getAssociatedNotificationSchemesAsync(string in0, RemoteProjectRole in1, object userState) {
-            if ((this.getAssociatedNotificationSchemesOperationCompleted == null)) {
-                this.getAssociatedNotificationSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAssociatedNotificationSchemesOperationCompleted);
-            }
-            this.InvokeAsync("getAssociatedNotificationSchemes", new object[] {
-                        in0,
-                        in1}, this.getAssociatedNotificationSchemesOperationCompleted, userState);
-        }
-        
-        private void OngetAssociatedNotificationSchemesOperationCompleted(object arg) {
-            if ((this.getAssociatedNotificationSchemesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAssociatedNotificationSchemesCompleted(this, new getAssociatedNotificationSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getAssociatedPermissionSchemesReturn")]
-        public RemoteScheme[] getAssociatedPermissionSchemes(string in0, RemoteProjectRole in1) {
-            object[] results = this.Invoke("getAssociatedPermissionSchemes", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteScheme[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAssociatedPermissionSchemesAsync(string in0, RemoteProjectRole in1) {
-            this.getAssociatedPermissionSchemesAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getAssociatedPermissionSchemesAsync(string in0, RemoteProjectRole in1, object userState) {
-            if ((this.getAssociatedPermissionSchemesOperationCompleted == null)) {
-                this.getAssociatedPermissionSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAssociatedPermissionSchemesOperationCompleted);
-            }
-            this.InvokeAsync("getAssociatedPermissionSchemes", new object[] {
-                        in0,
-                        in1}, this.getAssociatedPermissionSchemesOperationCompleted, userState);
-        }
-        
-        private void OngetAssociatedPermissionSchemesOperationCompleted(object arg) {
-            if ((this.getAssociatedPermissionSchemesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAssociatedPermissionSchemesCompleted(this, new getAssociatedPermissionSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deleteProject(string in0, string in1) {
-            this.Invoke("deleteProject", new object[] {
-                        in0,
-                        in1});
-        }
-        
-        /// <remarks/>
-        public void deleteProjectAsync(string in0, string in1) {
-            this.deleteProjectAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void deleteProjectAsync(string in0, string in1, object userState) {
-            if ((this.deleteProjectOperationCompleted == null)) {
-                this.deleteProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteProjectOperationCompleted);
-            }
-            this.InvokeAsync("deleteProject", new object[] {
-                        in0,
-                        in1}, this.deleteProjectOperationCompleted, userState);
-        }
-        
-        private void OndeleteProjectOperationCompleted(object arg) {
-            if ((this.deleteProjectCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deleteProjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectByIdReturn")]
-        public RemoteProject getProjectById(string in0, long in1) {
-            object[] results = this.Invoke("getProjectById", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteProject)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectByIdAsync(string in0, long in1) {
-            this.getProjectByIdAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectByIdAsync(string in0, long in1, object userState) {
-            if ((this.getProjectByIdOperationCompleted == null)) {
-                this.getProjectByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectByIdOperationCompleted);
-            }
-            this.InvokeAsync("getProjectById", new object[] {
-                        in0,
-                        in1}, this.getProjectByIdOperationCompleted, userState);
-        }
-        
-        private void OngetProjectByIdOperationCompleted(object arg) {
-            if ((this.getProjectByIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectByIdCompleted(this, new getProjectByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getVersionsReturn")]
-        public RemoteVersion[] getVersions(string in0, string in1) {
-            object[] results = this.Invoke("getVersions", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteVersion[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getVersionsAsync(string in0, string in1) {
-            this.getVersionsAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getVersionsAsync(string in0, string in1, object userState) {
-            if ((this.getVersionsOperationCompleted == null)) {
-                this.getVersionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetVersionsOperationCompleted);
-            }
-            this.InvokeAsync("getVersions", new object[] {
-                        in0,
-                        in1}, this.getVersionsOperationCompleted, userState);
-        }
-        
-        private void OngetVersionsOperationCompleted(object arg) {
-            if ((this.getVersionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getVersionsCompleted(this, new getVersionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getCommentsReturn")]
-        public RemoteComment[] getComments(string in0, string in1) {
-            object[] results = this.Invoke("getComments", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteComment[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getCommentsAsync(string in0, string in1) {
-            this.getCommentsAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getCommentsAsync(string in0, string in1, object userState) {
-            if ((this.getCommentsOperationCompleted == null)) {
-                this.getCommentsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCommentsOperationCompleted);
-            }
-            this.InvokeAsync("getComments", new object[] {
-                        in0,
-                        in1}, this.getCommentsOperationCompleted, userState);
-        }
-        
-        private void OngetCommentsOperationCompleted(object arg) {
-            if ((this.getCommentsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getCommentsCompleted(this, new getCommentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getFavouriteFiltersReturn")]
-        public RemoteFilter[] getFavouriteFilters(string in0) {
-            object[] results = this.Invoke("getFavouriteFilters", new object[] {
-                        in0});
-            return ((RemoteFilter[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getFavouriteFiltersAsync(string in0) {
-            this.getFavouriteFiltersAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getFavouriteFiltersAsync(string in0, object userState) {
-            if ((this.getFavouriteFiltersOperationCompleted == null)) {
-                this.getFavouriteFiltersOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFavouriteFiltersOperationCompleted);
-            }
-            this.InvokeAsync("getFavouriteFilters", new object[] {
-                        in0}, this.getFavouriteFiltersOperationCompleted, userState);
-        }
-        
-        private void OngetFavouriteFiltersOperationCompleted(object arg) {
-            if ((this.getFavouriteFiltersCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getFavouriteFiltersCompleted(this, new getFavouriteFiltersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void releaseVersion(string in0, string in1, RemoteVersion in2) {
-            this.Invoke("releaseVersion", new object[] {
-                        in0,
-                        in1,
-                        in2});
-        }
-        
-        /// <remarks/>
-        public void releaseVersionAsync(string in0, string in1, RemoteVersion in2) {
-            this.releaseVersionAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void releaseVersionAsync(string in0, string in1, RemoteVersion in2, object userState) {
-            if ((this.releaseVersionOperationCompleted == null)) {
-                this.releaseVersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnreleaseVersionOperationCompleted);
-            }
-            this.InvokeAsync("releaseVersion", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.releaseVersionOperationCompleted, userState);
-        }
-        
-        private void OnreleaseVersionOperationCompleted(object arg) {
-            if ((this.releaseVersionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.releaseVersionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void archiveVersion(string in0, string in1, string in2, bool in3) {
-            this.Invoke("archiveVersion", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-        }
-        
-        /// <remarks/>
-        public void archiveVersionAsync(string in0, string in1, string in2, bool in3) {
-            this.archiveVersionAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void archiveVersionAsync(string in0, string in1, string in2, bool in3, object userState) {
-            if ((this.archiveVersionOperationCompleted == null)) {
-                this.archiveVersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnarchiveVersionOperationCompleted);
-            }
-            this.InvokeAsync("archiveVersion", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.archiveVersionOperationCompleted, userState);
-        }
-        
-        private void OnarchiveVersionOperationCompleted(object arg) {
-            if ((this.archiveVersionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.archiveVersionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getFieldsForCreateReturn")]
-        public RemoteField[] getFieldsForCreate(string in0, string in1, long in2) {
-            object[] results = this.Invoke("getFieldsForCreate", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteField[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getFieldsForCreateAsync(string in0, string in1, long in2) {
-            this.getFieldsForCreateAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void getFieldsForCreateAsync(string in0, string in1, long in2, object userState) {
-            if ((this.getFieldsForCreateOperationCompleted == null)) {
-                this.getFieldsForCreateOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFieldsForCreateOperationCompleted);
-            }
-            this.InvokeAsync("getFieldsForCreate", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.getFieldsForCreateOperationCompleted, userState);
-        }
-        
-        private void OngetFieldsForCreateOperationCompleted(object arg) {
-            if ((this.getFieldsForCreateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getFieldsForCreateCompleted(this, new getFieldsForCreateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getFieldsForEditReturn")]
-        public RemoteField[] getFieldsForEdit(string in0, string in1) {
-            object[] results = this.Invoke("getFieldsForEdit", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteField[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getFieldsForEditAsync(string in0, string in1) {
-            this.getFieldsForEditAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getFieldsForEditAsync(string in0, string in1, object userState) {
-            if ((this.getFieldsForEditOperationCompleted == null)) {
-                this.getFieldsForEditOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFieldsForEditOperationCompleted);
-            }
-            this.InvokeAsync("getFieldsForEdit", new object[] {
-                        in0,
-                        in1}, this.getFieldsForEditOperationCompleted, userState);
-        }
-        
-        private void OngetFieldsForEditOperationCompleted(object arg) {
-            if ((this.getFieldsForEditCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getFieldsForEditCompleted(this, new getFieldsForEditCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getSubTaskIssueTypesForProjectReturn")]
-        public RemoteIssueType[] getSubTaskIssueTypesForProject(string in0, string in1) {
-            object[] results = this.Invoke("getSubTaskIssueTypesForProject", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteIssueType[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getSubTaskIssueTypesForProjectAsync(string in0, string in1) {
-            this.getSubTaskIssueTypesForProjectAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getSubTaskIssueTypesForProjectAsync(string in0, string in1, object userState) {
-            if ((this.getSubTaskIssueTypesForProjectOperationCompleted == null)) {
-                this.getSubTaskIssueTypesForProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSubTaskIssueTypesForProjectOperationCompleted);
-            }
-            this.InvokeAsync("getSubTaskIssueTypesForProject", new object[] {
-                        in0,
-                        in1}, this.getSubTaskIssueTypesForProjectOperationCompleted, userState);
-        }
-        
-        private void OngetSubTaskIssueTypesForProjectOperationCompleted(object arg) {
-            if ((this.getSubTaskIssueTypesForProjectCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getSubTaskIssueTypesForProjectCompleted(this, new getSubTaskIssueTypesForProjectCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getCustomFieldsReturn")]
-        public RemoteField[] getCustomFields(string in0) {
-            object[] results = this.Invoke("getCustomFields", new object[] {
-                        in0});
-            return ((RemoteField[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getCustomFieldsAsync(string in0) {
-            this.getCustomFieldsAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getCustomFieldsAsync(string in0, object userState) {
-            if ((this.getCustomFieldsOperationCompleted == null)) {
-                this.getCustomFieldsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCustomFieldsOperationCompleted);
-            }
-            this.InvokeAsync("getCustomFields", new object[] {
-                        in0}, this.getCustomFieldsOperationCompleted, userState);
-        }
-        
-        private void OngetCustomFieldsOperationCompleted(object arg) {
-            if ((this.getCustomFieldsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getCustomFieldsCompleted(this, new getCustomFieldsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("logoutReturn")]
-        public bool logout(string in0) {
-            object[] results = this.Invoke("logout", new object[] {
-                        in0});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void logoutAsync(string in0) {
-            this.logoutAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void logoutAsync(string in0, object userState) {
-            if ((this.logoutOperationCompleted == null)) {
-                this.logoutOperationCompleted = new System.Threading.SendOrPostCallback(this.OnlogoutOperationCompleted);
-            }
-            this.InvokeAsync("logout", new object[] {
-                        in0}, this.logoutOperationCompleted, userState);
-        }
-        
-        private void OnlogoutOperationCompleted(object arg) {
-            if ((this.logoutCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.logoutCompleted(this, new logoutCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("editCommentReturn")]
         public RemoteComment editComment(string in0, RemoteComment in1) {
             object[] results = this.Invoke("editComment", new object[] {
@@ -2506,697 +2920,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectWithSchemesByIdReturn")]
-        public RemoteProject getProjectWithSchemesById(string in0, long in1) {
-            object[] results = this.Invoke("getProjectWithSchemesById", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteProject)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectWithSchemesByIdAsync(string in0, long in1) {
-            this.getProjectWithSchemesByIdAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectWithSchemesByIdAsync(string in0, long in1, object userState) {
-            if ((this.getProjectWithSchemesByIdOperationCompleted == null)) {
-                this.getProjectWithSchemesByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectWithSchemesByIdOperationCompleted);
-            }
-            this.InvokeAsync("getProjectWithSchemesById", new object[] {
-                        in0,
-                        in1}, this.getProjectWithSchemesByIdOperationCompleted, userState);
-        }
-        
-        private void OngetProjectWithSchemesByIdOperationCompleted(object arg) {
-            if ((this.getProjectWithSchemesByIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectWithSchemesByIdCompleted(this, new getProjectWithSchemesByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getSecurityLevelsReturn")]
-        public RemoteSecurityLevel[] getSecurityLevels(string in0, string in1) {
-            object[] results = this.Invoke("getSecurityLevels", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteSecurityLevel[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getSecurityLevelsAsync(string in0, string in1) {
-            this.getSecurityLevelsAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getSecurityLevelsAsync(string in0, string in1, object userState) {
-            if ((this.getSecurityLevelsOperationCompleted == null)) {
-                this.getSecurityLevelsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSecurityLevelsOperationCompleted);
-            }
-            this.InvokeAsync("getSecurityLevels", new object[] {
-                        in0,
-                        in1}, this.getSecurityLevelsOperationCompleted, userState);
-        }
-        
-        private void OngetSecurityLevelsOperationCompleted(object arg) {
-            if ((this.getSecurityLevelsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getSecurityLevelsCompleted(this, new getSecurityLevelsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectAvatarsReturn")]
-        public RemoteAvatar[] getProjectAvatars(string in0, string in1, bool in2) {
-            object[] results = this.Invoke("getProjectAvatars", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteAvatar[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectAvatarsAsync(string in0, string in1, bool in2) {
-            this.getProjectAvatarsAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectAvatarsAsync(string in0, string in1, bool in2, object userState) {
-            if ((this.getProjectAvatarsOperationCompleted == null)) {
-                this.getProjectAvatarsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectAvatarsOperationCompleted);
-            }
-            this.InvokeAsync("getProjectAvatars", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.getProjectAvatarsOperationCompleted, userState);
-        }
-        
-        private void OngetProjectAvatarsOperationCompleted(object arg) {
-            if ((this.getProjectAvatarsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectAvatarsCompleted(this, new getProjectAvatarsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void setProjectAvatar(string in0, string in1, long in2) {
-            this.Invoke("setProjectAvatar", new object[] {
-                        in0,
-                        in1,
-                        in2});
-        }
-        
-        /// <remarks/>
-        public void setProjectAvatarAsync(string in0, string in1, long in2) {
-            this.setProjectAvatarAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void setProjectAvatarAsync(string in0, string in1, long in2, object userState) {
-            if ((this.setProjectAvatarOperationCompleted == null)) {
-                this.setProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetProjectAvatarOperationCompleted);
-            }
-            this.InvokeAsync("setProjectAvatar", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.setProjectAvatarOperationCompleted, userState);
-        }
-        
-        private void OnsetProjectAvatarOperationCompleted(object arg) {
-            if ((this.setProjectAvatarCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.setProjectAvatarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectAvatarReturn")]
-        public RemoteAvatar getProjectAvatar(string in0, string in1) {
-            object[] results = this.Invoke("getProjectAvatar", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteAvatar)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectAvatarAsync(string in0, string in1) {
-            this.getProjectAvatarAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectAvatarAsync(string in0, string in1, object userState) {
-            if ((this.getProjectAvatarOperationCompleted == null)) {
-                this.getProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectAvatarOperationCompleted);
-            }
-            this.InvokeAsync("getProjectAvatar", new object[] {
-                        in0,
-                        in1}, this.getProjectAvatarOperationCompleted, userState);
-        }
-        
-        private void OngetProjectAvatarOperationCompleted(object arg) {
-            if ((this.getProjectAvatarCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectAvatarCompleted(this, new getProjectAvatarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deleteProjectAvatar(string in0, long in1) {
-            this.Invoke("deleteProjectAvatar", new object[] {
-                        in0,
-                        in1});
-        }
-        
-        /// <remarks/>
-        public void deleteProjectAvatarAsync(string in0, long in1) {
-            this.deleteProjectAvatarAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void deleteProjectAvatarAsync(string in0, long in1, object userState) {
-            if ((this.deleteProjectAvatarOperationCompleted == null)) {
-                this.deleteProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteProjectAvatarOperationCompleted);
-            }
-            this.InvokeAsync("deleteProjectAvatar", new object[] {
-                        in0,
-                        in1}, this.deleteProjectAvatarOperationCompleted, userState);
-        }
-        
-        private void OndeleteProjectAvatarOperationCompleted(object arg) {
-            if ((this.deleteProjectAvatarCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deleteProjectAvatarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getNotificationSchemesReturn")]
-        public RemoteScheme[] getNotificationSchemes(string in0) {
-            object[] results = this.Invoke("getNotificationSchemes", new object[] {
-                        in0});
-            return ((RemoteScheme[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getNotificationSchemesAsync(string in0) {
-            this.getNotificationSchemesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getNotificationSchemesAsync(string in0, object userState) {
-            if ((this.getNotificationSchemesOperationCompleted == null)) {
-                this.getNotificationSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetNotificationSchemesOperationCompleted);
-            }
-            this.InvokeAsync("getNotificationSchemes", new object[] {
-                        in0}, this.getNotificationSchemesOperationCompleted, userState);
-        }
-        
-        private void OngetNotificationSchemesOperationCompleted(object arg) {
-            if ((this.getNotificationSchemesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getNotificationSchemesCompleted(this, new getNotificationSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getPermissionSchemesReturn")]
-        public RemotePermissionScheme[] getPermissionSchemes(string in0) {
-            object[] results = this.Invoke("getPermissionSchemes", new object[] {
-                        in0});
-            return ((RemotePermissionScheme[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getPermissionSchemesAsync(string in0) {
-            this.getPermissionSchemesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getPermissionSchemesAsync(string in0, object userState) {
-            if ((this.getPermissionSchemesOperationCompleted == null)) {
-                this.getPermissionSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetPermissionSchemesOperationCompleted);
-            }
-            this.InvokeAsync("getPermissionSchemes", new object[] {
-                        in0}, this.getPermissionSchemesOperationCompleted, userState);
-        }
-        
-        private void OngetPermissionSchemesOperationCompleted(object arg) {
-            if ((this.getPermissionSchemesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getPermissionSchemesCompleted(this, new getPermissionSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("createPermissionSchemeReturn")]
-        public RemotePermissionScheme createPermissionScheme(string in0, string in1, string in2) {
-            object[] results = this.Invoke("createPermissionScheme", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemotePermissionScheme)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void createPermissionSchemeAsync(string in0, string in1, string in2) {
-            this.createPermissionSchemeAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void createPermissionSchemeAsync(string in0, string in1, string in2, object userState) {
-            if ((this.createPermissionSchemeOperationCompleted == null)) {
-                this.createPermissionSchemeOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreatePermissionSchemeOperationCompleted);
-            }
-            this.InvokeAsync("createPermissionScheme", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.createPermissionSchemeOperationCompleted, userState);
-        }
-        
-        private void OncreatePermissionSchemeOperationCompleted(object arg) {
-            if ((this.createPermissionSchemeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.createPermissionSchemeCompleted(this, new createPermissionSchemeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deletePermissionScheme(string in0, string in1) {
-            this.Invoke("deletePermissionScheme", new object[] {
-                        in0,
-                        in1});
-        }
-        
-        /// <remarks/>
-        public void deletePermissionSchemeAsync(string in0, string in1) {
-            this.deletePermissionSchemeAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void deletePermissionSchemeAsync(string in0, string in1, object userState) {
-            if ((this.deletePermissionSchemeOperationCompleted == null)) {
-                this.deletePermissionSchemeOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeletePermissionSchemeOperationCompleted);
-            }
-            this.InvokeAsync("deletePermissionScheme", new object[] {
-                        in0,
-                        in1}, this.deletePermissionSchemeOperationCompleted, userState);
-        }
-        
-        private void OndeletePermissionSchemeOperationCompleted(object arg) {
-            if ((this.deletePermissionSchemeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deletePermissionSchemeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addPermissionToReturn")]
-        public RemotePermissionScheme addPermissionTo(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
-            object[] results = this.Invoke("addPermissionTo", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((RemotePermissionScheme)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void addPermissionToAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
-            this.addPermissionToAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void addPermissionToAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3, object userState) {
-            if ((this.addPermissionToOperationCompleted == null)) {
-                this.addPermissionToOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddPermissionToOperationCompleted);
-            }
-            this.InvokeAsync("addPermissionTo", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.addPermissionToOperationCompleted, userState);
-        }
-        
-        private void OnaddPermissionToOperationCompleted(object arg) {
-            if ((this.addPermissionToCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addPermissionToCompleted(this, new addPermissionToCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("deletePermissionFromReturn")]
-        public RemotePermissionScheme deletePermissionFrom(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
-            object[] results = this.Invoke("deletePermissionFrom", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((RemotePermissionScheme)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void deletePermissionFromAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3) {
-            this.deletePermissionFromAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void deletePermissionFromAsync(string in0, RemotePermissionScheme in1, RemotePermission in2, RemoteEntity in3, object userState) {
-            if ((this.deletePermissionFromOperationCompleted == null)) {
-                this.deletePermissionFromOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeletePermissionFromOperationCompleted);
-            }
-            this.InvokeAsync("deletePermissionFrom", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.deletePermissionFromOperationCompleted, userState);
-        }
-        
-        private void OndeletePermissionFromOperationCompleted(object arg) {
-            if ((this.deletePermissionFromCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deletePermissionFromCompleted(this, new deletePermissionFromCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getAllPermissionsReturn")]
-        public RemotePermission[] getAllPermissions(string in0) {
-            object[] results = this.Invoke("getAllPermissions", new object[] {
-                        in0});
-            return ((RemotePermission[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAllPermissionsAsync(string in0) {
-            this.getAllPermissionsAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getAllPermissionsAsync(string in0, object userState) {
-            if ((this.getAllPermissionsOperationCompleted == null)) {
-                this.getAllPermissionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAllPermissionsOperationCompleted);
-            }
-            this.InvokeAsync("getAllPermissions", new object[] {
-                        in0}, this.getAllPermissionsOperationCompleted, userState);
-        }
-        
-        private void OngetAllPermissionsOperationCompleted(object arg) {
-            if ((this.getAllPermissionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAllPermissionsCompleted(this, new getAllPermissionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("createIssueWithSecurityLevelReturn")]
-        public RemoteIssue createIssueWithSecurityLevel(string in0, RemoteIssue in1, long in2) {
-            object[] results = this.Invoke("createIssueWithSecurityLevel", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteIssue)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void createIssueWithSecurityLevelAsync(string in0, RemoteIssue in1, long in2) {
-            this.createIssueWithSecurityLevelAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void createIssueWithSecurityLevelAsync(string in0, RemoteIssue in1, long in2, object userState) {
-            if ((this.createIssueWithSecurityLevelOperationCompleted == null)) {
-                this.createIssueWithSecurityLevelOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateIssueWithSecurityLevelOperationCompleted);
-            }
-            this.InvokeAsync("createIssueWithSecurityLevel", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.createIssueWithSecurityLevelOperationCompleted, userState);
-        }
-        
-        private void OncreateIssueWithSecurityLevelOperationCompleted(object arg) {
-            if ((this.createIssueWithSecurityLevelCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.createIssueWithSecurityLevelCompleted(this, new createIssueWithSecurityLevelCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToEditCommentReturn")]
-        public bool hasPermissionToEditComment(string in0, RemoteComment in1) {
-            object[] results = this.Invoke("hasPermissionToEditComment", new object[] {
-                        in0,
-                        in1});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToEditCommentAsync(string in0, RemoteComment in1) {
-            this.hasPermissionToEditCommentAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToEditCommentAsync(string in0, RemoteComment in1, object userState) {
-            if ((this.hasPermissionToEditCommentOperationCompleted == null)) {
-                this.hasPermissionToEditCommentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToEditCommentOperationCompleted);
-            }
-            this.InvokeAsync("hasPermissionToEditComment", new object[] {
-                        in0,
-                        in1}, this.hasPermissionToEditCommentOperationCompleted, userState);
-        }
-        
-        private void OnhasPermissionToEditCommentOperationCompleted(object arg) {
-            if ((this.hasPermissionToEditCommentCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.hasPermissionToEditCommentCompleted(this, new hasPermissionToEditCommentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getFieldsForActionReturn")]
-        public RemoteField[] getFieldsForAction(string in0, string in1, string in2) {
-            object[] results = this.Invoke("getFieldsForAction", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteField[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getFieldsForActionAsync(string in0, string in1, string in2) {
-            this.getFieldsForActionAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void getFieldsForActionAsync(string in0, string in1, string in2, object userState) {
-            if ((this.getFieldsForActionOperationCompleted == null)) {
-                this.getFieldsForActionOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFieldsForActionOperationCompleted);
-            }
-            this.InvokeAsync("getFieldsForAction", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.getFieldsForActionOperationCompleted, userState);
-        }
-        
-        private void OngetFieldsForActionOperationCompleted(object arg) {
-            if ((this.getFieldsForActionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getFieldsForActionCompleted(this, new getFieldsForActionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("progressWorkflowActionReturn")]
-        public RemoteIssue progressWorkflowAction(string in0, string in1, string in2, RemoteFieldValue[] in3) {
-            object[] results = this.Invoke("progressWorkflowAction", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((RemoteIssue)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void progressWorkflowActionAsync(string in0, string in1, string in2, RemoteFieldValue[] in3) {
-            this.progressWorkflowActionAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void progressWorkflowActionAsync(string in0, string in1, string in2, RemoteFieldValue[] in3, object userState) {
-            if ((this.progressWorkflowActionOperationCompleted == null)) {
-                this.progressWorkflowActionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnprogressWorkflowActionOperationCompleted);
-            }
-            this.InvokeAsync("progressWorkflowAction", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.progressWorkflowActionOperationCompleted, userState);
-        }
-        
-        private void OnprogressWorkflowActionOperationCompleted(object arg) {
-            if ((this.progressWorkflowActionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.progressWorkflowActionCompleted(this, new progressWorkflowActionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssueByIdReturn")]
-        public RemoteIssue getIssueById(string in0, string in1) {
-            object[] results = this.Invoke("getIssueById", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteIssue)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssueByIdAsync(string in0, string in1) {
-            this.getIssueByIdAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getIssueByIdAsync(string in0, string in1, object userState) {
-            if ((this.getIssueByIdOperationCompleted == null)) {
-                this.getIssueByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueByIdOperationCompleted);
-            }
-            this.InvokeAsync("getIssueById", new object[] {
-                        in0,
-                        in1}, this.getIssueByIdOperationCompleted, userState);
-        }
-        
-        private void OngetIssueByIdOperationCompleted(object arg) {
-            if ((this.getIssueByIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssueByIdCompleted(this, new getIssueByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addAttachmentsToIssueReturn")]
-        public bool addAttachmentsToIssue(string in0, string in1, string[] in2, sbyte[] in3) {
-            object[] results = this.Invoke("addAttachmentsToIssue", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void addAttachmentsToIssueAsync(string in0, string in1, string[] in2, sbyte[] in3) {
-            this.addAttachmentsToIssueAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void addAttachmentsToIssueAsync(string in0, string in1, string[] in2, sbyte[] in3, object userState) {
-            if ((this.addAttachmentsToIssueOperationCompleted == null)) {
-                this.addAttachmentsToIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddAttachmentsToIssueOperationCompleted);
-            }
-            this.InvokeAsync("addAttachmentsToIssue", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.addAttachmentsToIssueOperationCompleted, userState);
-        }
-        
-        private void OnaddAttachmentsToIssueOperationCompleted(object arg) {
-            if ((this.addAttachmentsToIssueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addAttachmentsToIssueCompleted(this, new addAttachmentsToIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getAttachmentsFromIssueReturn")]
-        public RemoteAttachment[] getAttachmentsFromIssue(string in0, string in1) {
-            object[] results = this.Invoke("getAttachmentsFromIssue", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteAttachment[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAttachmentsFromIssueAsync(string in0, string in1) {
-            this.getAttachmentsFromIssueAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getAttachmentsFromIssueAsync(string in0, string in1, object userState) {
-            if ((this.getAttachmentsFromIssueOperationCompleted == null)) {
-                this.getAttachmentsFromIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAttachmentsFromIssueOperationCompleted);
-            }
-            this.InvokeAsync("getAttachmentsFromIssue", new object[] {
-                        in0,
-                        in1}, this.getAttachmentsFromIssueOperationCompleted, userState);
-        }
-        
-        private void OngetAttachmentsFromIssueOperationCompleted(object arg) {
-            if ((this.getAttachmentsFromIssueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAttachmentsFromIssueCompleted(this, new getAttachmentsFromIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogWithNewRemainingEstimateReturn")]
-        public RemoteWorklog addWorklogWithNewRemainingEstimate(string in0, string in1, RemoteWorklog in2, string in3) {
-            object[] results = this.Invoke("addWorklogWithNewRemainingEstimate", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((RemoteWorklog)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void addWorklogWithNewRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2, string in3) {
-            this.addWorklogWithNewRemainingEstimateAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void addWorklogWithNewRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2, string in3, object userState) {
-            if ((this.addWorklogWithNewRemainingEstimateOperationCompleted == null)) {
-                this.addWorklogWithNewRemainingEstimateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddWorklogWithNewRemainingEstimateOperationCompleted);
-            }
-            this.InvokeAsync("addWorklogWithNewRemainingEstimate", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.addWorklogWithNewRemainingEstimateOperationCompleted, userState);
-        }
-        
-        private void OnaddWorklogWithNewRemainingEstimateOperationCompleted(object arg) {
-            if ((this.addWorklogWithNewRemainingEstimateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addWorklogWithNewRemainingEstimateCompleted(this, new addWorklogWithNewRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndAutoAdjustRemainingEstimateReturn")]
         public RemoteWorklog addWorklogAndAutoAdjustRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
             object[] results = this.Invoke("addWorklogAndAutoAdjustRemainingEstimate", new object[] {
@@ -3230,41 +2954,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addWorklogAndRetainRemainingEstimateReturn")]
-        public RemoteWorklog addWorklogAndRetainRemainingEstimate(string in0, string in1, RemoteWorklog in2) {
-            object[] results = this.Invoke("addWorklogAndRetainRemainingEstimate", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteWorklog)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void addWorklogAndRetainRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2) {
-            this.addWorklogAndRetainRemainingEstimateAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void addWorklogAndRetainRemainingEstimateAsync(string in0, string in1, RemoteWorklog in2, object userState) {
-            if ((this.addWorklogAndRetainRemainingEstimateOperationCompleted == null)) {
-                this.addWorklogAndRetainRemainingEstimateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddWorklogAndRetainRemainingEstimateOperationCompleted);
-            }
-            this.InvokeAsync("addWorklogAndRetainRemainingEstimate", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.addWorklogAndRetainRemainingEstimateOperationCompleted, userState);
-        }
-        
-        private void OnaddWorklogAndRetainRemainingEstimateOperationCompleted(object arg) {
-            if ((this.addWorklogAndRetainRemainingEstimateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addWorklogAndRetainRemainingEstimateCompleted(this, new addWorklogAndRetainRemainingEstimateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void deleteWorklogAndAutoAdjustRemainingEstimate(string in0, string in1) {
             this.Invoke("deleteWorklogAndAutoAdjustRemainingEstimate", new object[] {
                         in0,
@@ -3294,7 +2984,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void deleteWorklogAndRetainRemainingEstimate(string in0, string in1) {
             this.Invoke("deleteWorklogAndRetainRemainingEstimate", new object[] {
                         in0,
@@ -3324,7 +3014,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void deleteWorklogWithNewRemainingEstimate(string in0, string in1, string in2) {
             this.Invoke("deleteWorklogWithNewRemainingEstimate", new object[] {
                         in0,
@@ -3356,7 +3046,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void updateWorklogAndAutoAdjustRemainingEstimate(string in0, RemoteWorklog in1) {
             this.Invoke("updateWorklogAndAutoAdjustRemainingEstimate", new object[] {
                         in0,
@@ -3386,7 +3076,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void updateWorklogAndRetainRemainingEstimate(string in0, RemoteWorklog in1) {
             this.Invoke("updateWorklogAndRetainRemainingEstimate", new object[] {
                         in0,
@@ -3416,7 +3106,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         public void updateWorklogWithNewRemainingEstimate(string in0, RemoteWorklog in1, string in2) {
             this.Invoke("updateWorklogWithNewRemainingEstimate", new object[] {
                         in0,
@@ -3448,583 +3138,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getWorklogsReturn")]
-        public RemoteWorklog[] getWorklogs(string in0, string in1) {
-            object[] results = this.Invoke("getWorklogs", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteWorklog[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getWorklogsAsync(string in0, string in1) {
-            this.getWorklogsAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getWorklogsAsync(string in0, string in1, object userState) {
-            if ((this.getWorklogsOperationCompleted == null)) {
-                this.getWorklogsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetWorklogsOperationCompleted);
-            }
-            this.InvokeAsync("getWorklogs", new object[] {
-                        in0,
-                        in1}, this.getWorklogsOperationCompleted, userState);
-        }
-        
-        private void OngetWorklogsOperationCompleted(object arg) {
-            if ((this.getWorklogsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getWorklogsCompleted(this, new getWorklogsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToCreateWorklogReturn")]
-        public bool hasPermissionToCreateWorklog(string in0, string in1) {
-            object[] results = this.Invoke("hasPermissionToCreateWorklog", new object[] {
-                        in0,
-                        in1});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToCreateWorklogAsync(string in0, string in1) {
-            this.hasPermissionToCreateWorklogAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToCreateWorklogAsync(string in0, string in1, object userState) {
-            if ((this.hasPermissionToCreateWorklogOperationCompleted == null)) {
-                this.hasPermissionToCreateWorklogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToCreateWorklogOperationCompleted);
-            }
-            this.InvokeAsync("hasPermissionToCreateWorklog", new object[] {
-                        in0,
-                        in1}, this.hasPermissionToCreateWorklogOperationCompleted, userState);
-        }
-        
-        private void OnhasPermissionToCreateWorklogOperationCompleted(object arg) {
-            if ((this.hasPermissionToCreateWorklogCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.hasPermissionToCreateWorklogCompleted(this, new hasPermissionToCreateWorklogCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToDeleteWorklogReturn")]
-        public bool hasPermissionToDeleteWorklog(string in0, string in1) {
-            object[] results = this.Invoke("hasPermissionToDeleteWorklog", new object[] {
-                        in0,
-                        in1});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToDeleteWorklogAsync(string in0, string in1) {
-            this.hasPermissionToDeleteWorklogAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToDeleteWorklogAsync(string in0, string in1, object userState) {
-            if ((this.hasPermissionToDeleteWorklogOperationCompleted == null)) {
-                this.hasPermissionToDeleteWorklogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToDeleteWorklogOperationCompleted);
-            }
-            this.InvokeAsync("hasPermissionToDeleteWorklog", new object[] {
-                        in0,
-                        in1}, this.hasPermissionToDeleteWorklogOperationCompleted, userState);
-        }
-        
-        private void OnhasPermissionToDeleteWorklogOperationCompleted(object arg) {
-            if ((this.hasPermissionToDeleteWorklogCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.hasPermissionToDeleteWorklogCompleted(this, new hasPermissionToDeleteWorklogCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToUpdateWorklogReturn")]
-        public bool hasPermissionToUpdateWorklog(string in0, string in1) {
-            object[] results = this.Invoke("hasPermissionToUpdateWorklog", new object[] {
-                        in0,
-                        in1});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToUpdateWorklogAsync(string in0, string in1) {
-            this.hasPermissionToUpdateWorklogAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void hasPermissionToUpdateWorklogAsync(string in0, string in1, object userState) {
-            if ((this.hasPermissionToUpdateWorklogOperationCompleted == null)) {
-                this.hasPermissionToUpdateWorklogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToUpdateWorklogOperationCompleted);
-            }
-            this.InvokeAsync("hasPermissionToUpdateWorklog", new object[] {
-                        in0,
-                        in1}, this.hasPermissionToUpdateWorklogOperationCompleted, userState);
-        }
-        
-        private void OnhasPermissionToUpdateWorklogOperationCompleted(object arg) {
-            if ((this.hasPermissionToUpdateWorklogCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.hasPermissionToUpdateWorklogCompleted(this, new hasPermissionToUpdateWorklogCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getResolutionDateByKeyReturn")]
-        public System.DateTime getResolutionDateByKey(string in0, string in1) {
-            object[] results = this.Invoke("getResolutionDateByKey", new object[] {
-                        in0,
-                        in1});
-            return ((System.DateTime)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getResolutionDateByKeyAsync(string in0, string in1) {
-            this.getResolutionDateByKeyAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getResolutionDateByKeyAsync(string in0, string in1, object userState) {
-            if ((this.getResolutionDateByKeyOperationCompleted == null)) {
-                this.getResolutionDateByKeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetResolutionDateByKeyOperationCompleted);
-            }
-            this.InvokeAsync("getResolutionDateByKey", new object[] {
-                        in0,
-                        in1}, this.getResolutionDateByKeyOperationCompleted, userState);
-        }
-        
-        private void OngetResolutionDateByKeyOperationCompleted(object arg) {
-            if ((this.getResolutionDateByKeyCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getResolutionDateByKeyCompleted(this, new getResolutionDateByKeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getResolutionDateByIdReturn")]
-        public System.DateTime getResolutionDateById(string in0, long in1) {
-            object[] results = this.Invoke("getResolutionDateById", new object[] {
-                        in0,
-                        in1});
-            return ((System.DateTime)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getResolutionDateByIdAsync(string in0, long in1) {
-            this.getResolutionDateByIdAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getResolutionDateByIdAsync(string in0, long in1, object userState) {
-            if ((this.getResolutionDateByIdOperationCompleted == null)) {
-                this.getResolutionDateByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetResolutionDateByIdOperationCompleted);
-            }
-            this.InvokeAsync("getResolutionDateById", new object[] {
-                        in0,
-                        in1}, this.getResolutionDateByIdOperationCompleted, userState);
-        }
-        
-        private void OngetResolutionDateByIdOperationCompleted(object arg) {
-            if ((this.getResolutionDateByIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getResolutionDateByIdCompleted(this, new getResolutionDateByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssueCountForFilterReturn")]
-        public long getIssueCountForFilter(string in0, string in1) {
-            object[] results = this.Invoke("getIssueCountForFilter", new object[] {
-                        in0,
-                        in1});
-            return ((long)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssueCountForFilterAsync(string in0, string in1) {
-            this.getIssueCountForFilterAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getIssueCountForFilterAsync(string in0, string in1, object userState) {
-            if ((this.getIssueCountForFilterOperationCompleted == null)) {
-                this.getIssueCountForFilterOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueCountForFilterOperationCompleted);
-            }
-            this.InvokeAsync("getIssueCountForFilter", new object[] {
-                        in0,
-                        in1}, this.getIssueCountForFilterOperationCompleted, userState);
-        }
-        
-        private void OngetIssueCountForFilterOperationCompleted(object arg) {
-            if ((this.getIssueCountForFilterCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssueCountForFilterCompleted(this, new getIssueCountForFilterCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromTextSearchReturn")]
-        public RemoteIssue[] getIssuesFromTextSearch(string in0, string in1) {
-            object[] results = this.Invoke("getIssuesFromTextSearch", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteIssue[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromTextSearchAsync(string in0, string in1) {
-            this.getIssuesFromTextSearchAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromTextSearchAsync(string in0, string in1, object userState) {
-            if ((this.getIssuesFromTextSearchOperationCompleted == null)) {
-                this.getIssuesFromTextSearchOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromTextSearchOperationCompleted);
-            }
-            this.InvokeAsync("getIssuesFromTextSearch", new object[] {
-                        in0,
-                        in1}, this.getIssuesFromTextSearchOperationCompleted, userState);
-        }
-        
-        private void OngetIssuesFromTextSearchOperationCompleted(object arg) {
-            if ((this.getIssuesFromTextSearchCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssuesFromTextSearchCompleted(this, new getIssuesFromTextSearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromTextSearchWithProjectReturn")]
-        public RemoteIssue[] getIssuesFromTextSearchWithProject(string in0, string[] in1, string in2, int in3) {
-            object[] results = this.Invoke("getIssuesFromTextSearchWithProject", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((RemoteIssue[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromTextSearchWithProjectAsync(string in0, string[] in1, string in2, int in3) {
-            this.getIssuesFromTextSearchWithProjectAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromTextSearchWithProjectAsync(string in0, string[] in1, string in2, int in3, object userState) {
-            if ((this.getIssuesFromTextSearchWithProjectOperationCompleted == null)) {
-                this.getIssuesFromTextSearchWithProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromTextSearchWithProjectOperationCompleted);
-            }
-            this.InvokeAsync("getIssuesFromTextSearchWithProject", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.getIssuesFromTextSearchWithProjectOperationCompleted, userState);
-        }
-        
-        private void OngetIssuesFromTextSearchWithProjectOperationCompleted(object arg) {
-            if ((this.getIssuesFromTextSearchWithProjectCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssuesFromTextSearchWithProjectCompleted(this, new getIssuesFromTextSearchWithProjectCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromJqlSearchReturn")]
-        public RemoteIssue[] getIssuesFromJqlSearch(string in0, string in1, int in2) {
-            object[] results = this.Invoke("getIssuesFromJqlSearch", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteIssue[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromJqlSearchAsync(string in0, string in1, int in2) {
-            this.getIssuesFromJqlSearchAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromJqlSearchAsync(string in0, string in1, int in2, object userState) {
-            if ((this.getIssuesFromJqlSearchOperationCompleted == null)) {
-                this.getIssuesFromJqlSearchOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromJqlSearchOperationCompleted);
-            }
-            this.InvokeAsync("getIssuesFromJqlSearch", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.getIssuesFromJqlSearchOperationCompleted, userState);
-        }
-        
-        private void OngetIssuesFromJqlSearchOperationCompleted(object arg) {
-            if ((this.getIssuesFromJqlSearchCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssuesFromJqlSearchCompleted(this, new getIssuesFromJqlSearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void setUserPassword(string in0, RemoteUser in1, string in2) {
-            this.Invoke("setUserPassword", new object[] {
-                        in0,
-                        in1,
-                        in2});
-        }
-        
-        /// <remarks/>
-        public void setUserPasswordAsync(string in0, RemoteUser in1, string in2) {
-            this.setUserPasswordAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void setUserPasswordAsync(string in0, RemoteUser in1, string in2, object userState) {
-            if ((this.setUserPasswordOperationCompleted == null)) {
-                this.setUserPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetUserPasswordOperationCompleted);
-            }
-            this.InvokeAsync("setUserPassword", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.setUserPasswordOperationCompleted, userState);
-        }
-        
-        private void OnsetUserPasswordOperationCompleted(object arg) {
-            if ((this.setUserPasswordCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.setUserPasswordCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deleteUser(string in0, string in1) {
-            this.Invoke("deleteUser", new object[] {
-                        in0,
-                        in1});
-        }
-        
-        /// <remarks/>
-        public void deleteUserAsync(string in0, string in1) {
-            this.deleteUserAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void deleteUserAsync(string in0, string in1, object userState) {
-            if ((this.deleteUserOperationCompleted == null)) {
-                this.deleteUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteUserOperationCompleted);
-            }
-            this.InvokeAsync("deleteUser", new object[] {
-                        in0,
-                        in1}, this.deleteUserOperationCompleted, userState);
-        }
-        
-        private void OndeleteUserOperationCompleted(object arg) {
-            if ((this.deleteUserCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deleteUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void deleteGroup(string in0, string in1, string in2) {
-            this.Invoke("deleteGroup", new object[] {
-                        in0,
-                        in1,
-                        in2});
-        }
-        
-        /// <remarks/>
-        public void deleteGroupAsync(string in0, string in1, string in2) {
-            this.deleteGroupAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void deleteGroupAsync(string in0, string in1, string in2, object userState) {
-            if ((this.deleteGroupOperationCompleted == null)) {
-                this.deleteGroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteGroupOperationCompleted);
-            }
-            this.InvokeAsync("deleteGroup", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.deleteGroupOperationCompleted, userState);
-        }
-        
-        private void OndeleteGroupOperationCompleted(object arg) {
-            if ((this.deleteGroupCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.deleteGroupCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void refreshCustomFields(string in0) {
-            this.Invoke("refreshCustomFields", new object[] {
-                        in0});
-        }
-        
-        /// <remarks/>
-        public void refreshCustomFieldsAsync(string in0) {
-            this.refreshCustomFieldsAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void refreshCustomFieldsAsync(string in0, object userState) {
-            if ((this.refreshCustomFieldsOperationCompleted == null)) {
-                this.refreshCustomFieldsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnrefreshCustomFieldsOperationCompleted);
-            }
-            this.InvokeAsync("refreshCustomFields", new object[] {
-                        in0}, this.refreshCustomFieldsOperationCompleted, userState);
-        }
-        
-        private void OnrefreshCustomFieldsOperationCompleted(object arg) {
-            if ((this.refreshCustomFieldsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.refreshCustomFieldsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getProjectsNoSchemesReturn")]
-        public RemoteProject[] getProjectsNoSchemes(string in0) {
-            object[] results = this.Invoke("getProjectsNoSchemes", new object[] {
-                        in0});
-            return ((RemoteProject[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getProjectsNoSchemesAsync(string in0) {
-            this.getProjectsNoSchemesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getProjectsNoSchemesAsync(string in0, object userState) {
-            if ((this.getProjectsNoSchemesOperationCompleted == null)) {
-                this.getProjectsNoSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectsNoSchemesOperationCompleted);
-            }
-            this.InvokeAsync("getProjectsNoSchemes", new object[] {
-                        in0}, this.getProjectsNoSchemesOperationCompleted, userState);
-        }
-        
-        private void OngetProjectsNoSchemesOperationCompleted(object arg) {
-            if ((this.getProjectsNoSchemesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getProjectsNoSchemesCompleted(this, new getProjectsNoSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addVersionReturn")]
-        public RemoteVersion addVersion(string in0, string in1, RemoteVersion in2) {
-            object[] results = this.Invoke("addVersion", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteVersion)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void addVersionAsync(string in0, string in1, RemoteVersion in2) {
-            this.addVersionAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void addVersionAsync(string in0, string in1, RemoteVersion in2, object userState) {
-            if ((this.addVersionOperationCompleted == null)) {
-                this.addVersionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddVersionOperationCompleted);
-            }
-            this.InvokeAsync("addVersion", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.addVersionOperationCompleted, userState);
-        }
-        
-        private void OnaddVersionOperationCompleted(object arg) {
-            if ((this.addVersionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addVersionCompleted(this, new addVersionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getSavedFiltersReturn")]
-        public RemoteFilter[] getSavedFilters(string in0) {
-            object[] results = this.Invoke("getSavedFilters", new object[] {
-                        in0});
-            return ((RemoteFilter[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getSavedFiltersAsync(string in0) {
-            this.getSavedFiltersAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getSavedFiltersAsync(string in0, object userState) {
-            if ((this.getSavedFiltersOperationCompleted == null)) {
-                this.getSavedFiltersOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSavedFiltersOperationCompleted);
-            }
-            this.InvokeAsync("getSavedFilters", new object[] {
-                        in0}, this.getSavedFiltersOperationCompleted, userState);
-        }
-        
-        private void OngetSavedFiltersOperationCompleted(object arg) {
-            if ((this.getSavedFiltersCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getSavedFiltersCompleted(this, new getSavedFiltersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("createIssueWithParentReturn")]
-        public RemoteIssue createIssueWithParent(string in0, RemoteIssue in1, string in2) {
-            object[] results = this.Invoke("createIssueWithParent", new object[] {
-                        in0,
-                        in1,
-                        in2});
-            return ((RemoteIssue)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void createIssueWithParentAsync(string in0, RemoteIssue in1, string in2) {
-            this.createIssueWithParentAsync(in0, in1, in2, null);
-        }
-        
-        /// <remarks/>
-        public void createIssueWithParentAsync(string in0, RemoteIssue in1, string in2, object userState) {
-            if ((this.createIssueWithParentOperationCompleted == null)) {
-                this.createIssueWithParentOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateIssueWithParentOperationCompleted);
-            }
-            this.InvokeAsync("createIssueWithParent", new object[] {
-                        in0,
-                        in1,
-                        in2}, this.createIssueWithParentOperationCompleted, userState);
-        }
-        
-        private void OncreateIssueWithParentOperationCompleted(object arg) {
-            if ((this.createIssueWithParentCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.createIssueWithParentCompleted(this, new createIssueWithParentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("createIssueWithParentWithSecurityLevelReturn")]
         public RemoteIssue createIssueWithParentWithSecurityLevel(string in0, RemoteIssue in1, string in2, long in3) {
             object[] results = this.Invoke("createIssueWithParentWithSecurityLevel", new object[] {
@@ -4060,10 +3174,704 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("addBase64EncodedAttachmentsToIssueReturn")]
-        public bool addBase64EncodedAttachmentsToIssue(string in0, string in1, string[] in2, string[] in3) {
-            object[] results = this.Invoke("addBase64EncodedAttachmentsToIssue", new object[] {
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getPrioritiesReturn")]
+        public RemotePriority[] getPriorities(string in0) {
+            object[] results = this.Invoke("getPriorities", new object[] {
+                        in0});
+            return ((RemotePriority[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getPrioritiesAsync(string in0) {
+            this.getPrioritiesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getPrioritiesAsync(string in0, object userState) {
+            if ((this.getPrioritiesOperationCompleted == null)) {
+                this.getPrioritiesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetPrioritiesOperationCompleted);
+            }
+            this.InvokeAsync("getPriorities", new object[] {
+                        in0}, this.getPrioritiesOperationCompleted, userState);
+        }
+        
+        private void OngetPrioritiesOperationCompleted(object arg) {
+            if ((this.getPrioritiesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getPrioritiesCompleted(this, new getPrioritiesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getResolutionsReturn")]
+        public RemoteResolution[] getResolutions(string in0) {
+            object[] results = this.Invoke("getResolutions", new object[] {
+                        in0});
+            return ((RemoteResolution[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getResolutionsAsync(string in0) {
+            this.getResolutionsAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getResolutionsAsync(string in0, object userState) {
+            if ((this.getResolutionsOperationCompleted == null)) {
+                this.getResolutionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetResolutionsOperationCompleted);
+            }
+            this.InvokeAsync("getResolutions", new object[] {
+                        in0}, this.getResolutionsOperationCompleted, userState);
+        }
+        
+        private void OngetResolutionsOperationCompleted(object arg) {
+            if ((this.getResolutionsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getResolutionsCompleted(this, new getResolutionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssueTypesReturn")]
+        public RemoteIssueType[] getIssueTypes(string in0) {
+            object[] results = this.Invoke("getIssueTypes", new object[] {
+                        in0});
+            return ((RemoteIssueType[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssueTypesAsync(string in0) {
+            this.getIssueTypesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getIssueTypesAsync(string in0, object userState) {
+            if ((this.getIssueTypesOperationCompleted == null)) {
+                this.getIssueTypesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueTypesOperationCompleted);
+            }
+            this.InvokeAsync("getIssueTypes", new object[] {
+                        in0}, this.getIssueTypesOperationCompleted, userState);
+        }
+        
+        private void OngetIssueTypesOperationCompleted(object arg) {
+            if ((this.getIssueTypesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssueTypesCompleted(this, new getIssueTypesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getSubTaskIssueTypesReturn")]
+        public RemoteIssueType[] getSubTaskIssueTypes(string in0) {
+            object[] results = this.Invoke("getSubTaskIssueTypes", new object[] {
+                        in0});
+            return ((RemoteIssueType[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getSubTaskIssueTypesAsync(string in0) {
+            this.getSubTaskIssueTypesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getSubTaskIssueTypesAsync(string in0, object userState) {
+            if ((this.getSubTaskIssueTypesOperationCompleted == null)) {
+                this.getSubTaskIssueTypesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSubTaskIssueTypesOperationCompleted);
+            }
+            this.InvokeAsync("getSubTaskIssueTypes", new object[] {
+                        in0}, this.getSubTaskIssueTypesOperationCompleted, userState);
+        }
+        
+        private void OngetSubTaskIssueTypesOperationCompleted(object arg) {
+            if ((this.getSubTaskIssueTypesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getSubTaskIssueTypesCompleted(this, new getSubTaskIssueTypesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectRolesReturn")]
+        public RemoteProjectRole[] getProjectRoles(string in0) {
+            object[] results = this.Invoke("getProjectRoles", new object[] {
+                        in0});
+            return ((RemoteProjectRole[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectRolesAsync(string in0) {
+            this.getProjectRolesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectRolesAsync(string in0, object userState) {
+            if ((this.getProjectRolesOperationCompleted == null)) {
+                this.getProjectRolesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectRolesOperationCompleted);
+            }
+            this.InvokeAsync("getProjectRoles", new object[] {
+                        in0}, this.getProjectRolesOperationCompleted, userState);
+        }
+        
+        private void OngetProjectRolesOperationCompleted(object arg) {
+            if ((this.getProjectRolesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectRolesCompleted(this, new getProjectRolesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectRoleReturn")]
+        public RemoteProjectRole getProjectRole(string in0, long in1) {
+            object[] results = this.Invoke("getProjectRole", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteProjectRole)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectRoleAsync(string in0, long in1) {
+            this.getProjectRoleAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectRoleAsync(string in0, long in1, object userState) {
+            if ((this.getProjectRoleOperationCompleted == null)) {
+                this.getProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("getProjectRole", new object[] {
+                        in0,
+                        in1}, this.getProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OngetProjectRoleOperationCompleted(object arg) {
+            if ((this.getProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectRoleCompleted(this, new getProjectRoleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectRoleActorsReturn")]
+        public RemoteProjectRoleActors getProjectRoleActors(string in0, RemoteProjectRole in1, RemoteProject in2) {
+            object[] results = this.Invoke("getProjectRoleActors", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteProjectRoleActors)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectRoleActorsAsync(string in0, RemoteProjectRole in1, RemoteProject in2) {
+            this.getProjectRoleActorsAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectRoleActorsAsync(string in0, RemoteProjectRole in1, RemoteProject in2, object userState) {
+            if ((this.getProjectRoleActorsOperationCompleted == null)) {
+                this.getProjectRoleActorsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectRoleActorsOperationCompleted);
+            }
+            this.InvokeAsync("getProjectRoleActors", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.getProjectRoleActorsOperationCompleted, userState);
+        }
+        
+        private void OngetProjectRoleActorsOperationCompleted(object arg) {
+            if ((this.getProjectRoleActorsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectRoleActorsCompleted(this, new getProjectRoleActorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getDefaultRoleActorsReturn")]
+        public RemoteRoleActors getDefaultRoleActors(string in0, RemoteProjectRole in1) {
+            object[] results = this.Invoke("getDefaultRoleActors", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteRoleActors)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getDefaultRoleActorsAsync(string in0, RemoteProjectRole in1) {
+            this.getDefaultRoleActorsAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getDefaultRoleActorsAsync(string in0, RemoteProjectRole in1, object userState) {
+            if ((this.getDefaultRoleActorsOperationCompleted == null)) {
+                this.getDefaultRoleActorsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetDefaultRoleActorsOperationCompleted);
+            }
+            this.InvokeAsync("getDefaultRoleActors", new object[] {
+                        in0,
+                        in1}, this.getDefaultRoleActorsOperationCompleted, userState);
+        }
+        
+        private void OngetDefaultRoleActorsOperationCompleted(object arg) {
+            if ((this.getDefaultRoleActorsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getDefaultRoleActorsCompleted(this, new getDefaultRoleActorsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deleteProjectRole(string in0, RemoteProjectRole in1, bool in2) {
+            this.Invoke("deleteProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2});
+        }
+        
+        /// <remarks/>
+        public void deleteProjectRoleAsync(string in0, RemoteProjectRole in1, bool in2) {
+            this.deleteProjectRoleAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void deleteProjectRoleAsync(string in0, RemoteProjectRole in1, bool in2, object userState) {
+            if ((this.deleteProjectRoleOperationCompleted == null)) {
+                this.deleteProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("deleteProjectRole", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.deleteProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OndeleteProjectRoleOperationCompleted(object arg) {
+            if ((this.deleteProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void updateProjectRole(string in0, RemoteProjectRole in1) {
+            this.Invoke("updateProjectRole", new object[] {
+                        in0,
+                        in1});
+        }
+        
+        /// <remarks/>
+        public void updateProjectRoleAsync(string in0, RemoteProjectRole in1) {
+            this.updateProjectRoleAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void updateProjectRoleAsync(string in0, RemoteProjectRole in1, object userState) {
+            if ((this.updateProjectRoleOperationCompleted == null)) {
+                this.updateProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("updateProjectRole", new object[] {
+                        in0,
+                        in1}, this.updateProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OnupdateProjectRoleOperationCompleted(object arg) {
+            if ((this.updateProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateProjectRoleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("createProjectRoleReturn")]
+        public RemoteProjectRole createProjectRole(string in0, RemoteProjectRole in1) {
+            object[] results = this.Invoke("createProjectRole", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteProjectRole)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void createProjectRoleAsync(string in0, RemoteProjectRole in1) {
+            this.createProjectRoleAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void createProjectRoleAsync(string in0, RemoteProjectRole in1, object userState) {
+            if ((this.createProjectRoleOperationCompleted == null)) {
+                this.createProjectRoleOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateProjectRoleOperationCompleted);
+            }
+            this.InvokeAsync("createProjectRole", new object[] {
+                        in0,
+                        in1}, this.createProjectRoleOperationCompleted, userState);
+        }
+        
+        private void OncreateProjectRoleOperationCompleted(object arg) {
+            if ((this.createProjectRoleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.createProjectRoleCompleted(this, new createProjectRoleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deleteProject(string in0, string in1) {
+            this.Invoke("deleteProject", new object[] {
+                        in0,
+                        in1});
+        }
+        
+        /// <remarks/>
+        public void deleteProjectAsync(string in0, string in1) {
+            this.deleteProjectAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void deleteProjectAsync(string in0, string in1, object userState) {
+            if ((this.deleteProjectOperationCompleted == null)) {
+                this.deleteProjectOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteProjectOperationCompleted);
+            }
+            this.InvokeAsync("deleteProject", new object[] {
+                        in0,
+                        in1}, this.deleteProjectOperationCompleted, userState);
+        }
+        
+        private void OndeleteProjectOperationCompleted(object arg) {
+            if ((this.deleteProjectCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteProjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectByIdReturn")]
+        public RemoteProject getProjectById(string in0, long in1) {
+            object[] results = this.Invoke("getProjectById", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteProject)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectByIdAsync(string in0, long in1) {
+            this.getProjectByIdAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectByIdAsync(string in0, long in1, object userState) {
+            if ((this.getProjectByIdOperationCompleted == null)) {
+                this.getProjectByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectByIdOperationCompleted);
+            }
+            this.InvokeAsync("getProjectById", new object[] {
+                        in0,
+                        in1}, this.getProjectByIdOperationCompleted, userState);
+        }
+        
+        private void OngetProjectByIdOperationCompleted(object arg) {
+            if ((this.getProjectByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectByIdCompleted(this, new getProjectByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getFavouriteFiltersReturn")]
+        public RemoteFilter[] getFavouriteFilters(string in0) {
+            object[] results = this.Invoke("getFavouriteFilters", new object[] {
+                        in0});
+            return ((RemoteFilter[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getFavouriteFiltersAsync(string in0) {
+            this.getFavouriteFiltersAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getFavouriteFiltersAsync(string in0, object userState) {
+            if ((this.getFavouriteFiltersOperationCompleted == null)) {
+                this.getFavouriteFiltersOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetFavouriteFiltersOperationCompleted);
+            }
+            this.InvokeAsync("getFavouriteFilters", new object[] {
+                        in0}, this.getFavouriteFiltersOperationCompleted, userState);
+        }
+        
+        private void OngetFavouriteFiltersOperationCompleted(object arg) {
+            if ((this.getFavouriteFiltersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getFavouriteFiltersCompleted(this, new getFavouriteFiltersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getAvailableActionsReturn")]
+        public RemoteNamedObject[] getAvailableActions(string in0, string in1) {
+            object[] results = this.Invoke("getAvailableActions", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteNamedObject[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAvailableActionsAsync(string in0, string in1) {
+            this.getAvailableActionsAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getAvailableActionsAsync(string in0, string in1, object userState) {
+            if ((this.getAvailableActionsOperationCompleted == null)) {
+                this.getAvailableActionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAvailableActionsOperationCompleted);
+            }
+            this.InvokeAsync("getAvailableActions", new object[] {
+                        in0,
+                        in1}, this.getAvailableActionsOperationCompleted, userState);
+        }
+        
+        private void OngetAvailableActionsOperationCompleted(object arg) {
+            if ((this.getAvailableActionsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAvailableActionsCompleted(this, new getAvailableActionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getProjectWithSchemesByIdReturn")]
+        public RemoteProject getProjectWithSchemesById(string in0, long in1) {
+            object[] results = this.Invoke("getProjectWithSchemesById", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteProject)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProjectWithSchemesByIdAsync(string in0, long in1) {
+            this.getProjectWithSchemesByIdAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getProjectWithSchemesByIdAsync(string in0, long in1, object userState) {
+            if ((this.getProjectWithSchemesByIdOperationCompleted == null)) {
+                this.getProjectWithSchemesByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProjectWithSchemesByIdOperationCompleted);
+            }
+            this.InvokeAsync("getProjectWithSchemesById", new object[] {
+                        in0,
+                        in1}, this.getProjectWithSchemesByIdOperationCompleted, userState);
+        }
+        
+        private void OngetProjectWithSchemesByIdOperationCompleted(object arg) {
+            if ((this.getProjectWithSchemesByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProjectWithSchemesByIdCompleted(this, new getProjectWithSchemesByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getNotificationSchemesReturn")]
+        public RemoteScheme[] getNotificationSchemes(string in0) {
+            object[] results = this.Invoke("getNotificationSchemes", new object[] {
+                        in0});
+            return ((RemoteScheme[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getNotificationSchemesAsync(string in0) {
+            this.getNotificationSchemesAsync(in0, null);
+        }
+        
+        /// <remarks/>
+        public void getNotificationSchemesAsync(string in0, object userState) {
+            if ((this.getNotificationSchemesOperationCompleted == null)) {
+                this.getNotificationSchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetNotificationSchemesOperationCompleted);
+            }
+            this.InvokeAsync("getNotificationSchemes", new object[] {
+                        in0}, this.getNotificationSchemesOperationCompleted, userState);
+        }
+        
+        private void OngetNotificationSchemesOperationCompleted(object arg) {
+            if ((this.getNotificationSchemesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getNotificationSchemesCompleted(this, new getNotificationSchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("createPermissionSchemeReturn")]
+        public RemotePermissionScheme createPermissionScheme(string in0, string in1, string in2) {
+            object[] results = this.Invoke("createPermissionScheme", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemotePermissionScheme)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void createPermissionSchemeAsync(string in0, string in1, string in2) {
+            this.createPermissionSchemeAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void createPermissionSchemeAsync(string in0, string in1, string in2, object userState) {
+            if ((this.createPermissionSchemeOperationCompleted == null)) {
+                this.createPermissionSchemeOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreatePermissionSchemeOperationCompleted);
+            }
+            this.InvokeAsync("createPermissionScheme", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.createPermissionSchemeOperationCompleted, userState);
+        }
+        
+        private void OncreatePermissionSchemeOperationCompleted(object arg) {
+            if ((this.createPermissionSchemeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.createPermissionSchemeCompleted(this, new createPermissionSchemeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        public void deletePermissionScheme(string in0, string in1) {
+            this.Invoke("deletePermissionScheme", new object[] {
+                        in0,
+                        in1});
+        }
+        
+        /// <remarks/>
+        public void deletePermissionSchemeAsync(string in0, string in1) {
+            this.deletePermissionSchemeAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void deletePermissionSchemeAsync(string in0, string in1, object userState) {
+            if ((this.deletePermissionSchemeOperationCompleted == null)) {
+                this.deletePermissionSchemeOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeletePermissionSchemeOperationCompleted);
+            }
+            this.InvokeAsync("deletePermissionScheme", new object[] {
+                        in0,
+                        in1}, this.deletePermissionSchemeOperationCompleted, userState);
+        }
+        
+        private void OndeletePermissionSchemeOperationCompleted(object arg) {
+            if ((this.deletePermissionSchemeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deletePermissionSchemeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("createIssueWithSecurityLevelReturn")]
+        public RemoteIssue createIssueWithSecurityLevel(string in0, RemoteIssue in1, long in2) {
+            object[] results = this.Invoke("createIssueWithSecurityLevel", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void createIssueWithSecurityLevelAsync(string in0, RemoteIssue in1, long in2) {
+            this.createIssueWithSecurityLevelAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void createIssueWithSecurityLevelAsync(string in0, RemoteIssue in1, long in2, object userState) {
+            if ((this.createIssueWithSecurityLevelOperationCompleted == null)) {
+                this.createIssueWithSecurityLevelOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateIssueWithSecurityLevelOperationCompleted);
+            }
+            this.InvokeAsync("createIssueWithSecurityLevel", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.createIssueWithSecurityLevelOperationCompleted, userState);
+        }
+        
+        private void OncreateIssueWithSecurityLevelOperationCompleted(object arg) {
+            if ((this.createIssueWithSecurityLevelCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.createIssueWithSecurityLevelCompleted(this, new createIssueWithSecurityLevelCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToEditCommentReturn")]
+        public bool hasPermissionToEditComment(string in0, RemoteComment in1) {
+            object[] results = this.Invoke("hasPermissionToEditComment", new object[] {
+                        in0,
+                        in1});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToEditCommentAsync(string in0, RemoteComment in1) {
+            this.hasPermissionToEditCommentAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToEditCommentAsync(string in0, RemoteComment in1, object userState) {
+            if ((this.hasPermissionToEditCommentOperationCompleted == null)) {
+                this.hasPermissionToEditCommentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToEditCommentOperationCompleted);
+            }
+            this.InvokeAsync("hasPermissionToEditComment", new object[] {
+                        in0,
+                        in1}, this.hasPermissionToEditCommentOperationCompleted, userState);
+        }
+        
+        private void OnhasPermissionToEditCommentOperationCompleted(object arg) {
+            if ((this.hasPermissionToEditCommentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.hasPermissionToEditCommentCompleted(this, new hasPermissionToEditCommentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("progressWorkflowActionReturn")]
+        public RemoteIssue progressWorkflowAction(string in0, string in1, string in2, RemoteFieldValue[] in3) {
+            object[] results = this.Invoke("progressWorkflowAction", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void progressWorkflowActionAsync(string in0, string in1, string in2, RemoteFieldValue[] in3) {
+            this.progressWorkflowActionAsync(in0, in1, in2, in3, null);
+        }
+        
+        /// <remarks/>
+        public void progressWorkflowActionAsync(string in0, string in1, string in2, RemoteFieldValue[] in3, object userState) {
+            if ((this.progressWorkflowActionOperationCompleted == null)) {
+                this.progressWorkflowActionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnprogressWorkflowActionOperationCompleted);
+            }
+            this.InvokeAsync("progressWorkflowAction", new object[] {
+                        in0,
+                        in1,
+                        in2,
+                        in3}, this.progressWorkflowActionOperationCompleted, userState);
+        }
+        
+        private void OnprogressWorkflowActionOperationCompleted(object arg) {
+            if ((this.progressWorkflowActionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.progressWorkflowActionCompleted(this, new progressWorkflowActionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("addAttachmentsToIssueReturn")]
+        public bool addAttachmentsToIssue(string in0, string in1, string[] in2, sbyte[] in3) {
+            object[] results = this.Invoke("addAttachmentsToIssue", new object[] {
                         in0,
                         in1,
                         in2,
@@ -4072,31 +3880,355 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        public void addBase64EncodedAttachmentsToIssueAsync(string in0, string in1, string[] in2, string[] in3) {
-            this.addBase64EncodedAttachmentsToIssueAsync(in0, in1, in2, in3, null);
+        public void addAttachmentsToIssueAsync(string in0, string in1, string[] in2, sbyte[] in3) {
+            this.addAttachmentsToIssueAsync(in0, in1, in2, in3, null);
         }
         
         /// <remarks/>
-        public void addBase64EncodedAttachmentsToIssueAsync(string in0, string in1, string[] in2, string[] in3, object userState) {
-            if ((this.addBase64EncodedAttachmentsToIssueOperationCompleted == null)) {
-                this.addBase64EncodedAttachmentsToIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddBase64EncodedAttachmentsToIssueOperationCompleted);
+        public void addAttachmentsToIssueAsync(string in0, string in1, string[] in2, sbyte[] in3, object userState) {
+            if ((this.addAttachmentsToIssueOperationCompleted == null)) {
+                this.addAttachmentsToIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddAttachmentsToIssueOperationCompleted);
             }
-            this.InvokeAsync("addBase64EncodedAttachmentsToIssue", new object[] {
+            this.InvokeAsync("addAttachmentsToIssue", new object[] {
                         in0,
                         in1,
                         in2,
-                        in3}, this.addBase64EncodedAttachmentsToIssueOperationCompleted, userState);
+                        in3}, this.addAttachmentsToIssueOperationCompleted, userState);
         }
         
-        private void OnaddBase64EncodedAttachmentsToIssueOperationCompleted(object arg) {
-            if ((this.addBase64EncodedAttachmentsToIssueCompleted != null)) {
+        private void OnaddAttachmentsToIssueOperationCompleted(object arg) {
+            if ((this.addAttachmentsToIssueCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addBase64EncodedAttachmentsToIssueCompleted(this, new addBase64EncodedAttachmentsToIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.addAttachmentsToIssueCompleted(this, new addAttachmentsToIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getAttachmentsFromIssueReturn")]
+        public RemoteAttachment[] getAttachmentsFromIssue(string in0, string in1) {
+            object[] results = this.Invoke("getAttachmentsFromIssue", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteAttachment[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAttachmentsFromIssueAsync(string in0, string in1) {
+            this.getAttachmentsFromIssueAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getAttachmentsFromIssueAsync(string in0, string in1, object userState) {
+            if ((this.getAttachmentsFromIssueOperationCompleted == null)) {
+                this.getAttachmentsFromIssueOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAttachmentsFromIssueOperationCompleted);
+            }
+            this.InvokeAsync("getAttachmentsFromIssue", new object[] {
+                        in0,
+                        in1}, this.getAttachmentsFromIssueOperationCompleted, userState);
+        }
+        
+        private void OngetAttachmentsFromIssueOperationCompleted(object arg) {
+            if ((this.getAttachmentsFromIssueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAttachmentsFromIssueCompleted(this, new getAttachmentsFromIssueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToCreateWorklogReturn")]
+        public bool hasPermissionToCreateWorklog(string in0, string in1) {
+            object[] results = this.Invoke("hasPermissionToCreateWorklog", new object[] {
+                        in0,
+                        in1});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToCreateWorklogAsync(string in0, string in1) {
+            this.hasPermissionToCreateWorklogAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToCreateWorklogAsync(string in0, string in1, object userState) {
+            if ((this.hasPermissionToCreateWorklogOperationCompleted == null)) {
+                this.hasPermissionToCreateWorklogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToCreateWorklogOperationCompleted);
+            }
+            this.InvokeAsync("hasPermissionToCreateWorklog", new object[] {
+                        in0,
+                        in1}, this.hasPermissionToCreateWorklogOperationCompleted, userState);
+        }
+        
+        private void OnhasPermissionToCreateWorklogOperationCompleted(object arg) {
+            if ((this.hasPermissionToCreateWorklogCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.hasPermissionToCreateWorklogCompleted(this, new hasPermissionToCreateWorklogCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToDeleteWorklogReturn")]
+        public bool hasPermissionToDeleteWorklog(string in0, string in1) {
+            object[] results = this.Invoke("hasPermissionToDeleteWorklog", new object[] {
+                        in0,
+                        in1});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToDeleteWorklogAsync(string in0, string in1) {
+            this.hasPermissionToDeleteWorklogAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToDeleteWorklogAsync(string in0, string in1, object userState) {
+            if ((this.hasPermissionToDeleteWorklogOperationCompleted == null)) {
+                this.hasPermissionToDeleteWorklogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToDeleteWorklogOperationCompleted);
+            }
+            this.InvokeAsync("hasPermissionToDeleteWorklog", new object[] {
+                        in0,
+                        in1}, this.hasPermissionToDeleteWorklogOperationCompleted, userState);
+        }
+        
+        private void OnhasPermissionToDeleteWorklogOperationCompleted(object arg) {
+            if ((this.hasPermissionToDeleteWorklogCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.hasPermissionToDeleteWorklogCompleted(this, new hasPermissionToDeleteWorklogCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("hasPermissionToUpdateWorklogReturn")]
+        public bool hasPermissionToUpdateWorklog(string in0, string in1) {
+            object[] results = this.Invoke("hasPermissionToUpdateWorklog", new object[] {
+                        in0,
+                        in1});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToUpdateWorklogAsync(string in0, string in1) {
+            this.hasPermissionToUpdateWorklogAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void hasPermissionToUpdateWorklogAsync(string in0, string in1, object userState) {
+            if ((this.hasPermissionToUpdateWorklogOperationCompleted == null)) {
+                this.hasPermissionToUpdateWorklogOperationCompleted = new System.Threading.SendOrPostCallback(this.OnhasPermissionToUpdateWorklogOperationCompleted);
+            }
+            this.InvokeAsync("hasPermissionToUpdateWorklog", new object[] {
+                        in0,
+                        in1}, this.hasPermissionToUpdateWorklogOperationCompleted, userState);
+        }
+        
+        private void OnhasPermissionToUpdateWorklogOperationCompleted(object arg) {
+            if ((this.hasPermissionToUpdateWorklogCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.hasPermissionToUpdateWorklogCompleted(this, new hasPermissionToUpdateWorklogCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getResolutionDateByKeyReturn")]
+        public System.DateTime getResolutionDateByKey(string in0, string in1) {
+            object[] results = this.Invoke("getResolutionDateByKey", new object[] {
+                        in0,
+                        in1});
+            return ((System.DateTime)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getResolutionDateByKeyAsync(string in0, string in1) {
+            this.getResolutionDateByKeyAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getResolutionDateByKeyAsync(string in0, string in1, object userState) {
+            if ((this.getResolutionDateByKeyOperationCompleted == null)) {
+                this.getResolutionDateByKeyOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetResolutionDateByKeyOperationCompleted);
+            }
+            this.InvokeAsync("getResolutionDateByKey", new object[] {
+                        in0,
+                        in1}, this.getResolutionDateByKeyOperationCompleted, userState);
+        }
+        
+        private void OngetResolutionDateByKeyOperationCompleted(object arg) {
+            if ((this.getResolutionDateByKeyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getResolutionDateByKeyCompleted(this, new getResolutionDateByKeyCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getResolutionDateByIdReturn")]
+        public System.DateTime getResolutionDateById(string in0, long in1) {
+            object[] results = this.Invoke("getResolutionDateById", new object[] {
+                        in0,
+                        in1});
+            return ((System.DateTime)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getResolutionDateByIdAsync(string in0, long in1) {
+            this.getResolutionDateByIdAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getResolutionDateByIdAsync(string in0, long in1, object userState) {
+            if ((this.getResolutionDateByIdOperationCompleted == null)) {
+                this.getResolutionDateByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetResolutionDateByIdOperationCompleted);
+            }
+            this.InvokeAsync("getResolutionDateById", new object[] {
+                        in0,
+                        in1}, this.getResolutionDateByIdOperationCompleted, userState);
+        }
+        
+        private void OngetResolutionDateByIdOperationCompleted(object arg) {
+            if ((this.getResolutionDateByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getResolutionDateByIdCompleted(this, new getResolutionDateByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssueCountForFilterReturn")]
+        public long getIssueCountForFilter(string in0, string in1) {
+            object[] results = this.Invoke("getIssueCountForFilter", new object[] {
+                        in0,
+                        in1});
+            return ((long)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssueCountForFilterAsync(string in0, string in1) {
+            this.getIssueCountForFilterAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getIssueCountForFilterAsync(string in0, string in1, object userState) {
+            if ((this.getIssueCountForFilterOperationCompleted == null)) {
+                this.getIssueCountForFilterOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssueCountForFilterOperationCompleted);
+            }
+            this.InvokeAsync("getIssueCountForFilter", new object[] {
+                        in0,
+                        in1}, this.getIssueCountForFilterOperationCompleted, userState);
+        }
+        
+        private void OngetIssueCountForFilterOperationCompleted(object arg) {
+            if ((this.getIssueCountForFilterCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssueCountForFilterCompleted(this, new getIssueCountForFilterCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromTextSearchReturn")]
+        public RemoteIssue[] getIssuesFromTextSearch(string in0, string in1) {
+            object[] results = this.Invoke("getIssuesFromTextSearch", new object[] {
+                        in0,
+                        in1});
+            return ((RemoteIssue[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromTextSearchAsync(string in0, string in1) {
+            this.getIssuesFromTextSearchAsync(in0, in1, null);
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromTextSearchAsync(string in0, string in1, object userState) {
+            if ((this.getIssuesFromTextSearchOperationCompleted == null)) {
+                this.getIssuesFromTextSearchOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromTextSearchOperationCompleted);
+            }
+            this.InvokeAsync("getIssuesFromTextSearch", new object[] {
+                        in0,
+                        in1}, this.getIssuesFromTextSearchOperationCompleted, userState);
+        }
+        
+        private void OngetIssuesFromTextSearchOperationCompleted(object arg) {
+            if ((this.getIssuesFromTextSearchCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssuesFromTextSearchCompleted(this, new getIssuesFromTextSearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromJqlSearchReturn")]
+        public RemoteIssue[] getIssuesFromJqlSearch(string in0, string in1, int in2) {
+            object[] results = this.Invoke("getIssuesFromJqlSearch", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteIssue[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromJqlSearchAsync(string in0, string in1, int in2) {
+            this.getIssuesFromJqlSearchAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void getIssuesFromJqlSearchAsync(string in0, string in1, int in2, object userState) {
+            if ((this.getIssuesFromJqlSearchOperationCompleted == null)) {
+                this.getIssuesFromJqlSearchOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromJqlSearchOperationCompleted);
+            }
+            this.InvokeAsync("getIssuesFromJqlSearch", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.getIssuesFromJqlSearchOperationCompleted, userState);
+        }
+        
+        private void OngetIssuesFromJqlSearchOperationCompleted(object arg) {
+            if ((this.getIssuesFromJqlSearchCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getIssuesFromJqlSearchCompleted(this, new getIssuesFromJqlSearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
+        [return: System.Xml.Serialization.SoapElementAttribute("createIssueWithParentReturn")]
+        public RemoteIssue createIssueWithParent(string in0, RemoteIssue in1, string in2) {
+            object[] results = this.Invoke("createIssueWithParent", new object[] {
+                        in0,
+                        in1,
+                        in2});
+            return ((RemoteIssue)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void createIssueWithParentAsync(string in0, RemoteIssue in1, string in2) {
+            this.createIssueWithParentAsync(in0, in1, in2, null);
+        }
+        
+        /// <remarks/>
+        public void createIssueWithParentAsync(string in0, RemoteIssue in1, string in2, object userState) {
+            if ((this.createIssueWithParentOperationCompleted == null)) {
+                this.createIssueWithParentOperationCompleted = new System.Threading.SendOrPostCallback(this.OncreateIssueWithParentOperationCompleted);
+            }
+            this.InvokeAsync("createIssueWithParent", new object[] {
+                        in0,
+                        in1,
+                        in2}, this.createIssueWithParentOperationCompleted, userState);
+        }
+        
+        private void OncreateIssueWithParentOperationCompleted(object arg) {
+            if ((this.createIssueWithParentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.createIssueWithParentCompleted(this, new createIssueWithParentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("createProjectFromObjectReturn")]
         public RemoteProject createProjectFromObject(string in0, RemoteProject in1) {
             object[] results = this.Invoke("createProjectFromObject", new object[] {
@@ -4128,69 +4260,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getSecuritySchemesReturn")]
-        public RemoteScheme[] getSecuritySchemes(string in0) {
-            object[] results = this.Invoke("getSecuritySchemes", new object[] {
-                        in0});
-            return ((RemoteScheme[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getSecuritySchemesAsync(string in0) {
-            this.getSecuritySchemesAsync(in0, null);
-        }
-        
-        /// <remarks/>
-        public void getSecuritySchemesAsync(string in0, object userState) {
-            if ((this.getSecuritySchemesOperationCompleted == null)) {
-                this.getSecuritySchemesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetSecuritySchemesOperationCompleted);
-            }
-            this.InvokeAsync("getSecuritySchemes", new object[] {
-                        in0}, this.getSecuritySchemesOperationCompleted, userState);
-        }
-        
-        private void OngetSecuritySchemesOperationCompleted(object arg) {
-            if ((this.getSecuritySchemesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getSecuritySchemesCompleted(this, new getSecuritySchemesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromFilterReturn")]
-        public RemoteIssue[] getIssuesFromFilter(string in0, string in1) {
-            object[] results = this.Invoke("getIssuesFromFilter", new object[] {
-                        in0,
-                        in1});
-            return ((RemoteIssue[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromFilterAsync(string in0, string in1) {
-            this.getIssuesFromFilterAsync(in0, in1, null);
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromFilterAsync(string in0, string in1, object userState) {
-            if ((this.getIssuesFromFilterOperationCompleted == null)) {
-                this.getIssuesFromFilterOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromFilterOperationCompleted);
-            }
-            this.InvokeAsync("getIssuesFromFilter", new object[] {
-                        in0,
-                        in1}, this.getIssuesFromFilterOperationCompleted, userState);
-        }
-        
-        private void OngetIssuesFromFilterOperationCompleted(object arg) {
-            if ((this.getIssuesFromFilterCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssuesFromFilterCompleted(this, new getIssuesFromFilterCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="http://localhost:8080/rpc/soap/jirasoapservice-v2")]
         [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromFilterWithLimitReturn")]
         public RemoteIssue[] getIssuesFromFilterWithLimit(string in0, string in1, int in2, int in3) {
             object[] results = this.Invoke("getIssuesFromFilterWithLimit", new object[] {
@@ -4222,76 +4292,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             if ((this.getIssuesFromFilterWithLimitCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getIssuesFromFilterWithLimitCompleted(this, new getIssuesFromFilterWithLimitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getIssuesFromTextSearchWithLimitReturn")]
-        public RemoteIssue[] getIssuesFromTextSearchWithLimit(string in0, string in1, int in2, int in3) {
-            object[] results = this.Invoke("getIssuesFromTextSearchWithLimit", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-            return ((RemoteIssue[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromTextSearchWithLimitAsync(string in0, string in1, int in2, int in3) {
-            this.getIssuesFromTextSearchWithLimitAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void getIssuesFromTextSearchWithLimitAsync(string in0, string in1, int in2, int in3, object userState) {
-            if ((this.getIssuesFromTextSearchWithLimitOperationCompleted == null)) {
-                this.getIssuesFromTextSearchWithLimitOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetIssuesFromTextSearchWithLimitOperationCompleted);
-            }
-            this.InvokeAsync("getIssuesFromTextSearchWithLimit", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.getIssuesFromTextSearchWithLimitOperationCompleted, userState);
-        }
-        
-        private void OngetIssuesFromTextSearchWithLimitOperationCompleted(object arg) {
-            if ((this.getIssuesFromTextSearchWithLimitCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getIssuesFromTextSearchWithLimitCompleted(this, new getIssuesFromTextSearchWithLimitCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://soap.rpc.jira.atlassian.com", ResponseNamespace="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2")]
-        public void setNewProjectAvatar(string in0, string in1, string in2, string in3) {
-            this.Invoke("setNewProjectAvatar", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3});
-        }
-        
-        /// <remarks/>
-        public void setNewProjectAvatarAsync(string in0, string in1, string in2, string in3) {
-            this.setNewProjectAvatarAsync(in0, in1, in2, in3, null);
-        }
-        
-        /// <remarks/>
-        public void setNewProjectAvatarAsync(string in0, string in1, string in2, string in3, object userState) {
-            if ((this.setNewProjectAvatarOperationCompleted == null)) {
-                this.setNewProjectAvatarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetNewProjectAvatarOperationCompleted);
-            }
-            this.InvokeAsync("setNewProjectAvatar", new object[] {
-                        in0,
-                        in1,
-                        in2,
-                        in3}, this.setNewProjectAvatarOperationCompleted, userState);
-        }
-        
-        private void OnsetNewProjectAvatarOperationCompleted(object arg) {
-            if ((this.setNewProjectAvatarCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.setNewProjectAvatarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -4423,242 +4423,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             }
             set {
                 this.updatedField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteWorklog {
-        
-        private string authorField;
-        
-        private string commentField;
-        
-        private System.Nullable<System.DateTime> createdField;
-        
-        private string groupLevelField;
-        
-        private string idField;
-        
-        private string roleLevelIdField;
-        
-        private System.Nullable<System.DateTime> startDateField;
-        
-        private string timeSpentField;
-        
-        private long timeSpentInSecondsField;
-        
-        private string updateAuthorField;
-        
-        private System.Nullable<System.DateTime> updatedField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string author {
-            get {
-                return this.authorField;
-            }
-            set {
-                this.authorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string comment {
-            get {
-                return this.commentField;
-            }
-            set {
-                this.commentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> created {
-            get {
-                return this.createdField;
-            }
-            set {
-                this.createdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string groupLevel {
-            get {
-                return this.groupLevelField;
-            }
-            set {
-                this.groupLevelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string roleLevelId {
-            get {
-                return this.roleLevelIdField;
-            }
-            set {
-                this.roleLevelIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate {
-            get {
-                return this.startDateField;
-            }
-            set {
-                this.startDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string timeSpent {
-            get {
-                return this.timeSpentField;
-            }
-            set {
-                this.timeSpentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long timeSpentInSeconds {
-            get {
-                return this.timeSpentInSecondsField;
-            }
-            set {
-                this.timeSpentInSecondsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string updateAuthor {
-            get {
-                return this.updateAuthorField;
-            }
-            set {
-                this.updateAuthorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> updated {
-            get {
-                return this.updatedField;
-            }
-            set {
-                this.updatedField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteAvatar {
-        
-        private string base64DataField;
-        
-        private string contentTypeField;
-        
-        private long idField;
-        
-        private string ownerField;
-        
-        private bool systemField;
-        
-        private string typeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string base64Data {
-            get {
-                return this.base64DataField;
-            }
-            set {
-                this.base64DataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string contentType {
-            get {
-                return this.contentTypeField;
-            }
-            set {
-                this.contentTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string owner {
-            get {
-                return this.ownerField;
-            }
-            set {
-                this.ownerField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool system {
-            get {
-                return this.systemField;
-            }
-            set {
-                this.systemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
             }
         }
     }
@@ -5218,16 +4982,16 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteField))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteNamedObject))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteFilter))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteSecurityLevel))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteProject))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteField))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(AbstractRemoteConstant))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteStatus))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssueType))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteResolution))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemotePriority))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteProject))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteSecurityLevel))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteNamedObject))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssueType))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteStatus))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteComponent))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteVersion))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
@@ -5255,16 +5019,16 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteAttachment))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssue))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(AbstractNamedRemoteEntity))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteField))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteNamedObject))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteFilter))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteSecurityLevel))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteProject))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteField))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(AbstractRemoteConstant))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteStatus))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssueType))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteResolution))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemotePriority))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteProject))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteSecurityLevel))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteNamedObject))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssueType))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteStatus))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteComponent))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteVersion))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
@@ -5753,7 +5517,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteField : AbstractNamedRemoteEntity {
+    public partial class RemoteNamedObject : AbstractNamedRemoteEntity {
     }
     
     /// <remarks/>
@@ -5818,10 +5582,41 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteStatus))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssueType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
+    public partial class RemoteSecurityLevel : AbstractNamedRemoteEntity {
+        
+        private string descriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
+    public partial class RemoteField : AbstractNamedRemoteEntity {
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteResolution))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemotePriority))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteIssueType))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(RemoteStatus))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5852,36 +5647,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             }
             set {
                 this.iconField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteStatus : AbstractRemoteConstant {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteIssueType : AbstractRemoteConstant {
-        
-        private bool subTaskField;
-        
-        /// <remarks/>
-        public bool subTask {
-            get {
-                return this.subTaskField;
-            }
-            set {
-                this.subTaskField = value;
             }
         }
     }
@@ -5923,18 +5688,17 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteSecurityLevel : AbstractNamedRemoteEntity {
+    public partial class RemoteIssueType : AbstractRemoteConstant {
         
-        private string descriptionField;
+        private bool subTaskField;
         
         /// <remarks/>
-        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string description {
+        public bool subTask {
             get {
-                return this.descriptionField;
+                return this.subTaskField;
             }
             set {
-                this.descriptionField = value;
+                this.subTaskField = value;
             }
         }
     }
@@ -5945,7 +5709,7 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteNamedObject : AbstractNamedRemoteEntity {
+    public partial class RemoteStatus : AbstractRemoteConstant {
     }
     
     /// <remarks/>
@@ -5954,15 +5718,44 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
-    public partial class RemoteFieldValue {
+    public partial class RemoteAvatar {
         
-        private string idField;
+        private string base64DataField;
         
-        private string[] valuesField;
+        private string contentTypeField;
+        
+        private long idField;
+        
+        private string ownerField;
+        
+        private bool systemField;
+        
+        private string typeField;
         
         /// <remarks/>
         [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string id {
+        public string base64Data {
+            get {
+                return this.base64DataField;
+            }
+            set {
+                this.base64DataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string contentType {
+            get {
+                return this.contentTypeField;
+            }
+            set {
+                this.contentTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long id {
             get {
                 return this.idField;
             }
@@ -5973,12 +5766,33 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         
         /// <remarks/>
         [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
-        public string[] values {
+        public string owner {
             get {
-                return this.valuesField;
+                return this.ownerField;
             }
             set {
-                this.valuesField = value;
+                this.ownerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool system {
+            get {
+                return this.systemField;
+            }
+            set {
+                this.systemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
             }
         }
     }
@@ -6118,6 +5932,157 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
+    public partial class RemoteWorklog {
+        
+        private string authorField;
+        
+        private string commentField;
+        
+        private System.Nullable<System.DateTime> createdField;
+        
+        private string groupLevelField;
+        
+        private string idField;
+        
+        private string roleLevelIdField;
+        
+        private System.Nullable<System.DateTime> startDateField;
+        
+        private string timeSpentField;
+        
+        private long timeSpentInSecondsField;
+        
+        private string updateAuthorField;
+        
+        private System.Nullable<System.DateTime> updatedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> created {
+            get {
+                return this.createdField;
+            }
+            set {
+                this.createdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string groupLevel {
+            get {
+                return this.groupLevelField;
+            }
+            set {
+                this.groupLevelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string roleLevelId {
+            get {
+                return this.roleLevelIdField;
+            }
+            set {
+                this.roleLevelIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> startDate {
+            get {
+                return this.startDateField;
+            }
+            set {
+                this.startDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string timeSpent {
+            get {
+                return this.timeSpentField;
+            }
+            set {
+                this.timeSpentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long timeSpentInSeconds {
+            get {
+                return this.timeSpentInSecondsField;
+            }
+            set {
+                this.timeSpentInSecondsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string updateAuthor {
+            get {
+                return this.updateAuthorField;
+            }
+            set {
+                this.updateAuthorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> updated {
+            get {
+                return this.updatedField;
+            }
+            set {
+                this.updatedField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
     public partial class RemoteTimeInfo {
         
         private string serverTimeField;
@@ -6222,6 +6187,41 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="http://beans.soap.rpc.jira.atlassian.com")]
+    public partial class RemoteFieldValue {
+        
+        private string idField;
+        
+        private string[] valuesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string[] values {
+            get {
+                return this.valuesField;
+            }
+            set {
+                this.valuesField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void getCommentCompletedEventHandler(object sender, getCommentCompletedEventArgs e);
     
@@ -6249,156 +6249,64 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getServerInfoCompletedEventHandler(object sender, getServerInfoCompletedEventArgs e);
+    public delegate void removeAllRoleActorsByNameAndTypeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addDefaultActorsToProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void removeDefaultActorsFromProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getAssociatedNotificationSchemesCompletedEventHandler(object sender, getAssociatedNotificationSchemesCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getServerInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getAssociatedNotificationSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getServerInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getAssociatedNotificationSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public RemoteServerInfo Result {
+        public RemoteScheme[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((RemoteServerInfo)(this.results[0]));
+                return ((RemoteScheme[])(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getGroupCompletedEventHandler(object sender, getGroupCompletedEventArgs e);
+    public delegate void getAssociatedPermissionSchemesCompletedEventHandler(object sender, getAssociatedPermissionSchemesCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getAssociatedPermissionSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getAssociatedPermissionSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public RemoteGroup Result {
+        public RemoteScheme[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((RemoteGroup)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void createGroupCompletedEventHandler(object sender, createGroupCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class createGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal createGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteGroup Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteGroup)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getConfigurationCompletedEventHandler(object sender, getConfigurationCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getConfigurationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getConfigurationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteConfiguration Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteConfiguration)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void loginCompletedEventHandler(object sender, loginCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class loginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal loginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void createUserCompletedEventHandler(object sender, createUserCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class createUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal createUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteUser Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteUser)(this.results[0]));
+                return ((RemoteScheme[])(this.results[0]));
             }
         }
     }
@@ -6457,10 +6365,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addCommentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void createIssueCompletedEventHandler(object sender, createIssueCompletedEventArgs e);
     
     /// <remarks/>
@@ -6484,92 +6388,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             }
         }
     }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getComponentsCompletedEventHandler(object sender, getComponentsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getComponentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getComponentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteComponent[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteComponent[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void updateUserCompletedEventHandler(object sender, updateUserCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class updateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal updateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteUser Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteUser)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void updateGroupCompletedEventHandler(object sender, updateGroupCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class updateGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal updateGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteGroup Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteGroup)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addUserToGroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void removeUserFromGroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
@@ -6603,26 +6421,1074 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getAvailableActionsCompletedEventHandler(object sender, getAvailableActionsCompletedEventArgs e);
+    public delegate void getGroupCompletedEventHandler(object sender, getGroupCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getAvailableActionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getAvailableActionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public RemoteNamedObject[] Result {
+        public RemoteGroup Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((RemoteNamedObject[])(this.results[0]));
+                return ((RemoteGroup)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void createGroupCompletedEventHandler(object sender, createGroupCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class createGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal createGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteGroup Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteGroup)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getServerInfoCompletedEventHandler(object sender, getServerInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getServerInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getServerInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteServerInfo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteServerInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void loginCompletedEventHandler(object sender, loginCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class loginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal loginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void logoutCompletedEventHandler(object sender, logoutCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class logoutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal logoutCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, addWorklogWithNewRemainingEstimateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addWorklogWithNewRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addWorklogWithNewRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteWorklog Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteWorklog)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, addWorklogAndRetainRemainingEstimateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addWorklogAndRetainRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addWorklogAndRetainRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteWorklog Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteWorklog)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getIssueByIdCompletedEventHandler(object sender, getIssueByIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getIssueByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getIssueByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssue Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssue)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getWorklogsCompletedEventHandler(object sender, getWorklogsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getWorklogsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getWorklogsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteWorklog[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteWorklog[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deleteUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deleteGroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addVersionCompletedEventHandler(object sender, addVersionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addVersionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addVersionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteVersion Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteVersion)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getStatusesCompletedEventHandler(object sender, getStatusesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getStatusesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getStatusesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteStatus[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteStatus[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getVersionsCompletedEventHandler(object sender, getVersionsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getVersionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getVersionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteVersion[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteVersion[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getCommentsCompletedEventHandler(object sender, getCommentsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCommentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCommentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteComment[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteComment[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void updateGroupCompletedEventHandler(object sender, updateGroupCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateGroupCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal updateGroupCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteGroup Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteGroup)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void updateUserCompletedEventHandler(object sender, updateUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal updateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteUser Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteUser)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getConfigurationCompletedEventHandler(object sender, getConfigurationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getConfigurationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getConfigurationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteConfiguration Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteConfiguration)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getSubTaskIssueTypesForProjectCompletedEventHandler(object sender, getSubTaskIssueTypesForProjectCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getSubTaskIssueTypesForProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getSubTaskIssueTypesForProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssueType[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssueType[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getCustomFieldsCompletedEventHandler(object sender, getCustomFieldsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCustomFieldsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCustomFieldsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteField[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteField[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getIssueTypesForProjectCompletedEventHandler(object sender, getIssueTypesForProjectCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getIssueTypesForProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getIssueTypesForProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssueType[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssueType[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void isProjectRoleNameUniqueCompletedEventHandler(object sender, isProjectRoleNameUniqueCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class isProjectRoleNameUniqueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal isProjectRoleNameUniqueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addActorsToProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void removeActorsFromProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void createUserCompletedEventHandler(object sender, createUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class createUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal createUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteUser Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteUser)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addCommentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void releaseVersionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void archiveVersionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getFieldsForCreateCompletedEventHandler(object sender, getFieldsForCreateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getFieldsForCreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getFieldsForCreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteField[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteField[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getFieldsForEditCompletedEventHandler(object sender, getFieldsForEditCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getFieldsForEditCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getFieldsForEditCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteField[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteField[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getIssuesFromTextSearchWithProjectCompletedEventHandler(object sender, getIssuesFromTextSearchWithProjectCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getIssuesFromTextSearchWithProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getIssuesFromTextSearchWithProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssue[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssue[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addBase64EncodedAttachmentsToIssueCompletedEventHandler(object sender, addBase64EncodedAttachmentsToIssueCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addBase64EncodedAttachmentsToIssueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addBase64EncodedAttachmentsToIssueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getIssuesFromTextSearchWithLimitCompletedEventHandler(object sender, getIssuesFromTextSearchWithLimitCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getIssuesFromTextSearchWithLimitCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getIssuesFromTextSearchWithLimitCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssue[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssue[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void removeAllRoleActorsByProjectCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getSecurityLevelsCompletedEventHandler(object sender, getSecurityLevelsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getSecurityLevelsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getSecurityLevelsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteSecurityLevel[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteSecurityLevel[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getProjectAvatarsCompletedEventHandler(object sender, getProjectAvatarsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getProjectAvatarsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getProjectAvatarsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteAvatar[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteAvatar[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void setProjectAvatarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getProjectAvatarCompletedEventHandler(object sender, getProjectAvatarCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getProjectAvatarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getProjectAvatarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteAvatar Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteAvatar)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deleteProjectAvatarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getPermissionSchemesCompletedEventHandler(object sender, getPermissionSchemesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getPermissionSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getPermissionSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemotePermissionScheme[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemotePermissionScheme[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addPermissionToCompletedEventHandler(object sender, addPermissionToCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addPermissionToCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addPermissionToCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemotePermissionScheme Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemotePermissionScheme)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deletePermissionFromCompletedEventHandler(object sender, deletePermissionFromCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class deletePermissionFromCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal deletePermissionFromCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemotePermissionScheme Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemotePermissionScheme)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getAllPermissionsCompletedEventHandler(object sender, getAllPermissionsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getAllPermissionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getAllPermissionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemotePermission[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemotePermission[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getFieldsForActionCompletedEventHandler(object sender, getFieldsForActionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getFieldsForActionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getFieldsForActionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteField[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteField[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void setUserPasswordCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void refreshCustomFieldsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getProjectsNoSchemesCompletedEventHandler(object sender, getProjectsNoSchemesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getProjectsNoSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getProjectsNoSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteProject[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteProject[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getSavedFiltersCompletedEventHandler(object sender, getSavedFiltersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getSavedFiltersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getSavedFiltersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteFilter[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteFilter[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getSecuritySchemesCompletedEventHandler(object sender, getSecuritySchemesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getSecuritySchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getSecuritySchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteScheme[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteScheme[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getIssuesFromFilterCompletedEventHandler(object sender, getIssuesFromFilterCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getIssuesFromFilterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getIssuesFromFilterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssue[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssue[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void setNewProjectAvatarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addUserToGroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void removeUserFromGroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void getComponentsCompletedEventHandler(object sender, getComponentsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getComponentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getComponentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteComponent[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteComponent[])(this.results[0]));
             }
         }
     }
@@ -6733,7 +7599,105 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void removeAllRoleActorsByProjectCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void editCommentCompletedEventHandler(object sender, editCommentCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class editCommentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal editCommentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteComment Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteComment)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void addWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteWorklog Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteWorklog)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deleteWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deleteWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void deleteWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void updateWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void updateWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void updateWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void createIssueWithParentWithSecurityLevelCompletedEventHandler(object sender, createIssueWithParentWithSecurityLevelCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class createIssueWithParentWithSecurityLevelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal createIssueWithParentWithSecurityLevelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RemoteIssue Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RemoteIssue)(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
@@ -6826,58 +7790,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         private object[] results;
         
         internal getSubTaskIssueTypesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssueType[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssueType[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getStatusesCompletedEventHandler(object sender, getStatusesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getStatusesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getStatusesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteStatus[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteStatus[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getIssueTypesForProjectCompletedEventHandler(object sender, getIssueTypesForProjectCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getIssueTypesForProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getIssueTypesForProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -6997,10 +7909,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void removeAllRoleActorsByNameAndTypeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void deleteProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
@@ -7029,100 +7937,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((RemoteProjectRole)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void isProjectRoleNameUniqueCompletedEventHandler(object sender, isProjectRoleNameUniqueCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class isProjectRoleNameUniqueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal isProjectRoleNameUniqueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addActorsToProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void removeActorsFromProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addDefaultActorsToProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void removeDefaultActorsFromProjectRoleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getAssociatedNotificationSchemesCompletedEventHandler(object sender, getAssociatedNotificationSchemesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getAssociatedNotificationSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getAssociatedNotificationSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteScheme[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteScheme[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getAssociatedPermissionSchemesCompletedEventHandler(object sender, getAssociatedPermissionSchemesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getAssociatedPermissionSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getAssociatedPermissionSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteScheme[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteScheme[])(this.results[0]));
             }
         }
     }
@@ -7159,58 +7973,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getVersionsCompletedEventHandler(object sender, getVersionsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getVersionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getVersionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteVersion[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteVersion[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getCommentsCompletedEventHandler(object sender, getCommentsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getCommentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getCommentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteComment[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteComment[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void getFavouriteFiltersCompletedEventHandler(object sender, getFavouriteFiltersCompletedEventArgs e);
     
     /// <remarks/>
@@ -7237,164 +7999,26 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void releaseVersionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void archiveVersionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getFieldsForCreateCompletedEventHandler(object sender, getFieldsForCreateCompletedEventArgs e);
+    public delegate void getAvailableActionsCompletedEventHandler(object sender, getAvailableActionsCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getFieldsForCreateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class getAvailableActionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal getFieldsForCreateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal getAvailableActionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public RemoteField[] Result {
+        public RemoteNamedObject[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((RemoteField[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getFieldsForEditCompletedEventHandler(object sender, getFieldsForEditCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getFieldsForEditCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getFieldsForEditCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteField[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteField[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getSubTaskIssueTypesForProjectCompletedEventHandler(object sender, getSubTaskIssueTypesForProjectCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getSubTaskIssueTypesForProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getSubTaskIssueTypesForProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssueType[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssueType[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getCustomFieldsCompletedEventHandler(object sender, getCustomFieldsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getCustomFieldsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getCustomFieldsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteField[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteField[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void logoutCompletedEventHandler(object sender, logoutCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class logoutCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal logoutCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void editCommentCompletedEventHandler(object sender, editCommentCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class editCommentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal editCommentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteComment Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteComment)(this.results[0]));
+                return ((RemoteNamedObject[])(this.results[0]));
             }
         }
     }
@@ -7427,92 +8051,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getSecurityLevelsCompletedEventHandler(object sender, getSecurityLevelsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getSecurityLevelsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getSecurityLevelsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteSecurityLevel[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteSecurityLevel[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getProjectAvatarsCompletedEventHandler(object sender, getProjectAvatarsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getProjectAvatarsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getProjectAvatarsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteAvatar[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteAvatar[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void setProjectAvatarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getProjectAvatarCompletedEventHandler(object sender, getProjectAvatarCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getProjectAvatarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getProjectAvatarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteAvatar Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteAvatar)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deleteProjectAvatarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void getNotificationSchemesCompletedEventHandler(object sender, getNotificationSchemesCompletedEventArgs e);
     
     /// <remarks/>
@@ -7533,32 +8071,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((RemoteScheme[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getPermissionSchemesCompletedEventHandler(object sender, getPermissionSchemesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getPermissionSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getPermissionSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemotePermissionScheme[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemotePermissionScheme[])(this.results[0]));
             }
         }
     }
@@ -7592,84 +8104,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void deletePermissionSchemeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addPermissionToCompletedEventHandler(object sender, addPermissionToCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addPermissionToCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addPermissionToCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemotePermissionScheme Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemotePermissionScheme)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deletePermissionFromCompletedEventHandler(object sender, deletePermissionFromCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class deletePermissionFromCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal deletePermissionFromCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemotePermissionScheme Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemotePermissionScheme)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getAllPermissionsCompletedEventHandler(object sender, getAllPermissionsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getAllPermissionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getAllPermissionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemotePermission[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemotePermission[])(this.results[0]));
-            }
-        }
-    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
@@ -7725,32 +8159,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getFieldsForActionCompletedEventHandler(object sender, getFieldsForActionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getFieldsForActionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getFieldsForActionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteField[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteField[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void progressWorkflowActionCompletedEventHandler(object sender, progressWorkflowActionCompletedEventArgs e);
     
     /// <remarks/>
@@ -7762,32 +8170,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
         private object[] results;
         
         internal progressWorkflowActionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssue Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssue)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getIssueByIdCompletedEventHandler(object sender, getIssueByIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getIssueByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getIssueByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -7849,134 +8231,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((RemoteAttachment[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, addWorklogWithNewRemainingEstimateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addWorklogWithNewRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addWorklogWithNewRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addWorklogAndAutoAdjustRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, addWorklogAndRetainRemainingEstimateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addWorklogAndRetainRemainingEstimateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addWorklogAndRetainRemainingEstimateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deleteWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deleteWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deleteWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void updateWorklogAndAutoAdjustRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void updateWorklogAndRetainRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void updateWorklogWithNewRemainingEstimateCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getWorklogsCompletedEventHandler(object sender, getWorklogsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getWorklogsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getWorklogsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteWorklog[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteWorklog[])(this.results[0]));
             }
         }
     }
@@ -8165,32 +8419,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getIssuesFromTextSearchWithProjectCompletedEventHandler(object sender, getIssuesFromTextSearchWithProjectCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getIssuesFromTextSearchWithProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getIssuesFromTextSearchWithProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssue[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssue[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void getIssuesFromJqlSearchCompletedEventHandler(object sender, getIssuesFromJqlSearchCompletedEventArgs e);
     
     /// <remarks/>
@@ -8211,100 +8439,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((RemoteIssue[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void setUserPasswordCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deleteUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void deleteGroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void refreshCustomFieldsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getProjectsNoSchemesCompletedEventHandler(object sender, getProjectsNoSchemesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getProjectsNoSchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getProjectsNoSchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteProject[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteProject[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addVersionCompletedEventHandler(object sender, addVersionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addVersionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addVersionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteVersion Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteVersion)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getSavedFiltersCompletedEventHandler(object sender, getSavedFiltersCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getSavedFiltersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getSavedFiltersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteFilter[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteFilter[])(this.results[0]));
             }
         }
     }
@@ -8337,58 +8471,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void createIssueWithParentWithSecurityLevelCompletedEventHandler(object sender, createIssueWithParentWithSecurityLevelCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class createIssueWithParentWithSecurityLevelCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal createIssueWithParentWithSecurityLevelCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssue Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssue)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void addBase64EncodedAttachmentsToIssueCompletedEventHandler(object sender, addBase64EncodedAttachmentsToIssueCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class addBase64EncodedAttachmentsToIssueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal addBase64EncodedAttachmentsToIssueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     public delegate void createProjectFromObjectCompletedEventHandler(object sender, createProjectFromObjectCompletedEventArgs e);
     
     /// <remarks/>
@@ -8409,58 +8491,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((RemoteProject)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getSecuritySchemesCompletedEventHandler(object sender, getSecuritySchemesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getSecuritySchemesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getSecuritySchemesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteScheme[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteScheme[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getIssuesFromFilterCompletedEventHandler(object sender, getIssuesFromFilterCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getIssuesFromFilterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getIssuesFromFilterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssue[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssue[])(this.results[0]));
             }
         }
     }
@@ -8490,36 +8520,6 @@ namespace AgileOutlook.Extensions.JiraSoapService {
             }
         }
     }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void getIssuesFromTextSearchWithLimitCompletedEventHandler(object sender, getIssuesFromTextSearchWithLimitCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getIssuesFromTextSearchWithLimitCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getIssuesFromTextSearchWithLimitCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RemoteIssue[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RemoteIssue[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
-    public delegate void setNewProjectAvatarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

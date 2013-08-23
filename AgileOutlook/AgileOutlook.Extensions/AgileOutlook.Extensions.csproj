@@ -265,10 +265,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2%3fwsdl">
+    <WebReferenceUrl Include="http://localhost:8080/rpc/soap/jirasoapservice-v2%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\JiraSoapService\</RelPath>
-      <UpdateFromURL>https://epm.verisk.com/jira/rpc/soap/jirasoapservice-v2%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>http://localhost:8080/rpc/soap/jirasoapservice-v2%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

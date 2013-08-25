@@ -1,0 +1,57 @@
+﻿@inherits System.Web.Mvc.WebViewPage<IList<ProfessionalMVCTest.Models.CollectionModel>>
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using System.Web.Routing
+
+@{
+    ViewBag.Title = "Collection";
+}
+
+<h2>Collection</h2>
+@{
+    var coll = Model ?? new List<ProfessionalMVCTest.Models.CollectionModel>();
+    
+}
+@using (Html.BeginForm())
+{
+    
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Remove</th>
+    </tr>
+
+    @for (int i = 0; i < coll.Count(); i++)
+    {
+        var mod = coll[i];
+        <tr>
+            <td>
+               @* <input type="hidden" name="coll.index" value="@i" />*@
+                <input type="text" name="coll[@i].Id"  value="@mod.Id" />
+            </td>
+            <td>
+                <input type="text" name="coll[@i].Name" value="@mod.Name" />
+            </td>
+            <td>
+                <input type="text" name="coll[@i].Address" value="@mod.Address" />
+            </td>
+            <td>
+                <input type="button" value="REMOVE" onclick="removeItem(this);" />
+            </td>
+        </tr>
+    }
+
+</table>
+    <input type="submit" value="Save" />
+}
+<script type="text/javascript">
+    function removeItem(btn) {
+        var wholeTR = $(btn).parents('tr');
+        console.log(wholeTR);
+        wholeTR.remove();
+    }
+</script>

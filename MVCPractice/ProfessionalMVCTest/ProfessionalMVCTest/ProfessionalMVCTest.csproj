@@ -168,6 +168,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AppStartup.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicationSettingModelBinder.cs" />
     <Compile Include="Models\AppSettingValueProvider.cs" />
+    <Compile Include="Models\CollectionModel.cs" />
     <Compile Include="Models\CustomControllerFactory.cs" />
     <Compile Include="Models\CustomView.cs" />
     <Compile Include="Models\DB\UserInfoContext.cs" />
@@ -347,6 +349,8 @@
     <Content Include="Views\ActionSelection\Form.cshtml" />
     <Content Include="Views\ActionSelection\BrowserView.cshtml" />
     <Content Include="Views\CustomBinder\Index.cshtml" />
+    <Content Include="Views\Forms\Collection.cshtml" />
+    <Content Include="Views\Forms\CollectionSimpleType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

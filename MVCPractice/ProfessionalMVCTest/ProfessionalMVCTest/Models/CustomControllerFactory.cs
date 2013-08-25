@@ -10,8 +10,10 @@ namespace ProfessionalMVCTest.Models
     {
         public override IController CreateController(System.Web.Routing.RequestContext requestContext, string controllerName)
         {
-            //return base.CreateController(requestContext, controllerName);
-            var controllerType = typeof(CustomControllerFactory).Assembly.GetTypes().Where(m=>typeof(IController).IsAssignableFrom(m)).FirstOrDefault(m => m.Name.Equals(string.Format("{0}MyController", controllerName),StringComparison.OrdinalIgnoreCase));
+            
+            var controllerType = typeof(CustomControllerFactory).Assembly.GetTypes().
+                Where(m=>typeof(IController).IsAssignableFrom(m)).
+                FirstOrDefault(m => m.Name.Equals(string.Format("{0}MyController", controllerName),StringComparison.OrdinalIgnoreCase));
             if (controllerType != null)
             {
                 return (IController)Activator.CreateInstance(controllerType);
@@ -20,14 +22,6 @@ namespace ProfessionalMVCTest.Models
             return null;
         }
 
-        protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
-        {
-            return base.GetControllerInstance(requestContext, controllerType);
-        }
-
-        protected override Type GetControllerType(System.Web.Routing.RequestContext requestContext, string controllerName)
-        {
-            return base.GetControllerType(requestContext, controllerName);
-        }
+        
     }
 }

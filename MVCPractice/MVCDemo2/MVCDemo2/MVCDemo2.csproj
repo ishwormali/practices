@@ -239,6 +239,8 @@
     <Content Include="Views\Forms\FruitsList.cshtml" />
     <Content Include="Views\College\Index.cshtml" />
     <Content Include="Views\College\Students.cshtml" />
+    <Content Include="Views\RouteTest\Index.cshtml" />
+    <Content Include="Views\RouteTest\NonIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

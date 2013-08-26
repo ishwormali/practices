@@ -1,0 +1,23 @@
+﻿@model MVCDemo2.Models.Person
+
+@{
+    ViewBag.Title = "SavePerson";
+}
+
+<h2>SavePerson</h2>
+
+    <label >Name: </label>@Model.Name
+    <br />
+    <label >Address: </label>@Model.Address
+    <br />
+    <label >Age: </label>@Model.Age
+    <br />
+ <label >Registration Date: </label>@Model.RegistrationDate
+    <br />
+
+    <label style="font-weight:bold">Married? </label>@(Model.IsMarried?"Married":"Unmarried")
+    <br />
+    
+    <label>Gender</label>@Model.Gender
+    <br />
+    <label>Hobbies</label>@(Model.Hobbies!=null?string.Join(", ",Model.Hobbies):"")

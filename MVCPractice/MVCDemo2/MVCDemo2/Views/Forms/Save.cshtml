@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Save";
+}
+
+<h2>Save</h2>
+
+
+    <label >Name: </label>@Request["Name"]
+    <br />
+    <label >Address: </label>@Request["Address"]
+    <br />
+    <label >Age: </label>@Request["Age"]
+    <br />
+<label>Registration Date: </label>@Request["RegistrationDate"]
+    <label style="font-weight:bold">Married? </label>@Request["IsMarried"]
+    <br />
+    
+    <label>Gender</label>@Request["Gender"]
+    <br />
+    <label>Hobbies</label>@Request["Hobbies"]
+
+
+
+@Html.ActionLink("Go Back","Index","Forms")

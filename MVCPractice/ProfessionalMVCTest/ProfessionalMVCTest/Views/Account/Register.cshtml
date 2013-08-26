@@ -27,6 +27,11 @@
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
+            <li>
+            @Html.Label("rad")
+                @Html.RadioButton("rad","VAl1")
+                @Html.RadioButton("rad","Val2")
+                </li>
         </ol>
         <input type="submit" value="Register" />
     </fieldset>

@@ -32,6 +32,7 @@ namespace ProfessionalMVCTest.Controllers
             return View("ComplexType");
         }
 
+
         [HttpPost]
         public ActionResult ComplexType(FormViewModel myform)
         {

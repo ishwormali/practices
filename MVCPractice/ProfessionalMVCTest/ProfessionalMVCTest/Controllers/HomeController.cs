@@ -10,6 +10,14 @@ namespace ProfessionalMVCTest.Controllers
     public class HomeController : Controller
     {
 
+
+        public ActionResult Index()
+        {
+            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //Response.SetCookie(new HttpCookie("somecookie", "secret.shhhhhhhhhhhhhh"));
+            return View();
+        }
+
         public ActionResult TemplatePractice()
         {
             return View();
@@ -55,12 +63,6 @@ namespace ProfessionalMVCTest.Controllers
         }
 
 
-        public ActionResult Index()
-        {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            //Response.SetCookie(new HttpCookie("somecookie", "secret.shhhhhhhhhhhhhh"));
-            return View();
-        }
 
         public ActionResult About()
         {

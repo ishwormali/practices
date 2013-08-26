@@ -1,0 +1,55 @@
+﻿
+@model IList<MVCDemo2.Models.Fruit>
+
+@{
+    ViewBag.Title = "FruitsList";
+}
+
+<h2>FruitsList</h2>
+
+@{
+    var fruits = Model ?? new List<MVCDemo2.Models.Fruit>();
+    
+}
+@using (Html.BeginForm("SaveFruitsList","Forms"))
+{
+    
+
+<table>
+    <tr>
+        
+        <th>Name</th>
+        <th>Price</th>
+        <th>Region</th>
+    </tr>
+
+    @for (int i = 0; i < fruits.Count(); i++)
+    {
+        var mod = fruits[i];
+        <tr>
+            <td>
+                <input type="hidden" name="fruits.index" value="@i" />
+                <input type="text" name="fruits[@i].Name"  value="@mod.Name" />
+            </td>
+            <td>
+                <input type="text" name="fruits[@i].Price" value="@mod.Price" />
+            </td>
+            <td>
+                <input type="text" name="fruits[@i].Region" value="@mod.Region" />
+            </td>
+            <td>
+                <input type="button" value="REMOVE" onclick="removeItem(this);" />
+            </td>
+        </tr>
+    }
+
+</table>
+    <input type="submit" value="Save" />
+}
+<script type="text/javascript">
+    function removeItem(btn) {
+        var wholeTR = $(btn).parents('tr');
+        console.log(wholeTR);
+        wholeTR.remove();
+    }
+</script>

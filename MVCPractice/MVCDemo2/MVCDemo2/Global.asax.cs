@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MVCDemo2.Controllers;
+using MVCDemo2.Models;
+using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +25,16 @@ namespace MVCDemo2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var kernel = new StandardKernel();
+            kernel.Bind<INameFormatter>().To<NameFormatter>();
+            kernel.Bind<IBlobService>().To<AmazonBlobService>();
+            kernel.Bind<PersonBlobController>().To<PersonBlobController>();
+            DependencyResolver.SetResolver(t => {
+                return kernel.TryGet(t);
+            }, t => { 
+                return kernel.GetAll(t); 
+            });
         }
     }
 }

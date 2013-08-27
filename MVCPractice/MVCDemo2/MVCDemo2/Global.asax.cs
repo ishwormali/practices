@@ -26,15 +26,15 @@ namespace MVCDemo2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            var kernel = new StandardKernel();
-            kernel.Bind<INameFormatter>().To<NameFormatter>();
-            kernel.Bind<IBlobService>().To<AmazonBlobService>();
-            kernel.Bind<PersonBlobController>().To<PersonBlobController>();
-            DependencyResolver.SetResolver(t => {
-                return kernel.TryGet(t);
-            }, t => { 
-                return kernel.GetAll(t); 
-            });
+            //var kernel = new StandardKernel();
+            //kernel.Bind<INameFormatter>().To<NameFormatter>();
+            //kernel.Bind<IBlobService>().To<AmazonBlobService>();
+            //kernel.Bind<PersonBlobController>().To<PersonBlobController>();
+            //DependencyResolver.SetResolver(t => {
+            //    return kernel.TryGet(t);
+            //}, t => { 
+            //    return kernel.GetAll(t); 
+            //});
         }
     }
 }

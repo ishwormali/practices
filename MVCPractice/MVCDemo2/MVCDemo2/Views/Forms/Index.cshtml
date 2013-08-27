@@ -5,38 +5,40 @@
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("Save", "Forms"))
+@using (Html.BeginForm("SavePerson", "Forms"))
 {
+    <input type="hidden" value="123" name="person.Id"/>
     
     <label >Name: </label>
-    <input type="text" name="Name" />
+    <input type="text" name="person.Name" />
     <br />
     
     <label >Address: </label>
-    <input type="text" name="Address" />
+    <input type="text" name="person.Address" />
     <br />
     
     <label >Age: </label>
-    <input type="number" name="Age" value="20" />
+    <input type="number" name="person.Age" value="20" />
     <br />
 
     <label>Registration Date</label>
    
-    <input type="date" value="08/27/2013" name="RegistrationDate"/>
+    <input type="date" value="08/27/2013" name="person.RegistrationDate"/>
     <br />
     
     <label style="font-weight:bold">Married? </label>
-    <input type="checkbox" name="IsMarried" value="True" />
+    <input type="checkbox" name="person.IsMarried" value="True" />
+    <input type="hidden" name="person.IsMarried" value="False" />
     <br />
     
-    <label>Gender</label><input type="radio" value="Male" name="Gender" style="width:5px;"  checked /><text>Male</text>
-    <input type="radio" value="Female" name="Gender" style="width:5px;"  /><text>Female</text>
+    <label>Gender</label><input type="radio" value="Male" name="person.Gender" style="width:5px;"  checked /><text>Male</text>
+    <input type="radio" value="Female" name="person.Gender" style="width:5px;"  /><text>Female</text>
     <br />
     
     <label>Hobbies</label>
-    <input type="checkbox" name="Hobbies" value="Football" />@:Football
-    <input type="checkbox" name="Hobbies" value="Basketball"/>@:Basketball
-    <input type="checkbox" name="Hobbies" value="Music"/>@:Music
+    <input type="checkbox" name="person.Hobbies" value="Football" />@:Football
+    <input type="checkbox" name="person.Hobbies" value="Basketball"/>@:Basketball
+    <input type="checkbox" name="person.Hobbies" value="Music"/>@:Music
         <br />
     
     <input type="submit" value="submit" />

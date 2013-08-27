@@ -31,9 +31,13 @@ namespace MVCDemo2
                 //, extraParam = "this is extra param" 
             });
           
+            
+            routes.MapRoute(
+               name: "RouteTestModified",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "NonIndex", id = UrlParameter.Optional }
+           );
              */
-
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

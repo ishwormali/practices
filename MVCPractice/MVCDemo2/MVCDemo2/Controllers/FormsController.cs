@@ -18,13 +18,32 @@ namespace MVCDemo2.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Save(string Id, string Name, int Age, string Address, string IsMarried, string[] Hobbies,string RegistrationDate)
-        {
+        //[HttpPost]
+        //public ActionResult Save()
+        //{
+        //    string Id = Request.Form["Id"];
+        //    string Name = Request.Form["Name"];
+        //    string Age = Request.Form["Age"];
+        //    string Address = Request.Form["Address"];
+        //    string IsMarried = Request.Form["IsMarried"];
+        //    string Hobbies = Request.Form["Hobbies"];
+        //    string RegistrationDate = Request.Form["RegistrationDate"];
+            
+        //    //do your thing
 
-            return View();
+        //    return View();
 
-        }
+        //}
+
+        //[HttpPost]
+        //public ActionResult Save(string Id, string Name, int Age, string Address,
+        //    bool IsMarried, string[] Hobbies, string RegistrationDate)
+        //{
+
+        //    return View();
+
+        //}
+
 
         //[HttpPost]
         //public ActionResult SavePerson(Person person)
@@ -34,18 +53,18 @@ namespace MVCDemo2.Controllers
 
         //}
 
-        //[HttpPost]
-        //public ActionResult SavePerson()
-        //{
-        //    Person person = new Person();
-        //    if (TryUpdateModel(person))
-        //    {
-        //        //model is valid
-        //    }
+        [HttpPost]
+        public ActionResult SavePerson()
+        {
+            Person person = new Person();
+            if (TryUpdateModel(person))
+            {
+                //model is valid
+            }
 
-        //    return View(person);
+            return View(person);
 
-        //}
+        }
 
 
         public ActionResult Fruits()
@@ -60,6 +79,11 @@ namespace MVCDemo2.Controllers
         {
             return View("Fruits", fruits);
         }
+
+
+
+
+
 
         public ActionResult FruitsList()
         {

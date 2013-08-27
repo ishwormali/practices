@@ -13,15 +13,15 @@ namespace MVCDemo2.Controllers
         //
         // GET: /BadBlob/
 
-        //public AmazonBlobService BlobService { get; set; }
+        public AmazonBlobService BlobService { get; set; }
 
-        [Inject]
-        public IBlobService BlobService{get;set;}
+        //[Inject]
+        //public IBlobService BlobService{get;set;}
 
         public PersonBlobController()//(IBlobService blobService)
         {
             //this.BlobService = blobService;
-            //BlobService = new AmazonBlobService();
+            BlobService = new AmazonBlobService();
         }
 
         public ActionResult Index()

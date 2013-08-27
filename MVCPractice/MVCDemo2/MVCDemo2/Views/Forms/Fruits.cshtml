@@ -27,8 +27,8 @@ var fruits=Model??new string[0];
         var mod = fruits[i];
         <tr>
             <td>
-              @*  <input type="hidden" name="coll.index" value="@i" />*@
-              @*  <input type="text" name="fruits[@i]"  value="@mod" />*@
+             
+                @*<input type="text" name="fruits[@i]"  value="@mod" />*@
                 <input type="text" name="fruits"  value="@mod" />
             </td>
            
@@ -48,3 +48,6 @@ var fruits=Model??new string[0];
         wholeTR.remove();
     }
 </script>
+
+
+ @*  <input type="hidden" name="coll.index" value="@i" />*@

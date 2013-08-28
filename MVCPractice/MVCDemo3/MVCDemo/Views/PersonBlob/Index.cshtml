@@ -1,0 +1,18 @@
+﻿@model IList<string>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> BLOBS:</h2>
+@{
+    
+    var files = Model ?? new List<string>();
+}
+
+<br />
+
+@foreach (var item in files)
+{
+    @item
+    <br />
+}

@@ -3,3 +3,28 @@
 }
 
 <h2>Action selection Index Page</h2>
+
+
+
+Url<input type="text" id="url" />
+<br />
+Method<input type="text" id="method" />
+<br />
+<input type="button" value="send" onclick="sendRequest()" />
+
+
+<script type="text/javascript">
+
+    function sendRequest() {
+        var url=$('#url').val();
+        var type=$('#method').val();
+        $.ajax({
+            url: url,
+            type: type
+        }).success(function (data) {
+            alert(data);
+        }).fail(function (xhr) {
+            alert(xhr.responseText);
+        });
+    }
+</script>

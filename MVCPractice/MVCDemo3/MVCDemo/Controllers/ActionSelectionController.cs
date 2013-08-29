@@ -22,7 +22,22 @@ namespace MVCDemo.Controllers
             return View();
         }
 
-        
+        public string MyAction()
+        {
+            return "MyAction";
+        }
+
+        [HttpPost]
+        public string MyAction(string temp)
+        {
+            return "MyAction For Post";
+        }
+
+       // [ActionName("MyAction2")]
+        public string NonMyAction()
+        {
+            return "NonMyAction";
+        }
 
         /* Example 2
         public ActionResult Form()

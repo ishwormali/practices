@@ -13,9 +13,11 @@ namespace MVCDemo.Models
         {
             this.userAgent = userAgent;
         }
+
         public override bool IsValidForRequest(ControllerContext controllerContext, System.Reflection.MethodInfo methodInfo)
         {
-            return controllerContext.RequestContext.HttpContext.Request.UserAgent.IndexOf(userAgent,StringComparison.OrdinalIgnoreCase)>=0;
+            var isValid= controllerContext.RequestContext.HttpContext.Request.UserAgent.IndexOf(userAgent,StringComparison.OrdinalIgnoreCase)>=0;
+            return isValid;
 
         }
     }

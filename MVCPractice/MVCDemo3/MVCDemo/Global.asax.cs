@@ -30,11 +30,13 @@ namespace MVCDemo
             //DI
             /*
               var kernel = new StandardKernel();
-            kernel.Bind<INameFormatter>().To<NameFormatter>();
+             
+             
+            //kernel.Bind<INameFormatter>().To<NameFormatter>();
+            
             kernel.Bind<IBlobService>().To<AmazonBlobService>();
             kernel.Bind<PersonBlobController>().To<PersonBlobController>();
             
-             
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
             
             
@@ -76,6 +78,9 @@ namespace MVCDemo
             kernel.Bind<IControllerActivator>().To<CustomControllerActivator>();
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
             */
+
+
+
 
             //model binders example
             //ModelBinders.Binders.Add(typeof(ApplicationSetting), new ApplicationSettingModelBinder());

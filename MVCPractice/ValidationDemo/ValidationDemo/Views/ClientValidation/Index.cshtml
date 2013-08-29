@@ -1,0 +1,34 @@
+﻿@model ValidationDemo.Controllers.Person
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+@Html.EditorForModel()    
+    
+    <br />
+    <input type="submit" />
+}
+
+
+
+@section scripts{
+
+<script type="text/javascript">
+
+    $.validator.addMethod("requiredifexp", function (value,element,p) {
+        return $.trim(value)!='' || $('input[type=checkbox][name$='+p+']').is(':checked');
+    });
+
+    $.validator.unobtrusive.adapters.add("requiredifexp", ["expression"], function (options) {
+        options.rules["requiredifexp"] = options.params.expression;
+        options.messages["requiredifexp"] = options.message;
+
+    });
+</script>
+
+    }

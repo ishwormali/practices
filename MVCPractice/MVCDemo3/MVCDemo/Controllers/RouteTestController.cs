@@ -11,7 +11,7 @@ namespace MVCDemo.Controllers
         //
         // GET: /RouteTest/
 
-        public ActionResult Index()
+        public ActionResult Index(string id,string a, string b)
         {
             return View();
         }

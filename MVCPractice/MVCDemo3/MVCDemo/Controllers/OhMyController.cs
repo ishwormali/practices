@@ -17,9 +17,16 @@ namespace MVCDemo.Controllers
 
         public ActionResult Index()
         {
+            
             return View();
+
+            
         }
 
 
     }
 }
+
+
+//var people = PersonService.GetAll();
+//            return View(people);

@@ -16,6 +16,26 @@ namespace MVCDemo.Controllers
             return View();
         }
 
+
+        public ActionResult Students(int year, string campus, string extraParam)
+        {
+            ViewBag.Year = year;
+            ViewBag.Campus = campus;
+            ViewBag.Group = "New Bloods";
+            return View();
+        }
+
+
+        public ActionResult GrandPas(int year, string campus)
+        {
+            ViewBag.Year = year;
+            ViewBag.Campus = campus;
+            ViewBag.Group = "GrandPas";
+            return View("Students");
+        }
+        
+        
+        
         /// <summary>
         /// Simple example
         /// </summary>
@@ -28,22 +48,5 @@ namespace MVCDemo.Controllers
         //    ViewBag.FruitName = fruitName;
         //    return View();
         //}
-
-        public ActionResult Students(int year, string college, string extraParam)
-        {
-            ViewBag.Year = year;
-            ViewBag.College = college;
-            ViewBag.Group = "New Bloods";
-            return View();
-        }
-
-
-        public ActionResult GrandPas(int year, string college)
-        {
-            ViewBag.Year = year;
-            ViewBag.College = college;
-            ViewBag.Group = "GrandPas";
-            return View("Students");
-        }
     }
 }

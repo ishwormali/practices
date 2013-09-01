@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
-    public class PersonBlobController : Controller
+    public class BlobController : Controller
     {
         //
         // GET: /BadBlob/
@@ -18,7 +18,7 @@ namespace MVCDemo.Controllers
         //[Inject]
         //public IBlobService BlobService{get;set;}
 
-        public PersonBlobController()//(IBlobService blobService)
+        public BlobController()//(IBlobService blobService)
         {
             //this.BlobService = blobService;
             BlobService = new AmazonBlobService();

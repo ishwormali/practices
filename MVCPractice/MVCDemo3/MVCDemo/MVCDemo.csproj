@@ -145,7 +145,7 @@
     <Compile Include="Controllers\CustomBinderController.cs" />
     <Compile Include="Controllers\ModelBindingTestController.cs" />
     <Compile Include="Controllers\OhMyController.cs" />
-    <Compile Include="Controllers\PersonBlobController.cs" />
+    <Compile Include="Controllers\BlobController.cs" />
     <Compile Include="Controllers\CollegeController.cs" />
     <Compile Include="Controllers\FormsController.cs" />
     <Compile Include="Controllers\RouteTestController.cs" />
@@ -278,7 +278,7 @@
     <Content Include="Views\College\Students.cshtml" />
     <Content Include="Views\RouteTest\Index.cshtml" />
     <Content Include="Views\RouteTest\NonIndex.cshtml" />
-    <Content Include="Views\PersonBlob\Index.cshtml" />
+    <Content Include="Views\Blob\Index.cshtml" />
     <Content Include="Views\ActionSelection\BrowserView.cshtml" />
     <Content Include="Views\ActionSelection\Form.cshtml" />
     <Content Include="Views\ActionSelection\Index.cshtml" />

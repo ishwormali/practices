@@ -1,4 +1,6 @@
-﻿@{
+﻿@*@model IList<MVCDemo.Models.Person>*@
+
+@{
     ViewBag.Title = "Index";
 }
 
@@ -6,3 +8,11 @@
 
 
 Oh My controller
+
+
+
+@*@foreach (var item in Model)
+{
+    @item.Name 
+    <br />
+}*@

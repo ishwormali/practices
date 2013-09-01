@@ -12,9 +12,11 @@ namespace MVCDemo.Models
 
         public IController Create(RequestContext requestContext, Type controllerType)
         {
-            //return (IController)Activator.CreateInstance(controllerType);
-            var controller=(IController)DependencyResolver.Current.GetService(controllerType);
-            return controller;
+            return (IController)Activator.CreateInstance(controllerType);
+
         }
     }
 }
+
+//var controller=(IController)DependencyResolver.Current.GetService(controllerType);
+//return controller;

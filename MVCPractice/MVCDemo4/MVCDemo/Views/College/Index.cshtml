@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@Html.ActionLink("2010 Harvard students","Students","College",new {year=2010,college="Harvard"},null)
+
+( @Url.Action("Students","College",new {year=2010,college="Harvard"}) )
+
+<br />
+@Html.ActionLink("2010 Oxford students","Students","College",new {year=2010,college="Oxford"},null)
+(@Url.Action("Students","College",new {year=2010,college="Oxford"}) )
+<br />
+@Html.ActionLink("1899 MIT students","Students","College",new {year=1899,college="MIT"},null)
+(@Url.Action("Students","College",new {year=1899,college="MIT"}) )

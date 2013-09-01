@@ -177,6 +177,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActionSelectionController.cs" />
+    <Compile Include="Controllers\AsyncTestController.cs" />
     <Compile Include="Controllers\ControllerActivatorSampleController.cs" />
     <Compile Include="Controllers\CustomBinderController.cs" />
     <Compile Include="Controllers\FormsController.cs" />
@@ -355,6 +356,7 @@
     <Content Include="Views\Forms\Collection.cshtml" />
     <Content Include="Views\Forms\CollectionSimpleType.cshtml" />
     <Content Include="Views\ControllerActivatorSample\Index.cshtml" />
+    <Content Include="Views\AsyncTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

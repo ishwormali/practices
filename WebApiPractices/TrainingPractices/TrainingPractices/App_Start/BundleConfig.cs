@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Threading.Tasks;
+using System.Web;
 using System.Web.Optimization;
 
 namespace TrainingPractices
@@ -17,13 +18,17 @@ namespace TrainingPractices
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/plugins").Include("~/scripts/knockout-2.1.0.debug.js","~/scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/app").Include("~/scripts/app/personapi.js"));
+            
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css","~/content/bootstrap/bootstrap.css"));
+            
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -38,6 +43,13 @@ namespace TrainingPractices
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+        }
+
+        public async void SomeAsyncTask()
+        {
+             await Task.Run(() => { 
+            
+            });
         }
     }
 }

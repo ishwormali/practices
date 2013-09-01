@@ -1,0 +1,27 @@
+﻿
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using System.Web.Routing
+@inherits System.Web.Mvc.WebViewPage<MVCDemo.Models.FormViewModel>
+
+
+@{
+    ViewBag.Title = "ComplexType";
+}
+
+<h1>Complex Form</h1>
+
+@using (Html.BeginForm("ComplexType","Forms"))
+{
+    @:ID <input type="text" name="Id" /> 
+    <br />
+    @:Name <input type="text" name="Name" />  
+@*    
+    @:ID <input type="text" name="myform.Id" /> 
+    <br />
+    @:Name <input type="text" name="myform.Name" />  *@
+      
+    <input type="submit" />
+}
+

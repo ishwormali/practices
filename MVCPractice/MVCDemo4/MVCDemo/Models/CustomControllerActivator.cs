@@ -7,7 +7,7 @@ using System.Web.Routing;
 
 namespace MVCDemo.Models
 {
-    public class CustomControllerActivator//:IControllerActivator
+    public class CustomControllerActivator:IControllerActivator
     {
 
         public IController Create(RequestContext requestContext, Type controllerType)

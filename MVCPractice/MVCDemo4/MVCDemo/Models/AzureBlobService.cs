@@ -9,14 +9,15 @@ namespace MVCDemo2.Models
 {
     public class AzureBlobService : IBlobService
     {
-        [Inject]
+        //[Inject]
         public NameFormatter Formatter { get; set; }
 
         public AzureBlobService()
         {
-            //Formatter = new NameFormatter();
+            Formatter = new NameFormatter();
 
         }
+
         public IList<string> GetFileNames(string containerPath)
         {
             return new List<string>{

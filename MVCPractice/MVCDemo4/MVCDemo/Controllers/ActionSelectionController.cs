@@ -22,6 +22,7 @@ namespace MVCDemo.Controllers
             return View();
         }
 
+
         public string MyAction()
         {
             return "MyAction";
@@ -33,7 +34,7 @@ namespace MVCDemo.Controllers
             return "MyAction For Post";
         }
 
-       // [ActionName("MyAction2")]
+       [ActionName("MyAction")]
         public string NonMyAction()
         {
             return "NonMyAction";
@@ -61,9 +62,10 @@ namespace MVCDemo.Controllers
          */
 
 
-        /*example 3
+       /*example 3
+       */
 
-        [UserAgentSelector("Firefox")]
+       [UserAgentSelector("Firefox")]
         public ActionResult BrowserView(string arbitaryParameter1)
         {
             ViewBag.UserAgent = "Firefox";
@@ -76,7 +78,7 @@ namespace MVCDemo.Controllers
             ViewBag.UserAgent = "Chrome";
             return View();
         }
-        */
+        
     }
 
     

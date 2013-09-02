@@ -28,35 +28,37 @@ namespace MVCDemo
 
 
             //DI
-            /*
-              var kernel = new StandardKernel();
+            /**/
+            //  var kernel = new StandardKernel();
              
              
             //kernel.Bind<INameFormatter>().To<NameFormatter>();
             
-            kernel.Bind<IBlobService>().To<AmazonBlobService>();
-            kernel.Bind<PersonBlobController>().To<PersonBlobController>();
+            //kernel.Bind<IBlobService>().To<AmazonBlobService>();
+            //kernel.Bind<PersonBlobController>().To<PersonBlobController>();
             
-            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
-            
-            
-            DependencyResolver.SetResolver(t => {
-                return kernel.TryGet(t);
-            }, t => { 
-                return kernel.GetAll(t); 
-            });
+           // DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
 
-            */
 
+            //DependencyResolver.SetResolver(t =>
+            //{
+            //    return kernel.TryGet(t);
+            //}, t =>
+            //{
+            //    return kernel.GetAll(t);
+            //});
+
+            //ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+          //  kernel.Bind<IControllerFactory>().To<CustomControllerFactory>();
 
             /*
-             * controller factory* */
+             * controller factory*
             
             //method 1
              
             
-            //ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
-
+           
+             */
 
             //method 2
 

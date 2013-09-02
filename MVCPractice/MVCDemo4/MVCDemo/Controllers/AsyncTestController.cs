@@ -18,23 +18,22 @@ namespace MVCDemo2.Controllers
             return View();
         }
 
-        public ActionResult List()
-        {
-            var service = new AmazonBlobService();
-            var filesTask = service.GetFileNamesAsync("container");
-            filesTask.Wait();
-            return View(filesTask.Result);
-        }
+        //public ActionResult List()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var filesTask = service.GetFileNamesAsync("container");
+        //    filesTask.Wait();
+        //    return View(filesTask.Result);
+        //}
 
-        public ViewResult GetSomething()
-        {
-            var service = new AmazonBlobService();
-            var filesTask = service.GetFileNamesAsync("container");
+        //public ViewResult GetSomething()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var filesTask = service.GetFileNamesAsync("container");
 
-            return View("List", filesTask.Result);
+        //    return View("List", filesTask.Result);
             
-
-        }
+        //}
 
         //public  async Task<ActionResult> List()
         //{

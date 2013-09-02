@@ -10,25 +10,33 @@ namespace MVCDemo.Controllers
 {
     public class PersonBlobController : Controller
     {
-        //
-        // GET: /BadBlob/
-
-        public AmazonBlobService BlobService { get; set; }
-
-        //[Inject]
-        //public IBlobService BlobService{get;set;}
+        [Inject]
+        public IBlobService BlobService { get; set; }
 
         public PersonBlobController()//(IBlobService blobService)
         {
-            //this.BlobService = blobService;
-            BlobService = new AmazonBlobService();
+            
         }
 
         public ActionResult Index()
         {
+           
             var blobFiles = BlobService.GetFileNames("Personal");
             return View(blobFiles);
         }
 
     }
 }
+
+
+
+//
+// GET: /BadBlob/
+
+
+//
+//public IBlobService BlobService{get;set;}
+
+
+//this.BlobService = blobService;
+//

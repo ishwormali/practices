@@ -18,13 +18,43 @@ namespace MVCDemo2.Controllers
             return View();
         }
 
-        public  async Task<ActionResult> List()
+        public ActionResult List()
         {
             var service = new AmazonBlobService();
-            var files = await service.GetFileNamesAsync("container");
-
-            return View(files);
+            var filesTask = service.GetFileNamesAsync("container");
+            filesTask.Wait();
+            return View(filesTask.Result);
         }
+
+        public ViewResult GetSomething()
+        {
+            var service = new AmazonBlobService();
+            var filesTask = service.GetFileNamesAsync("container");
+
+            return View("List", filesTask.Result);
+            
+
+        }
+
+        //public  async Task<ActionResult> List()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var files = await service.GetFileNamesAsync("container");
+            
+        //    return View(files);
+        //}
+
+        //public Task<ViewResult> GetSomething()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var filesTask = service.GetFileNamesAsync("container");
+
+        //    return filesTask.ContinueWith((files) =>
+        //    {
+        //        return View("List",files.Result);
+        //    });
+
+        //}
 
     }
 }

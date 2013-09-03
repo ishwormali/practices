@@ -1,0 +1,48 @@
+﻿@model MVCDemo.Models.DB.UserInfo
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using System.Web.Routing
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@{Html.EnableClientValidation(false);}
+
+@using(Html.BeginForm("Save","ModelBindingTest"))
+{
+    
+<text>ID:</text>@Html.TextBox("Id")
+    @Html.ValidationMessage("Id")
+<br />
+<text>First Name:</text>@Html.TextBox("FirstName")
+        @Html.ValidationMessage("FirstName")
+<br />
+<text>Last Name:</text>@Html.TextBox("LastName")
+        @Html.ValidationMessage("LastName")
+<br />
+    <input type="submit" />
+}
+
+
+
+
+
+
+
+@*@using(Html.BeginForm("Save","ModelBindingTest"))
+{
+<text>ID:</text<input type='text' name='user' />
+
+<br />
+
+    <input type="submit" />
+}
+
+
+*@

@@ -1,0 +1,16 @@
+﻿@model MVCDemo.Models.DB.UserInfo
+@{
+    ViewBag.Title = "Save";
+}
+
+<h2>Save</h2>
+
+UserId: @Model.Id
+<br />
+First Name : @Model.FirstName
+
+<br />
+Last Name : @Model.LastName
+
+<br />
+@Html.ActionLink("Back","Index")

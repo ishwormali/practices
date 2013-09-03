@@ -13,14 +13,14 @@
 
 @using(Html.BeginForm())
 {
-<text>ID:</text>@Html.TextBox("user.Id")
-    @Html.ValidationMessage("user.Id")
-@*<br />
+<text>ID:</text>@Html.TextBox("Id")
+    @Html.ValidationMessage("Id")
+<br />
 <text>First Name:</text>@Html.TextBox("user.FirstName")
     @Html.ValidationMessage("user.FirstName")
-*@<br />@*
+<br />
 <text>Last Name:</text>@Html.TextBox("user.LastName")
     @Html.ValidationMessage("user.LastName")
-*@<br />
+<br />
     <input type="submit" />
 }

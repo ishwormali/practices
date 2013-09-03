@@ -28,6 +28,10 @@ namespace ProfessionalMVCTest
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
+            var kernel = new StandardKernel();
+            kernel.Bind<IModelBinderProvider>().To<UserInfoModelBinderProvider>();
+            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+
             /*
              * controller factory
             //method 1

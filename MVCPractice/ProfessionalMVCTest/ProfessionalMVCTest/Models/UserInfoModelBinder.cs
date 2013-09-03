@@ -10,6 +10,8 @@ using System.Web.Mvc;
 
 namespace ProfessionalMVCTest.Models
 {
+
+    
     public class UserInfoModelBinder:IModelBinder
     {
         
@@ -139,4 +141,6 @@ namespace ProfessionalMVCTest.Models
             return true;
         }
     }
+     
+     
 }

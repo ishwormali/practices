@@ -1,0 +1,21 @@
+﻿@model MVCDemo.Models.DB.UserInfoParent
+
+@{
+    ViewBag.Title = "With Parent";
+}
+
+<h2>With Parent</h2>
+
+@using(Html.BeginForm())
+{
+<text>ID:</text>@Html.TextBox("Id")
+    @Html.ValidationMessage("Id")
+<br />
+<text>First Name:</text>@Html.TextBox("FirstName")
+    @Html.ValidationMessage("FirstName")
+<br />
+<text>Last Name:</text>@Html.TextBox("LastName")
+    @Html.ValidationMessage("LastName")
+<br />
+    <input type="submit" />
+}

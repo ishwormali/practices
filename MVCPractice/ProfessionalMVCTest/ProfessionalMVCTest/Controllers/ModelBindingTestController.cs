@@ -19,8 +19,29 @@ namespace ProfessionalMVCTest.Controllers
             
             //var users = ee.UserInfoes.ToList();
             //var users = context.UserInfoes.ToList();
-            return View(UserInfo.Users);
+            return View(new UserInfo());
             
+
+        }
+
+        [HttpPost]
+        public ActionResult Index([ModelBinder(typeof(UserInfoModelBinder))]UserInfo user)
+        {
+            
+            return View(user);
+            
+        }
+
+        public ActionResult WithParent()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WithParent(UserInfoParent parent)
+        {
+
+            return View(parent);
 
         }
 

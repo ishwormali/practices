@@ -1,0 +1,26 @@
+﻿@inherits System.Web.Mvc.WebViewPage<ProfessionalMVCTest.Models.DB.UserInfoParent>
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using System.Web.Routing
+
+
+@{
+    ViewBag.Title = "With Parent";
+}
+
+<h2>With Parent</h2>
+
+@using(Html.BeginForm())
+{
+<text>ID:</text>@Html.TextBox("User.Id")
+    @Html.ValidationMessage("User.Id")
+<br />
+<text>First Name:</text>@Html.TextBox("User.FirstName")
+    @Html.ValidationMessage("User.FirstName")
+<br />
+<text>Last Name:</text>@Html.TextBox("User.LastName")
+    @Html.ValidationMessage("User.LastName")
+<br />
+    <input type="submit" />
+}

@@ -358,6 +358,7 @@
     <Content Include="Views\Forms\CollectionSimpleType.cshtml" />
     <Content Include="Views\ControllerActivatorSample\Index.cshtml" />
     <Content Include="Views\AsyncTest\Index.cshtml" />
+    <Content Include="Views\ModelBindingTest\WithParent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

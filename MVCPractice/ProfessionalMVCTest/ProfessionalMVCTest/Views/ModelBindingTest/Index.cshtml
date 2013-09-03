@@ -1,9 +1,26 @@
-﻿@using ProfessionalMVCTest.Models.DB
+﻿@inherits System.Web.Mvc.WebViewPage<ProfessionalMVCTest.Models.DB.UserInfo>
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using System.Web.Routing
 
-@model IEnumerable<UserInfo>
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+
+@using(Html.BeginForm())
+{
+<text>ID:</text>@Html.TextBox("user.Id")
+    @Html.ValidationMessage("user.Id")
+@*<br />
+<text>First Name:</text>@Html.TextBox("user.FirstName")
+    @Html.ValidationMessage("user.FirstName")
+*@<br />@*
+<text>Last Name:</text>@Html.TextBox("user.LastName")
+    @Html.ValidationMessage("user.LastName")
+*@<br />
+    <input type="submit" />
+}

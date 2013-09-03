@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ProfessionalMVCTest.Models.DB
 {
@@ -34,10 +35,12 @@ namespace ProfessionalMVCTest.Models.DB
     //    public string Gender { get; set; }
     //}
 
+    [ModelBinder(typeof(UserInfoModelBinder))]
     public class UserInfo
     {
         public int Id { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -52,4 +55,11 @@ namespace ProfessionalMVCTest.Models.DB
 
         };
     }
+
+    public class UserInfoParent
+    {
+        
+        public UserInfo User { get; set; }
+    }
+       
 }

@@ -17,7 +17,7 @@ namespace ProfessionalMVCTest.Models
             model.Version = ConfigurationManager.AppSettings["Version"];
             model.ReleasedDate = ConfigurationManager.AppSettings["ReleasedDate"];
             model.IsOffline =Convert.ToBoolean(ConfigurationManager.AppSettings["IsOffline"]);
-
+            
             return model;
         }
     }

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace ProfessionalMVCTest.Models
 {
-    public class AppSettingValueProvider:NameValueCollectionValueProvider
+    public class AppSettingValueProvider:NameValueCollectionValueProvider,IValueProvider
     {
        
         public AppSettingValueProvider(ControllerContext controllerContext)
@@ -16,7 +16,7 @@ namespace ProfessionalMVCTest.Models
         {
         }
 
-        // For unit testing
+        
         internal AppSettingValueProvider(ControllerContext controllerContext,CultureInfo culture)
             : base(ConfigurationManager.AppSettings, culture)
         {

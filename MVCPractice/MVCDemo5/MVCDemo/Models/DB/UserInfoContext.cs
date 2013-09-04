@@ -12,13 +12,15 @@ using System.Web.Mvc;
 namespace MVCDemo.Models.DB
 {
     //[ModelBinder(typeof(UserInfoModelBinder))]
+
     public class UserInfo
     {
         //[ReadOnly(true)]
+
         public int Id { get; set; }
 
         [Required]
-        [Display(Name="First Name")]
+        [Display(Name = "First Name")]
         [StringLength(10)]
         public string FirstName { get; set; }
 
@@ -37,6 +39,19 @@ namespace MVCDemo.Models.DB
 
         };
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public class UserInfoParent
     {

@@ -11,9 +11,11 @@
                 <td>ID</td>
                 <td>First Name</td>
                 <td>Last Name</td>
-                <td>Address</td>
+                @*<td>Address</td>*@
+                <td>Married</td>
                 <td>Remove</td>
-
+                <td></td>
+                <td></td>
             </tr>
         </thead>
         <tbody data-bind="foreach: People">
@@ -23,9 +25,23 @@
                 <td data-bind="text: Id"></td>
                 <td data-bind="text: FirstName"></td>
                 <td data-bind="text: LastName"></td>
-                <td data-bind="text: Address"></td>
-                <td ><input type="button" data-bind="click: $root.remove" value="Remove" /></td>
+               @* <td data-bind="text: Address"></td>*@
+              <td>  <input type="checkbox" data-bind="checked:IsMarried,click:$root.changeMarried" />
 
+              </td>
+
+                <td >
+                    <input type="button" data-bind="click: $root.remove" value="Remove" />
+
+                </td>
+                <td >
+                    <input type="button" data-bind="click: $root.GetById" value="By Id" />
+
+                </td>
+                <td >
+                    <input type="button" data-bind="click: $root.GetByFirstName" value="By FirstName" />
+
+                </td>
             </tr>
 
         </tbody>
@@ -33,9 +49,15 @@
 </section>
 @using (Html.BeginForm())
 {
-    @Html.EditorForModel()
+    <div data-bind="with:form">
+        First Name : <input type="text" name="FirstName" data-bind="value:FirstName" /> <br />
+        Last Name : <input type="text" name="LastName"  data-bind="value:LastName" /> <br />
+        Address Name : <input type="text" name="Address"  data-bind="value:Address" /> <br />
+        Phone Number : <input type="tel" name="PhoneNumber"  data-bind="value:PhoneNumber" /> <br />
+        Is Married : <input type="checkbox" name="IsMarried"  data-bind="checked:IsMarried"  />
+    </div>
     <br />
-    <input type="button" value="Save" id="save" />
+    <input type="button" value="Save" id="save" data-bind="click:$root.save" />
 }
 
 
@@ -46,21 +68,25 @@
 
         var baseUrl = 'http://localhost:45839/api/Person';
 
-        var person = new Person();
-        ko.applyBindings(person, document.body);
+        var personVm = new PersonViewModel();
+        ko.applyBindings(personVm, document.body);
 
-        $('#save').click(function (e) {
-            $.ajax({
-                url: baseUrl,
-                type: 'POST',
-                data: $('form').serialize()
-            }).success(function (data) {
-                console.log(data);
-            }).error(function (xhr) {
-                alert(xhr.responseText);
-            });
-        });
-        person.init();
+        personVm.init();
+
+        //$('#save').click(function (e) {
+        //    alert($('form').serialize());
+        //    $.ajax({
+        //        url: baseUrl,
+        //        type: 'POST',
+        //        contentType:'application/json',
+        //        data: $('form').serialize()
+        //    }).success(function (data) {
+        //        console.log('success:' + data);
+        //    }).error(function (xhr) {
+        //        alert('error : '+xhr.responseText);
+        //    });
+        //});
+        
 
         $('#btnpost').click(function (e) {
             $.ajax({

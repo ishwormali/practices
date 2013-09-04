@@ -29,28 +29,49 @@ namespace TrainingPractices.Controllers
             return person;
         }
 
-        // POST api/person
-        public HttpResponseMessage Post([FromBody]string FirstName)
+        public Person Get(string firstName)
         {
-            //person.Id = Person.All.Max(m => m.Id) + 1;
-            //Person.All.Add(person);
-            //return Request.CreateResponse(HttpStatusCode.OK, person);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            var person = Person.All.FirstOrDefault(m => m.FirstName.Equals(firstName));
+            if (person == null)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with first name {0} not found", firstName)));
+
+            }
+
+            return person;
+        }
+
+        // POST api/person
+        public HttpResponseMessage Put(Person person)
+        {
+            var p = Person.All.FirstOrDefault(m => m.Id == person.Id);
+            p.FirstName = person.FirstName;
+            p.LastName = person.LastName;
+            p.IsMarried = person.IsMarried;
+            p.PhoneNumber = person.PhoneNumber;
+
+            return Request.CreateResponse(HttpStatusCode.OK, person);
+
         }
 
         // PUT api/person/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage POST(Person person)
         {
+            person.Id = Person.All.Max(m => m.Id) + 1;
+            Person.All.Add(person);
+            return Request.CreateResponse(HttpStatusCode.OK, person);
+
+            //return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // DELETE api/person/5
         //[HttpPost]
-        public HttpResponseMessage Delete([FromBody] int personId)
+        public HttpResponseMessage Delete(int Id)
         {
-            var person = Person.All.FirstOrDefault(m => m.Id.Equals(personId));
+            var person = Person.All.FirstOrDefault(m => m.Id.Equals(Id));
             if (person == null)
             {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with id {0} not found", personId)));
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with id {0} not found", Id)));
 
             }
 

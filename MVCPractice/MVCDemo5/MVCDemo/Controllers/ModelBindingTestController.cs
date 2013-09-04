@@ -23,29 +23,41 @@ namespace MVCDemo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save( UserInfo user)// [Bind(Exclude="LastName")]
+        public ActionResult Save(UserInfo user)
         {
 
             if (!ModelState.IsValid)
             {
-                return View("Index",user);
+                return View("Index", user);
             }
 
             return View(user);
 
         }
 
-        public ActionResult WithParent()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult WithParent(UserInfoParent parent)
+        public ActionResult Save2( UserInfo user)// [Bind(Exclude="LastName")]
         {
 
-            return View(parent);
+            //if (!ModelState.IsValid)
+            //{
+            //    return View("Index",user);
+            //}
+
+            return View(user);
 
         }
+        //public ActionResult WithParent()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult WithParent(UserInfoParent parent)
+        //{
+
+        //    return View(parent);
+
+        //}
     }
 }

@@ -28,24 +28,25 @@ namespace MVCDemo
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //ModelBinders.Binders.Add(typeof(UserInfo), new UserInfoModelBinder());
 
-            ModelBinderProviders.BinderProviders.Add(new UserInfoModelBinderProvider());
+            ModelBinders.Binders.Add(typeof(UserInfo), new UserInfoModelBinder());
+
+            //ModelBinderProviders.BinderProviders.Add(new UserInfoModelBinderProvider());
+
 
 
             //var kernel = new StandardKernel();
             //kernel.Bind<IModelBinderProvider>().To<UserInfoModelBinderProvider>();
             //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
 
-            //model binders example
-            //ModelBinders.Binders.Add(typeof(ApplicationSetting), new ApplicationSettingModelBinder());
+
 
 
             //value provider factories
             //ValueProviderFactories.Factories.Add(new AppSettingValueProviderFactory());
-            var kernel = new StandardKernel();
-            kernel.Bind<ValueProviderFactory>().To<AppSettingValueProviderFactory>();
-            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+            //var kernel = new StandardKernel();
+            //kernel.Bind<ValueProviderFactory>().To<AppSettingValueProviderFactory>();
+            //DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
     }
 

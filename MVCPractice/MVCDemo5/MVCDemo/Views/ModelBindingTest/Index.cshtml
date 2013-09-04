@@ -20,12 +20,15 @@
 <text>ID:</text>@Html.TextBox("Id")
     @Html.ValidationMessage("Id")
 <br />
+    
 <text>First Name:</text>@Html.TextBox("FirstName")
         @Html.ValidationMessage("FirstName")
 <br />
+    
 <text>Last Name:</text>@Html.TextBox("LastName")
         @Html.ValidationMessage("LastName")
 <br />
+    
     <input type="submit" />
 }
 
@@ -34,15 +37,15 @@
 
 
 
+@*
 
-@*@using(Html.BeginForm("Save","ModelBindingTest"))
+
+@using(Html.BeginForm("Save","ModelBindingTest"))
 {
-<text>ID:</text<input type='text' name='user' />
+<text>ID: </text><input type='text' name='userId' />
 
 <br />
 
     <input type="submit" />
 }
-
-
 *@

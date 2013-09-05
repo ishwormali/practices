@@ -11,6 +11,7 @@ namespace TrainingPractices.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
     }

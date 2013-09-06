@@ -10,6 +10,7 @@ namespace TrainingPractices.Controllers
 {
     public class PersonController : ApiController
     {
+        
         // GET api/person
         public IEnumerable<Person> Get()
         {
@@ -23,44 +24,19 @@ namespace TrainingPractices.Controllers
             if (person==null)
             {
                 throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with id {0} not found", id)));
-
+                
             }
 
             return person;
-        }
-
-        public Person Get(string firstName)
-        {
-            var person = Person.All.FirstOrDefault(m => m.FirstName.Equals(firstName));
-            if (person == null)
-            {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with first name {0} not found", firstName)));
-
-            }
-
-            return person;
-        }
-
-        // POST api/person
-        public HttpResponseMessage Put(Person person)
-        {
-            var p = Person.All.FirstOrDefault(m => m.Id == person.Id);
-            p.FirstName = person.FirstName;
-            p.LastName = person.LastName;
-            p.IsMarried = person.IsMarried;
-            p.PhoneNumber = person.PhoneNumber;
-
-            return Request.CreateResponse(HttpStatusCode.OK, person);
-
         }
 
         // PUT api/person/5
-        public HttpResponseMessage POST(Person person)
+        public HttpResponseMessage POST(Person person,string someParam)
         {
             person.Id = Person.All.Max(m => m.Id) + 1;
             Person.All.Add(person);
             return Request.CreateResponse(HttpStatusCode.OK, person);
-
+            
             //return Request.CreateResponse(HttpStatusCode.OK);
         }
 
@@ -78,6 +54,32 @@ namespace TrainingPractices.Controllers
             Person.All.Remove(person);
             return Request.CreateResponse(HttpStatusCode.OK, string.Format("Successfully deleted {0} from the system.", person.FirstName));
 
+        }
+
+        // POST api/person
+        public HttpResponseMessage Put(Person person)
+        {
+            var p = Person.All.FirstOrDefault(m => m.Id == person.Id);
+            p.FirstName = person.FirstName;
+            p.LastName = person.LastName;
+            p.IsMarried = person.IsMarried;
+            p.PhoneNumber = person.PhoneNumber;
+
+            return Request.CreateResponse(HttpStatusCode.OK, person);
+
+        }
+
+
+        public Person Get(string firstName)
+        {
+            var person = Person.All.FirstOrDefault(m => m.FirstName.Equals(firstName));
+            if (person == null)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with first name {0} not found", firstName)));
+                
+            }
+
+            return person;
         }
 
         //[HttpDelete]

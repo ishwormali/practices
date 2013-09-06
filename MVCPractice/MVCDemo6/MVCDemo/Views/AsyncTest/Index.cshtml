@@ -1,5 +1,15 @@
-﻿@{
+﻿@model List<string>
+
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+@DateTime.Now.ToString()
+
+<br />
+@foreach (var item in Model)
+{
+    @item
+    <br />
+}

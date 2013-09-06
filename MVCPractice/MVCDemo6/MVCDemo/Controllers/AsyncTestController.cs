@@ -13,22 +13,120 @@ namespace MVCDemo2.Controllers
         //
         // GET: /AsyncTest/
 
-        public Task<ContentResult> Index()
-        {
-            return Task.Run(() =>
-            {
-                System.Threading.Thread.Sleep(2000);
-                return Content("good");
-            });
+        //public ActionResult Index()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var files = service.GetFileNames("container");
 
+        //    return View(files);
+
+        //}
+
+        //public Task<ActionResult> Index()
+        //{
+        //    return Task.Factory.StartNew<ActionResult>(() =>
+        //    {
+        //        var service = new AmazonBlobService();
+
+        //        var files = service.GetFileNames("container");
+        //        return View(files);
+        //    });
+
+        //}
+
+        //public Task<ActionResult> Index()
+        //{
+        //    var tsk = Task.Factory.StartNew(() =>
+        //    {
+        //        var service = new AmazonBlobService();
+
+        //        var files = service.GetFileNames("container");
+        //        return files;
+        //    });
+
+        //    return tsk.ContinueWith<ActionResult>((firstTask) =>
+        //    {
+        //        var service = new AmazonBlobService();
+        //        var files = service.GetExtendedFileNames(firstTask.Result);
+        //        return View(files.ToList());
+        //    });
+
+        //}
+
+        public async Task<ActionResult> Index()
+        {
+            var service = new AmazonBlobService();
+            var files = await service.GetFileNamesAsync("asynccontainer");
+            var extendedFiles = await service.GetExtendedFileNamesAsync(files);
+
+            return View(extendedFiles);
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public Task<ViewResult> GetSomething()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var filesTask = service.GetFileNamesAsync("container");
+
+        //    return filesTask.ContinueWith((files) =>
+        //    {
+        //        return View("List",files.Result);
+        //    });
+
+        //}
+
+        //public  async Task<ActionResult> List()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var files = await service.GetFileNamesAsync("container");
+
+        //    return View(files);
+        //}
 
         //public ActionResult Index()
         //{
 
         //    System.Threading.Thread.Sleep(2000);
         //    return Content("good");
+
+        //}
+
+        //public Task<ContentResult> Index()
+        //{
+        //    return Task.Run(() =>
+        //    {
+        //        System.Threading.Thread.Sleep(2000);
+        //        return Content("good");
+        //    });
+
 
         //}
 
@@ -49,25 +147,9 @@ namespace MVCDemo2.Controllers
             
         //}
 
-        //public  async Task<ActionResult> List()
-        //{
-        //    var service = new AmazonBlobService();
-        //    var files = await service.GetFileNamesAsync("container");
-            
-        //    return View(files);
-        //}
+        
 
-        //public Task<ViewResult> GetSomething()
-        //{
-        //    var service = new AmazonBlobService();
-        //    var filesTask = service.GetFileNamesAsync("container");
-
-        //    return filesTask.ContinueWith((files) =>
-        //    {
-        //        return View("List",files.Result);
-        //    });
-
-        //}
+       
 
     }
 }

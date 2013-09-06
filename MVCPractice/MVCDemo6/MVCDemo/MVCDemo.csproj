@@ -147,14 +147,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AmazonBlobService.cs" />
-    <Compile Include="Models\ApplicationSettingModelBinder.cs" />
-    <Compile Include="Models\ApplicationSetting.cs" />
-    <Compile Include="Models\AppSettingValueProvider.cs" />
     <Compile Include="Models\DB\UserInfoContext.cs" />
-    <Compile Include="Models\ModelBinderModel.cs" />
-    <Compile Include="Models\UserInfoModelBinderProvider.cs" />
-    <Compile Include="Models\TestFilter.cs" />
-    <Compile Include="Models\UserInfoModelBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

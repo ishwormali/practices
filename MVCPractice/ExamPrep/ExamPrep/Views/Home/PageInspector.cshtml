@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "PageInspector";
+}
+
+<h2>Page Inspector</h2>
+
+<div id="container">
+
+</div>
+
+<input type="button" value="Add" id="b" />
+
+<script type="text/javascript">
+    $('#btn').click(function (e) {
+        $('#container').append('<div>' + new Date().toString() + '</div');
+    });
+</script>

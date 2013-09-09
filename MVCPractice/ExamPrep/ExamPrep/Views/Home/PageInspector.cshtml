@@ -8,10 +8,13 @@
 
 </div>
 
-<input type="button" value="Add" id="b" />
+<input type="button" value="Add" id="btn" />
 
+@section scripts{
 <script type="text/javascript">
     $('#btn').click(function (e) {
-        $('#container').append('<div>' + new Date().toString() + '</div');
+        $('#container').append($('<div>' + new Date().toString() + '</div>'));
     });
 </script>
+
+    }

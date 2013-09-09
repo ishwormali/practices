@@ -1,7 +1,7 @@
 ﻿
 using MVCDemo.Models;
 using MVCDemo.Models.DB;
-using MVCDemo2.Models;
+
 using Ninject;
 using System;
 using System.Collections.Generic;

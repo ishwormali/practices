@@ -47,7 +47,7 @@ function PersonViewModel() {
     self.save = function () {
        console.log(ko.toJSON( self.form()));
         $.ajax({
-            url: self.baseUrl ,
+            url: self.baseUrl,// + '?someParam=someparamvalue',
             type: 'POST',
             //dataType: 'json',
             contentType:'application/json',

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ExamPrep.Models.Blog>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Created By</th>
+            <th># of Posts</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blog in Model)
+        {
+         <tr>
+            <td>@blog.Id</td>
+            <td>@blog.Title</td>
+            <td>@blog.CreatedBy</td>
+            <td>@blog.Posts.Count()</td>
+             <td>@Html.ActionLink("Edit", "Edit", new { Id = blog.Id })</td>
+            <td>>@Html.ActionLink("Details", "Details", new { Id = blog.Id })</td>
+            <td>>@Html.ActionLink("Remove", "Remove", new { Id = blog.Id })</td>
+        </tr>
+        }
+       
+    </tbody>
+</table>

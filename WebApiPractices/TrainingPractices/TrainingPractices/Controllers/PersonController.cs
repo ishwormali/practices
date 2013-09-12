@@ -30,8 +30,20 @@ namespace TrainingPractices.Controllers
             return person;
         }
 
+        public Person Get(string firstName)
+        {
+            var person = Person.All.FirstOrDefault(m => m.FirstName.Equals(firstName));
+            if (person == null)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with first name {0} not found", firstName)));
+
+            }
+
+            return person;
+        }
+
         // PUT api/person/5
-        public HttpResponseMessage POST(Person person,string someParam)
+        public HttpResponseMessage POST(Person person)
         {
             person.Id = Person.All.Max(m => m.Id) + 1;
             Person.All.Add(person);
@@ -70,17 +82,7 @@ namespace TrainingPractices.Controllers
         }
 
 
-        public Person Get(string firstName)
-        {
-            var person = Person.All.FirstOrDefault(m => m.FirstName.Equals(firstName));
-            if (person == null)
-            {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.NotFound, string.Format("Person with first name {0} not found", firstName)));
-                
-            }
-
-            return person;
-        }
+       
 
         //[HttpDelete]
         //public HttpResponseMessage RemovePerson(int id)

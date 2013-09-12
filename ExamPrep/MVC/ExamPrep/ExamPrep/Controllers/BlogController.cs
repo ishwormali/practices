@@ -21,6 +21,7 @@ namespace ExamPrep.Controllers
             //blog.CreatedBy = "Ishwor";
             //db.Blogs.Add(blog);
             //db.SaveChanges();
+            
             return View(db.Blogs.ToList());
         }
 
@@ -36,16 +37,18 @@ namespace ExamPrep.Controllers
             return View(blog);
         }
 
+        [HttpPost]
         public ActionResult Edit(Blog blog)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(blog).State = EntityState.Modified;
                 db.SaveChanges();
-                return View(blog);
+                return RedirectToAction("Index");
+                
             }
 
-            return View("Index");
+            return View(blog);
         }
 
 

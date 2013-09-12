@@ -45,7 +45,7 @@ function PersonViewModel() {
         return true;
     };
     self.save = function () {
-       console.log(ko.toJSON( self.form()));
+       //console.log(ko.toJSON( self.form()));
         $.ajax({
             url: self.baseUrl,// + '?someParam=someparamvalue',
             type: 'POST',

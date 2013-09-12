@@ -1,0 +1,26 @@
+﻿@model ExamPrep.Models.Blog
+
+@{
+    ViewBag.Title = "Posts";
+}
+
+<h2>Posts for @Model.Title</h2>
+<em>@Model.CreatedBy</em>
+
+
+@Html.ActionLink("Add Post", "AddPost", new { id = Model.Id })
+<br />
+<br />
+@foreach (var post in Model.Posts)
+{
+    <div style="padding:5px;min-height:50px; width:100%;border:1px;background-color:#b6a99f;border-color:#b6a99f">
+        <header style="font-weight:bold">@(post.Title)(@post.Id)</header>
+
+        <article >
+           
+            
+            @post.Body
+        </article>
+    </div>
+    <br />
+}

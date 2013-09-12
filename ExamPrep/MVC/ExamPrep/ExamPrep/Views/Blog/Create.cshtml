@@ -1,0 +1,15 @@
+﻿@model ExamPrep.Models.Blog
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create"))
+{
+@Html.EditorForModel()
+    
+    <br />
+    <input type="submit" value="Submit" />    
+}

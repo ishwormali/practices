@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ExamPrep.Models
 {
     
     public class Blog
     {
+       [HiddenInput]
         public int Id { get; set; }
         
         [Required]

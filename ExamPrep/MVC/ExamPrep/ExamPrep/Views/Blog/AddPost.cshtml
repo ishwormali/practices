@@ -1,0 +1,21 @@
+﻿@model ExamPrep.Models.Blog
+
+@{
+    ViewBag.Title = "AddPost";
+}
+
+<h2>Add Post</h2>
+@Model.Title
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m=>m.Id)
+    @:Title
+    @Html.TextBox("post.Title")
+    <br />
+    @:Body
+    @Html.TextArea("post.Body")
+    
+    <br />
+    <input type="submit" value="Create" />
+}

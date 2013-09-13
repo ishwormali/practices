@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -15,10 +16,16 @@ namespace ExamPrep.Models
         public int Id { get; set; }
         
         [Required]
+        [StringLength(200)]
         public string Title { get; set; }
+
         public virtual ICollection<Post> Posts { get; set; }
 
-        
+        [Required]
+        [Column("Created_By_User")]
         public string CreatedBy { get; set; }
+
+
+        public virtual BlogMetadata Metadata { get; set; }
     }
 }

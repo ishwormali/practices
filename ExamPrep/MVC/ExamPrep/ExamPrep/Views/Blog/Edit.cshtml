@@ -8,7 +8,17 @@
 
 @using (Html.BeginForm())
 {
-@Html.EditorForModel()
+    @Html.HiddenFor(m => m.Id)
+    
+    @Html.LabelFor(m=>m.Title)
+@Html.TextBoxFor(m=>m.Title)
+    <br />
+    @Html.LabelFor(m=>m.CreatedBy)
+@Html.TextBoxFor(m=>m.CreatedBy)
+    <br />
+    @Html.LabelFor(m=>m.Metadata.Language)
+@Html.TextBoxFor(m=>m.Metadata.Language)
+    <br />
 
     <input type="submit" value="Update"  />     
 }

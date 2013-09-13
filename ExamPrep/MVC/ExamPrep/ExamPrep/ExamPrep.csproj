@@ -41,6 +41,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EFProviderWrapperToolkit">
+      <HintPath>..\packages\CommunityEFProviderWrappers.EFProviderWrapperToolkit.1.0.0\lib\net40-Client\EFProviderWrapperToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EFTracingProvider">
+      <HintPath>..\packages\CommunityEFProviderWrappers.EFTracingProvider.1.0.0\lib\net40-Client\EFTracingProvider.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -198,9 +204,46 @@
     <Compile Include="Migrations\201309110854512_InitialCreate1.Designer.cs">
       <DependentUpon>201309110854512_InitialCreate1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201309130729310_ValidationAddedForBlog.cs" />
+    <Compile Include="Migrations\201309130729310_ValidationAddedForBlog.Designer.cs">
+      <DependentUpon>201309130729310_ValidationAddedForBlog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309130734223_Blog.CreatedBy_ColumnNameChange.cs" />
+    <Compile Include="Migrations\201309130734223_Blog.CreatedBy_ColumnNameChange.Designer.cs">
+      <DependentUpon>201309130734223_Blog.CreatedBy_ColumnNameChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309130750063_Added_Blog_Metadata.cs" />
+    <Compile Include="Migrations\201309130750063_Added_Blog_Metadata.Designer.cs">
+      <DependentUpon>201309130750063_Added_Blog_Metadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309130751241_Added_BlogMetadata_In_Blog.cs" />
+    <Compile Include="Migrations\201309130751241_Added_BlogMetadata_In_Blog.Designer.cs">
+      <DependentUpon>201309130751241_Added_BlogMetadata_In_Blog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309130757449_Added_Blog_Property_In_BlogMetadata.cs" />
+    <Compile Include="Migrations\201309130757449_Added_Blog_Property_In_BlogMetadata.Designer.cs">
+      <DependentUpon>201309130757449_Added_Blog_Property_In_BlogMetadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309131253147_Remove_Indentity_In_BlogMetadata.cs" />
+    <Compile Include="Migrations\201309131253147_Remove_Indentity_In_BlogMetadata.Designer.cs">
+      <DependentUpon>201309131253147_Remove_Indentity_In_BlogMetadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309131300392_Updating.cs" />
+    <Compile Include="Migrations\201309131300392_Updating.Designer.cs">
+      <DependentUpon>201309131300392_Updating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309131301228_Updating1.cs" />
+    <Compile Include="Migrations\201309131301228_Updating1.Designer.cs">
+      <DependentUpon>201309131301228_Updating1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309131304253_Adding_BlogMetadata.cs" />
+    <Compile Include="Migrations\201309131304253_Adding_BlogMetadata.Designer.cs">
+      <DependentUpon>201309131304253_Adding_BlogMetadata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\BlogMetadata.cs" />
     <Compile Include="Models\DB\BlogDbContext.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -264,8 +307,11 @@
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
-    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-2.0.3-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -336,6 +382,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309110854512_InitialCreate1.resx">
       <DependentUpon>201309110854512_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309130729310_ValidationAddedForBlog.resx">
+      <DependentUpon>201309130729310_ValidationAddedForBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309130734223_Blog.CreatedBy_ColumnNameChange.resx">
+      <DependentUpon>201309130734223_Blog.CreatedBy_ColumnNameChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309130750063_Added_Blog_Metadata.resx">
+      <DependentUpon>201309130750063_Added_Blog_Metadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309130751241_Added_BlogMetadata_In_Blog.resx">
+      <DependentUpon>201309130751241_Added_BlogMetadata_In_Blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309130757449_Added_Blog_Property_In_BlogMetadata.resx">
+      <DependentUpon>201309130757449_Added_Blog_Property_In_BlogMetadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309131253147_Remove_Indentity_In_BlogMetadata.resx">
+      <DependentUpon>201309131253147_Remove_Indentity_In_BlogMetadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309131300392_Updating.resx">
+      <DependentUpon>201309131300392_Updating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309131301228_Updating1.resx">
+      <DependentUpon>201309131301228_Updating1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309131304253_Adding_BlogMetadata.resx">
+      <DependentUpon>201309131304253_Adding_BlogMetadata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

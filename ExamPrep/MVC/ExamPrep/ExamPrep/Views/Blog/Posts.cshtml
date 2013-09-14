@@ -20,6 +20,9 @@
            
             
             @post.Body
+            <div style="display:inline;float:right">
+                @Html.ActionLink("Edit","EditPost",new {id=post.Id})
+            </div>
         </article>
     </div>
     <br />

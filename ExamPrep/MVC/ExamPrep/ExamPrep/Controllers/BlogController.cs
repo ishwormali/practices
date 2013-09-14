@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,6 +36,7 @@ namespace ExamPrep.Controllers
 
         public ActionResult Create()
         {
+            db.Configuration.ValidateOnSaveEnabled = false;
             return View();
         }
 
@@ -132,6 +134,74 @@ namespace ExamPrep.Controllers
             }
 
             return View(blog);
+        }
+
+        public ActionResult EditPost(int id)
+        {
+            var post = db.Posts.Include(m=>m.Blog).FirstOrDefault(m => m.Id == id);
+            return View(post);
+        }
+
+        [HttpPost]
+        public ActionResult EditPost(Post post)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(post).State = EntityState.Modified;
+                try
+                {
+                    db.SaveChanges();
+                    //post = db.Posts.Include(m=>m.Blog).FirstOrDefault(m => m.Id == post.Id);
+                    ////Reading original value of a property
+                    //var orgBody = db.Entry(post).Property(m => m.Body).OriginalValue;
+                    ////Reading the current changed value
+                    //var changedBody = db.Entry(post).Property(m => m.Body).CurrentValue;
+                    ////Check if the property is modified?
+                    //var isBodyModified = db.Entry(post).Property(m => m.Body).IsModified;
+                    ////Returns all properties original values as DbPropertyValues 
+                    //var allOriginalValues=db.Entry(post).OriginalValues;
+                    ////Returns all properties current values as DbPropertyValues 
+                    //var allCurrentValues = db.Entry(post).CurrentValues;
+                    ////Get values from db as DbPropertyValues
+                    //var dbValues = db.Entry(post).GetDatabaseValues();
+                    ////looping and displaying values
+                    //foreach (var propName in dbValues.PropertyNames)
+                    //{
+                    //    var propValue = dbValues[propName]; //returns object
+                    //    var propValue2 = dbValues.GetValue<string>(propName); //strongly typed
+                        
+                    //}
+
+                    ////setting new values 
+                    //dbValues.SetValues(post);
+
+                    return RedirectToAction("Posts", new { id = post.Blog.Id });
+                }
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    var entry = ex.Entries.SingleOrDefault();
+                    var dbPost = entry.GetDatabaseValues().ToObject() as Post;
+                    if (!dbPost.Title.Equals(post.Title))
+                    {
+                        ModelState.AddModelError("Title",string.Format( "Current Value : {0}", dbPost.Title));
+                    }
+
+                    if (!dbPost.Body.Equals(post.Body))
+                    {
+                        ModelState.AddModelError("Body",string.Format( "Current Value : {0}", dbPost.Body));
+                    }
+
+                    return View(post);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+            return View(post);
+
         }
 
     }

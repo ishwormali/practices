@@ -27,5 +27,11 @@ namespace ExamPrep.Models
 
 
         public virtual BlogMetadata Metadata { get; set; }
+
+        [ForeignKey("Author")]
+        public int? AuthorId { get; set; }
+
+        
+        public virtual BlogAuthor Author { get; set; }
     }
 }

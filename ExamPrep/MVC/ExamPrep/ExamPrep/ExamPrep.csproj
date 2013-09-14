@@ -47,6 +47,10 @@
     <Reference Include="EFTracingProvider">
       <HintPath>..\packages\CommunityEFProviderWrappers.EFTracingProvider.1.0.0\lib\net40-Client\EFTracingProvider.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -68,9 +72,6 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -240,12 +241,31 @@
     <Compile Include="Migrations\201309131304253_Adding_BlogMetadata.Designer.cs">
       <DependentUpon>201309131304253_Adding_BlogMetadata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201309140522171_Post_Rowversion.cs" />
+    <Compile Include="Migrations\201309140522171_Post_Rowversion.Designer.cs">
+      <DependentUpon>201309140522171_Post_Rowversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309141347323_Test.cs" />
+    <Compile Include="Migrations\201309141347323_Test.Designer.cs">
+      <DependentUpon>201309141347323_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309141513580_Author.cs" />
+    <Compile Include="Migrations\201309141513580_Author.Designer.cs">
+      <DependentUpon>201309141513580_Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309141516498_Author1.cs" />
+    <Compile Include="Migrations\201309141516498_Author1.Designer.cs">
+      <DependentUpon>201309141516498_Author1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\BlogAuthor.cs" />
     <Compile Include="Models\BlogMetadata.cs" />
     <Compile Include="Models\DB\BlogDbContext.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostAuthor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -369,6 +389,7 @@
     <Content Include="Views\Blog\Posts.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\Blog\AddPost.cshtml" />
+    <Content Include="Views\Blog\EditPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -409,6 +430,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309131304253_Adding_BlogMetadata.resx">
       <DependentUpon>201309131304253_Adding_BlogMetadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309140522171_Post_Rowversion.resx">
+      <DependentUpon>201309140522171_Post_Rowversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309141347323_Test.resx">
+      <DependentUpon>201309141347323_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309141513580_Author.resx">
+      <DependentUpon>201309141513580_Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309141516498_Author1.resx">
+      <DependentUpon>201309141516498_Author1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -22,6 +22,10 @@ namespace ExamPrep.Models.DB
             //((IObjectContextAdapter)this).ObjectContext.EnableTracing();
         }
 
+        protected override System.Data.Entity.Validation.DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, IDictionary<object, object> items)
+        {
+            return base.ValidateEntity(entityEntry, items);
+        }
 
     }
 }

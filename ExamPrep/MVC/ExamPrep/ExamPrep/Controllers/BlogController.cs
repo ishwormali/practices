@@ -8,6 +8,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity.Validation;
 
 namespace ExamPrep.Controllers
 {
@@ -54,9 +55,54 @@ namespace ExamPrep.Controllers
 
             db.Blogs.Add(blog);
             //blog.Metadata = new BlogMetadata();
-            
-            db.SaveChanges();
 
+            try
+            {
+
+                /* //method 2
+                var errors=db.GetValidationErrors();
+                if (errors.Count() > 0)
+                {
+                    HandleValidationResult(errors);
+                    return View(blog);
+                }
+                */
+                /*
+                //method 3
+                var validationResult = db.Entry(blog).GetValidationResult();
+                if (!validationResult.IsValid && validationResult.ValidationErrors.Count() > 0)
+                {
+                    HandleValidationResult(new List<DbEntityValidationResult> { validationResult });
+                    return View(blog);
+                }
+                */
+                //method 4
+
+                var validationResults = db.Entry(blog).Property(m => m.Title).GetValidationErrors();
+                if (validationResults.Count() > 0)
+                {
+                    foreach (var error in validationResults)
+                    {
+                        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                    }
+
+                    return View(blog);
+                }
+
+                db.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+            /* //method 1
+            //catch (DbEntityValidationException ex)
+            //{
+            //    HandleValidationResult(ex.EntityValidationErrors);
+
+            //    return View(blog);
+            //}
+            */
             //metadata.BlogId = blog.Id;
             //metadata.Blog = blog;
 
@@ -64,6 +110,17 @@ namespace ExamPrep.Controllers
            // db.SaveChanges();
 
             return RedirectToAction("Edit", new { id = blog.Id });
+        }
+
+        private void HandleValidationResult(IEnumerable<DbEntityValidationResult> errors)
+        {
+            foreach (var validationResult in errors)
+            {
+                foreach (var error in validationResult.ValidationErrors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
         }
 
         public ActionResult Edit(int id)

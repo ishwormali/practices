@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,19 +258,29 @@
     <Compile Include="Migrations\201309141516498_Author1.Designer.cs">
       <DependentUpon>201309141516498_Author1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201309150631570_none.cs" />
-    <Compile Include="Migrations\201309150631570_none.Designer.cs">
-      <DependentUpon>201309150631570_none.cs</DependentUpon>
+    <Compile Include="Migrations\201309161208348_Library_InitialCreate.cs" />
+    <Compile Include="Migrations\201309161208348_Library_InitialCreate.Designer.cs">
+      <DependentUpon>201309161208348_Library_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Library\LibraryConfiguration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\BlogAuthor.cs" />
     <Compile Include="Models\BlogMetadata.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookAuthor.cs" />
+    <Compile Include="Models\BookIssue.cs" />
     <Compile Include="Models\DB\BlogDbContext.cs" />
+    <Compile Include="Models\DB\Library\LibraryDbContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostAuthor.cs" />
+    <Compile Include="Models\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -347,7 +358,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -447,8 +460,8 @@
     <EmbeddedResource Include="Migrations\201309141516498_Author1.resx">
       <DependentUpon>201309141516498_Author1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309150631570_none.resx">
-      <DependentUpon>201309150631570_none.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201309161208348_Library_InitialCreate.resx">
+      <DependentUpon>201309161208348_Library_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,12 @@
+﻿@{
+    Layout = null;
+}
+
+@System.Security.Principal.WindowsIdentity.GetCurrent().Name
+<br />
+@System.Security.Principal.WindowsIdentity.GetAnonymous().Name
+
+<br />
+@*@System.Security.Principal.WindowsIdentity.GetCurrent(true).Name*@
+<br />
+

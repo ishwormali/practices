@@ -1,0 +1,7 @@
+aspnet_regiis -pe "connectionStrings" -app "/WebSecurityDemo"
+
+aspnet_regiis -pe "system.web/machineKey" -app "/WebSecurityDemo"
+
+aspnet_regiis -pe "system.web/machineKey" -app "D:/ishwor/Git/practices/SecurityPractice/WebAppSecurityDemo/WebAppSecurityDemo"
+
+aspnet_regiis -pe "system.web/machineKey" -app "/" -site "9"

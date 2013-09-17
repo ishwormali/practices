@@ -258,9 +258,9 @@
     <Compile Include="Migrations\201309141516498_Author1.Designer.cs">
       <DependentUpon>201309141516498_Author1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201309161208348_Library_InitialCreate.cs" />
-    <Compile Include="Migrations\201309161208348_Library_InitialCreate.Designer.cs">
-      <DependentUpon>201309161208348_Library_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201309161728149_LibraryInitialCreate.cs" />
+    <Compile Include="Migrations\201309161728149_LibraryInitialCreate.Designer.cs">
+      <DependentUpon>201309161728149_LibraryInitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Library\LibraryConfiguration.cs" />
@@ -274,6 +274,7 @@
     <Compile Include="Models\BookIssue.cs" />
     <Compile Include="Models\DB\BlogDbContext.cs" />
     <Compile Include="Models\DB\Library\LibraryDbContext.cs" />
+    <Compile Include="Models\DB\Library\Map\BookMap.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Membership.cs" />
@@ -460,8 +461,8 @@
     <EmbeddedResource Include="Migrations\201309141516498_Author1.resx">
       <DependentUpon>201309141516498_Author1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309161208348_Library_InitialCreate.resx">
-      <DependentUpon>201309161208348_Library_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201309161728149_LibraryInitialCreate.resx">
+      <DependentUpon>201309161728149_LibraryInitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

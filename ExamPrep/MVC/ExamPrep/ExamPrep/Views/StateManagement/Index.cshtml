@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("AddCookies"))
+{
+    @:Name <input type="text" name="cookieName" />
+    <br />
+    @:Value <input type="text" name="cookieValue" />
+    <br />
+    <input type="submit" value="Add Cookies in server" />
+    <input type="button" value="Add Cookie in client" onclick="addCookie"/>
+}
+
+
+<br />
+<br />
+Cookies
+<ul id="cookieContainer">
+    
+
+</ul>
+
+@section scripts{
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/_references.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+        });
+        function reloadCookies() {
+            $('#cookieContainer').clear();
+        }
+        function addCookie() {
+
+        }
+    </script>
+}

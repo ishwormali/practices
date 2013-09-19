@@ -16,14 +16,31 @@ namespace ExamPrep.Controllers
             return View();
         }
 
-        public ActionResult AddCookie(string cookieName,string cookieValue)
+        [OutputCache(CacheProfile="")]
+        public ActionResult AddCookie(string cookieName, string cookieValue, bool httpOnly)
         {
+            HttpContext context;
+            
             HttpCookie cooki = new HttpCookie(cookieName,cookieValue);
             cooki.Expires = DateTime.Now.AddMinutes(2);
+            cooki.HttpOnly = httpOnly;
             Response.SetCookie(cooki);
+            
             //Response.Cookies.Add(cooki);
             //Response.AppendCookie(cooki);
             return View("Index");
+        }
+
+        public ActionResult StateServer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult StateServer(string sessionName,string sessionValue)
+        {
+            Session[sessionName] = sessionValue;
+            return View();
         }
     }
 }

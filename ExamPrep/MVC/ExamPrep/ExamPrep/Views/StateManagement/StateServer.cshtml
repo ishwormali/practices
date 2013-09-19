@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "StateServer";
+}
+
+<h2>StateServer</h2>
+@using (Html.BeginForm("StateServer", "StateManagement"))
+{
+    @:Name <input type="text" name="sessionName" id="sessionName" />
+    <br />
+    @:Value <input type="text" name="sessionValue" id="sessionValue" />
+    <br />
+    <br />
+
+   
+    <br />
+    <input type="submit" value="Add Session in server" />
+}
+
+<br />
+Sessions
+<ul>
+    @foreach (var item in Session.Keys)
+    {
+        <li>@item <text>=</text>@Session[item.ToString()] </li>
+    }
+
+</ul>

@@ -4,23 +4,40 @@
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("AddCookies"))
+@using (Html.BeginForm("AddCookie","StateManagement"))
 {
-    @:Name <input type="text" name="cookieName" />
+    @:Name <input type="text" name="cookieName" id="cookieName" />
     <br />
-    @:Value <input type="text" name="cookieValue" />
+    @:Value <input type="text" name="cookieValue" id="cookieValue" />
+    <br />
+    <br />
+    
+    @:HttpOnly? <input type="checkbox" name="httpOnly" value="True" />
+    <input type="hidden" name="httpOnly" value="False" />
     <br />
     <input type="submit" value="Add Cookies in server" />
-    <input type="button" value="Add Cookie in client" onclick="addCookie"/>
+    <input type="button" value="Add Cookie in client" onclick="addCookie()"/>
 }
 
 
 <br />
 <br />
 Cookies
+<br />
+Client
 <ul id="cookieContainer">
     
 
+</ul>
+
+<br />
+Server
+<ul id="cookieContainerServer">
+   @for (int i = 0; i < Request.Cookies.Count; i++)
+   {
+       var cookie=@Request.Cookies[i];
+       <li>@cookie.Name <text>&nbsp;=&nbsp;</text>@cookie.Value <text>HttpOnly&nbsp;=&nbsp;</text> @cookie.HttpOnly</li>
+   }
 </ul>
 
 @section scripts{
@@ -28,13 +45,33 @@ Cookies
 <script src="~/Scripts/_references.js"></script>
     <script>
         $(document).ready(function () {
-            
+            reloadCookies();
         });
         function reloadCookies() {
-            $('#cookieContainer').clear();
-        }
-        function addCookie() {
+            $('#cookieContainer').empty();
+            var cookies = document.cookie.split(';');
+            var allCookes = [];
+            for (i = 0; i < cookies.length; i++) {
+                allCookes.push(cookies[i]);
+            }
 
+            for (i = 0; i < allCookes.length; i++) {
+                $('#cookieContainer').append($('<li>').text(allCookes[i]));
+
+            }
+        }
+        
+        function addCookie() {
+            var cookieName = $('#cookieName').val();
+            var cookieValue = $('#cookieValue').val();
+            if(cookieName=='' || cookieValue==''){
+                return ;
+            }
+
+            var nowDate = new Date();
+            var expDay = nowDate.setMinutes(nowDate.getMinutes() + 5);
+            var cValue = escape(cookieValue) + '; expires=' + expDay;
+            document.cookie = cookieName + '=' + cValue;
         }
     </script>
 }

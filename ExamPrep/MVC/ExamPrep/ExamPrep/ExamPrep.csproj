@@ -276,9 +276,13 @@
     <Compile Include="Models\DB\BlogDbContext.cs" />
     <Compile Include="Models\DB\Library\LibraryDbContext.cs" />
     <Compile Include="Models\DB\Library\Map\BookMap.cs" />
+    <Compile Include="Models\GenHandler.ashx.cs">
+      <DependentUpon>GenHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\NonGenericHandler.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostAuthor.cs" />
@@ -342,6 +346,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Models\GenHandler.ashx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
@@ -410,6 +415,7 @@
     <Content Include="Views\Blog\AddPost.cshtml" />
     <Content Include="Views\Blog\EditPost.cshtml" />
     <Content Include="Views\StateManagement\Index.cshtml" />
+    <Content Include="Views\StateManagement\StateServer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -466,6 +472,9 @@
     <EmbeddedResource Include="Migrations\201309161728149_LibraryInitialCreate.resx">
       <DependentUpon>201309161728149_LibraryInitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,7 +12,7 @@ namespace ExamPrep
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.Ignore("{rssname}.rss");
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -16,11 +16,9 @@ namespace ExamPrep.Controllers
             return View();
         }
 
-        [OutputCache(CacheProfile="")]
+        //[OutputCache(CacheProfile="")]
         public ActionResult AddCookie(string cookieName, string cookieValue, bool httpOnly)
-        {
-            HttpContext context;
-            
+        {   
             HttpCookie cooki = new HttpCookie(cookieName,cookieValue);
             cooki.Expires = DateTime.Now.AddMinutes(2);
             cooki.HttpOnly = httpOnly;

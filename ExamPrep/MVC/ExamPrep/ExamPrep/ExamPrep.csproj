@@ -195,6 +195,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Controllers\StateManagementController.cs" />
+    <Compile Include="Controllers\TestViewController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -416,6 +417,9 @@
     <Content Include="Views\Blog\EditPost.cshtml" />
     <Content Include="Views\StateManagement\Index.cshtml" />
     <Content Include="Views\StateManagement\StateServer.cshtml" />
+    <Content Include="Views\TestView\Index.cshtml" />
+    <Content Include="Views\TestView\PartialView.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

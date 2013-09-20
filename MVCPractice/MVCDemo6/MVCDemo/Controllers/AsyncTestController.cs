@@ -22,6 +22,16 @@ namespace MVCDemo2.Controllers
 
         //}
 
+        public string Index()
+        {
+            //var service = new AmazonBlobService();
+            //var files = service.GetFileNames("container");
+
+            //return View(files);
+            System.Threading.Thread.Sleep(5000);
+            return DateTime.Now.ToString();
+        }
+
         //public Task<ActionResult> Index()
         //{
         //    return Task.Factory.StartNew<ActionResult>(() =>
@@ -53,15 +63,15 @@ namespace MVCDemo2.Controllers
 
         //}
 
-        public async Task<ActionResult> Index()
-        {
-            var service = new AmazonBlobService();
-            var files = await service.GetFileNamesAsync("asynccontainer");
-            var extendedFiles = await service.GetExtendedFileNamesAsync(files);
+        //public async Task<ActionResult> Index()
+        //{
+        //    var service = new AmazonBlobService();
+        //    var files = await service.GetFileNamesAsync("asynccontainer");
+        //    var extendedFiles = await service.GetExtendedFileNamesAsync(files);
 
-            return View(extendedFiles);
+        //    return View(extendedFiles);
 
-        }
+        //}
 
 
 

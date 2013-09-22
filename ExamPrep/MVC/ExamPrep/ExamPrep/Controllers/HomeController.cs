@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace ExamPrep.Controllers
 {
+
+    //[HandleError()]
+    [HandleError(View = "CustomErrPage")]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -34,6 +37,22 @@ namespace ExamPrep.Controllers
             return View();
         }
 
+        public ActionResult ThrowError()
+        {
+            throw new ApplicationException("Deliberately thrown the error.");
+        }
+
+        
+
+        public ActionResult ThrowErrorStatus(int error)
+        {
+            throw new HttpException(error,string.Empty);
+        }
+
+        public string Error505Result()
+        {
+            return "this is error 500 result";
+        }
         
     }
 }

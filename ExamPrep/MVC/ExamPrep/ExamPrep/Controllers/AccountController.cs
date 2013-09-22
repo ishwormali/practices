@@ -331,6 +331,7 @@ namespace ExamPrep.Controllers
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)
         {
+           
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);

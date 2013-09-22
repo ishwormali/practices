@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    var languages=new Dictionary<string,string>();
+    languages.Add("", "");
+    languages.Add("en-US","en-US");
+    languages.Add("ne-NP", "ne-NP");
+    languages.Add("ml-IN", "ml-IN");
+    languages.Add("es-MX", "es-MX");
+    languages.Add("es-ES", "es-ES");
+    
+    @Html.DropDownList("mylanguage", new SelectList(languages, "Key","Value", System.Threading.Thread.CurrentThread.CurrentCulture.Name))
+    
+    <input type="submit" value="Let's Go" />
+}
+<br />
+<br />CurrentCulture:&nbsp;
+@System.Threading.Thread.CurrentThread.CurrentCulture.Name
+<br />
+<br />
+Current UI Culture: &nbsp;
+@System.Threading.Thread.CurrentThread.CurrentUICulture.Name
+
+<br />
+Label1 : @Res.MyLabels.Label1
+<br />
+Label 2 : @Res.MyLabels.Label2
+<br />
+Label 3: @Res.MyLabels.Label3

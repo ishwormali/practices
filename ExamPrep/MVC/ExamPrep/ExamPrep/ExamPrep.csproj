@@ -185,6 +185,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\MyLabels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLabels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyLabels.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLabels.es-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyLabels.es-MX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLabels.es-MX.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MyLabels.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyLabels.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\LocalRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalRes.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -192,6 +217,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\GlobalizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Controllers\StateManagementController.cs" />
@@ -348,6 +374,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Models\GenHandler.ashx" />
+    <Content Include="Views\Shared\CustomErrPage.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
@@ -366,6 +393,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="ViewPage1.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -420,6 +448,7 @@
     <Content Include="Views\TestView\Index.cshtml" />
     <Content Include="Views\TestView\PartialView.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Globalization\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -428,6 +457,30 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\MyLabels.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyLabels.es-ES.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Res</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\MyLabels.es-MX.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyLabels.es-MX.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Res</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\MyLabels.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyLabels.es.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Res</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\MyLabels.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyLabels.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Res</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\LocalRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309110844563_InitialCreate.resx">
       <DependentUpon>201309110844563_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>

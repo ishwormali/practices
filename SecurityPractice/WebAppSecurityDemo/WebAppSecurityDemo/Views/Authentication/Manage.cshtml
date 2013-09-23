@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Manage</h2>
+@{
+    var user = Membership.GetUser();
+}
+
+User Name : @user.UserName

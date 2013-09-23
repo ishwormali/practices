@@ -218,6 +218,7 @@
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\RestrictedPage.cshtml" />
+    <Content Include="Views\Authentication\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

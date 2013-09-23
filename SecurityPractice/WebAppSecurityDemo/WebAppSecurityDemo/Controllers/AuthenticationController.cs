@@ -121,5 +121,10 @@ namespace WebAppSecurityDemo.Controllers
             }
         }
 
+        public ActionResult Manage()
+        {
+            return View();
+        }
+
     }
 }

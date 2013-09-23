@@ -216,6 +216,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthenticationTestController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\GlobalizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -449,6 +450,8 @@
     <Content Include="Views\TestView\PartialView.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Globalization\Index.cshtml" />
+    <Content Include="Views\AuthenticationTest\Index.cshtml" />
+    <Content Include="Views\AuthenticationTest\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

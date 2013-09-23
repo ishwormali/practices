@@ -1,0 +1,19 @@
+﻿@model LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+@:UserName : @Html.TextBoxFor(m=>m.UserName)
+<br />
+@:Password : @Html.TextBoxFor(m=>m.Password)
+<br />
+@:RememberMe? @Html.CheckBoxFor(m=>m.RememberMe)
+    
+    <br />
+<input type="submit" value="Login" />    
+}

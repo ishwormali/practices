@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebAppSecurityDemo.Models 
 {
@@ -59,5 +60,27 @@ namespace WebAppSecurityDemo.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //[DataType(DataType.EmailAddress)]
+        [Display(Name="Email Address")]
+        [Required]
+        [EmailAddress]
+        public string EmailAddress { get; set; }
+
+        [Required]
+        public string SecurityQuestion { get; set; }
+
+        [Required]
+        public string SecurityAnswer { get; set; }
+
+        public static Dictionary<string, string> GetSecurityQuestions()
+        {
+            var questions = new Dictionary<string, string>();
+            questions.Add("What is your favourite color", "What is your favourite color");
+            questions.Add("What is your favourite pet", "What is your favourite pet");
+            questions.Add("What is your favourite flower", "What is your favourite flower");
+
+            return questions;
+        }
     }
 }

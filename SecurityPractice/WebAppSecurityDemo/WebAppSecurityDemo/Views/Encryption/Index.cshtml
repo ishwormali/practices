@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    
+
+@:Input
+<input type="text" id="txtinput" />
+<br />
+@:Output
+<input type="text" id="txtoutput"/>
+
+  <br />
+   
+    <br />
+    <input type="button" value="Encrypt" id="encrypt"/>
+    <br />
+    <input type="button" value="Decrypt" id="decrypt"/>   
+    
+}
+@section scripts{
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#encrypt').click(function () {
+            
+            $.post('@Url.Action("Encrypt")', { input: $('#txtinput').val() }
+            ).done(function (data) {
+                $('#txtoutput').val(data);
+            });
+        });
+
+        $('#decrypt').click(function () {
+
+            $.post('@Url.Action("Decrypt")', { input: $('#txtinput').val() }
+            ).done(function (data) {
+                $('#txtoutput').val(data);
+            });
+        });
+    });
+</script>
+
+    }

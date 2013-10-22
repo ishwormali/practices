@@ -40,6 +40,9 @@ namespace WebAppSecurityDemo.Models
             cs.FlushFinalBlock();
             var outputBytes = strm.ToArray();
             return System.Text.Encoding.Unicode.GetString(outputBytes);
+            //SHA1CryptoServiceProvider p = new SHA1CryptoServiceProvider();
+            //RSACryptoServiceProvider pop;
+            //pop.Encrypt(,)
         }
 
 

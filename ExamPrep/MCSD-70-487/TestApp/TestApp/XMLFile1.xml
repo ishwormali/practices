@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<myroot>
+  <people>
+    <person id="1" name="ram" age="20"></person>
+    <person id="2" name="shyam" age="30">
+      <address street="stree name" housenumber="200"></address>
+    </person>
+  </people>
+</myroot>

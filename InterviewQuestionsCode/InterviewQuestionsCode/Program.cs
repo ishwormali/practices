@@ -10,9 +10,58 @@ namespace InterviewQuestionsCode
     {
         static void Main(string[] args)
         {
-
+            Conversion();
+            //Foo.Bar();
+            Console.Read();
         }
 
+        public static void Conversion()
+        {
+            //float f = 10.9F;        a)
+
+            //int i = (int)f;         b)  
+
+            //double d = i;           c) 
+ 
+            //Single s = d;           d) 
+ 
+        }
+
+        public class Foo
+        {
+            public const string Bar = "999";
+            
+            public Foo()
+            {
+                Foo.Bar = "luljlj";
+
+                Bar = "444";
+            }
+        }
+
+
+        //public static class Foo
+        //{
+        //    static Foo()
+        //    {
+        //        Console.WriteLine(" Foo ");
+        //    }
+
+        //    public static void Bar()
+        //    {
+        //        Console.WriteLine(" Bar ");
+        //    }
+        //}
+
+        public static void PrintData()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(++i);
+            }
+        }
+
+        /*
         public void SaveData()
         {
             try
@@ -69,6 +118,8 @@ namespace InterviewQuestionsCode
         {
 
         }
+         
+         */
     }
 
 

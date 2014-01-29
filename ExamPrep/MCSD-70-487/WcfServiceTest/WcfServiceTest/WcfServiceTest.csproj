@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CallableService.svc" />
+    <Content Include="SecureService.svc" />
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -70,6 +71,10 @@
     </Compile>
     <Compile Include="ICallableServiceCallback.cs" />
     <Compile Include="ICallableService.cs" />
+    <Compile Include="ISecureService.cs" />
+    <Compile Include="SecureService.svc.cs">
+      <DependentUpon>SecureService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

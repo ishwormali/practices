@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Basic tests</title>
+</head>
+<body>
+
+<div id="mydiv">
+This is a div
+<br/>
+which is a div
+
+</div>
+
+<input type="button" id="triggerer" value="Triggerer" />
+
+</body>
+
+
+<script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$('#triggerer').click(function(){
+		$('#mydiv').trigger('customplugin:customeventtty'); ,[{customprop:'custompropvalue'},{customprop2:'customprop2value'}]
+	});
+
+	$('#mydiv').on('customplugin:customeventtty',function(e,a,b){
+		alert('customplugin:customeventtty called');
+		console.log(a);
+	});
+</script>
+</html>

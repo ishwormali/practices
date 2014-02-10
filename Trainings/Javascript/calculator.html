@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Calculator</title>
+	<style type="text/css">
+
+		.calculator-container{
+			width:120px;
+			height: 300px;
+
+		}
+		.calculator-button{
+			width:30px;
+			height: 30px;
+			float: left;
+		}
+		.result{
+			width:100%;
+			height:20px;
+			text-align: right;
+		}
+		.main-container{
+			margin-left: 40%;
+		}
+	</style>
+</head>
+<body>
+	<div class="main-container">
+		<div id='calculator-container' class='calculator-container'>
+			<div>
+				<input type='text' id='result' class="result" />
+			</div>
+			<div>
+				<input type='button' value="7" class='calculator-button' />
+				<input type='button' value="8" class='calculator-button' />
+				<input type='button' value="9" class='calculator-button' />
+				<input type='button' value="+" class='calculator-button' />
+			</div>
+			<div>
+				<input type='button' value="4" class='calculator-button' />
+				<input type='button' value="5" class='calculator-button' />
+				<input type='button' value="6" class='calculator-button' />
+				<input type='button' value="-" class='calculator-button' />
+			</div>
+			<div>
+				<input type='button' value="1" class='calculator-button' />
+				<input type='button' value="2" class='calculator-button' />
+				<input type='button' value="3" class='calculator-button' />
+				<input type='button' value="*" class='calculator-button' />
+			</div>
+			<div>
+				<input type='button' value="0" class='calculator-button' />
+				<input type='button' value="." class='calculator-button' />
+				<input type='button' value="=" class='calculator-button' />
+				<input type='button' value="/" class='calculator-button' />
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">
+		var numStack=[];
+		$('.calculator-container').click(function(e) {
+			var targ=e.target;
+			var calcFn=$(targ).val();
+			var numericValue=parseInt(calcFn);
+			var currentValue=$('.result').val();
+			if((numericValue>=0 && numericValue<=9)) {
+
+				$('.result').val((currentValue+'')+(numericValue+''));
+
+			}
+			else if (calcFn=='.' || calcFn=='+'|| calcFn=='-'|| calcFn=='*'|| calcFn=='/') {
+
+				numStack.push(parseFloat(currentValue));
+				$('.result').val('');
+				numStack.push(calcFn);
+			}
+			else if(calcFn=='='){
+				if (currentValue!='') {
+					numStack.push(parseFloat(currentValue));
+					if (numStack.length>=3) {
+						var finalResult=eval(numStack.join(' '));
+						$('.result').val(finalResult);
+						clearArray(numStack);
+						//numStack.push(finalResult);
+					}
+				};
+				
+			}
+		});
+
+		function clearArray(arr){
+			var arrlength=arr.length;
+			for (var i = 0; i < arrlength; i++) {
+				arr.pop();
+			};
+		}
+	</script>
+</body>
+</html>

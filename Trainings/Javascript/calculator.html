@@ -22,33 +22,60 @@
 		.main-container{
 			margin-left: 40%;
 		}
+		.calculator-container row{
+			/*display: table-row;*/
+		}
+		.calculator-container .span-1{
+			width:30px;
+			height: 30px;
+			float: left;
+		}
+		.calculator-container .span-2{
+			width:60px;
+			height: 30px;
+			float: left;
+		}
+		.calculator-container .span-3{
+			width:90px;
+			height: 30px;
+			float: left;
+		}
+		.calculator-container .span-4{
+			width:120px;
+			height: 30px;
+			float: left;
+		}
 	</style>
 </head>
 <body>
 	<div class="main-container">
 		<div id='calculator-container' class='calculator-container'>
-			<div>
+			<div class="row">
 				<input type='text' id='result' class="result" />
 			</div>
-			<div>
+			<div class="row">
+				<div class="span-3"></div>
+				<input type='button' value="C" class='calculator-button' />
+			</div>
+			<div class="row">
 				<input type='button' value="7" class='calculator-button' />
 				<input type='button' value="8" class='calculator-button' />
 				<input type='button' value="9" class='calculator-button' />
 				<input type='button' value="+" class='calculator-button' />
 			</div>
-			<div>
+			<div class="row">
 				<input type='button' value="4" class='calculator-button' />
 				<input type='button' value="5" class='calculator-button' />
 				<input type='button' value="6" class='calculator-button' />
 				<input type='button' value="-" class='calculator-button' />
 			</div>
-			<div>
+			<div class="row">
 				<input type='button' value="1" class='calculator-button' />
 				<input type='button' value="2" class='calculator-button' />
 				<input type='button' value="3" class='calculator-button' />
 				<input type='button' value="*" class='calculator-button' />
 			</div>
-			<div>
+			<div class="row">
 				<input type='button' value="0" class='calculator-button' />
 				<input type='button' value="." class='calculator-button' />
 				<input type='button' value="=" class='calculator-button' />
@@ -79,8 +106,9 @@
 			}
 			else if(calcFn=='='){
 				if (currentValue!='') {
-					numStack.push(parseFloat(currentValue));
-					if (numStack.length>=3) {
+					
+					if (numStack.length>=2) {
+						numStack.push(parseFloat(currentValue));
 						var finalResult=eval(numStack.join(' '));
 						$('.result').val(finalResult);
 						clearArray(numStack);
@@ -88,6 +116,10 @@
 					}
 				};
 				
+			}
+			else if (calcFn=='C'){
+				clearArray(numStack);
+				$('.result').val('');
 			}
 		});
 

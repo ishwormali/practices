@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample form</title>
+</head>
+<body>
+<form action="http://www.google.com">
+	User Name<input type='text' id='username'/>
+	<br>
+	Password <input type='text' id='password' />
+	<br>
+
+	<input type='submit' value='submit'/>
+
+<a href='http://www.google.com' id='googlelink' >Go to google</a>
+
+</form>
+
+<script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	//$('form').submit
+	$('input[type=submit]').click(function(e) {
+		if($('#username').val()==''){
+			alert('Please enter user name');
+			
+		}
+		else if($('#password').val()==''){
+			alert('Please enter password');
+			
+		}
+		
+	});
+
+	//$('#googlelink').click(function(e) {
+	//	alert('you just clicked on google link');
+	//	e.preventDefault();
+	//});
+</script>
+</body>
+</html>

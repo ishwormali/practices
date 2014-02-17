@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Jquery form practice</title>
+	
+
+</head>
+<body>
+<form action='http://www.google.com'>
+	User Name : <input type='text' name='UserName' />
+	<br/>
+	Password : <input type='password' name='Password' />
+	<br/>
+	<input type='submit' value='Send'/>
+	<input type='reset' value='Clear Form'/>
+	<button >This is a different button</button>
+
+</form>
+
+<script type="text/javascript" src='scripts/jquery-1.9.0.js'></script>
+<script type="text/javascript">
+var btn=$('input[type=submit]');
+	btn.click(function(){
+		if($('input[name=UserName]').val()===''){
+			alert('you must enter your user name');
+			return false;
+		}
+
+		if($('input[name=Password]').val()===''){
+			alert('you must enter your password');
+			return false;
+		}
+		
+		
+	});
+
+
+</script>
+
+
+
+</body>
+</html>

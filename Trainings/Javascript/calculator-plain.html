@@ -3,15 +3,61 @@
 <head>
 	<title>Jquery Calculator</title>
 	<style type="text/css">
-		@font-face
-{
-font-family: CalculatorFont;
-src: url(fonts/digital-7.ttf);
-}
-		
-	</style>
 
-	<link rel="stylesheet" type="text/css" href="calculator-style.css">
+		.calculator-container{
+			width:120px;
+			height: 300px;
+
+		}
+		.calculator-button{
+			width:30px;
+			height: 30px;
+			float: left;
+			/*transition: background-color 0.3s;*/
+			/*--webkit-transition: */
+			/*--moz-transition: */
+		}
+		.calculator-button:active{
+			width:30px;
+			height: 30px;
+			float: left;
+			background-color: Red;
+		}
+		
+		.result{
+			width:100%;
+			height:20px;
+			text-align: right;
+			
+			font-size: 15px;
+		}
+		.main-container{
+			margin-left: 40%;
+		}
+		.calculator-container row{
+			/*display: table-row;*/
+		}
+		.calculator-container .span-1{
+			width:30px;
+			height: 30px;
+			float: left;
+		}
+		.calculator-container .span-2{
+			width:60px;
+			height: 30px;
+			float: left;
+		}
+		.calculator-container .span-3{
+			width:90px;
+			height: 30px;
+			float: left;
+		}
+		.calculator-container .span-4{
+			width:120px;
+			height: 30px;
+			float: left;
+		}
+	</style>
 </head>
 <body>
 	<div class="main-container">
@@ -52,7 +98,8 @@ src: url(fonts/digital-7.ttf);
 	</div>
 
 	<script type="text/javascript" src="Scripts/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src='calculator-scripts.js'></script>
+	<script type="text/javascript">
+		
 	</script>
 </body>
 </html>

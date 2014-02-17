@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slider test</title>
+	<link rel="stylesheet" type="text/css" href="flexslider.css"/>
+	<style type="text/css">
+	.flexslider{
+		height: 250px;
+		width: 400px;
+
+	}
+	</style>
+</head>
+<body>
+
+	<div class="flexslider">
+		<ul class="slides">
+			<li>
+				<img src="images/fireworks.jpg" />
+			</li>
+			<li>
+				<img src="images/grandprix_race.jpg" />
+			</li>
+			<li>
+				<img src="images/horse.jpg" />
+			</li>
+			<li>
+				<img src="images/student.jpg" />
+			</li>
+			<li>
+				<img src="images/mask-man.jpg" />
+			</li>
+			<li>
+				<img src="images/shuttle_carrier.jpg" />
+			</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src='scripts/jquery-1.7.1.min.js'></script>
+	<script type="text/javascript" src='jquery.flexslider.js'></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function(slider){
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>

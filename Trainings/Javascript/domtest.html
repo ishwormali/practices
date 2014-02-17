@@ -9,8 +9,11 @@
 <input  type="checkbox" name="hobbies" value="Fishing">Fishing
 <input  type="checkbox" name="hobbies" value="Hiking">Hiking
 
+
 <br />
-<input type="button" value="Get Hobbies" id="showHobbies"  /><!--  onclick='myfn' -->
+<input type="button" value="Get Hobbies" id="showHobbies"  />
+
+<!--  onclick='myfn' -->
 <br />
 <div id="result">
 	
@@ -18,41 +21,24 @@
 </body>
 
 <script type="text/javascript">
-	 document.getElementById('showHobbies')
-	// // document.querySelector('#showHobbies')
-	  .onclick=function(){
-	  	alert('clicked');
-
-	//  	// var allhobbies=document.getElementsByName('hobbies');
-	//  	// var selectedHobbies=[];
-	//  	// for (var i = 0; i < allhobbies.length; i++) {
-	//  	// 	var hobb=allhobbies[i];
-	// 		// if(hobb.checked){
-	// 		// 	selectedHobbies.push(hobb.value);
-	// 		// }
-
-	//  	// };
-
-	//  	// document.getElementById('result').innerText=selectedHobbies.join(', ');
-	  };
-
-	// document.querySelector('#showHobbies').onclick=function(){
-	// 	var hobbies=document.querySelectorAll('[name=hobbies]:checked');
-	// 	// var hobbies=document.querySelectorAll('[name=hobbies]:checked:not([value=Music])');
-	// 	var selectedHobbies=[];
-	// 	for (var i = 0; i < hobbies.length; i++) {
-	// 		var hobb=hobbies[i];
-	// 		selectedHobbies.push(hobb.value);
-	// 	};
-
-	// 	document.getElementById('result').innerText=selectedHobbies.join(', ');
-	// };
-
-	function myfn(e){
-		//alert('myfn');
-		console.log(e);
-		console.log(this);
-		alert(this.value);
+var btn=document.querySelector('#showHobbies');
+btn.onclick=function(){
+	
+	var allhobbies=document.getElementsByName('hobbies');
+	var selectedHobbies=[];
+	for (var i = 0; i < allhobbies.length; i++) {
+	var hobb=allhobbies[i];
+	if(hobb.checked){
+		selectedHobbies.push(hobb.value);
 	}
+
+	};
+
+	document.getElementById('result').innerText=selectedHobbies.join(', ');
+};
+
+	function showAlert(){
+		alert('button clicked');
+	} 
 </script>
 </html>

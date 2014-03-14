@@ -10,10 +10,25 @@ namespace InterviewQuestionsCode
     {
         static void Main(string[] args)
         {
-            Conversion();
+         //   Conversion();
             //Foo.Bar();
+           // Console.Write(ReturnBool());
+            SaveData();
             Console.Read();
         }
+
+        static bool ReturnBool()
+        {
+
+            bool a = false;
+            bool b = true;
+            int i = 4;
+            int j = 6;
+
+            bool ret = a || b && false || --j > ++i;
+            return ret;
+        }
+
 
         public static void Conversion()
         {
@@ -33,9 +48,9 @@ namespace InterviewQuestionsCode
             
             public Foo()
             {
-                Foo.Bar = "luljlj";
+                //Foo.Bar = "luljlj";
 
-                Bar = "444";
+                //Bar = "444";
             }
         }
 
@@ -61,8 +76,8 @@ namespace InterviewQuestionsCode
             }
         }
 
-        /*
-        public void SaveData()
+        
+        public static void SaveData()
         {
             try
             {
@@ -71,8 +86,8 @@ namespace InterviewQuestionsCode
             }
             catch (Exception ex)
             {
+                Console.WriteLine("error");
                 
-                throw;
             }
             finally {
 
@@ -80,46 +95,49 @@ namespace InterviewQuestionsCode
             }
         }
 
-        public void SaveData()
+        
+        public static void SaveData()
         {
             try
             {
                 ///Save the data in the database which may throw error
-
+                
                 EndTask();//task that needs to be executed despite of any error
             }
             catch (Exception ex)
             {
-
-                throw;
+                Console.WriteLine("error");
+                EndTask();//task that needs to be executed despite of any error
+                 
             }
             
         }
 
-        public void SaveData()
+       
+        public static void SaveData()
         {
             try
             {
                 ///Save the data in the database which may throw error
-
+                
             }
             catch (Exception ex)
             {
-
-                EndTask();//task that needs to be executed despite of any error
-                throw;
+                Console.WriteLine("error");
             }
 
             EndTask();//code that needs to be executed despite of any error
         }
 
 
-        public void EndTask()
+        /*
+       */
+        public static void EndTask()
         {
-
+            Console.WriteLine("end task");
         }
          
-         */
+         
     }
 
 

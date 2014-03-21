@@ -1,0 +1,23 @@
+package com.Practices.fragmentpractice;
+
+public class Ipsum {
+	static String[] Headlines ={
+		"Article One",
+		"Article Two"
+	};
+	
+	static String[] Articles={
+		"Article One\n\nExcepteur pour-over occaecat squid biodiesel" +
+				15	        "umami gastropub, nulla laborum salvia dreamcatcher fanny pack." +
+				16	        "Ullamco culpa retro ea, trust fund excepteur eiusmod direct trade" +
+				17	        "banksy nisi lo-fi cray messenger bag. Nesciunt esse carles selvage" +
+				18	        "put a bird on it gluten-free, wes anderson ut trust fund twee occupy" +
+				19	        "viral. Laboris small batch scenester pork belly, leggings ut farm-to-table" +
+				20	        "aliquip yr nostrud iphone viral next level. Craft beer dreamcatcher" +
+				21	        "pinterest truffaut ethnic, authentic brunch. Esse single-origin coffee" +
+				22	        "banksy do next level tempor. Velit synth dreamcatcher, magna shoreditch" +
+				23	        "in american apparel messenger bag narwhal PBR ennui farm-to-table.",
+				- See more at: http://www.newthinktank.com/2013/08/android-development-17/#sthash.F9MAigGF.dpuf
+	}
+
+}

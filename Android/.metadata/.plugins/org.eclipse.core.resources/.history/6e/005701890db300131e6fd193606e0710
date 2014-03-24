@@ -1,0 +1,35 @@
+package com.Practices.fragmentpractice;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class ArticleFragment extends Fragment {
+
+	final static String ARG_POSITION="position";
+	int mPosition=-1;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		//return super.onCreateView(inflater, container, savedInstanceState);
+		if(savedInstanceState!=null){
+			
+		}
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	public void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+	}
+
+}

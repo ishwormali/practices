@@ -1,6 +1,10 @@
 package com.practices.todolist;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import com.practices.todolist.db.ToDoListDataSource;
+import com.practices.todolist.db.ToDoListDbHelper;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -12,13 +16,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.os.Build;
+import com.practices.todolist.domain.ToDoListItem;
 
 public class ToDoListActivity extends ActionBarActivity {
-
+	ToDoItemAdapter aa;
+	ToDoListDataSource dataSource;
+	ArrayList<ToDoListItem> todoItems;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,8 +37,11 @@ public class ToDoListActivity extends ActionBarActivity {
 		final EditText myEditText=(EditText)findViewById(R.id.myEditText);
 		final ListView myListView=(ListView)findViewById(R.id.myListView);
 		
-		final ArrayList<String> todoItems=new ArrayList<String>();
-		final ArrayAdapter<String> aa=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,todoItems);
+		dataSource=new ToDoListDataSource(this);
+		
+		todoItems=new ArrayList<ToDoListItem>();
+		aa=new ToDoItemAdapter(this, this.getLayoutInflater(),todoItems);
+		
 		myListView.setAdapter(aa);
 		myEditText.setOnKeyListener(new View.OnKeyListener() {
 			
@@ -38,9 +51,12 @@ public class ToDoListActivity extends ActionBarActivity {
 				if(event.getAction()==KeyEvent.ACTION_DOWN){
 					if(keyCode==KeyEvent.KEYCODE_DPAD_CENTER||
 					keyCode==KeyEvent.KEYCODE_ENTER){
-						todoItems.add(0,myEditText.getText().toString());
-						aa.notifyDataSetChanged();
+						insertItem(myEditText.getText().toString());
+						
+						//todoItems.add(0,myEditText.getText().toString());
+						//aa.notifyDataSetChanged();
 						myEditText.setText("");
+						loadData();
 						return true;
 					}
 				}
@@ -48,8 +64,40 @@ public class ToDoListActivity extends ActionBarActivity {
 			}
 		
 		});
-	}
+		
+		myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				ToDoListItem item=(ToDoListItem)arg0.getItemAtPosition(arg2);
+				Toast.makeText(ToDoListActivity.this, item.getItemName(), Toast.LENGTH_SHORT).show();
+				
+			}
+			
+			
+		});
+		
+		loadData();
+	}
+	
+	private Boolean insertItem(String todo){
+		ToDoListItem item=new ToDoListItem();
+		item.setItemName(todo);
+		long insertedRow=dataSource.InsertToDo(item);
+		return insertedRow==1;
+	}
+	
+	private void loadData(){
+		List<ToDoListItem> items= dataSource.GetAll();
+		todoItems.clear();
+		for(int i=0;i<items.size();i++){
+			ToDoListItem item=items.get(i);
+			todoItems.add(item);
+		}
+		
+		aa.notifyDataSetChanged();
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

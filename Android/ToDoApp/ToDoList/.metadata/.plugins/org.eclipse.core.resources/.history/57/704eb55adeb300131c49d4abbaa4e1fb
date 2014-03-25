@@ -1,0 +1,10 @@
+package com.practices.todolist.db;
+
+public final class ToDoListDbContract {
+	
+	
+	public static abstract class ToDoListDbEntry implements BaseColumns{
+		
+	}
+
+}

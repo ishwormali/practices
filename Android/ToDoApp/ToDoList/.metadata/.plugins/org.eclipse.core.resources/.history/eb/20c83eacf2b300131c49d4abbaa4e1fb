@@ -1,0 +1,10 @@
+package com.practices.todolist.db;
+
+public class ToDoListDataSource {
+	public ToDoListDataSource(Context context)
+	{
+		
+	
+	}
+	
+}

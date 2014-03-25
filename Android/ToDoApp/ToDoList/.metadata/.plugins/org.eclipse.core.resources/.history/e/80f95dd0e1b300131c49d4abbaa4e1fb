@@ -1,0 +1,30 @@
+package com.practices.todolist.domain;
+
+public final class ToDoListItem {
+	private int id;
+	
+	public int getId(){
+		return id;
+	}
+	public void setId(int id){
+		this.id=id;
+		
+	}
+	
+	private	String itemName;
+	public String getItemName(){
+		return itemName;
+	}
+	public void setItemName(String itemName){
+		this.itemName=itemName;
+	}
+	
+	private Date dateCreated;
+	public Date getDateCreated(){
+		return dateCreated;
+	}
+	
+	public void setDateCreated(Date dateCreated){
+		dateCreated=dateCreated;
+	}
+}

@@ -1,0 +1,12 @@
+package com.practices.todolist.domain;
+
+public final class ToDoListItem {
+	private int id;
+	
+	public int getId(){
+		return id;
+	}
+	public int setId(id){
+		this.id=id;
+	}
+}

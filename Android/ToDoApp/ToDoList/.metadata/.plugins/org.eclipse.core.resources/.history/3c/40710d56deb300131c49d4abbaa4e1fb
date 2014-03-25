@@ -1,0 +1,6 @@
+package com.practices.todolist.db;
+
+public final class ToDoListDbContract {
+	
+
+}

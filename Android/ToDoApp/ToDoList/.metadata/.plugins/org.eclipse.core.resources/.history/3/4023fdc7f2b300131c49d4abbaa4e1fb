@@ -1,0 +1,12 @@
+package com.practices.todolist.db;
+
+import android.content.Context;
+
+public class ToDoListDataSource {
+	public ToDoListDataSource(Context context)
+	{
+		super(context);
+	
+	}
+	
+}

@@ -8,5 +8,5 @@
     <string name="addItemHint">New TO DO Item</string>
     <string name="addItemContentDescription">New TO DO Item Description</string>
     <string name="title_activity_main">MainActivity</string>
-
+	<string name="action_refresh">Refresh</string>
 </resources>

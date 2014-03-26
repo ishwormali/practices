@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <application
@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.practices.todolist.ToDoListActivity"
-            android:label="@string/title_activity_to_do_list"  android:theme="@style/Theme.AppCompat" >
+            android:label="@string/title_activity_to_do_list"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

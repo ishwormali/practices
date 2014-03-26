@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ToDoList/res/layout/custon_action_progress.xml&apos; to &apos;custom_action_progress.xml&apos;" description="Rename resource &apos;custon_action_progress.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/custon_action_progress.xml" name="custom_action_progress.xml" stamp="1395814789758" updateReferences="true"/>
+</session>

@@ -1,0 +1,7 @@
+package com.practices.todolist;
+
+import android.support.v4.app.Fragment;
+
+public class OperationSystemFragment extends Fragment {
+
+}

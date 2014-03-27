@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.practices.todolist.ToDoListActivity" >
 
+    <item android:id="@+id/action_second_activity"
+        android:orderInCategory="99"
+        
+        android:title="@string/title_activity_second"
+        app:showAsAction="always"
+        />
+    
     <item android:id="@+id/action_refresh"
         android:orderInCategory="99"
         android:icon="@android:drawable/stat_notify_sync"

@@ -86,6 +86,7 @@ public class ToDoListActivity extends ActionBarActivity {
 		loadData();
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setTitle("Good Lord!");
+		
 		//actionBar.setCustomView(R.layout.custom_action_bar);
 		//actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM |ActionBar.DISPLAY_SHOW_HOME);
 		// Hide the Action Bar
@@ -141,6 +142,10 @@ public class ToDoListActivity extends ActionBarActivity {
 		else if (id==R.id.action_share){
 			DoShare();
 			
+		}
+		else if (id==R.id.action_second_activity){
+			Intent intent=new Intent(this,SecondActivity.class);
+			startActivity(intent);
 		}
 		return super.onOptionsItemSelected(item);
 		//ActionBar actionBar = getActionBar();

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ToDoList</string>
+    <string name="title_activity_to_do_list">ToDoListActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="addItemHint">New TO DO Item</string>
+    <string name="addItemContentDescription">New TO DO Item Description</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_my_drawer">MyDrawerActivity</string>
+    <string name="action_update">Update</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="section1">Section 1</string>
+    <string name="section2">Section 2</string>
+    <string name="section3">Section 3</string>
+
+    <string-array name="operating_systems">
+        <item>Android</item>
+        <item>iPhone</item>
+        <item>Windows Mobile</item>
+    </string-array>
+
+    <string name="title_activity_my_navigation_tab">MyNavigationTabActivity</string>
+    <string name="title_activity_my_sub_tab">MySubTabActivity</string>
+
+</resources>

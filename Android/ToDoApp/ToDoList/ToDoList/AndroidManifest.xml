@@ -16,7 +16,6 @@
         <activity
             android:name="com.practices.todolist.ToDoListActivity"
             android:label="@string/title_activity_to_do_list" >
-
         </activity>
         <activity
             android:name="com.practices.todolist.SecondActivity"
@@ -25,9 +24,27 @@
         <activity
             android:name="com.practices.todolist.MyDrawerActivity"
             android:label="@string/title_activity_my_drawer" >
+        </activity>
+        <activity
+            android:name="com.practices.todolist.MyNavigationTabActivity"
+            android:label="@string/title_activity_my_navigation_tab" >
+        </activity>
+        <activity
+            android:name="com.practices.todolist.MySubTabActivity"
+            android:label="@string/title_activity_my_sub_tab" >
+        </activity>
+        <activity
+            android:name="com.practices.todolist.MyDropDownNavigationActivity"
+            android:label="@string/title_activity_my_drop_down_navigation" >
+           
+        </activity>
+        <activity
+            android:name="com.practices.todolist.MyContextActionBarActivity"
+            android:label="@string/title_activity_my_context_action_bar" >
              <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
- <category android:name="android.intent.category.LAUNCHER" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

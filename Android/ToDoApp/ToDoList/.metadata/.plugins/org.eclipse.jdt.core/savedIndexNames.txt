@@ -1,7 +1,4 @@
 INDEX VERSION 1.126+D:\ishwor\Git\practices\Android\ToDoApp\ToDoList\.metadata\.plugins\org.eclipse.jdt.core
-1180340937.index
-2498250528.index
-4247075544.index
-3615668661.index
-1284074322.index
 2748841841.index
+1284074322.index
+4247075544.index

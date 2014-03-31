@@ -36,16 +36,23 @@
         <activity
             android:name="com.practices.todolist.MyDropDownNavigationActivity"
             android:label="@string/title_activity_my_drop_down_navigation" >
-           
         </activity>
         <activity
             android:name="com.practices.todolist.MyContextActionBarActivity"
             android:label="@string/title_activity_my_context_action_bar" >
-             <intent-filter>
+        </activity>
+        <activity
+            android:name="com.practices.todolist.MyStyledActivity"
+            android:label="@string/title_activity_my_styled" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.practices.todolist.GoogleKeepActivity"
+            android:label="@string/title_activity_google_keep" >
         </activity>
     </application>
 

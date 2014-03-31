@@ -28,5 +28,7 @@
     <string name="title_activity_my_sub_tab">MySubTabActivity</string>
     <string name="title_activity_my_drop_down_navigation">MyDropDownNavigationActivity</string>
     <string name="title_activity_my_context_action_bar">MyContextActionBarActivity</string>
+    <string name="title_activity_my_styled">MyStyledActivity</string>
+    <string name="title_activity_google_keep">GoogleKeepActivity</string>
 
 </resources>

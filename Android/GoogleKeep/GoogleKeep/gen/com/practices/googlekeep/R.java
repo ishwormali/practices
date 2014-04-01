@@ -794,10 +794,12 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070003;
+        public static final int abc_search_url_text_holo=0x7f070005;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
+        public static final int area_container_background=0x7f070004;
+        public static final int main_background=0x7f070003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -987,34 +989,39 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f02005a;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f02005b;
         public static final int abc_textfield_searchview_right_holo_light=0x7f02005c;
-        public static final int btn_cab_done_default_orangeboom=0x7f02005d;
-        public static final int btn_cab_done_focused_orangeboom=0x7f02005e;
-        public static final int btn_cab_done_orangeboom=0x7f02005f;
-        public static final int btn_cab_done_pressed_orangeboom=0x7f020060;
-        public static final int cab_background_bottom_orangeboom=0x7f020061;
-        public static final int cab_background_top_orangeboom=0x7f020062;
-        public static final int ic_launcher=0x7f020063;
-        public static final int list_focused_orangeboom=0x7f020064;
-        public static final int list_pressed_orangeboom=0x7f020065;
-        public static final int menu_dropdown_panel_orangeboom=0x7f020066;
-        public static final int progress_bg_orangeboom=0x7f020067;
-        public static final int progress_horizontal_orangeboom=0x7f020068;
-        public static final int progress_primary_orangeboom=0x7f020069;
-        public static final int progress_secondary_orangeboom=0x7f02006a;
-        public static final int selectable_background_orangeboom=0x7f02006b;
-        public static final int spinner_ab_default_orangeboom=0x7f02006c;
-        public static final int spinner_ab_disabled_orangeboom=0x7f02006d;
-        public static final int spinner_ab_focused_orangeboom=0x7f02006e;
-        public static final int spinner_ab_pressed_orangeboom=0x7f02006f;
-        public static final int spinner_background_ab_orangeboom=0x7f020070;
-        public static final int tab_indicator_ab_orangeboom=0x7f020071;
-        public static final int tab_selected_focused_orangeboom=0x7f020072;
-        public static final int tab_selected_orangeboom=0x7f020073;
-        public static final int tab_selected_pressed_orangeboom=0x7f020074;
-        public static final int tab_unselected_focused_orangeboom=0x7f020075;
-        public static final int tab_unselected_orangeboom=0x7f020076;
-        public static final int tab_unselected_pressed_orangeboom=0x7f020077;
-        public static final int text_x_todo=0x7f020078;
+        public static final int area_container=0x7f02005d;
+        public static final int btn_cab_done_default_orangeboom=0x7f02005e;
+        public static final int btn_cab_done_focused_orangeboom=0x7f02005f;
+        public static final int btn_cab_done_orangeboom=0x7f020060;
+        public static final int btn_cab_done_pressed_orangeboom=0x7f020061;
+        public static final int cab_background_bottom_orangeboom=0x7f020062;
+        public static final int cab_background_top_orangeboom=0x7f020063;
+        public static final int drop_shadow=0x7f020064;
+        public static final int edit_box=0x7f020065;
+        public static final int ic_launcher=0x7f020066;
+        public static final int ico_linedpaper32=0x7f020067;
+        public static final int ico_notepencil32=0x7f020068;
+        public static final int list_focused_orangeboom=0x7f020069;
+        public static final int list_pressed_orangeboom=0x7f02006a;
+        public static final int menu_dropdown_panel_orangeboom=0x7f02006b;
+        public static final int progress_bg_orangeboom=0x7f02006c;
+        public static final int progress_horizontal_orangeboom=0x7f02006d;
+        public static final int progress_primary_orangeboom=0x7f02006e;
+        public static final int progress_secondary_orangeboom=0x7f02006f;
+        public static final int selectable_background_orangeboom=0x7f020070;
+        public static final int spinner_ab_default_orangeboom=0x7f020071;
+        public static final int spinner_ab_disabled_orangeboom=0x7f020072;
+        public static final int spinner_ab_focused_orangeboom=0x7f020073;
+        public static final int spinner_ab_pressed_orangeboom=0x7f020074;
+        public static final int spinner_background_ab_orangeboom=0x7f020075;
+        public static final int tab_indicator_ab_orangeboom=0x7f020076;
+        public static final int tab_selected_focused_orangeboom=0x7f020077;
+        public static final int tab_selected_orangeboom=0x7f020078;
+        public static final int tab_selected_pressed_orangeboom=0x7f020079;
+        public static final int tab_unselected_focused_orangeboom=0x7f02007a;
+        public static final int tab_unselected_orangeboom=0x7f02007b;
+        public static final int tab_unselected_pressed_orangeboom=0x7f02007c;
+        public static final int text_x_todo=0x7f02007d;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1038,6 +1045,7 @@ containing a value of this type.
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
+        public static final int divider=0x7f05003e;
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
         public static final int end=0x7f050013;
@@ -1075,7 +1083,6 @@ containing a value of this type.
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
         public static final int text_quicknote=0x7f05003d;
-        public static final int text_quicknote2=0x7f05003e;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
@@ -1132,7 +1139,7 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int fragment_main=0x7f030018;
+        public static final int fragment_notes=0x7f030018;
         public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class menu {

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;GoogleKeep/res/layout/fragment_main.xml&apos; to &apos;fragment_notes.xml&apos;" description="Rename resource &apos;fragment_main.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/layout/fragment_main.xml" name="fragment_notes.xml" stamp="1396337673813" updateReferences="true"/>
+</session>

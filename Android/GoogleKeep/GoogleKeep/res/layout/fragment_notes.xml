@@ -6,7 +6,9 @@
 	android:paddingRight="@dimen/activity_horizontal_margin"
 	android:paddingTop="@dimen/activity_vertical_margin"
 	tools:context="com.practices.googlekeep.MainActivity$PlaceholderFragment"
-	android:background="@color/main_background">
+	android:background="@color/main_background"
+	android:id="@+id/container"
+	>
 
 	<LinearLayout android:layout_width="match_parent"
 		android:layout_height="wrap_content" android:layout_alignParentTop="true"
@@ -28,7 +30,7 @@
 
 		<LinearLayout android:layout_width="fill_parent"
 			android:layout_height="50dp">
-			<ImageButton android:layout_width="wrap_content"
+			<ImageButton android:layout_width="wrap_content" android:id="@+id/btn_create_note"
 				android:layout_height="wrap_content" android:src="@drawable/ico_notepencil32"
 				style="?android:attr/borderlessButtonStyle"  />
 		</LinearLayout>

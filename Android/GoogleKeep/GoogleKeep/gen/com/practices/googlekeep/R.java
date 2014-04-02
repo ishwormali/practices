@@ -996,32 +996,33 @@ containing a value of this type.
         public static final int btn_cab_done_pressed_orangeboom=0x7f020061;
         public static final int cab_background_bottom_orangeboom=0x7f020062;
         public static final int cab_background_top_orangeboom=0x7f020063;
-        public static final int drop_shadow=0x7f020064;
-        public static final int edit_box=0x7f020065;
-        public static final int ic_launcher=0x7f020066;
-        public static final int ico_linedpaper32=0x7f020067;
-        public static final int ico_notepencil32=0x7f020068;
-        public static final int list_focused_orangeboom=0x7f020069;
-        public static final int list_pressed_orangeboom=0x7f02006a;
-        public static final int menu_dropdown_panel_orangeboom=0x7f02006b;
-        public static final int progress_bg_orangeboom=0x7f02006c;
-        public static final int progress_horizontal_orangeboom=0x7f02006d;
-        public static final int progress_primary_orangeboom=0x7f02006e;
-        public static final int progress_secondary_orangeboom=0x7f02006f;
-        public static final int selectable_background_orangeboom=0x7f020070;
-        public static final int spinner_ab_default_orangeboom=0x7f020071;
-        public static final int spinner_ab_disabled_orangeboom=0x7f020072;
-        public static final int spinner_ab_focused_orangeboom=0x7f020073;
-        public static final int spinner_ab_pressed_orangeboom=0x7f020074;
-        public static final int spinner_background_ab_orangeboom=0x7f020075;
-        public static final int tab_indicator_ab_orangeboom=0x7f020076;
-        public static final int tab_selected_focused_orangeboom=0x7f020077;
-        public static final int tab_selected_orangeboom=0x7f020078;
-        public static final int tab_selected_pressed_orangeboom=0x7f020079;
-        public static final int tab_unselected_focused_orangeboom=0x7f02007a;
-        public static final int tab_unselected_orangeboom=0x7f02007b;
-        public static final int tab_unselected_pressed_orangeboom=0x7f02007c;
-        public static final int text_x_todo=0x7f02007d;
+        public static final int dotted=0x7f020064;
+        public static final int drop_shadow=0x7f020065;
+        public static final int edit_box=0x7f020066;
+        public static final int ic_launcher=0x7f020067;
+        public static final int ico_linedpaper32=0x7f020068;
+        public static final int ico_notepencil32=0x7f020069;
+        public static final int list_focused_orangeboom=0x7f02006a;
+        public static final int list_pressed_orangeboom=0x7f02006b;
+        public static final int menu_dropdown_panel_orangeboom=0x7f02006c;
+        public static final int progress_bg_orangeboom=0x7f02006d;
+        public static final int progress_horizontal_orangeboom=0x7f02006e;
+        public static final int progress_primary_orangeboom=0x7f02006f;
+        public static final int progress_secondary_orangeboom=0x7f020070;
+        public static final int selectable_background_orangeboom=0x7f020071;
+        public static final int spinner_ab_default_orangeboom=0x7f020072;
+        public static final int spinner_ab_disabled_orangeboom=0x7f020073;
+        public static final int spinner_ab_focused_orangeboom=0x7f020074;
+        public static final int spinner_ab_pressed_orangeboom=0x7f020075;
+        public static final int spinner_background_ab_orangeboom=0x7f020076;
+        public static final int tab_indicator_ab_orangeboom=0x7f020077;
+        public static final int tab_selected_focused_orangeboom=0x7f020078;
+        public static final int tab_selected_orangeboom=0x7f020079;
+        public static final int tab_selected_pressed_orangeboom=0x7f02007a;
+        public static final int tab_unselected_focused_orangeboom=0x7f02007b;
+        public static final int tab_unselected_orangeboom=0x7f02007c;
+        public static final int tab_unselected_pressed_orangeboom=0x7f02007d;
+        public static final int text_x_todo=0x7f02007e;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1035,17 +1036,18 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f05003f;
+        public static final int action_settings=0x7f050042;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
+        public static final int btn_create_note=0x7f050040;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int container=0x7f05003c;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
-        public static final int divider=0x7f05003e;
+        public static final int divider=0x7f050041;
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
         public static final int end=0x7f050013;
@@ -1082,7 +1084,9 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
-        public static final int text_quicknote=0x7f05003d;
+        public static final int text_note_content=0x7f05003e;
+        public static final int text_note_title=0x7f05003d;
+        public static final int text_quicknote=0x7f05003f;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
@@ -1139,8 +1143,9 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int fragment_notes=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int fragment_create_note=0x7f030018;
+        public static final int fragment_notes=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -1189,7 +1194,9 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000f;
         public static final int add_quick_note=0x7f0a0010;
         public static final int app_name=0x7f0a000d;
+        public static final int create_note_title=0x7f0a0011;
         public static final int hello_world=0x7f0a000e;
+        public static final int note_content_title=0x7f0a0012;
     }
     public static final class style {
         /**           <item name="logo">@drawable/text_x_todo</item> 

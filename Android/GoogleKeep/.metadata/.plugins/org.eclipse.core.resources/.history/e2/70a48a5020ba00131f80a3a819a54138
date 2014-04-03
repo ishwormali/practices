@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GoogleKeep</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="add_quick_note"><i>Add quick note</i></string>
+	<string name="create_note_title"><i>Title</i></string>
+</resources>

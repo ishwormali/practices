@@ -1,0 +1,7 @@
+package com.practices.googlekeep;
+
+import android.support.v4.app.Fragment;
+
+public class CreateNewNoteActivity extends Fragment {
+
+}

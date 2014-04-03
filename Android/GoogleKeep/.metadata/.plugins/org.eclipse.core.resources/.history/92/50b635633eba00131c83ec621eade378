@@ -1,0 +1,73 @@
+package com.practices.googlekeep;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class NotesFragment extends Fragment implements View.OnClickListener {
+	
+	NotesEventListener mCallback;
+	
+	public NotesFragment() {
+		
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_notes, container, false);
+        initializeHandler();
+        return rootView;
+        
+    }
+    
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	// TODO Auto-generated method stub
+    	super.onCreate(savedInstanceState);
+    	
+    }
+    
+    @Override
+    public void onAttach(Activity activity) {
+    	// TODO Auto-generated method stub
+    	super.onAttach(activity);
+    	if(NotesEventListener.class.isInstance(activity)){
+    		mCallback=(NotesEventListener)activity;
+    	}
+    	else{
+    		throw new ClassCastException(activity.getClass().getName() + " must implement NotesEventListener");
+    	}
+    }
+
+    private void initializeHandler(){
+    	ImageButton create_note=getSupportFragmentManager().findFragmentById(R.layout.fragment_notes) (ImageButton) findViewById(R.id.btn_create_note);
+    	//create_note.setOnClickListener(this);
+    }
+
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch(v.getId()){
+		case R.id.btn_create_note:
+			openCreateNoteView();
+			break;
+		default:
+			break;
+		}
+	}
+	
+	private void openCreateNoteView(){
+		mCallback.OnCreateNoteClick();
+	}
+	
+	
+	public interface NotesEventListener{
+		public void OnCreateNoteClick();
+	}
+
+}

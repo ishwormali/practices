@@ -1,0 +1,15 @@
+package com.practices.googlekeep.db;
+
+public class Note {
+	private String noteId;
+
+	public String getNoteId() {
+		return noteId;
+	}
+
+	public void setNoteId(String noteId) {
+		this.noteId = noteId;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.practices.googlekeep.db;
+
+public class DbHelperConstants {
+
+}

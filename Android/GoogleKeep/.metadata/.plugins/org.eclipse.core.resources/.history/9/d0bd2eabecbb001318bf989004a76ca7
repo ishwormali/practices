@@ -1,0 +1,50 @@
+package com.practices.googlekeep.db;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
+public class NotesService {
+
+	private DbHelper dbHelper;
+	public NotesService(Context context){
+		this.dbHelper=new DbHelper(context);
+	}
+	
+	public List<Note> getNotes(){
+		SQLiteDatabase db= dbHelper.getReadableDatabase();
+		String[] columns=new String[]{
+			DbHelperConstants.COLUMN__NOTE_ID,
+			DbHelperConstants.COLUMN_NOTE_TITLE,
+			DbHelperConstants.COLUMN_NOTE_TEXT_CONTENT,
+			DbHelperConstants.COLUMN_NOTE_TYPE,
+			DbHelperConstants.COLUMN_DATE_CREATED,
+			DbHelperConstants.COLUMN_DATE_UPDATED
+		};
+		Cursor cursor=db.query(DbHelperConstants.TABLE_NOTES, columns, null, null, null, null, DbHelperConstants.COLUMN_DATE_UPDATED + " desc ");
+		
+		
+		
+		List<Note> notes=new ArrayList<Note>();
+		
+		while(cursor.moveToNext()){
+			Note note=
+		}
+		
+	}
+	
+	public Note mapNote(Cursor cursor){
+		int noteIdIdx=cursor.getColumnIndex(DbHelperConstants.COLUMN__NOTE_ID);
+		int noteTitleIdx=cursor.getColumnIndex(DbHelperConstants.COLUMN_NOTE_TITLE);
+		int noteTextContentIdx=cursor.getColumnIndex(DbHelperConstants.COLUMN_NOTE_TEXT_CONTENT);
+		int noteTypeIdx=cursor.getColumnIndex(DbHelperConstants.COLUMN_NOTE_TYPE);
+		int dateCreatedIdx=cursor.getColumnIndex(DbHelperConstants.COLUMN_DATE_CREATED);
+		int dateUpdatedIdx=cursor.getColumnIndex(DbHelperConstants.COLUMN_DATE_UPDATED);
+		
+	}
+	
+	
+}

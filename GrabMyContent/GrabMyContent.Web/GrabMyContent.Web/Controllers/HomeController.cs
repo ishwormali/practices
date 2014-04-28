@@ -1,11 +1,13 @@
 ﻿using GrabMyContent.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -33,83 +35,142 @@ namespace GrabMyContent.Web.Controllers
             return View();
         }
 
-        public async Task Grab(GrabRequest request)
+        public async Task<ActionResult> Grab(GrabRequest request)
         {
-            HttpClient client = new HttpClient();
-            var response = await client.GetAsync(request.Url);
-            if (response.IsSuccessStatusCode)
+            var webRequest=WebRequest.Create(request.Url);
+            using (var response = await webRequest.GetResponseAsync())
             {
-                HandleSuccessResponse(request,response);
-            }
-            
-            HandleFailureResponse(request,response);
-
-        }
-
-        private void HandleSuccessResponse(GrabRequest request,HttpResponseMessage response)
-        {
-            var contentTypeHeader = response.Headers.FirstOrDefault(m => m.Key == "Content-Type");
-            if (contentTypeHeader.Key != null)
-            {
-
-
-                var contentType = contentTypeHeader.Value.FirstOrDefault();
-                switch (contentType)
+                //HttpClient client = new HttpClient();
+                //var response = await client.GetAsync(request.Url);
+                var statusCode = ((HttpWebResponse)response).StatusCode;
+                if (statusCode == HttpStatusCode.OK)
                 {
-                    case "text/html":
-                        HandleTextContent(request,response);
-                        break;
-                    default:
-                        HandleOtherResponse(request, response);
-                        break;
+                    return HandleSuccessResponse(request, response);
                 }
+                else
+                {
+                    return HandleFailureResponse(request, response);
+                }
+                
             }
-            else
-            {
-                HandleOtherResponse(request, response);
-            }
+
+            //var response = await request.GetResponseAsync();
+            
+            
 
         }
 
-        private void HandleOtherResponse(GrabRequest request, HttpResponseMessage response)
+        private ActionResult HandleSuccessResponse(GrabRequest request, WebResponse response)
         {
-            var path=Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var folderName = string.Format("GC{0}", DateTime.Now.Ticks);
-            if (!Directory.Exists(folderName))
+            var contentTypeHeader = response.ContentType;
+            string contentType = "text/html";
+            Encoding encoding = null;
+            if (contentTypeHeader != null)
             {
-                Directory.CreateDirectory(folderName);
+                contentType = contentTypeHeader.Split(';')[0];
+
+                var match = Regex.Match(contentTypeHeader, @"(?<=charset\=).*");
+                if (match.Success)
+                    encoding = Encoding.GetEncoding(match.ToString());
+
+                
             }
 
-            
-            var filePath=string.Format("{0}\\GCFile{1}.css",folderName,DateTime.Now.Ticks);
-            Response.ClearContent();
-            Response.ClearHeaders();
+            switch (contentType)
+            {
+                case "text/html":
+                    return HandleTextContent(request, response);
+                    break;
+                default:
+                    return HandleOtherResponse(request, response);
+                    break;
+            }
+
+            //else
+            //{
+            //    HandleOtherResponse(request, response);
+            //}
+
+        }
+
+        private ActionResult HandleOtherResponse(GrabRequest request, WebResponse response)
+        {
+
+            var filePath = GetFilePath();
+            //Response.ClearContent();
+            //Response.ClearHeaders();
 
             using (var fs = System.IO.File.OpenWrite(filePath))
             {
-                var buff=response.Content.ReadAsByteArrayAsync().Result;
-                fs.Write(buff, 0, buff.Length);
+                byte[] buffer=new byte[response.ContentLength];
+                var buff = response.GetResponseStream().Read(buffer, 0, buffer.Length);
+
+                fs.Write(buffer, 0, buffer.Length);
             }
 
-            Response.ContentType = "text/html";
-Response.AddHeader("Content-Length", getContent.Length.ToString());
-Response.AddHeader("Content-Disposition", "attachment; filename=" + FileName);
-            Response.AddHeader("Content-Disposition","")
+            return ReturnFile(filePath, request, response);
         }
 
-        private void HandleTextContent(GrabRequest request,HttpResponseMessage response)
+        private ActionResult HandleTextContent(GrabRequest request, WebResponse response)
         {
-            var responseResult = response.Content.ReadAsByteArrayAsync().Result;
+            string content = string.Empty;
+
+            using (var reader = new StreamReader(response.GetResponseStream(), ParseEncoding(response)))
+            {
+                content = reader.ReadToEnd();
+            }
+
+            //var responseResult = response.Content.ReadAsByteArrayAsync().Result;
             Response.AppendHeader("Content-Type", "text/html");
-            Response.Write(Encoding.UTF8.GetString(responseResult));
-            
-
+            Response.Write(content);
+            return new EmptyResult();
         }
 
 
-        private void HandleFailureResponse(GrabRequest request,HttpResponseMessage response)
+        private ActionResult HandleFailureResponse(GrabRequest request,WebResponse response)
         {
+            return new EmptyResult();
+        }
+
+        private ActionResult ReturnFile(string filePath,GrabRequest request, WebResponse response)
+        {
+            return File(filePath, "application/msword",string.Format(CultureInfo.InvariantCulture,"{0}.docx",DateTime.Now.ToString()));
+
+        }
+
+        private string GetFilePath()
+        {
+            var path = GetRootFolder();
+
+            var filePath = string.Format("{0}\\GCFile{1}.docx", path, DateTime.Now.Ticks);
+            return filePath;
             
         }
+
+        private string GetRootFolder()
+        {
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var folderName = "GrabMyContent";
+            var fullFolderName = Path.Combine(path, folderName);
+            if (!Directory.Exists(fullFolderName))
+            {
+                Directory.CreateDirectory(fullFolderName);
+            }
+
+            return fullFolderName;
+        }
+
+        private Encoding ParseEncoding(WebResponse response)
+        {
+            Encoding encoding = null;
+            if (response.ContentType != null)
+            {
+                var match = Regex.Match(response.ContentType, @"(?<=charset\=).*");
+                if (match.Success)
+                    encoding = Encoding.GetEncoding(match.ToString());
+            }
+            return encoding;
+        }
+
     }
 }

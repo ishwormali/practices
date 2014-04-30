@@ -113,6 +113,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\GrabRequest.cs" />
+    <Compile Include="Models\HttpWebResponseResult.cs" />
+    <Compile Include="Models\RequestKeyValidationActionFilterAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

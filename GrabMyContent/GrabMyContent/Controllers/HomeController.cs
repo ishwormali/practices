@@ -1,4 +1,5 @@
-﻿using GrabMyContent.Web.Models;
+﻿using GrabMyContent.Models;
+using GrabMyContent.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -22,10 +23,17 @@ namespace GrabMyContent.Web.Controllers
             return "HOME";
         }
 
+        [RequestKeyValidationActionFilter]
         public ActionResult Grab(GrabRequest request)
         {
             var webRequest=WebRequest.Create(request.Url);
-            using (var response = webRequest.GetResponse())
+
+            Response.Clear();
+            Response.ClearContent();
+            Response.ClearHeaders();
+
+            var response = (HttpWebResponse)webRequest.GetResponse();
+
             {
                 //HttpClient client = new HttpClient();
                 //var response = await client.GetAsync(request.Url);
@@ -43,11 +51,9 @@ namespace GrabMyContent.Web.Controllers
 
             //var response = await request.GetResponseAsync();
             
-            
-
         }
 
-        private ActionResult HandleSuccessResponse(GrabRequest request, WebResponse response)
+        private ActionResult HandleSuccessResponse(GrabRequest request, HttpWebResponse response)
         {
             var contentTypeHeader = response.ContentType;
             string contentType = "text/html";
@@ -60,14 +66,22 @@ namespace GrabMyContent.Web.Controllers
                 if (match.Success)
                     encoding = Encoding.GetEncoding(match.ToString());
 
-                
+                if (contentType.IndexOf("image")>=0)
+                {
+                    contentType = "image";
+                }
             }
 
             switch (contentType)
             {
+                
+               
                 case "text/html":
-                    return HandleTextContent(request, response);
+                    return HandleHtmlContent(request, response);
                     break;
+                case "image":
+                    return HandleBinaryContent(request, response);
+                    
                 default:
                     return HandleOtherResponse(request, response);
                     break;
@@ -80,7 +94,29 @@ namespace GrabMyContent.Web.Controllers
 
         }
 
-        private ActionResult HandleOtherResponse(GrabRequest request, WebResponse response)
+        private ActionResult HandleBinaryContent(GrabRequest request, HttpWebResponse response)
+        {
+
+            if(string.IsNullOrWhiteSpace(request.ToEmail))
+            {
+                return new HttpWebResponseResult(response);
+                //byte[] buffer = new byte[response.ContentLength];
+                //var buff = response.GetResponseStream().Read(buffer, 0, buffer.Length);
+                //Response.OutputStream.Write(buffer, 0, buffer.Length);
+                var contentType = response.ContentType;
+                //Response.AppendHeader("Content-Type", contentType);
+                return new FileStreamResult(response.GetResponseStream(), contentType);
+                
+            }
+            else
+            {
+                return HandleOtherResponse(request, response);
+            }
+
+            return new EmptyResult();
+        }
+
+        private ActionResult HandleOtherResponse(GrabRequest request, HttpWebResponse response)
         {
 
             var filePath = GetFilePath();
@@ -90,51 +126,48 @@ namespace GrabMyContent.Web.Controllers
             using (var fs = System.IO.File.OpenWrite(filePath))
             {
                 byte[] buffer=new byte[response.ContentLength];
-                var buff = response.GetResponseStream().Read(buffer, 0, buffer.Length);
-
-                fs.Write(buffer, 0, buffer.Length);
+                //var buff = response.GetResponseStream().Read(buffer, 0, buffer.Length);
+                var responseStrm = response.GetResponseStream();
+                var buff =0;
+                while ((buff=responseStrm.ReadByte())>=0)
+                {
+                    fs.WriteByte(Convert.ToByte(buff));
+                }
+                
             }
 
             return ReturnFile(filePath, request, response);
         }
 
-        private ActionResult HandleTextContent(GrabRequest request, WebResponse response)
+        private ActionResult HandleHtmlContent(GrabRequest request, HttpWebResponse response)
         {
-            string content = string.Empty;
-
-            using (var reader = new StreamReader(response.GetResponseStream(), ParseEncoding(response)))
-            {
-                content = reader.ReadToEnd();
-            }
-
-            //var responseResult = response.Content.ReadAsByteArrayAsync().Result;
-            Response.AppendHeader("Content-Type", "text/html");
-            Response.Write(content);
-            return new EmptyResult();
+            return new HttpWebResponseResult(response);
         }
 
 
-        private ActionResult HandleFailureResponse(GrabRequest request,WebResponse response)
+        private ActionResult HandleFailureResponse(GrabRequest request, HttpWebResponse response)
         {
             return new EmptyResult();
         }
 
-        private ActionResult ReturnFile(string filePath,GrabRequest request, WebResponse response)
+        private ActionResult ReturnFile(string filePath, GrabRequest request, HttpWebResponse response)
         {
             try
             {
 
-                var message = new MailMessage("ishwor.space@gmail.com", request.ToEmail);
+                var message = new MailMessage();
+                message.To.Add(request.ToEmail);
+
                 message.Attachments.Add(new Attachment(filePath));
                 message.Body = string.Format(CultureInfo.InvariantCulture, "Here is your content for the following parameters : {0}", this.HttpContext.Request.Url.Query);
 
                 var client = new SmtpClient();
                 
-                client.EnableSsl = true;
+                client.EnableSsl = false;
                 
                 client.Send(message);
 
-                return new EmptyResult();
+                return new ContentResult(){Content="Successful operation"};
             }
             catch (Exception ex)
             {
@@ -157,7 +190,7 @@ namespace GrabMyContent.Web.Controllers
 
         private string GetRootFolder()
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path = Server.MapPath("~/temp");
             var folderName = "GrabMyContent";
             var fullFolderName = Path.Combine(path, folderName);
             if (!Directory.Exists(fullFolderName))
@@ -168,7 +201,7 @@ namespace GrabMyContent.Web.Controllers
             return fullFolderName;
         }
 
-        private Encoding ParseEncoding(WebResponse response)
+        private Encoding ParseEncoding(HttpWebResponse response)
         {
             Encoding encoding = null;
             if (response.ContentType != null)

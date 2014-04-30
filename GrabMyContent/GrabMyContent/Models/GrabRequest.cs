@@ -9,5 +9,7 @@ namespace GrabMyContent.Web.Models
     {
         public string Url { get; set; }
         public string ToEmail { get; set; }
+        public string RequestKey { get; set; }
+
     }
 }

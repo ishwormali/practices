@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -54,10 +56,16 @@ namespace GrabMyContent.Models
             }
             else
             {
+                var urlHelper=new UrlHelper(HttpContext.Current.Request.RequestContext);
+
                 // Text result
                 var contentResult = new ContentResult();
                 contentResult = new ContentResult();
-                contentResult.Content = new StreamReader(contentStream).ReadToEnd();
+                var html = new StreamReader(contentStream).ReadToEnd();
+      //          var newHtml=Regex.Replace(html,
+      //@"(?<=<img\s+[^>]*?src=(?<q>['""]))(?<url>.+?)(?=\k<q>)",
+      //m => urlHelper.Action("Grab","Home",null) +"url="+ m.Value + "requestKey="+ConfigurationManager.AppSettings["RequestKey"]);
+                contentResult.Content = html;
                 _innerResult = contentResult;
             }
         }

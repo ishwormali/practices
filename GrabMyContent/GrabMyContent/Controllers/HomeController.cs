@@ -6,51 +6,60 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GrabMyContent.Web.Controllers
+namespace GrabMyContent.Controllers
 {
     public class HomeController : Controller
     {
+
         public string Index()
         {
             return "HOME";
         }
 
-        [RequestKeyValidationActionFilter]
+
+
+        // [RequestKeyValidationActionFilter]
         public ActionResult Grab(GrabRequest request)
         {
-            var webRequest=WebRequest.Create(request.Url);
-
-            Response.Clear();
-            Response.ClearContent();
-            Response.ClearHeaders();
-
-            var response = (HttpWebResponse)webRequest.GetResponse();
-
+            if (request != null && !string.IsNullOrWhiteSpace(request.Url) && !string.IsNullOrWhiteSpace(request.RequestKey))
             {
-                //HttpClient client = new HttpClient();
-                //var response = await client.GetAsync(request.Url);
-                var statusCode = ((HttpWebResponse)response).StatusCode;
-                if (statusCode == HttpStatusCode.OK)
+                var webRequest = WebRequest.Create(request.Url);
+
+                Response.Clear();
+                Response.ClearContent();
+                Response.ClearHeaders();
+
+                var response = (HttpWebResponse)webRequest.GetResponse();
+
                 {
-                    return HandleSuccessResponse(request, response);
+                    //HttpClient client = new HttpClient();
+                    //var response = await client.GetAsync(request.Url);
+                    var statusCode = ((HttpWebResponse)response).StatusCode;
+                    if (statusCode == HttpStatusCode.OK)
+                    {
+                        return HandleSuccessResponse(request, response);
+                    }
+                    else
+                    {
+                        return HandleFailureResponse(request, response);
+                    }
+
                 }
-                else
-                {
-                    return HandleFailureResponse(request, response);
-                }
-                
+            }
+            else
+            {
+                return View();
             }
 
+
             //var response = await request.GetResponseAsync();
-            
+
         }
 
         private ActionResult HandleSuccessResponse(GrabRequest request, HttpWebResponse response)
@@ -66,7 +75,7 @@ namespace GrabMyContent.Web.Controllers
                 if (match.Success)
                     encoding = Encoding.GetEncoding(match.ToString());
 
-                if (contentType.IndexOf("image")>=0)
+                if (contentType.IndexOf("image") >= 0)
                 {
                     contentType = "image";
                 }
@@ -74,14 +83,14 @@ namespace GrabMyContent.Web.Controllers
 
             switch (contentType)
             {
-                
-               
+
+
                 case "text/html":
                     return HandleHtmlContent(request, response);
                     break;
                 case "image":
                     return HandleBinaryContent(request, response);
-                    
+
                 default:
                     return HandleOtherResponse(request, response);
                     break;
@@ -97,7 +106,7 @@ namespace GrabMyContent.Web.Controllers
         private ActionResult HandleBinaryContent(GrabRequest request, HttpWebResponse response)
         {
 
-            if(string.IsNullOrWhiteSpace(request.ToEmail))
+            if (string.IsNullOrWhiteSpace(request.ToEmail))
             {
                 return new HttpWebResponseResult(response);
                 //byte[] buffer = new byte[response.ContentLength];
@@ -106,7 +115,7 @@ namespace GrabMyContent.Web.Controllers
                 var contentType = response.ContentType;
                 //Response.AppendHeader("Content-Type", contentType);
                 return new FileStreamResult(response.GetResponseStream(), contentType);
-                
+
             }
             else
             {
@@ -125,15 +134,15 @@ namespace GrabMyContent.Web.Controllers
 
             using (var fs = System.IO.File.OpenWrite(filePath))
             {
-                byte[] buffer=new byte[response.ContentLength];
+                byte[] buffer = new byte[response.ContentLength];
                 //var buff = response.GetResponseStream().Read(buffer, 0, buffer.Length);
                 var responseStrm = response.GetResponseStream();
-                var buff =0;
-                while ((buff=responseStrm.ReadByte())>=0)
+                var buff = 0;
+                while ((buff = responseStrm.ReadByte()) >= 0)
                 {
                     fs.WriteByte(Convert.ToByte(buff));
                 }
-                
+
             }
 
             return ReturnFile(filePath, request, response);
@@ -162,12 +171,12 @@ namespace GrabMyContent.Web.Controllers
                 message.Body = string.Format(CultureInfo.InvariantCulture, "Here is your content for the following parameters : {0}", this.HttpContext.Request.Url.Query);
 
                 var client = new SmtpClient();
-                
+
                 client.EnableSsl = false;
-                
+
                 client.Send(message);
 
-                return new ContentResult(){Content="Successful operation"};
+                return new ContentResult() { Content = "Successful operation" };
             }
             catch (Exception ex)
             {
@@ -185,7 +194,7 @@ namespace GrabMyContent.Web.Controllers
 
             var filePath = string.Format("{0}\\GCFile{1}.docx", path, DateTime.Now.Ticks);
             return filePath;
-            
+
         }
 
         private string GetRootFolder()
@@ -212,6 +221,7 @@ namespace GrabMyContent.Web.Controllers
             }
             return encoding;
         }
+
 
     }
 }

@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+
+    <script src="~/Scripts/jquery-1.6.4.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.0.3.js"></script>
+    <script src="signalr/hubs"></script>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+        $(document).ready(function () {
+
+            var remoteHub = $.connection.remoteHub;
+            remoteHub.client.commandReceived = function (command,parameters) {
+                console.log('command received : ' + command);
+                $.ajax({
+                    url: 'http://localhost:4521/api/Remote?command='+command + '&parameters='+parameters
+                });
+            };
+
+            $.connection.hub.start().done(function () {
+
+            });
+        });
+    </script>
+</body>
+</html>

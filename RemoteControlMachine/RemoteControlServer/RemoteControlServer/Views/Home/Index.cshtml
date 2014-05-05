@@ -1,0 +1,22 @@
+﻿@model RemoteControlServer.Models.ServerCommand
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m=>m.Command)
+     <br />
+    @Html.EditorFor(m=>m.Parameters)
+    <br />
+    <input type="submit" value="Execute" />   
+    
+}
+
+
+<script src="~/Scripts/jquery-1.6.4.js"></script>
+<script src="~/Scripts/jquery.signalR-2.0.3.js"></script>
+

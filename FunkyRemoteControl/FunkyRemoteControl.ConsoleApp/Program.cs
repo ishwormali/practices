@@ -13,10 +13,11 @@ namespace FunkyRemoteControl.ConsoleApp
     {
         static void Main(string[] args)
         {
-            HubConnection hub = new HubConnection("http://localhost:57365/");
+            HubConnection hub = new HubConnection(System.Configuration.ConfigurationManager.AppSettings["RemoteServer"]);
+
             
-            var prxy = hub.CreateHubProxy("RemoteHub");
-            prxy.On<string, string>("commandReceived", (command, parameters) =>
+            var prxy = hub.CreateHubProxy("RemoteServer");
+            prxy.On<string, string,string>("commandReceived", (command, parameters,requestToken) =>
             {
                 Console.WriteLine(string.Format("Command : {0}, Parameters : {1} ", command, parameters));
                 if (!string.IsNullOrWhiteSpace(command))

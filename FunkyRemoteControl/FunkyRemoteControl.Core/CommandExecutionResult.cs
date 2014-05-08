@@ -31,7 +31,7 @@ namespace FunkyRemoteControl.Core
         /// </summary>
         public IList<string> Errors
         {
-            get { return errors??(errors=new List<string>(); }
+            get { return errors ?? (errors = new List<string>()); }
             set { errors = value; }
         }
 

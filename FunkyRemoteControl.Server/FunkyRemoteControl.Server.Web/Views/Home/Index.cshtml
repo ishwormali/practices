@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+<label for="commandName">Command :</label>
+<input type="text" name="commandName" id="commandName" />
+<br />
+<label for="commandParameters">Parameters : </label>
+<input type="text" name="commandParameters" id="commandParameters" />
+<br />
+<input type="button" value="Send Command" id="btnSendCommand" />
+
+@section Scripts{
+    <script src="~/Scripts/jquery.signalR-2.0.3.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+        var requestToken=jQuery.now();
+
+        $(document).ready(function () {
+            var hub = $.connection.remoteServer;
+            $.connection.hub.start().done(function () {
+                $('#btnSendCommand').click(function () {
+                    
+                    hub.server.sendCommand($('#commandName').val(), $('#commandParameters').val(), requestToken++);
+                });
+            });
+            
+        });
+    </script>
+}

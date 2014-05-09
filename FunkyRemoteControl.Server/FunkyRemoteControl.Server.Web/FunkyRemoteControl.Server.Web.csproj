@@ -182,6 +182,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServerApiController.cs" />
+    <Compile Include="Models\Db\RemoteConnectionRequest.cs" />
+    <Compile Include="Models\Db\RemoteMachine.cs" />
     <Compile Include="Controllers\RemoteServer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

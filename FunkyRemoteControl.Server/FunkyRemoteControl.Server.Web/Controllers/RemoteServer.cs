@@ -8,6 +8,7 @@ namespace FunkyRemoteControl.Server.Web.Controllers
 {
     public class RemoteServer : Hub
     {
+        [Authorize]
         public void SendCommand(string command,string parameters,string requestToken)
         {
             Clients.All.commandReceived(command, parameters, requestToken);

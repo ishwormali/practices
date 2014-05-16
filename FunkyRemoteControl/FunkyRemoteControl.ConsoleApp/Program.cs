@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +14,24 @@ namespace FunkyRemoteControl.ConsoleApp
     {
         static void Main(string[] args)
         {
-            HubConnection hub = new HubConnection(System.Configuration.ConfigurationManager.AppSettings["RemoteServer"]);
+            var loginManager=new LoginManager();
+            //Console.WriteLine("User Name : ");
 
+            var uName = "ishwor";// Console.ReadLine();
+           // Console.WriteLine("Password : ");
+
+            var pwd = "passw0rd";// Console.ReadLine();
+
+            var authCookie = new Cookie();
+            var loginSuccess = loginManager.Login(uName, pwd, out authCookie);
+            if (!loginSuccess)
+            {
+                return;
+            }
+
+            HubConnection hub = new HubConnection(System.Configuration.ConfigurationManager.AppSettings["RemoteServer"]);
+            hub.CookieContainer = new CookieContainer();
+            hub.CookieContainer.Add(authCookie);
             
             var prxy = hub.CreateHubProxy("RemoteServer");
             prxy.On<string, string,string>("commandReceived", (command, parameters,requestToken) =>
@@ -46,7 +63,22 @@ namespace FunkyRemoteControl.ConsoleApp
                 }
                 
             });
+
             hub.Start().Wait();
+
+            try
+            {
+                prxy.Invoke("SendCommand", "tempcommand", "tempparameter", "nothing").Wait();
+            }
+            catch (AggregateException ae)
+            {
+                ae.Handle(e =>
+                {
+                    return true;
+                });
+                throw;
+            }
+            
 
             Console.ReadLine();
         }

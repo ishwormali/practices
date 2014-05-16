@@ -19,11 +19,11 @@ namespace FunkyRemoteControl.Core
 
             commandPrompt.StartInfo.FileName=  "CMD.exe";
             commandPrompt.StartInfo.Arguments = command.CommandParameters;
-            commandPrompt.StartInfo.RedirectStandardOutput = true;
+            //commandPrompt.StartInfo.RedirectStandardOutput = true;
             commandPrompt.Start();
-            var output = commandPrompt.StandardOutput.ReadToEnd();
+           // var output = commandPrompt.StandardOutput.ReadToEnd();
             var result = new CommandExecutionResult();
-            result.Result.Add(output);
+          //  result.Result.Add(output);
             return result;
         }
 

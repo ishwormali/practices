@@ -16,8 +16,9 @@
     <script src="~/signalr/hubs"></script>
     <script type="text/javascript">
         var requestToken=jQuery.now();
-
+       
         $(document).ready(function () {
+            $.connection.hub.logging = true;
             var hub = $.connection.remoteServer;
             $.connection.hub.start().done(function () {
                 $('#btnSendCommand').click(function () {

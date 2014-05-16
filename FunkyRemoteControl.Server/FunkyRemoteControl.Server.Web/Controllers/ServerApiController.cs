@@ -27,15 +27,16 @@ namespace FunkyRemoteControl.Server.Web.Controllers
 
         public ServerApiController(UserManager<ApplicationUser> userManager)
         {
-
+            this.UserManager = userManager;
         }
 
         [Route("api/authorize")]
         [HttpPost]
-        public HttpStatusCode Authorize(string userName, string password)
+       // [HttpGet]
+        public HttpStatusCode Authorize(LoginViewModel login)
         {
 
-            var user = UserManager.FindAsync(userName, password).Result;
+            var user = UserManager.FindAsync(login.UserName, login.Password).Result;
             if (user != null)
             {
                 SignIn(user,false);

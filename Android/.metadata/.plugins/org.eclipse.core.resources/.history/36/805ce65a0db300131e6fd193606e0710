@@ -1,7 +1,0 @@
-package com.Practices.fragmentpractice;
-
-import android.support.v4.app.Fragment;
-
-public class ArticleFragment extends Fragment {
-
-}

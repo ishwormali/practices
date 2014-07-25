@@ -1,9 +1,0 @@
-package com.Practices.fragmentpractice;
-
-public class Ipsum {
-	static String[] Headlines ={
-		"Article One",
-		"Article Two"
-	};
-
-}

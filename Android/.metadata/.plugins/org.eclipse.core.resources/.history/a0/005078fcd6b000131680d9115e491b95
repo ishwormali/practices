@@ -1,7 +1,0 @@
-package com.Practices.fragmentpractice;
-
-import android.support.v4.app.ListFragment;
-
-public class HeadlinesFragment extends ListFragment {
-
-}

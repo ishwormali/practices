@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395809169154_5" label="ToDoList2" name="ToDoList2"/>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396251105926_13" label="GoogleKeep" name="GoogleKeep"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395640562465_0" label="Window Working Set" name="Aggregate for window 1395640562465"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395641909162_1" label="Window Working Set" name="Aggregate for window 1395641909162"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395658916856_2" label="Window Working Set" name="Aggregate for window 1395658916856"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395719598542_3" label="Window Working Set" name="Aggregate for window 1395719598542"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395805504637_4" label="Window Working Set" name="Aggregate for window 1395805504637"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395810063214_6" label="Window Working Set" name="Aggregate for window 1395810063214"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395810120676_7" label="Window Working Set" name="Aggregate for window 1395810120676"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395893700359_8" label="Window Working Set" name="Aggregate for window 1395893700359"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395980412204_9" label="Window Working Set" name="Aggregate for window 1395980412204"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396006981637_10" label="Window Working Set" name="Aggregate for window 1396006981637"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396007034938_11" label="Window Working Set" name="Aggregate for window 1396007034938"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396241254294_12" label="Window Working Set" name="Aggregate for window 1396241254294"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396505859197_1" label="todo" name="todo"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396505695913_0" label="Window Working Set" name="Aggregate for window 1396505695912"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396583310455_2" label="Window Working Set" name="Aggregate for window 1396583310455"/>
+<mruList name="todo"/>
 </workingSetManager>

@@ -1,0 +1,14 @@
+{
+  "name": "IELTSCHECKER",
+  "version": "0.0.1",
+  "description": "IELTS CHECKER",
+  "directories": {},
+  "dependencies": {
+    "selenium-webdriver": "^2.44.0",
+    "twilio": "^1.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Ishwor",
+  "license": ""
+}

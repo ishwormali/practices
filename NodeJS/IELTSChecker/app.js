@@ -1,7 +1,7 @@
 var webdriver=require('selenium-webdriver');
 var Q=require('q');
 
-var client = require('twilio')('ACfd2dfa7e43d9d74846dc772a8ec531fb', '17a90e2071958e9bd0f62e5846947b3f');
+var client = require('twilio')('', '');
 var driver=new webdriver.Builder()
 			.withCapabilities(webdriver.Capabilities.chrome()).build();
 

@@ -1,18 +1,24 @@
 var webdriver=require('selenium-webdriver');
 var Q=require('q');
 
-var client = require('twilio')('', '');
+var client = require('twilio')('ACfd2dfa7e43d9d74846dc772a8ec531fb', '17a90e2071958e9bd0f62e5846947b3f');
 var driver=new webdriver.Builder()
 			.withCapabilities(webdriver.Capabilities.chrome()).build();
 
-//var myurl='file:///C:/Users/ishan/Desktop/smstest/British%20Council%20IELTS%20Online%20Application.html';
+// var myurl='file:///C:/Users/ishan/Desktop/smstest/British%20Council%20IELTS%20Online%20Application.html';
  var myurl='https://ielts.britishcouncil.org/nepal';
 var elementid='ctl00_ContentPlaceHolder1_ddlDateMonthYear';//'ctl00_ContentPlaceHolder1_ddlTownCityVenue';
 
-setInterval(checkSite,300000);
+setInterval(checkSite,240000);
+var beepstarted=false;
+process.on('uncaughtException', function(err) {
+  console.log('Caught uncaught exception: ' + err);
+});
+
+checkSite();
 
 function checkSite(){
-	Q(function(){
+	Q(Q.Promise(function(resolve,reject){
 		console.log('checking site ');
 		driver.get(myurl);
 		var children=driver.findElement(webdriver.By.id(elementid))
@@ -27,17 +33,22 @@ function checkSite(){
 				return options[0].getText().then(function(txt){
 					if(txt.indexOf('no test date')<0){
 						console.log('Date found '+txt);
-						sendSMS('new ielts date');
+						if(!beepstarted){
+							startBeeping();
+							beepstarted=true;
+						}
+
+						//sendSMS('new ielts date');
 					}
 				});
-				
+
 
 			}
 			return true;
 			// console.log('closing driver');
 			//driver.quit();
-		});	
-	}())
+		});
+	}))
 	.catch(function(err){
 		console.log('.....................ERROR...........');
 		console.log(err);
@@ -47,7 +58,7 @@ function checkSite(){
 
 function sendSMS(message){
 	console.log('sending sms '+message);
-	//return;
+	return;
 //Send an SMS text message
 client.sendMessage({
 
@@ -72,4 +83,11 @@ client.sendMessage({
     	console.log(err);
     }
 });
+}
+
+function startBeeping(){
+	setInterval(function(){
+		process.stdout.write('\x07');
+	},2000);
+
 }
